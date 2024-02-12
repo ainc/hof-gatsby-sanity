@@ -1,0 +1,26 @@
+{
+  "name": "hof-gatsby-sanity",
+  "version": "1.0.0",
+  "private": true,
+  "description": "hof-gatsby-sanity",
+  "author": "Ethan Gamble",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^5.13.2",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-source-sanity": "^7.9.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
