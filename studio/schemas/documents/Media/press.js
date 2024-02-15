@@ -14,9 +14,9 @@ export default {
         type: 'string'
       },
       {
-        name: 'year',
-        title: 'Year',
-        type: 'string'
+        name: 'date',
+        title: 'Date',
+        type: 'datetime'
       },
       {
         name: 'link',

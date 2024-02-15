@@ -9,9 +9,9 @@ export default {
         type: 'string'
       },
       {
-        name: 'video',
-        title: 'Video',
-        type: 'file'
+        name: 'videoLink',
+        title: 'Video Link',
+        type: 'url'
       }
     ]
   }

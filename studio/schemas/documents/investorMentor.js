@@ -10,10 +10,10 @@ export default {
       },
       {
         name: 'type',
-        title: 'Investor or Mentor',
+        title: 'Investor, Mentor, or Executive',
         type: 'string',
         options: {
-          list: ['Investor', 'Mentor'],
+          list: ['Investor', 'Mentor', 'Executive'],
           layout: 'radio'
         }
       },

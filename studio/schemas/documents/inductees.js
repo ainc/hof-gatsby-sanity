@@ -10,7 +10,17 @@ export default {
       },
       {
         name: 'company',
-        title: 'Company / Title',
+        title: 'Company',
+        type: 'string'
+      },
+      {
+        name: 'title',
+        title: 'Title',
+        type: 'string'
+      },
+      {
+        name: 'year',
+        title: 'Year',
         type: 'string'
       },
       {
@@ -25,13 +35,13 @@ export default {
       },
       {
         name: 'profileVideo',
-        title: 'Profile Video',
-        type: 'file'
+        title: 'Profile Video Link',
+        type: 'url'
       },
       {
-        name: 'inductionCeremony',
-        title: 'Induction Ceremony',
-        type: 'file'
+        name: 'inductionCeremonyVideo',
+        title: 'Induction Ceremony Video Link',
+        type: 'url'
       }
     ]
   }

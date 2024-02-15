@@ -21,6 +21,11 @@ export default {
         name: 'image',
         title: 'Image',
         type: 'image'
+      },
+      {
+        name: 'link',
+        title: 'Link',
+        type: 'url'
       }
     ]
   }
