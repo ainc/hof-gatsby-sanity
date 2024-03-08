@@ -1,21 +1,22 @@
 import * as React from "react"
 import { graphql } from 'gatsby'
 import { GatsbyImage} from 'gatsby-plugin-image'
-
+import { Container, Row, Col } from 'react-bootstrap';
+import InducteeCard from "../components/InducteeCard/InducteeCard"
+import '../styles/main.scss'
 const IndexPage = ({data}) => {
-  console.log(data.allSanityInductee.totalCount);
-  const allSanityInductee = (data.allSanityInductee.nodes);
+  console.log(data.allSanityInductee);
+  const allSanityInductee = data.allSanityInductee.nodes;
 
   return (
     <div>
-    {allSanityInductee.map((node, index) => (
-      <div>
-      <h1>{node.name}</h1>
-      <p>{node.company}</p>
-      <GatsbyImage image={node.profilePhoto.asset.gatsbyImageData} className='rounded-circle' alt={node.name}/>
-      <p>{node.bio}</p>
-      </div>
-    ))}
+    <ul style={{listStyle: 'none', display: 'flex', flexWrap: 'wrap'}}>
+      {allSanityInductee.map((node, index) => (
+        <li key={index}>
+          <InducteeCard img={node.profilePhoto.asset.gatsbyImageData} name={node.name} company={node.company} />
+        </li>
+      ))}
+    </ul>
     </div>
   )
 }

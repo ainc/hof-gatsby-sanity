@@ -15,12 +15,20 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "gatsby": "^5.13.2",
     "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-sass": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-sanity": "^7.9.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.71.1",
+    "sass-loader": "^14.1.1",
+    "webpack": "^5.90.3"
   }
 }

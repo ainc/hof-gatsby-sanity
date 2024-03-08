@@ -22,5 +22,5 @@ module.exports = {
       watchMode: !isProd,
       overlayDrafts: !isProd && token,
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp"]
+  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass"]
 };
