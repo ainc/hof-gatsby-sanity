@@ -30,6 +30,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     box-shadow: -1 1px 0 rgba(0,0,0,0.1), 0 -10px 0 rgba(255,255,255,0.3);
+    text-decoration: none;
 }
 
 .image-container:hover .card-overlay {

@@ -24,6 +24,17 @@ export default {
         type: 'string'
       },
       {
+        name: 'slug',
+        type: 'slug',
+        title: 'Slug',
+        description: "You must click the 'generate' button after entering the name in order to create the url for the inductee.",
+        options: {
+          source: 'name',
+          maxLength: 96
+        },
+        validation: (Rule) => Rule.required(),
+    },
+      {
         name: 'bio',
         title: 'Bio',
         type: 'text'

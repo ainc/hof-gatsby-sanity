@@ -9,7 +9,7 @@ const InducteeCard = (props) => {
     <Card className={styles.inducteeCard}>
         <div className={styles.imageContainer}>
             <GatsbyImage image={props.img} alt={props.name} />
-            <div className={styles.cardOverlay}>
+            <a href={props.link} className={styles.cardOverlay}>
                 <Row>
                     <Col>
                         <h2>{props.name}</h2>
@@ -20,7 +20,12 @@ const InducteeCard = (props) => {
                         <h4>{props.company}</h4>
                     </Col>
                 </Row>
-            </div>
+                <Row>
+                    <span class="view-bio">
+                         <i className='icon-eye-open'></i> View Bio
+                    </span>
+                </Row>
+            </a>
         </div>
     </Card>
     )
