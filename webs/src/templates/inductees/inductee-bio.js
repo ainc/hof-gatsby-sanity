@@ -3,8 +3,8 @@ import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {Row, Col, Container, Card} from 'react-bootstrap'
 import '../../styles/main.scss'
 import * as styles from './inductee-bio.module.scss'
-
-
+import Sponsors from '../../components/Sponsors/sponsors'
+import Layout from '../../components/Layout/Layout'
 const InducteeBio = ({ pageContext }) => {
 
     const inducteeInfo = pageContext.post;
@@ -12,6 +12,7 @@ const InducteeBio = ({ pageContext }) => {
     const inducteeImage = getImage(inducteeInfo.profilePhoto.asset.gatsbyImageData)
 
     return (
+    <Layout>
         <Container>
             <Row>
                 <h1>Inductee</h1>
@@ -45,7 +46,9 @@ const InducteeBio = ({ pageContext }) => {
             </Row>
             </>
             )}
+            <Sponsors />
         </Container>
+    </Layout>
     )
 };
 

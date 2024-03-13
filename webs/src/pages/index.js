@@ -6,8 +6,9 @@ import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss';
 import * as styles from './index.module.scss'
 import Layout from "../components/Layout/Layout";
+import Sponsors from "../components/Sponsors/sponsors";
 
-const IndexPage = ({data}) => {
+const IndexPage = ({ data }) => {
   const allSanityInductee = data.allSanityInductee.nodes;
   const [selectedYear, setSelectedYear] = useState(null);
 
@@ -15,6 +16,7 @@ const IndexPage = ({data}) => {
   const handleYearClick = (year) => {
     setSelectedYear(year);
   };
+  
   // Filter inductees based on the selected year
   const filteredInductees = selectedYear ? allSanityInductee.filter(inductee => inductee.year === selectedYear) : allSanityInductee;
 
@@ -40,6 +42,7 @@ const IndexPage = ({data}) => {
           </li>
         ))}
       </ul>
+      <Sponsors />
     </Layout>
   )
 }
@@ -66,6 +69,6 @@ export const query = graphql`
 `;
 
 
-export default IndexPage
+export default IndexPage;
 
 export const Head = () => <title>Home Page</title>

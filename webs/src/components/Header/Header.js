@@ -6,16 +6,18 @@ import * as styles from './header.module.scss';
 const Header = () => {
     return (
         <Navbar className={styles.header}>
-            <Navbar.Brand href="#"><StaticImage src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
-            <Nav as='ul' className={styles.nav}>
-                <Nav.Link as='li' className='text-white' href="#">Media</Nav.Link>
-                <Nav.Link as='li' className='text-white'>Book</Nav.Link>
-                <Nav.Link as='li' className='text-white'>Founders Series</Nav.Link>
-                <Nav.Link as='li' className='text-white'>The Fellowship</Nav.Link>
-                <Nav.Link as='li' className='text-white'>Nominate</Nav.Link>
-                <Nav.Link as='li' className='text-white'>Induction Dinner</Nav.Link>
-                <Nav.Link as='li' className='text-white'>Sponsors</Nav.Link>
-            </Nav>
+            <Container className={styles.headerContainer}>
+                <Navbar.Brand href="#"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
+                <Nav as='ul'>
+                    <Nav.Link as='li'><a href="#" className={styles.links}>Media</a></Nav.Link>
+                    <Nav.Link as='li'><a href="#" className={styles.links}>Book</a></Nav.Link>
+                    <Nav.Link as='li'><a href="#" className={styles.links}>Founders Series</a></Nav.Link>
+                    <Nav.Link as='li'><a href="#" className={styles.links}>The Fellowship</a></Nav.Link>
+                    <Nav.Link as='li'><a href="#" className={styles.links}>Nominate</a></Nav.Link>
+                    <Nav.Link as='li'><a href="#" className={styles.links}>Induction Dinner</a></Nav.Link>
+                    <Nav.Link as='li'><a href="#" className={styles.links}>Sponsors</a></Nav.Link>
+                </Nav>
+            </Container>
         </Navbar>
     )
 }
