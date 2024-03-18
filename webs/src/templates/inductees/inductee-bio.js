@@ -5,11 +5,12 @@ import '../../styles/main.scss'
 import * as styles from './inductee-bio.module.scss'
 import Sponsors from '../../components/Sponsors/sponsors'
 import Layout from '../../components/Layout/Layout'
+
 const InducteeBio = ({ pageContext }) => {
 
     const inducteeInfo = pageContext.post;
 
-    const inducteeImage = getImage(inducteeInfo.profilePhoto.asset.gatsbyImageData)
+    const inducteeImage = getImage(inducteeInfo.inductee.profilePhoto.asset.gatsbyImageData)
 
     return (
     <Layout>
@@ -21,13 +22,13 @@ const InducteeBio = ({ pageContext }) => {
                 <Col md={3}>
                     <Card className={styles.inducteeCard}>
                         <div className={styles.imageContainer}>
-                            <GatsbyImage image={inducteeImage} alt={inducteeInfo.name} />
+                            <GatsbyImage image={inducteeImage} alt={inducteeInfo.inductee.name} />
                         </div>
                     </Card>
                 </Col>
                 <Col>
-                    <h2>{inducteeInfo.name}</h2>
-                    <h3>{inducteeInfo.title}, {inducteeInfo.company}</h3>
+                    <h2>{inducteeInfo.inductee.name}</h2>
+                    <h3>{inducteeInfo.inductee.title}, {inducteeInfo.inductee.company}</h3>
                     <p>{inducteeInfo.bio}</p>
                 </Col>
             </Row>

@@ -7,21 +7,23 @@ async function createInducteeBioPages(graphql, actions) {
     allSanityInductee {
       edges {
         node {
-          bio
-          company
-          inductionCeremonyVideo
-          profilePhoto {
-            asset {
-              gatsbyImageData
+          inductee {
+            company
+            name
+            profilePhoto {
+              asset {
+                gatsbyImageData
+              }
             }
+            title
+            year
           }
-          title
-          year
+          inductionCeremonyVideo
           profileVideo
-          name
           slug {
             current
           }
+          bio
         }
       }
     }

@@ -7,62 +7,57 @@ import '../styles/main.scss';
 import * as styles from './index.module.scss'
 import Layout from "../components/Layout/Layout";
 import Sponsors from "../components/Sponsors/sponsors";
+import InducteeNav from "../components/InducteeNav/InducteeNav";
 
 const IndexPage = ({ data }) => {
-  const allSanityInductee = data.allSanityInductee.nodes;
-  const [selectedYear, setSelectedYear] = useState(null);
-
-  // Function to handle year selection
-  const handleYearClick = (year) => {
-    setSelectedYear(year);
-  };
-  
-  // Filter inductees based on the selected year
-  const filteredInductees = selectedYear ? allSanityInductee.filter(inductee => inductee.year === selectedYear) : allSanityInductee;
+  const Inductees = data.allSanityInductee.nodes;
+  const Emerging = data.allSanityEmergingEntrepreneur.nodes;
 
   return (
     <Layout>
-      <Row>
-        <Col md={1}>
-          <h2>Inductees</h2>
-        </Col>
-        <Col>
-          <Nav as="ul" className={styles.navFilter}>
-            <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2023")} tabIndex='-1'>2023</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2022")} tabIndex='-1'>2022</Nav.Item>
-            {/* Add more years here */}
-          </Nav>
-        </Col>
-      </Row>
-      <ul className={styles.inducteesList}>
-        {filteredInductees.map((node, index) => (
-          <li key={index}>
-            <InducteeCard img={node.profilePhoto.asset.gatsbyImageData} name={node.name} company={node.company} link={node.slug.current}/>
-          </li>
-        ))}
-      </ul>
+      <InducteeNav title="Inductees" data={Inductees} />
+      <InducteeNav title="Emerging Entrepreneurs" data={Emerging} />
       <Sponsors />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query MyQuery {
+  query IndexPageQuery {
     allSanityInductee {
       nodes {
-        name
-        company
-        year
-        profilePhoto {
-          asset {
-            gatsbyImageData(height: 300, width: 300)
+        inductee {
+          name
+          company
+          profilePhoto {
+            asset {
+              gatsbyImageData
+            }
           }
+          year(formatString: "YYYY")
+          title
         }
-        bio
-        slug{
+        inductionCeremonyVideo
+        profileVideo
+        slug {
           current
         }
+      }
+    }
+    allSanityEmergingEntrepreneur {
+      nodes {
+        inductee {
+          name
+          company
+          title
+          year(formatString: "YYYY")
+          profilePhoto {
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+        linkedin
       }
     }
   }

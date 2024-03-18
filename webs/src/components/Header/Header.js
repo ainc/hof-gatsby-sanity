@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <Navbar className={styles.header}>
             <Container className={styles.headerContainer}>
-                <Navbar.Brand href="#"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
+                <Navbar.Brand href="/"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
                 <Nav as='ul'>
                     <Nav.Link as='li'><a href="#" className={styles.links}>Media</a></Nav.Link>
                     <Nav.Link as='li'><a href="#" className={styles.links}>Book</a></Nav.Link>
