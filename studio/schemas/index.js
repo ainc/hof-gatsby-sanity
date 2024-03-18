@@ -1,7 +1,7 @@
 // Objects
 import imageLink from "./objects/imageLink"
 import link from "./objects/link"
-
+import inducteeTemplate from "./objects/inducteeTemplate"
 // Documents
 import inductees from "./documents/inductees"
 import emergingEntrepreneurs from "./documents/emergingEntrepreneurs"
@@ -17,6 +17,7 @@ import footer from "./documents/footer"
 export const schemaTypes = [
     imageLink,
     link,
+    inducteeTemplate,
     inductees, 
     emergingEntrepreneurs, 
     investorMentor, 

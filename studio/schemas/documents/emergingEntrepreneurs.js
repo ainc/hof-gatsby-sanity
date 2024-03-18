@@ -4,29 +4,21 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'name',
-      title: 'Name',
-      type: 'string'
-    },
-    {
-      name: 'year',
-      title: 'Year',
-      type: 'string'
-    },
-    {
-      name: 'company',
-      title: 'Company',
-      type: 'string'
+      name: 'inductee',
+      type: 'inducteeTemplate',
+      title: 'Inductee',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'linkedin',
       title: 'LinkedIn',
-      type: 'url'
+      type: 'url',
+      validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'profilePhoto',
-      title: 'Profile Photo',
-      type: 'image'
+  ],
+  preview: {
+    select: {
+      title: 'inductee.name',
     }
-  ]
+  }
 }

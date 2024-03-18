@@ -4,24 +4,10 @@ export default {
     type: 'document',
     fields: [
       {
-        name: 'name',
-        title: 'Name',
-        type: 'string'
-      },
-      {
-        name: 'company',
-        title: 'Company',
-        type: 'string'
-      },
-      {
-        name: 'title',
-        title: 'Title',
-        type: 'string'
-      },
-      {
-        name: 'year',
-        title: 'Year',
-        type: 'string'
+        name: 'inductee',
+        type: 'inducteeTemplate',
+        title: 'Inductee',
+        validation: (Rule) => Rule.required(),
       },
       {
         name: 'slug',
@@ -29,7 +15,7 @@ export default {
         title: 'Slug',
         description: "You must click the 'generate' button after entering the name in order to create the url for the inductee.",
         options: {
-          source: 'name',
+          source: 'inductee.name',
           maxLength: 96
         },
         validation: (Rule) => Rule.required(),
@@ -38,11 +24,6 @@ export default {
         name: 'bio',
         title: 'Bio',
         type: 'text'
-      },
-      {
-        name: 'profilePhoto',
-        title: 'Profile Photo',
-        type: 'image'
       },
       {
         name: 'profileVideo',
@@ -54,6 +35,11 @@ export default {
         title: 'Induction Ceremony Video Link',
         type: 'url'
       }
-    ]
+    ],
+    preview: {
+      select: {
+        title: 'inductee.name',
+      }
+    }
   }
   
