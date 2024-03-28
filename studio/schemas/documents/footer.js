@@ -17,22 +17,14 @@ export default {
       hidden: true
     },
     {
-      name: 'quicklinks',
-      title: 'Quicklinks',
-      type: 'array',
-      of: [{type: 'link'}],
+      name: 'sponsorLink',
+      type: 'url',
+      title: 'Sponsor Link'
     },
     {
-      name: 'courses',
-      title: 'Courses',
-      type: 'array',
-      of: [{type: 'link'}],
-    },
-    {
-      name: 'sponsors',
-      title: 'Sponsors',
-      type: 'array',
-      of: [{type: 'imageLink'}]
+      name: 'sponsorContact',
+      type: 'contactInfo',
+      title: 'Sponsor Contact'
     }
   ]
 }
