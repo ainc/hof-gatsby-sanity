@@ -1,13 +1,22 @@
 .header{
     background: #af0a0a;
+    width: 100%;
 }
 
-.social-bar {
+.alert {
+    display: flex;
+    justify-content: center;
     height: 30px;
-    width: 40px;
+    border-bottom: 1px solid #f11a1a;
+    background-color: #f2dede;
+    color: #b94a48;
+    border-color: #eed3d7;
+    padding: 5px;
+}
+.social-bar{
+    height: 30px;
     border-bottom: 1px solid #f11a1a;
 }
-
 
 .links{
     color: white;

@@ -5,6 +5,11 @@ import * as styles from './header.module.scss';
 
 const Header = () => {
     return (
+    <>
+        <div className={styles.alert}>
+        Nominations for 2024 class are open. Deadline is May 3, 2024. <a href="/nominate" style={{color: '#666'}}>Nominate here</a>.
+        </div>
+        <div className={styles.socialBar} />
         <Navbar className={styles.header}>
             <Container className={styles.headerContainer}>
                 <Navbar.Brand href="/"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
@@ -19,6 +24,7 @@ const Header = () => {
                 </Nav>
             </Container>
         </Navbar>
+    </>
     )
 }
 export default Header;

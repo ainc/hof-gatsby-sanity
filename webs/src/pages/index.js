@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage} from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss';
@@ -12,11 +12,13 @@ import InducteeNav from "../components/InducteeNav/InducteeNav";
 const IndexPage = ({ data }) => {
   const Inductees = data.allSanityInductee.nodes;
   const Emerging = data.allSanityEmergingEntrepreneur.nodes;
+  const [inducteeSelectedYear, setInducteeSelectedYear] = useState(null);
+  const [emergingSelectedYear, setEmergingSelectedYear] = useState(null);
 
   return (
     <Layout>
-      <InducteeNav title="Inductees" data={Inductees} />
-      <InducteeNav title="Emerging Entrepreneurs" data={Emerging} />
+      <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
+      <InducteeNav title="Emerging Entrepreneurs" data={Emerging} selectedYear={emergingSelectedYear} setSelectedYear={setEmergingSelectedYear}/>
       <Sponsors />
     </Layout>
   )

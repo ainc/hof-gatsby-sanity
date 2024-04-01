@@ -12,18 +12,13 @@ const InducteeCard = (props) => {
             <a href={props.link} className={styles.cardOverlay}>
                 <Row>
                     <Col>
-                        <h2>{props.name}</h2>
-                    </Col>
-                </Row>
-                <Row style={{borderBottom: '1px solid white', width: '80%'}}>
-                    <Col>
-                        <h4>{props.company}</h4>
-                    </Col>
-                </Row>
-                <Row>
+                        <span className={styles.name}>{props.name} <br />
+                            <span className={styles.company}>{props.company}</span>
+                        </span>
                     <span class="view-bio">
                          <i className='icon-eye-open'></i> View Bio
                     </span>
+                    </Col>
                 </Row>
             </a>
         </div>
