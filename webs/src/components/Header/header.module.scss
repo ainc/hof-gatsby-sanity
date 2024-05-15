@@ -1,6 +1,7 @@
 .header{
     background: #af0a0a;
     width: 100%;
+    color: white;
 }
 
 .alert {
@@ -16,6 +17,8 @@
 .social-bar{
     height: 30px;
     border-bottom: 1px solid #f11a1a;
+    margin: 0 auto; /* Center the inner div horizontally */
+    width: 70%;
 }
 
 .links{
@@ -24,4 +27,11 @@
 }
 .links:hover{
     border-top: 4px solid #f11a1a;
+}
+.dropdown-menu{
+    color: white !important;
+}
+.dropdown-menu div{
+    background: #af0a0a !important;
+    border: none !important;
 }
