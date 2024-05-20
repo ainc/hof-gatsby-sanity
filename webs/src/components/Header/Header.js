@@ -9,30 +9,29 @@ import { FaBars } from 'react-icons/fa';
 const Header = () => {
     return (
     <>
+    <div className={styles.alert}>
+      <p>
+        Nominations for 2024 class are open. Deadline is May 3, 2024. <a href="/nominate" style={{color: '#666'}}>Nominate here</a>.
+      </p>
+    </div>
     {/*Header for large screens and wider */}
     <div className='d-none d-lg-block'>
-        <div className={styles.alert}>
-        <p>
-        Nominations for 2024 class are open. Deadline is May 3, 2024. <a href="/nominate" style={{color: '#666'}}>Nominate here</a>.
-        </p>
-        </div>
-        <Container fluid style={{background: '#af0a0a'}}>
+        <Container fluid className={`${styles.background} `}>
             <div className={`${styles.socialBar}`} />
+            <Navbar className={`${styles.nav} mx-5 px-5`}>
+              <Navbar.Brand href="/"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
+              <Nav as='ul'>
+                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Media</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Book</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Founders Series</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>The Fellowship</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Nominate</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Induction Dinner</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Sponsors</a></Nav.Link>
+              </Nav>
+            </Navbar>
         </Container>
-        <Navbar className={styles.header}>
-            <Container>
-                <Navbar.Brand href="/"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
-                <Nav as='ul'>
-                    <Nav.Link as='li'><a href="#" className={styles.links}>Media</a></Nav.Link>
-                    <Nav.Link as='li'><a href="#" className={styles.links}>Book</a></Nav.Link>
-                    <Nav.Link as='li'><a href="#" className={styles.links}>Founders Series</a></Nav.Link>
-                    <Nav.Link as='li'><a href="#" className={styles.links}>The Fellowship</a></Nav.Link>
-                    <Nav.Link as='li'><a href="#" className={styles.links}>Nominate</a></Nav.Link>
-                    <Nav.Link as='li'><a href="#" className={styles.links}>Induction Dinner</a></Nav.Link>
-                    <Nav.Link as='li'><a href="#" className={styles.links}>Sponsors</a></Nav.Link>
-                </Nav>
-            </Container>
-        </Navbar>
+
     </div>
 
     {/*Header for medium screens and smaller */}
@@ -47,7 +46,7 @@ const Header = () => {
               <Nav.Link href="/book" className={styles.links} as='li'>Book</Nav.Link>
               <Nav.Link href="/founders-series" className={styles.links} as='li'>Founders Series</Nav.Link>
               <Nav.Link href="/fellowship" className={styles.links} as='li'>The Fellowship</Nav.Link>
-              <NavDropdown title="Nominate" id="collapsable-nav-dropdown" className={styles.dropdownMenu}>
+              <NavDropdown title={<span style={{color: 'white'}}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenu}>
                 <NavDropdown.Item  className={styles.links} href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI">
                   Hall of Fame
                 </NavDropdown.Item>

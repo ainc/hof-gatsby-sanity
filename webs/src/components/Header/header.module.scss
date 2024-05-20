@@ -1,7 +1,12 @@
-.header{
-    background: #af0a0a;
-    width: 100%;
+.background{
+    background: url('../../images/bg.jpg') center center repeat-y;
+    background-size: cover;
+}
+.nav{
     color: white;
+    margin: 0 -15px 10px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .alert {
@@ -13,17 +18,25 @@
     color: #b94a48;
     border-color: #eed3d7;
     padding: 5px;
+    @media (max-width: 560px){
+        height: 55px;
+        text-align: center;
+    }
 }
 .social-bar{
     height: 30px;
     border-bottom: 1px solid #f11a1a;
     margin: 0 auto; /* Center the inner div horizontally */
-    width: 70%;
+    width: 80%;
+    display: inline-block; /* Ensure the margin and border are applied correctly */
+
 }
 
 .links{
     color: white;
     text-decoration: none;
+    font-family: 'Times New Roman, Times, Serif';
+
 }
 .links:hover{
     border-top: 4px solid #f11a1a;
