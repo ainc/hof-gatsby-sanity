@@ -25,13 +25,28 @@ const Header = () => {
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Book</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Founders Series</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>The Fellowship</a></Nav.Link>
-                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Nominate</a></Nav.Link>
+                <NavDropdown title={<span className={styles.links}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenuLg}>
+                  <NavDropdown.Item  className={styles.dropdownItems} href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI">
+                    Hall of Fame
+                  </NavDropdown.Item>
+                  <NavDropdown.Item  className={styles.dropdownItems} href="https://forms.zohopublic.com/virtualoffice9155/form/EmergingEntrepreneurNominationKentuckyEntrepreneur/formperma/WlfEONIkD_KdXHI5lfj9kXvZ8SUBgQTaC9bIf9AnGXk">
+                    Emerging
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItems}  href="https://zfrmz.com/HiHnbru8T7pFNW1rTFpw">
+                    Mentor
+                  </NavDropdown.Item>
+                  <NavDropdown.Item  className={styles.dropdownItems} href="https://zfrmz.com/FcyrqHK54OYvk507ovTQ">
+                    Investor
+                  </NavDropdown.Item>
+                  <NavDropdown.Item  className={styles.dropdownItems} href="https://zfrmz.com/PcjCQ9fgz9mjukf8hpv3">
+                    President/Executive
+                  </NavDropdown.Item>
+                </NavDropdown>                
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Induction Dinner</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Sponsors</a></Nav.Link>
               </Nav>
             </Navbar>
         </Container>
-
     </div>
 
     {/*Header for medium screens and smaller */}
