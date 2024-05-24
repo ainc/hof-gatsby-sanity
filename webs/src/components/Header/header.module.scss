@@ -2,9 +2,10 @@
     background: url('../../images/bg.jpg') center center repeat-y;
     background-size: cover;
 }
+
+
 .nav{
     color: white;
-    margin: 0 0 10px 25px;
     display: flex;
     justify-content: space-between;
     padding: 0;
@@ -28,16 +29,14 @@
     height: 30px;
     border-bottom: 1px solid #f11a1a;
     margin: 0 auto; /* Center the inner div horizontally */
-    width: 80%;
+    width: 100%;
 }
 
 .links{
     color: white;
     text-decoration: none;
     font-family: 'Times New Roman, Times, Serif';
-    padding-top: 4px; /* Adjust padding to offset the border-top height */
-    padding-bottom: 4px;
-    box-sizing: border-box; /* Include padding and border in the element's dimensions */
+    padding: 20px 0;
 }
 .links:hover{
     border-top: 4px solid #f11a1a;

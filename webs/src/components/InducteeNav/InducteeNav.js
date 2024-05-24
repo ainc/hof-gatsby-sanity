@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage} from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import InducteeCard from "../InducteeCard/InducteeCard";
+import Title from "../Title/Title";
 import * as styles from './inducteenav.module.scss';
 
 const InducteeNav = ( props ) => {
@@ -19,7 +20,7 @@ const InducteeNav = ( props ) => {
   return (
     <Container>
           <Nav as="ul" className={styles.navFilter}>
-            <h2 className="mx-3">{props.title}</h2>
+            <Title className="mx-3">{props.title}</Title>
             <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
             <Nav.Item as="li" onClick={() => handleYearClick("2023")} tabIndex='-1'>2023</Nav.Item>
             <Nav.Item as="li" onClick={() => handleYearClick("2022")} tabIndex='-1'>2022</Nav.Item>

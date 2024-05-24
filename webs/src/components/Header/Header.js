@@ -2,9 +2,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React, {useState, useEffect} from 'react';
 import {Row, Col, Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import * as styles from './header.module.scss';
-import { AiFillCaretDown } from "react-icons/ai";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { FaBars } from 'react-icons/fa';
 
 const Header = () => {
     return (
@@ -15,10 +12,10 @@ const Header = () => {
       </p>
     </div>
     {/*Header for large screens and wider */}
-    <div className='d-none d-lg-block'>
-        <Container fluid className={`${styles.background} `}>
+    <Container fluid className={`${styles.background} d-none d-lg-block`} >
+        <Container>
             <div className={`${styles.socialBar}`} />
-            <Navbar className={`${styles.nav} mx-5 px-5`}>
+            <Navbar className={`${styles.nav} py-1 px-2`}>
               <Navbar.Brand href="/"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
               <Nav as='ul'>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Media</a></Nav.Link>
@@ -47,11 +44,11 @@ const Header = () => {
               </Nav>
             </Navbar>
         </Container>
-    </div>
+    </Container>
 
     {/*Header for medium screens and smaller */}
     <div className='d-lg-none'>
-      <Navbar collapseOnSelect expand="lg" variant="dark"  className={styles.header}>
+      <Navbar collapseOnSelect expand="lg" variant="dark"  className={styles.background}>
         <Container>
           <Navbar.Brand href="#"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className='border-white text-white'/>
@@ -61,7 +58,7 @@ const Header = () => {
               <Nav.Link href="/book" className={styles.links} as='li'>Book</Nav.Link>
               <Nav.Link href="/founders-series" className={styles.links} as='li'>Founders Series</Nav.Link>
               <Nav.Link href="/fellowship" className={styles.links} as='li'>The Fellowship</Nav.Link>
-              <NavDropdown title={<span style={{color: 'white'}}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenu}>
+              <NavDropdown title={<span className={styles.links}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenu}>
                 <NavDropdown.Item  className={styles.links} href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI">
                   Hall of Fame
                 </NavDropdown.Item>
