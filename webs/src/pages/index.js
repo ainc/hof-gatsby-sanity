@@ -10,12 +10,13 @@ import Sponsors from "../components/Sponsors/Sponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
 import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
+
 const IndexPage = ({ data }) => {
   const Inductees = data.allSanityInductee.nodes;
   const Emerging = data.allSanityEmergingEntrepreneur.nodes;
+  const event = data.allSanityEvent.nodes.at(-1) //todo: format date time
   const [inducteeSelectedYear, setInducteeSelectedYear] = useState(null);
   const [emergingSelectedYear, setEmergingSelectedYear] = useState(null);
-
   return (
     <Layout>
       <div className={styles.background}>
@@ -40,7 +41,21 @@ const IndexPage = ({ data }) => {
             <Body>Nominations are open for the current year's class. To nominate, fill out this form. Anyone can nominate.</Body>
             <Body>If you have questions or would like to become involved please email us at <a className='link' href='mailto:ky@entrepreneurhof.com' target="_blank">ky@entrepreneurhof.com</a>.</Body>
           </Col>
-          <Col></Col>
+          <Col>{/* Images go here*/}</Col>
+        </Row>
+        <Row>
+          <Col>
+            <Title className='mx-4 py-5'>Induction Dinner</Title>
+          </Col>
+        </Row>
+        <Row>
+          <Col className='mx-4 py-5'>
+            <Body>The Induction Dinner exists to celebrate the new Kentucky Entrepreneur Hall of Fame inductees and their stories. Join us as we induct this year’s class of entrepreneurs.</Body>
+            <Body><span className='fw-bold'>Date:</span>{event.date}</Body>
+            <Body><span className='fw-bold'>Schedule:</span>4:30 p.m. Reception | 6 p.m. Dinner</Body>
+            <Body><span className='fw-bold'>Location:</span>{event.location.venue}, {event.location.city}</Body>
+          </Col>
+          <Col>{/* Images go here*/}</Col>
         </Row>
       </Container>
       <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
@@ -86,6 +101,21 @@ export const query = graphql`
           }
         }
         linkedin
+      }
+    }
+    allSanityEvent {
+      nodes {
+        location {
+          address
+          city
+          venue
+          zip
+          contact {
+            phoneNumber
+          }
+        }
+        registrationLink
+        date
       }
     }
   }

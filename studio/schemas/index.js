@@ -13,7 +13,8 @@ import ceremonyVideos from "./documents/Media/ceremonyVideos"
 import press from "./documents/Media/press"
 import foundersVideo from "./documents/Founders Series/foundersVideo"
 import footer from "./documents/footer"
-import yearlyUpdates from "./documents/yearlyUpdates"
+import event from "./documents/event"
+import documents from "./documents/documents"
 
 export const schemaTypes = [
     //objects
@@ -31,5 +32,6 @@ export const schemaTypes = [
     press,
     foundersVideo,
     footer,
-    yearlyUpdates,
+    event,
+    documents
 ]

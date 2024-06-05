@@ -16,44 +16,48 @@ const Footer = () => {
             }
             }
         }
-        allSanityYearlyUpdates {
+        allSanityDocuments {
             nodes {
-                registrationLink
-                advertisingRate {
-                    asset {
-                    url
-                    originalFilename
-                    }
+              postEventReport {
+                asset {
+                  originalFilename
+                  url
                 }
-                postEventReport {
-                    asset {
-                    url
-                    originalFilename
-                    }
+              }
+              advertisingRate {
+                asset {
+                  originalFilename
+                  url
                 }
-                sponsorOpportunites {
-                    asset {
-                    originalFilename
-                    url
-                    }
+              }
+              sponsorOpportunites {
+                asset {
+                  url
+                  originalFilename
                 }
-                location {
-                    address
-                    city
-                    venue
-                    zip
-                    contact {
-                      phoneNumber
-                    }
-                }
+              }
             }
-        }
+          }
+          allSanityEvent {
+            nodes {
+              location {
+                address
+                city
+                venue
+                zip
+                contact {
+                  phoneNumber
+                }
+              }
+            registrationLink
+            }
+          }
     }`);
     const footerInfo = query.allSanityFooter.nodes.at(-1)
-    const advertisingDoc = query.allSanityYearlyUpdates.nodes.at(-1).advertisingRate
-    const postEventReport = query.allSanityYearlyUpdates.nodes.at(-1).postEventReport
-    const sponsorOpportunites = query.allSanityYearlyUpdates.nodes.at(-1).sponsorOpportunites
-    const location = query.allSanityYearlyUpdates.nodes.at(-1).location
+    const advertisingDoc = query.allSanityDocuments.nodes.at(-1).advertisingRate
+    const postEventReport = query.allSanityDocuments.nodes.at(-1).postEventReport
+    const sponsorOpportunites = query.allSanityDocuments.nodes.at(-1).sponsorOpportunites
+    const location = query.allSanityEvent.nodes.at(-1).location
 
     return (
         <Container fluid className={styles.footer}>
@@ -96,7 +100,7 @@ const Footer = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <p style={{fontWeight: 'bold'}}><a href={ query.allSanityYearlyUpdates.nodes.at(-1).registrationLink} target='_blank'>Register Today!</a></p>
+                            <p style={{fontWeight: 'bold'}}><a href={ query.allSanityEvent.nodes.at(-1).registrationLink} target='_blank'>Register Today!</a></p>
                         </Row>
                     </Col>
                     <Col className='mx-4'>
