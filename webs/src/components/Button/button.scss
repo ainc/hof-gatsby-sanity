@@ -1,0 +1,16 @@
+.button{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+    background-color: #af0a09;
+    border-radius: 100px;
+    border-width: 0;
+    color: white;
+    font-size: x-large;
+    font-weight: 700;
+    padding: 1% 2%;
+    line-height: 20px;
+    @media (max-width: 426px){
+        padding: 1% 5%;
+        font-size: large;
+    }
+}

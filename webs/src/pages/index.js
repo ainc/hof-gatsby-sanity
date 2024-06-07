@@ -10,11 +10,12 @@ import Sponsors from "../components/Sponsors/Sponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
 import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
+import Button from "../components/Button/Button";
 
 const IndexPage = ({ data }) => {
   const Inductees = data.allSanityInductee.nodes;
   const Emerging = data.allSanityEmergingEntrepreneur.nodes;
-  const event = data.allSanityEvent.nodes.at(-1) //todo: format date time
+  const event = data.allSanityEvent.nodes.at(-1)
   const [inducteeSelectedYear, setInducteeSelectedYear] = useState(null);
   const [emergingSelectedYear, setEmergingSelectedYear] = useState(null);
   return (
@@ -51,9 +52,12 @@ const IndexPage = ({ data }) => {
         <Row>
           <Col className='mx-4 py-5'>
             <Body>The Induction Dinner exists to celebrate the new Kentucky Entrepreneur Hall of Fame inductees and their stories. Join us as we induct this year’s class of entrepreneurs.</Body>
-            <Body><span className='fw-bold'>Date:</span>{event.date}</Body>
-            <Body><span className='fw-bold'>Schedule:</span>4:30 p.m. Reception | 6 p.m. Dinner</Body>
-            <Body><span className='fw-bold'>Location:</span>{event.location.venue}, {event.location.city}</Body>
+            <Body><span className='fw-bold'>Date:</span> {event.date}</Body>
+            <Body><span className='fw-bold'>Schedule:</span> 4:30 p.m. Reception | 6 p.m. Dinner</Body>
+            <Body><span className='fw-bold'>Location:</span> {event.location.venue}, {event.location.city}</Body>
+            <a href='/induction-dinner'>
+              <Button className=''>More Info</Button>
+            </a>
           </Col>
           <Col>{/* Images go here*/}</Col>
         </Row>
@@ -115,7 +119,7 @@ export const query = graphql`
           }
         }
         registrationLink
-        date
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

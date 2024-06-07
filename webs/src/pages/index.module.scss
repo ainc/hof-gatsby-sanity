@@ -31,22 +31,41 @@
 
 .title1{
     font-family: 'AmericanPurpose', Arial, Sans-Serif;
-    font-size: 59px;
     font-weight: 100;
-    line-height: 62px;
     border-bottom: 1px solid #fff;
     color: white;
+    @media (min-width: 427px){
+        font-size: 59px;
+        line-height: 62px;
+
+    }
+    @media (max-width: 426px){
+        font-size: 26px;
+        line-height: 32px;
+    }
 }
 .title2{
     font-family: 'AmericanPurpose', Arial, Sans-Serif;
-    font-size: 111px;
     font-weight: 100;
-    line-height: 128px;
+    @media (min-width: 427px){
+        font-size: 111px;
+        line-height: 128px;
+
+    }
+    @media (max-width: 426px){
+        font-size: 49px;
+        line-height: 70px;
+    }
 }
 
 .tagline{
     font-family: 'Times New Roman', Times, Serif;
-    font-size: 27px;
     font-weight: 100;
-    margin-top: -18px;
+    @media (min-width: 427px){
+        font-size: 27px;
+        margin-top: -18px;
+    }
+    @media (max-width: 426px){
+        font-size: 20px;
+    }
 }

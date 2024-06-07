@@ -18,21 +18,26 @@ const InducteeNav = ( props ) => {
   const filteredInductees = props.selectedYear ? data.filter(node => node.inductee.year === props.selectedYear) : data;
 
   return (
-    <Container>
+    <Container className='d-flex flex-column'>
+      <div className='d-flex align-items-center pb-5' style={{borderBottom: '1px solid #bbb'}}>
+          <Title className="mx-3" style={{borderBottom: 'none'}}>{props.title}</Title>
           <Nav as="ul" className={styles.navFilter}>
-            <Title className="mx-3">{props.title}</Title>
             <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
             <Nav.Item as="li" onClick={() => handleYearClick("2023")} tabIndex='-1'>2023</Nav.Item>
             <Nav.Item as="li" onClick={() => handleYearClick("2022")} tabIndex='-1'>2022</Nav.Item>
+            
             {/* Add more years here */}
           </Nav>
-      <ul className={styles.inducteesList}>
-        {filteredInductees.map((node, index) => (
-          <li key={index}>
-            <InducteeCard img={node.inductee.profilePhoto.asset.gatsbyImageData} name={node.inductee.name} company={node.inductee.company} link={props.title === "Inductees" ? node.slug.current : node.linkedin}/>
-          </li>
-        ))}
+      </div>
+      <div className='py-3'>
+        <ul className={styles.inducteesList}>
+          {filteredInductees.map((node, index) => (
+            <li key={index}>
+              <InducteeCard img={node.inductee.profilePhoto.asset.gatsbyImageData} name={node.inductee.name} company={node.inductee.company} link={props.title === "Inductees" ? node.slug.current : node.linkedin}/>
+            </li>
+          ))}
         </ul>
+      </div>
     </Container>
   )
 }
