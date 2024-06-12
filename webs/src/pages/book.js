@@ -21,6 +21,14 @@ const BookPage = ({ data }) => {
           <Col>
             <Title className='mx-4 py-5'>Unbridled Series</Title>
           </Col>
+          <Col className='mx-4 py-5'>
+          <GatsbyImage image='C:\Users\layth\hof-gatsby-sanity\webs\src\images\founders_logo.png' alt="Logo_Square"/>
+          </Col>
+        </Row>
+        <Row>
+            <Col className='mx-4 py-5'>
+                <Body></Body>
+            </Col>
         </Row>
     </Container>
     </Layout>
