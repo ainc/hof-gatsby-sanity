@@ -20,7 +20,7 @@ const BookPage = ({ data }) => {
         <Row>
           <Col>
             <Title className='mx-4 py-5'>Unbridled Series</Title> 
-            <img src="../images/Logo_Square.png" style="border: 1px solid black; max-width: 100px; margin: auto; margin-bottom: 1em;"/>
+            <img src="../images/Logo_Square.png"/>
           </Col>
         </Row>
         <Row>
