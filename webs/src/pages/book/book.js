@@ -2,15 +2,14 @@ import React, {useState} from "react"
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
-import InducteeCard from "../components/InducteeCard/InducteeCard";
-import '../styles/main.scss';
-import * as styles from './index.module.scss'
-import Layout from "../components/Layout/Layout";
-import Sponsors from "../components/Sponsors/Sponsors";
-import InducteeNav from "../components/InducteeNav/InducteeNav";
-import Title from "../components/Title/Title";
-import Body from "../components/Body/Body";
-import Button from "../components/Button/Button";
+import InducteeCard from "../../components/InducteeCard/InducteeCard";
+import '../../styles/main.scss';
+import Layout from "../../components/Layout/Layout";
+import Sponsors from "../../components/Sponsors/Sponsors";
+import InducteeNav from "../../components/InducteeNav/InducteeNav";
+import Title from "../../components/Title/Title";
+import Body from "../../components/Body/Body";
+import Button from "../../components/Button/Button";
 
 const BookPage = ({ data }) => {
   return (
