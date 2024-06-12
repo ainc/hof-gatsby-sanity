@@ -19,10 +19,8 @@ const BookPage = ({ data }) => {
       <Container>
         <Row>
           <Col>
-            <Title className='mx-4 py-5'>Unbridled Series</Title>
-          </Col>
-          <Col className='mx-4 py-5'>
-          <GatsbyImage image='C:\Users\layth\hof-gatsby-sanity\webs\src\images\founders_logo.png' alt="Logo_Square"/>
+            <Title className='mx-4 py-5'>Unbridled Series</Title> 
+            <GatsbyImage image='../images/Logo_Square.png' alt="Logo Square"/>
           </Col>
         </Row>
         <Row>
