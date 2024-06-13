@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import InducteeCard from "../components/InducteeCard/InducteeCard";
-import '../styles/main.scss';
+import '../styles/main.scss'; 
 import * as styles from './index.module.scss'
 import Layout from "../components/Layout/Layout";
 import Sponsors from "../components/Sponsors/sponsors";
