@@ -41,16 +41,16 @@ const BookPage = ({ data }) => {
           </Col>
         </Row>
         <Row className={styles.UBSRow}>
-            <Col className={`${styles.UBSColumn} mx-4 py-4`}>
+            <Col className={`${styles.UBSColumn} mx-4 py-5`}>
                 <StaticImage className={styles.UBSv1Cover}
                   alt="Unbridled Series Vol. 1 Cover"
                   src='../images/UBS-V1-Cover.jpg'
                 />
                 <b>
-                  <a href='https://www.amazon.com/dp/1619616815/'>Purchase Here: Unbridled Spirit Volume 1</a>
+                  <a class="btn" target="_blank" href='https://www.amazon.com/dp/1619616815/' className="">Purchase Here: Unbridled Spirit Volume 1</a>
                 </b>
             </Col>
-            <Col className={`${styles.UBSColumn} mx-4 py-4`}>
+            <Col className={`${styles.UBSColumn} mx-4 py-5`}>
               <StaticImage className={styles.UBSv2Cover}
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../images/UBS-V2-Cover.jpg'
