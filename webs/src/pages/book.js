@@ -35,9 +35,9 @@ const BookPage = ({ data }) => {
                 <StaticImage className='founderImage'
                   width={60}
                   height={60}
-                  style={`
-                    right: 60%;
-                  `}
+                  imgStyle={`
+                    right: 90%;
+                    `}
                   alt="Founders Logo"
                   src='../images/founders_logo.png'
                 />
