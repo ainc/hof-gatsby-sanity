@@ -47,7 +47,7 @@ const BookPage = ({ data }) => {
                   src='../images/UBS-V1-Cover.jpg'
                 />
                 <form onSubmit={
-                  location.href = 'https://www.amazon.com/dp/1619616815/'
+                  window.location.href = 'https://www.amazon.com/dp/1619616815/'
                 }>
                   <button type="submit" className={styles.UBSv1Button}>
                     <b>
