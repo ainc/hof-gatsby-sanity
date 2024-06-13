@@ -42,6 +42,7 @@ const BookPage = ({ data }) => {
         </Row>
         <Row>
             <Col className={`${styles.UBSColumn} mx-4 py-5`}>
+              <Row>
                 <StaticImage className={styles.UBSv1}
                   alt="Unbridled Series Vol. 1 Cover"
                   src='../images/UBS-V1-Cover.jpg'
@@ -50,6 +51,7 @@ const BookPage = ({ data }) => {
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../images/UBS-V2-Cover.jpg'
                 />
+                </Row>
                 <Body></Body>
             </Col>
         </Row>
