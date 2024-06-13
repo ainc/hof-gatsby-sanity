@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss';
@@ -20,7 +20,12 @@ const BookPage = ({ data }) => {
         <Row>
           <Col>
             <Title className='mx-4 py-5'>Unbridled Series</Title> 
-            <img src="../images/Logo_Square.png"/>
+          </Col>
+          <Col>
+            <StaticImage
+                alt="Awesome Inc Logo"
+                src='../images/Logo_Square.png'
+            />
           </Col>
         </Row>
         <Row>
