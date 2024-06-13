@@ -46,7 +46,9 @@ const BookPage = ({ data }) => {
                   alt="Unbridled Series Vol. 1 Cover"
                   src='../images/UBS-V1-Cover.jpg'
                 />
-                  <button onClick={"window.location.href = 'https://www.amazon.com/dp/1619616815/';"} class="submit-button">Purchase Here: Unbridled Spirit Volume 1</button>
+                <b>
+                  <a href='https://www.amazon.com/dp/1619616815/'>Purchase Here: Unbridled Spirit Volume 1</a>
+                </b>
             </Col>
             <Col className={`${styles.UBSColumn} mx-4 py-4`}>
               <StaticImage className={styles.UBSv2Cover}
