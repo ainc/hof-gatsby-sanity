@@ -27,7 +27,7 @@ const BookPage = ({ data }) => {
                     src='../images/Logo_Square.png'
                     css={
                         `
-                        right: 90%;
+                        float: right;
                     `}
                 />
             </Title> 
