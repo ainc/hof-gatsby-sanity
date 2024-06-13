@@ -25,7 +25,8 @@ const BookPage = ({ data }) => {
                     height={60}
                     alt="Awesome Inc Logo"
                     src='../images/Logo_Square.png'
-                    css={css`
+                    css={
+                        `
                         align: right;
                     `}
                 />
