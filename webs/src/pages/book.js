@@ -24,6 +24,9 @@ const BookPage = ({ data }) => {
                 <StaticImage className='aincImage'
                   width={53.6}
                   height={60}
+                  style={`
+                    align: right;
+                  `}
                   alt="Awesome Inc Logo"
                   src='../images/Logo_Square.png'
                 />
@@ -32,6 +35,9 @@ const BookPage = ({ data }) => {
                 <StaticImage className='founderImage'
                   width={60}
                   height={60}
+                  style={`
+                    align: right;
+                  `}
                   alt="Founders Logo"
                   src='../images/founders_logo.png'
                 />
