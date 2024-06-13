@@ -7,6 +7,10 @@
     margin-left: 20px;
 }
 
+.UBSColumn{
+    display: flex; flex-direction: column;
+}
+
 .UBSv1{
     border: 1px solid black; max-width: 100px; margin: auto; margin-bottom: 1em;
 }
