@@ -21,8 +21,8 @@ const BookPage = ({ data }) => {
           <Col>
             <Title className='mx-4 py-5'>Unbridled Series
                 <StaticImage
-                    width={58}
-                    height={65}
+                    width={54.78}
+                    height={60}
                     alt="Awesome Inc Logo"
                     src='../images/Logo_Square.png'
                 />
