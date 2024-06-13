@@ -22,7 +22,7 @@ const BookPage = ({ data }) => {
             <Title className='mx-4 py-5'>Unbridled Series
                 <StaticImage
                     width={55}
-                    height={60}
+                    height={65}
                     alt="Awesome Inc Logo"
                     src='../images/Logo_Square.png'
                 />
