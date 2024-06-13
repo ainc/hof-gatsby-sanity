@@ -42,17 +42,16 @@ const BookPage = ({ data }) => {
         </Row>
         <Row>
             <Col>
-              <Row className={`${styles.UBSColumn} mx-4 py-5`}>
                 <StaticImage className={styles.UBSv1}
                   alt="Unbridled Series Vol. 1 Cover"
                   src='../images/UBS-V1-Cover.jpg'
                 />
-                <StaticImage className={styles.UBSv1}
+            </Col>
+            <Col>
+              <StaticImage className={styles.UBSv1}
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../images/UBS-V2-Cover.jpg'
                 />
-                </Row>
-                <Body></Body>
             </Col>
         </Row>
     </Container>
