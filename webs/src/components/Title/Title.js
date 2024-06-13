@@ -6,13 +6,11 @@ const Title = (props) => {
     return (
       <h2 {...props} className={`title ${props.className}`}>
         {props.children}
-        <StaticImage className='titleImage'
-          width={53.6}
-          height={60}
+        <StaticImage className='aincImage'
           alt="Awesome Inc Logo"
           src='../images/Logo_Square.png'
         />
-        <StaticImage className='titleImage'
+        <StaticImage className='founderImage'
           width={60}
           height={60}
           alt="Founders Logo"
