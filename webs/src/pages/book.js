@@ -25,9 +25,6 @@ const BookPage = ({ data }) => {
                 <StaticImage
                   width={53.6}
                   height={60}
-                  style={`
-                    align: right;
-                  `}
                   alt="Awesome Inc Logo"
                   src='../images/Logo_Square.png'
                 />
