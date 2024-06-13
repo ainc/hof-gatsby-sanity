@@ -20,19 +20,16 @@ const BookPage = ({ data }) => {
         <Row>
           <Col>
             <Title className='mx-4 py-5'>Unbridled Series
-              <div className={styles.aincImage}>
               <a href="http://fellowship.awesomeinc.org/">
-                <StaticImage
+                <StaticImage className={styles.aincImage}
                   width={53.6}
                   height={60}
                   alt="Awesome Inc Logo"
                   src='../images/Logo_Square.png'
                 />
               </a>
-              </div>
-              <div className={styles.founderImage}>
               <a href="/founders-series">
-                <StaticImage
+                <StaticImage className={styles.founderImage}
                   width={60}
                   height={60}
                   
@@ -40,7 +37,6 @@ const BookPage = ({ data }) => {
                   src='../images/founders_logo.png'
                 />
               </a>
-              </div>
             </Title>
           </Col>
         </Row>
