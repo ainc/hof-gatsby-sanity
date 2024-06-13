@@ -63,7 +63,7 @@ const Footer = () => {
         <Container fluid className={styles.footer}>
             <Container>
                 <Row>
-                    <Col className='mx-4' md={7}>
+                    <Col className='mx-lg-4' md={7}>
                         <Row>
                             <Col>
                                 <h3>Become a Sponsor</h3>
@@ -103,7 +103,7 @@ const Footer = () => {
                             <p style={{fontWeight: 'bold'}}><a href={ query.allSanityEvent.nodes.at(-1).registrationLink} target='_blank'>Register Today!</a></p>
                         </Row>
                     </Col>
-                    <Col className='mx-4'>
+                    <Col className='mx-lg-4'>
                         <Row>
                             <Col>
                                 <h3>Contact</h3>
@@ -117,7 +117,7 @@ const Footer = () => {
                     </Col>
                 </Row>
                 <Row className='mt-5'>
-                    <Col className={`${styles.copyright} mx-4`}>
+                    <Col className={`${styles.copyright} mx-lg-4`}>
                         <p className='my-3'>Copyright © 2023 Kentucky Entrepreneur Hall Of Fame</p>
                     </Col>
                 </Row>
