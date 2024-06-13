@@ -19,11 +19,12 @@ const BookPage = ({ data }) => {
       <Container>
         <Row>
           <Col>
-            <Title className='mx-4 py-5'>Unbridled Series</Title> 
-            <StaticImage
-                alt="Awesome Inc Logo"
-                src='../images/Logo_Square.png'
-            />
+            <Title className='mx-4 py-5'>Unbridled Series
+                <StaticImage
+                    alt="Awesome Inc Logo"
+                    src='../images/Logo_Square.png'
+                />
+            </Title> 
           </Col>
         </Row>
         <Row>
