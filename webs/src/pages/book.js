@@ -4,7 +4,7 @@ import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss';
-import './book.module.scss'
+import * as styles from './book.module.scss'
 import Layout from "../components/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
@@ -20,8 +20,9 @@ const BookPage = ({ data }) => {
         <Row>
           <Col>
             <Title className='mx-4 py-5'>Unbridled Series
+              <div className={styles.aincImage}>
               <a href="http://fellowship.awesomeinc.org/">
-                <StaticImage className='aincImage'
+                <StaticImage
                   width={53.6}
                   height={60}
                   style={`
@@ -31,8 +32,10 @@ const BookPage = ({ data }) => {
                   src='../images/Logo_Square.png'
                 />
               </a>
+              </div>
+              <div className={styles.founderImage}>
               <a href="/founders-series">
-                <StaticImage className='founderImage'
+                <StaticImage
                   width={60}
                   height={60}
                   
@@ -40,6 +43,7 @@ const BookPage = ({ data }) => {
                   src='../images/founders_logo.png'
                 />
               </a>
+              </div>
             </Title>
           </Col>
         </Row>
