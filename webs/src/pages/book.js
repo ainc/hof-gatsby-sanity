@@ -47,7 +47,7 @@ const BookPage = ({ data }) => {
                   src='../images/UBS-V1-Cover.jpg'
                 />
                 <b>
-                  <a class="btn" target="_blank" href='https://www.amazon.com/dp/1619616815/' className="">Purchase Here: Unbridled Spirit Volume 1</a>
+                  <a class="btn" target="_blank" href='https://www.amazon.com/dp/1619616815/' className={styles.UBSv1Button}>Purchase Here: Unbridled Spirit Volume 1</a>
                 </b>
             </Col>
             <Col className={`${styles.UBSColumn} mx-4 py-5`}>
