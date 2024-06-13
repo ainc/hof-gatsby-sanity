@@ -4,7 +4,7 @@ import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss';
-import * as styles from './index.module.scss'
+import './book.module.scss'
 import Layout from "../components/Layout/Layout";
 import Sponsors from "../components/Sponsors/Sponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
@@ -35,10 +35,7 @@ const BookPage = ({ data }) => {
                 <StaticImage className='founderImage'
                   width={60}
                   height={60}
-                  css={`
-                    border: 4px green dashed;
-                    `
-                  }
+                  
                   alt="Founders Logo"
                   src='../images/founders_logo.png'
                 />
