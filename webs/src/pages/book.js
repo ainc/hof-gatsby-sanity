@@ -42,16 +42,16 @@ const BookPage = ({ data }) => {
         </Row>
         <Row className={styles.UBSRow}>
             <Col className={`${styles.UBSColumn} mx-4 py-4`}>
-                <StaticImage className={styles.UBSv1}
+                <StaticImage className={styles.UBSv1Cover}
                   alt="Unbridled Series Vol. 1 Cover"
                   src='../images/UBS-V1-Cover.jpg'
                 />
-                <b>
-                <button type="button">Purchase Here: Unbridled Spirit Volume 1</button>
+                <b style="margin: auto;">
+                  <a class="btn" href="https://www.amazon.com/dp/1619616815/" target="_blank">Purchase Here: Unbridled Spirit Volume 1</a>
                 </b>
             </Col>
             <Col className={`${styles.UBSColumn} mx-4 py-4`}>
-              <StaticImage className={styles.UBSv2}
+              <StaticImage className={styles.UBSv2Cover}
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../images/UBS-V2-Cover.jpg'
                 />
