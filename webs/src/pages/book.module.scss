@@ -8,17 +8,26 @@
 }
 
 .UBSRow{
-    display: flex; justify-content: center; margin-bottom: 1em;
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 1em;
 }
 
 .UBSColumn{
-    display: flex; flex-direction: column; justify-content: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
 }
 
 .UBSv1{
-    border: 1px solid black; max-width: 100px; margin: auto; margin-bottom: 1em;
+    border: 1px solid black; 
+    max-width: 100px; margin: 
+    auto; margin-bottom: 1em;
+    left: 10%;
 }
 
 .UBSv2{
-    border: 1px solid black; max-width: 100px; margin: auto; margin-bottom: 1em;
+    border: 1px solid black; 
+    max-width: 100px; margin: auto; 
+    margin-bottom: 1em;
 }
