@@ -12,6 +12,7 @@ import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
 import Button from "../components/Button/Button";
 import FlickerImages from "../components/FlickerImages/FlickerImages";
+import IconPair from "../components/IconPair/IconPair";
 
 const IndexPage = ({ data }) => {
   const Inductees = data.allSanityInductee.nodes;
@@ -33,7 +34,10 @@ const IndexPage = ({ data }) => {
       <Container>
         <Row>
           <Col>
-            <Title className='mx-4 py-5'>About Us</Title>
+            <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
+              <Title  style={{borderBottom: 'none'}}>About Us</Title>
+              <IconPair />
+            </div>
           </Col>
         </Row>
         <Row>
@@ -91,6 +95,14 @@ const IndexPage = ({ data }) => {
       </Container>
       <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
       <InducteeNav title="Emerging Entrepreneurs" data={Emerging} selectedYear={emergingSelectedYear} setSelectedYear={setEmergingSelectedYear}/>
+      <Container>
+        <Row>
+          <Col>
+            <Body className='mx-4'><span className="fw-bold">Note:</span> The companies or organizations listed for each Emerging Entrepreneur are those with which the honoree was most closely associated at the time of recognition.</Body>
+            <Title className='mx-4 py-5'><a className='link' href='/investors-mentors'>Investors and Mentors of the Year</a></Title>
+          </Col>
+        </Row>
+      </Container>
       <Sponsors />
     </Layout>
   )
