@@ -59,13 +59,15 @@ const BookPage = ({ data }) => {
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../images/UBS-V2-Cover.jpg'
                 />
+                <Container className='btn2'>
                  <a href='https://www.amazon.com/Unbridled-Spirit-Kentuckys-Successful-Entrepreneurs/dp/1544536704' target='_blank'>
-                  <button style={`left: 20%;`} className={styles.UBSv2Button}>
+                  <button className={styles.UBSv2Button}>
                     <b>
                       Purchase Here: Unbridled Spirit Volume 2
                     </b>
                   </button>
                 </a>
+                </Container>
             </Col>
         </Row>
     </Container>
