@@ -60,7 +60,7 @@ const BookPage = ({ data }) => {
                   src='../images/UBS-V2-Cover.jpg'
                 />
                  <a href='https://www.amazon.com/Unbridled-Spirit-Kentuckys-Successful-Entrepreneurs/dp/1544536704' target='_blank'>
-                  <button style='left: 20%;' className={styles.UBSv2Button}>
+                  <button style={`left: 20%;`} className={styles.UBSv2Button}>
                     <b>
                       Purchase Here: Unbridled Spirit Volume 2
                     </b>
