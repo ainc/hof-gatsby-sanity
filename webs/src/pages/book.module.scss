@@ -81,13 +81,9 @@
 .UBSv1Text{
     text-align: center;
     justify-content: center;
-}
-
-Body{
     font-family: 'Muli', Arial;
     color:rgb(102, 102, 102);
-    font-size: 16px;
-    line-height: .7;
+    font-size: 16px;    
 }
 
 .UBSColumnText{
@@ -101,4 +97,9 @@ Body{
     margin: auto; 
     margin-bottom: 1em;
     margin-left: 50px;
+    margin-right: 0px;
+}
+
+.UBSDescription{
+    text-align: left;
 }
