@@ -48,7 +48,9 @@ const BookPage = ({ data }) => {
                 />
                 <a href='https://www.amazon.com/dp/1619616815/' target='_blank'>
                   <button className={styles.UBSv1Button}>
+                    <b>
                       Purchase Here: Unbridled Spirit Volume 1
+                    </b>
                   </button>
                 </a>
             </Col>
