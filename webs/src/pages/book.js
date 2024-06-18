@@ -41,7 +41,7 @@ const BookPage = ({ data }) => {
           </Col>
         </Row>
         <Row className={styles.UBSRow}>
-            <Col className={`${styles.UBSColumn} mx-4 py-5`}>
+            <Col className={`${styles.UBSColumn} mx-4`}>
                 <StaticImage className={styles.UBSv1Cover}
                   alt="Unbridled Series Vol. 1 Cover"
                   src='../images/UBS-V1-Cover.jpg'
@@ -54,7 +54,7 @@ const BookPage = ({ data }) => {
                   </button>
                 </a>
             </Col>
-            <Col className={`${styles.UBSColumn} mx-4 py-5`}>
+            <Col className={`${styles.UBSColumn} mx-4 `}>
               <StaticImage className={styles.UBSv2Cover}
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../images/UBS-V2-Cover.jpg'
@@ -67,6 +67,25 @@ const BookPage = ({ data }) => {
                   </button>
                 </a>
             </Col>
+        </Row>
+        <Row>
+          <Col className={`${styles.UBSColumnText} mx-4`}>
+            <div class="row-fluid center-block" className={styles.UBSv1Text}>
+              <Body>Famous for college basketball, horse racing, bourbon, coal, and bluegrass music, the Commonwealth of</Body>
+              <Body>Kentucky is also home to industries and opportunities not normally associated with it. Compiled by the</Body>      
+              <Body>Kentucky Entrepreneur Hall of Fame, Unbridled Spirit shares the success stories of twenty of its members—</Body>
+              <Body>business leaders who dared to think beyond t  he region’s best known institutions—to encourage the next</Body>
+              <Body>generation of entrepreneurs from the Bluegrass State.</Body>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <StaticImage className={styles.UBSv2CoverBig}
+                  alt="Unbridled Series Vol. 2 Cover"
+                  src='../images/UBS-V2-Cover.jpg'
+                />
+          </Col>
         </Row>
     </Container>
     </Layout>
