@@ -46,6 +46,7 @@ const BookPage = ({ data }) => {
                   alt="Unbridled Series Vol. 1 Cover"
                   src='../images/UBS-V1-Cover.jpg'
                 />
+                <Container className='btn1'>
                 <a href='https://www.amazon.com/dp/1619616815/' target='_blank'>
                   <button className={styles.UBSv1Button}>
                     <b>
@@ -53,13 +54,13 @@ const BookPage = ({ data }) => {
                     </b>
                   </button>
                 </a>
+                </Container>
             </Col>
             <Col className={`${styles.UBSColumn} mx-4 py-5`}>
               <StaticImage className={styles.UBSv2Cover}
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../images/UBS-V2-Cover.jpg'
                 />
-                <Container className='btn2'>
                  <a href='https://www.amazon.com/Unbridled-Spirit-Kentuckys-Successful-Entrepreneurs/dp/1544536704' target='_blank'>
                   <button className={styles.UBSv2Button}>
                     <b>
@@ -67,7 +68,6 @@ const BookPage = ({ data }) => {
                     </b>
                   </button>
                 </a>
-                </Container>
             </Col>
         </Row>
     </Container>
