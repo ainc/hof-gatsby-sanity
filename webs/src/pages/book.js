@@ -80,13 +80,13 @@ const BookPage = ({ data }) => {
           </Col>
         </Row>
         <Row>
-          <Col class='col-'>
+          <Col class=''>
             <StaticImage className={styles.UBSv2CoverBig}
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../images/UBS-V2-Cover.jpg'
                 />
           </Col>
-          <Col >
+          <Col>
             <div class='span6' className={styles.UBSDescription}>
               <Body>In this inspiring second installment of the Amazon bestseller, Unbridled Spirit,</Body>
               <Body>the Kentucky Entrepreneur Hall of Fame recognizes and celebrates the</Body>
