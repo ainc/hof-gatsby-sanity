@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import { graphql } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
+import { Container, Row, Col, btn, Navbar, Nav } from 'react-bootstrap';
 import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss';
 import * as styles from './book.module.scss'
