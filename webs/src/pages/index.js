@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
 import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss'; 
@@ -11,6 +11,8 @@ import InducteeNav from "../components/InducteeNav/InducteeNav";
 import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
 import Button from "../components/Button/Button";
+import FlickerImages from "../components/FlickerImages/FlickerImages";
+import IconPair from "../components/IconPair/IconPair";
 
 const IndexPage = ({ data }) => {
   const Inductees = data.allSanityInductee.nodes;
@@ -32,7 +34,10 @@ const IndexPage = ({ data }) => {
       <Container>
         <Row>
           <Col>
-            <Title className='mx-4 py-5'>About Us</Title>
+            <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
+              <Title  style={{borderBottom: 'none'}}>About Us</Title>
+              <IconPair />
+            </div>
           </Col>
         </Row>
         <Row>
@@ -42,15 +47,39 @@ const IndexPage = ({ data }) => {
             <Body>Nominations are open for the current year's class. To nominate, fill out this form. Anyone can nominate.</Body>
             <Body>If you have questions or would like to become involved please email us at <a className='link' href='mailto:ky@entrepreneurhof.com' target="_blank">ky@entrepreneurhof.com</a>.</Body>
           </Col>
-          <Col>{/* Images go here*/}</Col>
+          <Col className='mx-4 py-5'>
+            <Row>
+              <Col>
+                <FlickerImages img='https://farm4.static.flickr.com/3828/11002815294_556f3a0413_q.jpg' />
+              </Col>
+              <Col>
+                <FlickerImages img='https://farm6.static.flickr.com/5519/11002635503_4c62714db6_q.jpg' />
+              </Col>
+              <Col>
+                <FlickerImages img='https://farm4.static.flickr.com/3773/11003240183_57109022a6_q.jpg' />
+              </Col>
+              <Col>
+                <FlickerImages img='https://farm3.static.flickr.com/2891/10981649563_470d50bd93_q.jpg' />
+              </Col>
+              <Col>
+                <FlickerImages img='https://farm3.static.flickr.com/2835/11003216434_7c9b92b6fa_q.jpg' />
+              </Col>
+              <Col>
+                <FlickerImages img='https://farm7.static.flickr.com/6093/6377120649_5eb9469158_q.jpg' />
+              </Col>
+            </Row>
+            <Row className='text-right' style={{textAlign: 'right'}}>
+              <Body className='text-right'><a className='link' href='http://www.timwebbphotography.com/p377969083'>See All Photos <i className='icon-caret-right' /></a></Body>
+            </Row>
+          </Col>
         </Row>
         <Row>
           <Col>
             <Title className='mx-4 py-5'>Induction Dinner</Title>
           </Col>
         </Row>
-        <Row>
-          <Col className='mx-4 py-5'>
+        <Row className={`${styles.flexColSm} d-flex`}>
+          <Col className='mx-lg-4 py-5'>
             <Body>The Induction Dinner exists to celebrate the new Kentucky Entrepreneur Hall of Fame inductees and their stories. Join us as we induct this year’s class of entrepreneurs.</Body>
             <Body><span className='fw-bold'>Date:</span> {event.date}</Body>
             <Body><span className='fw-bold'>Schedule:</span> 4:30 p.m. Reception | 6 p.m. Dinner</Body>
@@ -59,11 +88,21 @@ const IndexPage = ({ data }) => {
               <Button className=''>More Info</Button>
             </a>
           </Col>
-          <Col>{/* Images go here*/}</Col>
+          <Col className='mx-lg-4 py-5'>
+            <StaticImage  placeholder='blurred' src='../images/2023-dinner.jpg' />
+          </Col>
         </Row>
       </Container>
       <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
       <InducteeNav title="Emerging Entrepreneurs" data={Emerging} selectedYear={emergingSelectedYear} setSelectedYear={setEmergingSelectedYear}/>
+      <Container>
+        <Row>
+          <Col>
+            <Body className='mx-4'><span className="fw-bold">Note:</span> The companies or organizations listed for each Emerging Entrepreneur are those with which the honoree was most closely associated at the time of recognition.</Body>
+            <Title className='mx-4 py-5'><a className='link' href='/investors-mentors'>Investors and Mentors of the Year</a></Title>
+          </Col>
+        </Row>
+      </Container>
       <Sponsors />
     </Layout>
   )
