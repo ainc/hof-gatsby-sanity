@@ -38,6 +38,24 @@
     padding: 4px 12px;
     margin-bottom: 0;
     font-size: 14px;
+    left: 20%;
+    border-radius: 6px;
+    border-width: 0.1px;
+    border-color: #c0bfbf;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #333333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-color: #f5f5f5;
+}
+
+.UBSv2Button{
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
     border-radius: 6px;
     border-width: 0.1px;
     border-color: #c0bfbf;
