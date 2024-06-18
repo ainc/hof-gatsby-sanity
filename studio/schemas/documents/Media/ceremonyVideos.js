@@ -12,6 +12,11 @@ export default {
         name: 'videoLink',
         title: 'Video Link',
         type: 'url'
+      },
+      {
+        name: 'thumbnail',
+        title: 'Thumbnail',
+        type: 'image'
       }
     ]
   }

@@ -18,7 +18,7 @@ const Header = () => {
             <Navbar className={`${styles.nav} py-1 px-2`}>
               <Navbar.Brand href="/"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
               <Nav as='ul'>
-                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Media</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="/media" className={styles.links}>Media</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Book</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Founders Series</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>The Fellowship</a></Nav.Link>
