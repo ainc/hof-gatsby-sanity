@@ -1,5 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import Header from "../components/Header/Header"
+import Layout from "../components/Layout/Layout";
+import Sponsors from "../components/Sponsors/Sponsors";
 
 const pageStyles = {
   color: "#232129",
