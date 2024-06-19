@@ -31,10 +31,12 @@ Sanity runs into issues with overwriting work when trying to update schemas simu
 1.  Plan out all necessary schema for development.
     
 2.  Add schema and push to the main branch on Github before any changes are made by other users.
+
+3.  Redeploy graphql API  (`sanity graphql deploy`)
     
-3.  Other users should pull your schema changes before adding any new schema.
+4.  Other users should pull your schema changes before adding any new schema.
     
-4.  Continue development on the front-end accessing the already committed schema.
+5.  Continue development on the front-end accessing the already committed schema.
 
 
 4.  **Learn more**
