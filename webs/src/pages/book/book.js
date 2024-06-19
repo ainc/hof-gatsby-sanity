@@ -17,7 +17,7 @@ const BookPage = ({ data }) => {
         <Row>
           <Col>
             <Title className='mx-4 py-5'>Unbridled Series
-              <a href="http://fellowship.awesomeinc.org/">
+              <a href="http://fellowship.awesomeinc.org/" target="_blank">
                 <StaticImage className={styles.aincImage}
                   width={53.6}
                   height={60}
@@ -25,7 +25,7 @@ const BookPage = ({ data }) => {
                   src='../../images/Logo_Square.png'
                 />
               </a>
-              <a href="/founders-series">
+              <a href="/founders-series/founder-series">
                 <StaticImage className={styles.founderImage}
                   width={60}
                   height={60}
