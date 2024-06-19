@@ -2,12 +2,12 @@ import React, {useState} from "react"
 import { graphql } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, btn, Navbar, Nav } from 'react-bootstrap';
-import '../styles/main.scss';
+import '../../styles/main.scss';
 import * as styles from './book.module.scss'
-import Layout from "../../components/Layout/Layout";
 import Sponsors from "../../components/Sponsors/Sponsors";
 import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
+import Layout from "../../components/Layout/Layout";
 
 const BookPage = ({ data }) => {
 
@@ -22,7 +22,7 @@ const BookPage = ({ data }) => {
                   width={53.6}
                   height={60}
                   alt="Awesome Inc Logo"
-                  src='../images/Logo_Square.png'
+                  src='../../images/Logo_Square.png'
                 />
               </a>
               <a href="/founders-series">
@@ -31,7 +31,7 @@ const BookPage = ({ data }) => {
                   height={60}
                   
                   alt="Founders Logo"
-                  src='../images/founders_logo.png'
+                  src='../../images/founders_logo.png'
                 />
               </a>
             </Title>
@@ -41,7 +41,7 @@ const BookPage = ({ data }) => {
             <Col className={`${styles.UBSColumn} mx-4`}>
                 <StaticImage className={styles.UBSv1Cover}
                   alt="Unbridled Series Vol. 1 Cover"
-                  src='../images/UBS-V1-Cover.jpg'
+                  src='../../images/UBS-V1-Cover.jpg'
                 />
                 <a href='https://www.amazon.com/dp/1619616815/' target='_blank'>
                   <button className={styles.UBSv1Button}>
@@ -54,7 +54,7 @@ const BookPage = ({ data }) => {
             <Col className={`${styles.UBSColumn} mx-4 `}>
               <StaticImage className={styles.UBSv2Cover}
                   alt="Unbridled Series Vol. 2 Cover"
-                  src='../images/UBS-V2-Cover.jpg'
+                  src='../../images/UBS-V2-Cover.jpg'
                 />
                  <a href='https://www.amazon.com/Unbridled-Spirit-Kentuckys-Successful-Entrepreneurs/dp/1544536704' target='_blank'>
                   <button className={styles.UBSv2Button}>
@@ -80,7 +80,7 @@ const BookPage = ({ data }) => {
           <div>
               <StaticImage className={styles.UBSv2CoverBig}
                     alt="Unbridled Series Vol. 2 Cover"
-                    src='../images/UBS-V2-Cover.jpg'
+                    src='../../images/UBS-V2-Cover.jpg'
                   />
             <div className={styles.UBSDescription}>
               <Body>In this inspiring second installment of the Amazon bestseller, Unbridled Spirit,</Body>
@@ -104,7 +104,7 @@ const BookPage = ({ data }) => {
           <div>
               <StaticImage className={styles.UBSv2CoverBig}
                     alt="Unbridled Series Vol. 1 Cover"
-                    src='../images/UBS-V1-Cover.jpg'
+                    src='../../images/UBS-V1-Cover.jpg'
                   />
             <div className={styles.UBSDescription}>
               <Body>Kentucky’s history of being a small impoverished state didn’t stop</Body>
@@ -165,7 +165,7 @@ const BookPage = ({ data }) => {
               <a  href='https://itunes.apple.com/us/audiobook/unbridled-spirit-lessons-in-life-business-from-kentuckys/id1441679300' target='_blank'>Unbridled Spirit on iTunes</a>
               </li>
               </ul></Body>  
-            <Body>Inquiries about using the book for a class on business, entrepreneurship and/or Kentucky history, please email <a href='garrett.fahrbach@entrepreneurhof.com'>garrett.fahrbach@entrepreneurhof.com</a></Body>
+            <Body>Inquiries about using the book for a class on business, entrepreneurship and/or Kentucky history, please email <a href='mailto:garrett.fahrbach@entrepreneurhof.com' target='_blank'>garrett.fahrbach@entrepreneurhof.com</a></Body>
         </div>
         </Row>
         <Sponsors />

@@ -19,7 +19,7 @@ const Header = () => {
               <Navbar.Brand href="/"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
               <Nav as='ul'>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Media</a></Nav.Link>
-                <Nav.Link as='li' className='mx-2'><a href="/book" className={styles.links}>Book</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="/book/book" className={styles.links}>Book</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Founders Series</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>The Fellowship</a></Nav.Link>
                 <NavDropdown title={<span className={styles.links}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenuLg}>
