@@ -1,9 +1,9 @@
-.aincImage{
-    left: 75%;
-}
+.wrapper {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+  }
 
 .founderImage{
-    left: 75%;
     margin-left: 20px;
 }
 
