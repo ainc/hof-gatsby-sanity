@@ -8,6 +8,8 @@ import Sponsors from "../../components/Sponsors/Sponsors";
 import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
 import Layout from "../../components/Layout/Layout";
+import IconPair from "../../components/IconPair/IconPair";
+
 
 const BookPage = ({ data }) => {
 
@@ -15,49 +17,33 @@ const BookPage = ({ data }) => {
     <Layout>
       <Container>
         <Row>
-          
-            <div class='wrapper'>
-              <div>
-             <Title className='mx-4 py-5'>Unbridled Series</Title>
-             </div>
-             <div>
-              <a href="http://fellowship.awesomeinc.org/" target="_blank">
-                <StaticImage className={styles.aincImage}
-                  width={53.6}
-                  height={60}
-                  alt="Awesome Inc Logo"
-                  src='../../images/Logo_Square.png'
-                />
-              </a>
-              <a href="/founders-series/founder-series">
-                <StaticImage className={styles.founderImage}
-                  width={60}
-                  height={60}
-                  
-                  alt="Founders Logo"
-                  src='../../images/founders_logo.png'
-                />
-              </a>
-              </div>
+        <Row>
+          <Col>
+            <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
+              <Title  style={{borderBottom: 'none'}}>Unbridled Series</Title>
+              <IconPair />
             </div>
-          
+          </Col>
         </Row>
-        <Row className={styles.UBSRow}>
-            <Col className={`${styles.UBSColumn} mx-4`}>
-                <StaticImage className={styles.UBSv1Cover}
-                  alt="Unbridled Series Vol. 1 Cover"
-                  src='../../images/UBS-V1-Cover.jpg'
-                />
-                <a href='https://www.amazon.com/dp/1619616815/' target='_blank'>
-                  <button className={styles.UBSv1Button}>
-                    <b>
-                      Purchase Here: Unbridled Spirit Volume 1
-                    </b>
-                  </button>
-                </a>
+        </Row>
+        <Row className={`${styles.UBSRow} d-flex justify-content-center align-items-center text-center my-4`}>
+            <Col className={`${styles.UBSColumn} justify-content-center align-items-center text-center `}>
+
+                  <StaticImage className={styles.UBSv1Cover1}
+                    alt="Unbridled Series Vol. 1 Cover"
+                    src='../../images/UBS-V1-Cover.jpg'
+                  />
+                  <a href='https://www.amazon.com/dp/1619616815/' target='_blank'>
+                    <button className={styles.UBSv1Button}>
+                      <b>
+                        Purchase Here: Unbridled Spirit Volume 1
+                      </b>
+                    </button>
+                  </a>
+
             </Col>
-            <Col className={`${styles.UBSColumn} mx-4 `}>
-              <StaticImage className={styles.UBSv2Cover}
+            <Col className={`${styles.UBSColumn} justify-content-center align-items-center text-center`}>
+              <StaticImage className={styles.UBSv2Cover1}
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../../images/UBS-V2-Cover.jpg'
                 />
@@ -70,16 +56,14 @@ const BookPage = ({ data }) => {
                 </a>
             </Col>
         </Row>
-        <Row>
-          <Col className={`${styles.UBSColumnText} mx-4`}>
+        <Row className='d-flex justify-content-center align-items-center text-center my-4'>
             <div class="row-fluid center-block" className={styles.UBSv1Text}>
-              <Body>Famous for college basketball, horse racing, bourbon, coal, and bluegrass music, the Commonwealth of</Body>
-              <Body>Kentucky is also home to industries and opportunities not normally associated with it. Compiled by the</Body>      
-              <Body>Kentucky Entrepreneur Hall of Fame, Unbridled Spirit shares the success stories of twenty of its members—</Body>
-              <Body>business leaders who dared to think beyond the region’s best known institutions—to encourage the next</Body>
-              <Body>generation of entrepreneurs from the Bluegrass State.</Body>
+              <Body>Famous for college basketball, horse racing, bourbon, coal, and bluegrass music, the Commonwealth of
+              Kentucky is also home to industries and opportunities not normally associated with it. Compiled by the      
+              Kentucky Entrepreneur Hall of Fame, Unbridled Spirit shares the success stories of twenty of its members—
+              business leaders who dared to think beyond the region’s best known institutions—to encourage the next
+              generation of entrepreneurs from the Bluegrass State.</Body>
             </div>
-          </Col>
         </Row>
         <Row>
           <div>
@@ -88,11 +72,11 @@ const BookPage = ({ data }) => {
                     src='../../images/UBS-V2-Cover.jpg'
                   />
             <div className={styles.UBSDescription}>
-              <Body>In this inspiring second installment of the Amazon bestseller, Unbridled Spirit,</Body>
-              <Body>the Kentucky Entrepreneur Hall of Fame recognizes and celebrates the</Body>
-              <Body>contributions and accomplishments of 19 entrepreneurs across the state.</Body>
-              <Body>Unbridled Spirit Volume 2 shares the success stories of seasoned</Body>
-              <Body>entrepreneurs who continue to redefine what it is to be a Kentuckian.</Body>
+              <Body>In this inspiring second installment of the Amazon bestseller, Unbridled Spirit,
+              the Kentucky Entrepreneur Hall of Fame recognizes and celebrates the
+              contributions and accomplishments of 19 entrepreneurs across the state.
+             Unbridled Spirit Volume 2 shares the success stories of seasoned
+              entrepreneurs who continue to redefine what it is to be a Kentuckian.</Body>
             </div>
             <div className={`${styles.UBSDescription} py-3`}>
             <Body>These Hall of Famers have overcome the odds, stepped up in the face of</Body>
