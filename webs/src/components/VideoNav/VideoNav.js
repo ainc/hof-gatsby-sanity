@@ -1,38 +1,31 @@
 import React, {useState} from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { Container, Row, Col, Navbar, Nav , NavDropdown } from 'react-bootstrap';
-import InducteeCard from "../components/InducteeCard/InducteeCard";
-import '../styles/main.scss'; 
-import * as styles from './founders-series.module.scss'
-import Layout from "../components/Layout/Layout";
-import Sponsors from "../components/Sponsors/sponsors";
-import InducteeNav from "../components/InducteeNav/InducteeNav";
-import Title from "../components/Title/Title";
-import Body from "../components/Body/Body";
-import Button from "../components/Button/Button";
-import IconPair from "../components/IconPair/IconPair";
-import Video from "../components/Video/Video";
-import VideoNav from "../components/VideoNav/VideoNav";
+import { GatsbyImage} from 'gatsby-plugin-image'
+import { Container, Row, Col, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import InducteeCard from "../InducteeCard/InducteeCard";
+import Title from "../Title/Title";
+import * as styles from './videonav.module.scss';
+import Body from "../Body/Body";
 
-const FoundersSeries = ({ data }) => {
+const VideoNav = ( props ) => {
+  const data = props.data
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
     setSelectedYear(year); // Update state when a year is clicked
+    props.setSelectedYear(year);
   };
-
-  const filteredInductees = selectedYear ? data.allSanityFoundersSeries.nodes.filter(node => node.year === selectedYear) : data.allSanityFoundersSeries.nodes;
+  
+  // Filter inductees based on the selected year
+  props.filtered = props.selectedYear ? data.filter(node => node.inductee.year === props.selectedYear) : data;
 
   return (
-    <Layout>
-      <Container>
-        <Row>
-          <Col>
-          <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
-              <Title  style={{borderBottom: 'none'}}>Founders Series</Title>
-              <div className={`${styles.navBetween} d-flex align-items-center pb-5`} style={{borderBottom: '1px solid #bbb'}}>
+    <Container className='d-flex flex-column'>
+      <div className={`${styles.navBetween} d-flex align-items-center pb-5`} style={{borderBottom: '1px solid #bbb'}}>
+        <div>
+          <Title className="mx-3" style={{borderBottom: 'none'}}>{props.title}</Title>
+        </div>
         <div>
           {/*Nav for large screens and wider */}
           <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
@@ -63,53 +56,16 @@ const FoundersSeries = ({ data }) => {
               </NavDropdown.Item>    
               <NavDropdown.Item onClick={() => handleYearClick("2022")}>
                 2022
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => handleYearClick("2021")}>
-                2021
-              </NavDropdown.Item>             
+              </NavDropdown.Item>         
             {/* Add more years here */}
             </NavDropdown>
           </Nav>
         </div>
       </div>
-              <IconPair />
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <div className={styles.heading}>
-            In order to share the success stories of Kentucky's entrepreneurs on a larger scale, we launched a video series where we interviewed each HOF inductee.
-          </div>
-        </Row>
-        <Row>
-          {
-            filteredInductees.map(node => (
-              <Video link={node.videoEmbedLink} title={node.title} preview={node.preview}/>
-            ))
-          }
-        </Row>
-      </Container>
-      <Sponsors />
-    </Layout>
+    </Container>
   )
 }
-export const query = graphql`
-  query FoundersSeriesPageQuery {
-    allSanityFoundersSeries {
-      nodes {
-        videoEmbedLink
-        title
-        preview {
-          asset {
-            gatsbyImageData(width: 430, height: 275)
-          }
-        }
-        year (formatString: "YYYY")
-      }
-    }
-  }
-`;
 
-export default FoundersSeries;
 
-export const Head = () => <title>Founders Series</title>
+
+export default VideoNav;
