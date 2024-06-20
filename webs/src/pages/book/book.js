@@ -27,9 +27,9 @@ const BookPage = ({ data }) => {
         </Row>
         </Row>
         <Row className={`${styles.UBSRow} d-flex justify-content-center align-items-center text-center my-4`}>
-            <Col className={`${styles.UBSColumn} justify-content-center align-items-center text-center `}>
+            <Col className={styles.UBSColumn1}>
 
-                  <StaticImage className={styles.UBSv1Cover1}
+                  <StaticImage className={styles.UBSv1Cover}
                     alt="Unbridled Series Vol. 1 Cover"
                     src='../../images/UBS-V1-Cover.jpg'
                   />
@@ -42,8 +42,8 @@ const BookPage = ({ data }) => {
                   </a>
 
             </Col>
-            <Col className={`${styles.UBSColumn} justify-content-center align-items-center text-center`}>
-              <StaticImage className={styles.UBSv2Cover1}
+            <Col className={`${styles.UBSColumn2} text-center`}>
+              <StaticImage className={styles.UBSv2Cover}
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../../images/UBS-V2-Cover.jpg'
                 />
@@ -65,24 +65,24 @@ const BookPage = ({ data }) => {
               generation of entrepreneurs from the Bluegrass State.</Body>
             </div>
         </Row>
-        <Row>
-          <div>
+        <Row  className={styles.UBSv2CoverRow}>
+          <div className='align-items-center'>
               <StaticImage className={styles.UBSv2CoverBig}
                     alt="Unbridled Series Vol. 2 Cover"
                     src='../../images/UBS-V2-Cover.jpg'
                   />
-            <div className={styles.UBSDescription}>
+            <div className={`{styles.UBSDescription} align-items-center`}>
               <Body>In this inspiring second installment of the Amazon bestseller, Unbridled Spirit,
               the Kentucky Entrepreneur Hall of Fame recognizes and celebrates the
               contributions and accomplishments of 19 entrepreneurs across the state.
              Unbridled Spirit Volume 2 shares the success stories of seasoned
               entrepreneurs who continue to redefine what it is to be a Kentuckian.</Body>
             </div>
-            <div className={`${styles.UBSDescription} py-3`}>
-            <Body>These Hall of Famers have overcome the odds, stepped up in the face of</Body>
-            <Body>adversity, and built innovative, prosperous ventures. The Kentucky</Body>
-            <Body>Entrepreneur Hall of Fame is proud to recount their stories and hard-earned</Body>
-            <Body>wisdom in this exciting second volume of all-American success.</Body>
+            <div className={`${styles.UBSDescription} py-3 align-items-center`}>
+            <Body>These Hall of Famers have overcome the odds, stepped up in the face of
+            adversity, and built innovative, prosperous ventures. The Kentucky
+            Entrepreneur Hall of Fame is proud to recount their stories and hard-earned
+            wisdom in this exciting second volume of all-American success.</Body>
             <Body><ul><li>
               <a  href='https://www.amazon.com/dp/1544536704' target='_blank'>Purchase Here: Unbridled Spirit Volume 2</a>
               </li></ul></Body>  
@@ -90,21 +90,21 @@ const BookPage = ({ data }) => {
           </div>
         </Row>
         <Row>
-          <div>
+          <div className='align-items-center'>
               <StaticImage className={styles.UBSv2CoverBig}
                     alt="Unbridled Series Vol. 1 Cover"
                     src='../../images/UBS-V1-Cover.jpg'
                   />
             <div className={styles.UBSDescription}>
-              <Body>Kentucky’s history of being a small impoverished state didn’t stop</Body>
-              <Body>entrepreneurial Kentuckians like tech inventor and DataBeam founder Lee</Body>
-              <Body>Todd and former Milwaukee-Bucks-superstar-turned-restaurant-franchiser</Body>
-              <Body>Junior Bridgeman from overcoming adversity, pursuing their dreams, and</Body>
-              <Body>achieving their goals. These Hall of Famers, and the others profiled in this</Body>
-              <Body>book, have built prosperous careers that have redefined what it means to be</Body>
-              <Body>Kentuckian, inspiring others in communities throughout the Commonwealth to</Body>
-              <Body>step outside the box and create their own business legacies in twenty-first</Body>
-              <Body>century America.</Body>
+              <Body>Kentucky’s history of being a small impoverished state didn’t stop
+              entrepreneurial Kentuckians like tech inventor and DataBeam founder Lee
+              Todd and former Milwaukee-Bucks-superstar-turned-restaurant-franchiser
+              Junior Bridgeman from overcoming adversity, pursuing their dreams, and
+              achieving their goals. These Hall of Famers, and the others profiled in this
+              book, have built prosperous careers that have redefined what it means to be
+              Kentuckian, inspiring others in communities throughout the Commonwealth to
+              step outside the box and create their own business legacies in twenty-first
+              century America.</Body>
               <Body><h3>Stories inside include:</h3></Body>  
               <Body><ul>
                 <li>What Jim Host (Host Communications) did after going from having 
@@ -121,17 +121,17 @@ const BookPage = ({ data }) => {
           </div>
         </Row>
         <Row>
-          <div className={styles.aboutAuthor}>
+          <div className={`{styles.aboutAuthor} align-items-center`}>
           <Body><h3>About the Author</h3></Body>
-          <Body>Founded by Kentucky entrepreneurs Brian Raney, Luke Murray, Nick Such, and Bobby Clark, the Kentucky Entrepreneur Hall of Fame is an organization that</Body>
-          <Body>shares and celebrates stories of Kentucky’s most successful entrepreneurs. The Hall of Fame’s mission is to raise awareness and shine a spotlight on the impact</Body>
-          <Body>entrepreneurship has on the Commonwealth of Kentucky, while encouraging others to pursue similarly ambitious endeavors. This volume was compiled by</Body>
-          <Body>Garrett Fahrbach, who manages the Outreach and Storytelling programs at Awesome Inc. He maintains the relationships between the Kentucky Entrepreneur</Body>
-          <Body>Hall of Fame inductees and Awesome Inc along with team members Brian Raney and Keith McMunn.</Body>
+          <Body>Founded by Kentucky entrepreneurs Brian Raney, Luke Murray, Nick Such, and Bobby Clark, the Kentucky Entrepreneur Hall of Fame is an organization that
+          shares and celebrates stories of Kentucky’s most successful entrepreneurs. The Hall of Fame’s mission is to raise awareness and shine a spotlight on the impact
+          entrepreneurship has on the Commonwealth of Kentucky, while encouraging others to pursue similarly ambitious endeavors. This volume was compiled by
+          Garrett Fahrbach, who manages the Outreach and Storytelling programs at Awesome Inc. He maintains the relationships between the Kentucky Entrepreneur
+          Hall of Fame inductees and Awesome Inc along with team members Brian Raney and Keith McMunn.</Body>
           </div>
         </Row>
         <Row>
-        <div className={styles.aboutAuthor}>
+        <div className={`{styles.aboutAuthor} align-items-center`}>
           <Body><h3>Check out samples from the Audio version of Unbridled Spirit:</h3></Body>
           <Body><ul><li>
               <a  href='https://www.instagram.com/p/BuXfzSyhFsr/?utm_source=ig_web_button_share_sheet' target='_blank'>Junior Bridgeman</a>
