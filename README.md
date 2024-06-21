@@ -1,4 +1,5 @@
 # hof-gatsby-sanity
+## Big Picture goal: Remake [the hall of fame website](https://www.entrepreneurhof.com/) in the React/Gatsby/Sanity framework
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
@@ -22,6 +23,20 @@
 2.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000!
+
+## Sanity Workflow
+
+Sanity runs into issues with overwriting work when trying to update schemas simultaneously on different branches. The ideal workflow for updating schema is as follows:
+
+1.  Plan out all necessary schema for development.
+    
+2.  Add schema and push to the main branch on Github before any changes are made by other users.
+
+3.  Redeploy graphql API  (`sanity graphql deploy`)
+    
+4.  Other users should pull your schema changes before adding any new schema.
+    
+5.  Continue development on the front-end accessing the already committed schema.
 
 
 4.  **Learn more**

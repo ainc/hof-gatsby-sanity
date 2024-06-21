@@ -69,3 +69,20 @@
         font-size: 20px;
     }
 }
+
+.flex-col-sm{
+    @media (max-width: 767px){
+        flex-direction: column !important;
+        justify-content: center;
+    }
+}
+.flex-col-sm img{
+    @media (max-width: 767px){
+        max-width: 350px;
+        height: auto;
+    }
+    @media (min-width: 768px){
+        max-width: 500px;
+        height: auto;
+    }
+}
