@@ -13,7 +13,7 @@ const IconPair = ( props ) => {
             <a href='https://awesomeinc.org/fellowship/' target="_blank">
                 <StaticImage placeholder='blurred' src='../../images/Logo_Square.png'  className='mx-1' style={{maxHeight: '75px', maxWidth: '50px'}} />
             </a>
-            <a href='founders-series'>
+            <a href='/founders-series'>
                 <StaticImage placeholder='blurred' src='../../images/founders_logo.png' className='mx-1'/>
             </a>
         </div>
