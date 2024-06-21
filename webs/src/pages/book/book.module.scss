@@ -122,11 +122,18 @@ ul li::marker {
     text-align-last: start !important;
 }
 
-a{
+.link{
     color: #af0a09;
     text-decoration: none;
 }
+.link:hover{
+    border-bottom: 1px dashed #af0a09;
+    transition: border 0.2s ease;
 
+}
+*{
+    outline: 1px solid red;
+}
 .aboutAuthor{
     margin-left: 60px;
     margin-bottom: 50px;
