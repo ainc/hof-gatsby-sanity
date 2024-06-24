@@ -1,6 +1,8 @@
-* {
-    font-family: "Muli", Arial, sans-serif;
-    
+body {
+    font-family: 'Muli', Arial, sans-serif;
+    background: #e6e6e6;
+    line-height: 24px;
+    color: #666;
 }
 
 .podcastHeader {
@@ -8,12 +10,15 @@
     margin: 40px;
     margin-top: 20px;
     margin-left: 80px;
+    padding-bottom: 77px;
 }
 
 .recentHeader {
     display: flex;
     margin-right: 60px;
     margin-top: 20px;
+    padding-bottom: 70px;
+
 }
 
 .awesomeLogo {
@@ -27,28 +32,31 @@
     width: 50px;
     height: 50px;
     margin-left: 15px;
-    margin-bottom: 60px;
-    // left: 60%;
-    
 }
-.whiteSpace {
-    margin-bottom: 110px; // 50px height of logo + 60px margin-bottom
-}
+
 .logos {
-    // margin-left: 120px;
+
     margin-left: 50%;
 }
 .podcastVideo {
-    height: 315px;
-    width: 87%;
+    height: 340px;
+    width: 760px;
     margin-left: 80px;
+}
+
+.thumbnail {
+    width: 350px;
+    height: 197px;
+    padding: 8px;
+    background-clip: border-box;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+
 }
 
 .mediaInfo {
     margin-left: 100px;
     margin-right: 80px;
     margin-top: 20px;
-    color: #666;
     font-size: 16px;
     line-height: 20px;
     font-weight: 0 !important;
@@ -57,4 +65,20 @@
 a {
     color: rgb(175, 10, 9);
     text-decoration: none;
+}
+
+.ceremonyVideos {
+    list-style-type: none;
+}
+
+p {
+    font-size: 16px;
+}
+
+.iconPlayCircle {
+    content: url('../../images/founders_logo_white_smallest.png');
+}
+
+.pressContent {
+    margin-left: 80px;
 }

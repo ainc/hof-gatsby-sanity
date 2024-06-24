@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Layout from '../../components/Layout/Layout';
+import Sponsors from '../../components/Sponsors/sponsors';
 import SEO from '../../components/SEO/seo';
 import { graphql } from 'gatsby';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
@@ -8,22 +9,44 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import Title from '../../components/Title/Title';
 import * as styles from './media.module.scss'
 
+
 const MediaPage = ({data}) => {
     const allPress = data.allSanityPress.nodes || {};
     const allCeremony = data.allSanityCeremonyVideo.nodes || {};
-    const allSponsors = data.allSanitySponsors.nodes || {};
+
+    const PressComp = ({allPress}) => {
+        let currentYear = null;
+
+        return (
+            <div>
+                {allPress.map(node => {
+                    const articleYear = node.year
+                    const yearHeading = articleYear == currentYear ? <h2>Class of {articleYear}</h2> : null;
+                    currentYear = articleYear;
+
+                    return (
+                    <Title className={styles.pressContent}>
+                        {yearHeading}
+                        <h3>{node.title}</h3>
+                        <p>{node.date} - {node.publisher}</p>
+                    </Title>
+                    );
+                })}
+            </div>
+        );
+    }
+
+
     return (
         <Layout>
           <Row >
             <Col md={8} sm={12}>
                 <Title className={styles.podcastHeader}>
                     <h2>Podcast</h2>
-                    <div className={styles.whiteSpace}></div>
                 </Title>
                 <iframe className={styles.podcastVideo} src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <Title className={styles.podcastHeader}>
                     <h2>Book</h2>
-                    <div className={styles.whiteSpace}></div>
                 </Title>
                 <iframe className={styles.podcastVideo} src="https://www.youtube.com/embed/uUbLe0U6Fdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <section className={styles.mediaInfo}>
@@ -51,8 +74,9 @@ const MediaPage = ({data}) => {
                 </section>
                 <Title className={styles.podcastHeader}>
                     Recent Press
-                    <div className={styles.whiteSpace}></div>
                 </Title>
+                
+                <PressComp allPress={allPress} />        
             </Col>
             <Col md={4} sm={12}>
                 <Title className={styles.recentHeader}>
@@ -70,22 +94,25 @@ const MediaPage = ({data}) => {
                   />
                   </div>
                 </Title>
-                <ul>
+                <ul className={styles.ceremonyVideos}>
                     {allCeremony.map(node => (
                         <li key={node.name}>
-                            <a href={node.videoLink} target="_blank" rel="noreferrer">
-                                <GatsbyImage 
-                                    image={node.videoThumbnail.asset.gatsbyImageData} 
+                            <p>{node.name}</p>
+                            <a href={node.videoLink} target="_blank" rel="shadowbox">
+                                <GatsbyImage
+                                    className={styles.thumbnail} 
+                                    image={node.thumbnail.asset.gatsbyImageData} 
                                     alt={node.name} 
                                     style={{maxWidth: '100%'}}
                                 />
+                                <i className={styles.iconPLayCircle}></i>
                             </a>
                         </li>
                     ))}
                 </ul>
             </Col>
           </Row>
-
+        <Sponsors />
         </Layout>
     );
 }
@@ -93,16 +120,17 @@ const MediaPage = ({data}) => {
 
 export const query = graphql`
     query MediaPageQuery {
-        allSanityPress {
+        allSanityPress (sort: {fields: date, order: DESC}){
             nodes {
                 title
                 publisher
                 date(formatString: "MMM D, YYYY")
+                year: date(formatString: "YYYY")
                 link
             }
         }
-        allSanityceremonyVideo {
-            nodes{
+        allSanityCeremonyVideo {
+            nodes {
                 name
                 videoLink
                 thumbnail {
@@ -110,18 +138,6 @@ export const query = graphql`
                         gatsbyImageData
                     }
                 }
-            }
-        }
-        allSanitySponsors {
-            nodes {
-                sponsorType
-                name
-                image {
-                    asset {
-                        gatsbyImageData
-                    }
-                }
-                link
             }
         }
     }
