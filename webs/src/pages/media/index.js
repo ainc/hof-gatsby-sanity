@@ -11,7 +11,7 @@ import * as styles from './media.module.scss'
 
 
 const MediaPage = ({data}) => {
-    const allPress = data.allSanityPress.nodes || {};
+    const allPress = data.allSanityPress.nodes;
     const allCeremony = data.allSanityCeremonyVideo.nodes || {};
 
     const PressComp = ({allPress}) => {
@@ -20,8 +20,8 @@ const MediaPage = ({data}) => {
         return (
             <div>
                 {allPress.map(node => {
-                    const articleYear = node.year
-                    const yearHeading = articleYear == currentYear ? <h2>Class of {articleYear}</h2> : null;
+                    const articleYear = new Date(node.date).getFullYear();
+                    const yearHeading = articleYear !== currentYear ? <h2>Class of {articleYear}</h2> : null;
                     currentYear = articleYear;
 
                     return (
@@ -120,7 +120,7 @@ const MediaPage = ({data}) => {
 
 export const query = graphql`
     query MediaPageQuery {
-        allSanityPress (sort: {fields: date, order: DESC}){
+        allSanityPress (sort: {date: DESC}){
             nodes {
                 title
                 publisher
