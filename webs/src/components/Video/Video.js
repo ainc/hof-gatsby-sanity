@@ -4,7 +4,10 @@ import { Container, Row, Col} from 'react-bootstrap';
 import * as styles from './video.module.scss'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Image from "react-bootstrap";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import img from "../../images/founders_logo.png"
+import playButtonImage from "../../images/founders_logo.png"
 
 const Video = ( props ) => {
     const [show, setShow] = useState(false);
@@ -14,9 +17,12 @@ const Video = ( props ) => {
     return(
         <div className={styles.box}>
       <div className={styles.title}>{props.title}</div>
-            <Button variant="light" onClick={handleShow}>
-                <GatsbyImage image={props.preview.asset.gatsbyImageData} alt={props.title}/>
-            </Button>
+      <div className={styles.imageWrapper}>
+                <Button variant="light" onClick={handleShow}>
+                    <GatsbyImage image={props.preview.asset.gatsbyImageData} alt={props.title} />
+                    <img src={playButtonImage} alt="Play button" className={styles.playButton} />
+                </Button>
+            </div>
             
       <Modal show={show} onHide={handleClose} size="xl" centered="true">
         <Modal.Body>
