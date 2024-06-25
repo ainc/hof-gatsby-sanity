@@ -51,6 +51,7 @@ const FoundersSeries = ({ data }) => {
             <Nav.Item as="li" onClick={() => handleYearClick("2012")} tabIndex='-1'>2012</Nav.Item>
             <Nav.Item as="li" onClick={() => handleYearClick("2011")} tabIndex='-1'>2011</Nav.Item>
             <Nav.Item as="li" onClick={() => handleYearClick("2010")} tabIndex='-1'>2010</Nav.Item>
+            <Nav.Item as="li" onClick={() => handleYearClick("-1")} tabIndex='-1'>Noteworthy Entrepreneurs</Nav.Item>
           </Nav>
           {/*Nav for medium screens and smaller */}
           <Nav as="ul" className={`d-lg-none`}>
