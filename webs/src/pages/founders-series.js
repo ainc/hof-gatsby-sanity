@@ -33,7 +33,7 @@ const FoundersSeries = ({ data }) => {
           <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
               <Title  style={{borderBottom: 'none'}}>Founders Series</Title>
               <div className={`${styles.navBetween} d-flex align-items-center pb-5`} style={{borderBottom: '1px solid #bbb'}}>
-        <div>
+        <div style={{width: 900}}>
           {/*Nav for large screens and wider */}
           <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
             <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
