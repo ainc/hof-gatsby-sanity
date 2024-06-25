@@ -96,7 +96,7 @@ const FoundersSeries = ({ data }) => {
 }
 export const query = graphql`
   query FoundersSeriesPageQuery {
-    allSanityFoundersSeries {
+    allSanityFoundersSeries(sort: {year: DESC}) {
       nodes {
         videoEmbedLink
         title
