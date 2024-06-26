@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
 body {
     font-family: 'Muli', Arial, sans-serif;
     background: #e6e6e6;
@@ -5,11 +7,16 @@ body {
     color: #666;
 }
 
+h4 {
+    font-size: 18px;
+    font-weight: 200;
+}
+
 .podcastHeader {
     display: flex;
     margin: 40px;
     margin-top: 20px;
-    margin-left: 80px;
+    margin-left: 100px;
     padding-bottom: 77px;
 }
 
@@ -19,6 +26,14 @@ body {
     margin-top: 20px;
     padding-bottom: 70px;
 
+}
+
+.pressHeader {
+    display: flex;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-left: 100px;
+    padding-bottom: 77px;
 }
 
 .awesomeLogo {
@@ -35,21 +50,21 @@ body {
 }
 
 .logos {
-
     margin-left: 50%;
 }
 .podcastVideo {
-    height: 340px;
     width: 760px;
-    margin-left: 80px;
+    height: 340px;
+    margin-left: 100px;
 }
 
 .thumbnail {
     width: 350px;
     height: 197px;
     padding: 8px;
-    background-clip: border-box;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+    border: 8px solid white;
+    max-width: 100%;
 
 }
 
@@ -77,8 +92,46 @@ p {
 
 .iconPlayCircle {
     content: url('../../images/founders_logo_white_smallest.png');
+    position: relative;
+    opacity: 30%;
 }
 
 .pressContent {
-    margin-left: 80px;
+    margin-left: 100px;
+}
+
+.pressContent h4, .pressContent p {
+    margin-top: 5px !important;
+    margin-left: 20px;
+    font-family: 'Muli';
+    line-height: 26px;
+}
+
+.yearHeader {
+    padding-top: 20px !important;
+    margin-top: 0px !important;
+}
+
+.videoLink {
+    position: relative;
+    text-align: center;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+.videoText {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);    
+}
+
+.play {
+    top: 45px;
+    left: 90px;
+    text-align: center;
+    position: absolute;
+    display: block;
+}
+
+.videoLink:hover .videoText{
+    color: rgba(255, 255, 255, 0.8);
 }

@@ -14,7 +14,7 @@ export default {
         type: 'url'
       },
       {
-        name: 'thumbnail',
+        name: 'image',
         title: 'Thumbnail',
         type: 'image'
       }

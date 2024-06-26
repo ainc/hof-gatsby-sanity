@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import Layout from '../../components/Layout/Layout';
 import Sponsors from '../../components/Sponsors/sponsors';
-import SEO from '../../components/SEO/seo';
 import { graphql } from 'gatsby';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
 import { Container, Row, Col, Button } from "react-bootstrap";
@@ -10,33 +9,31 @@ import Title from '../../components/Title/Title';
 import * as styles from './media.module.scss'
 
 
+
 const MediaPage = ({data}) => {
-    const allPress = data.allSanityPress.nodes;
+    const allPress = data.allSanityPress.nodes || {};
     const allCeremony = data.allSanityCeremonyVideo.nodes || {};
 
     const PressComp = ({allPress}) => {
         let currentYear = null;
-
         return (
             <div>
-                {allPress.map(node => {
-                    const articleYear = new Date(node.date).getFullYear();
-                    const yearHeading = articleYear !== currentYear ? <h2>Class of {articleYear}</h2> : null;
-                    currentYear = articleYear;
+            {allPress.map(node => {
+                const articleYear = new Date(node.date).getFullYear();
+                const yearHeading = articleYear !== currentYear ? <h3 className={styles.yearHeader}>Class of {articleYear}</h3> : null;
+                currentYear = articleYear;
 
-                    return (
+                return (
                     <Title className={styles.pressContent}>
                         {yearHeading}
-                        <h3>{node.title}</h3>
+                        <a href={node.link}><h4>{node.title}</h4></a>
                         <p>{node.date} - {node.publisher}</p>
                     </Title>
-                    );
-                })}
+                );
+            })}
             </div>
         );
-    }
-
-
+    } 
     return (
         <Layout>
           <Row >
@@ -76,7 +73,7 @@ const MediaPage = ({data}) => {
                     Recent Press
                 </Title>
                 
-                <PressComp allPress={allPress} />        
+                <PressComp allPress={allPress} /> 
             </Col>
             <Col md={4} sm={12}>
                 <Title className={styles.recentHeader}>
@@ -98,16 +95,22 @@ const MediaPage = ({data}) => {
                     {allCeremony.map(node => (
                         <li key={node.name}>
                             <p>{node.name}</p>
-                            <a href={node.videoLink} target="_blank" rel="shadowbox">
+                            <a className={styles.videoLink} href={node.videoLink} target="_blank" rel="shadowbox">
                                 <GatsbyImage
                                     className={styles.thumbnail} 
                                     image={node.thumbnail.asset.gatsbyImageData} 
                                     alt={node.name} 
-                                    style={{maxWidth: '100%'}}
+                                    
                                 />
-                                <i className={styles.iconPLayCircle}></i>
+                                <div className={styles.play}>
+                                    <StaticImage 
+                                        className={styles.iconPlayCircle}
+                                        src='../../images/founders_logo_white_smallest.png'
+                                    />
+                                    <p className={styles.videoText}>{node.name}</p>
+                                </div>
                             </a>
-                        </li>
+                           </li>
                     ))}
                 </ul>
             </Col>
@@ -125,7 +128,6 @@ export const query = graphql`
                 title
                 publisher
                 date(formatString: "MMM D, YYYY")
-                year: date(formatString: "YYYY")
                 link
             }
         }
@@ -133,7 +135,7 @@ export const query = graphql`
             nodes {
                 name
                 videoLink
-                thumbnail {
+                image {
                     asset {
                         gatsbyImageData
                     }
