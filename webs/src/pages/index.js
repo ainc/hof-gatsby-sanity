@@ -6,7 +6,7 @@ import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss';
 import * as styles from './index.module.scss'
 import Layout from "../components/Layout/Layout";
-import Sponsors from "../components/Sponsors/sponsors";
+import Sponsors from "../components/Sponsors/Sponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
 import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
