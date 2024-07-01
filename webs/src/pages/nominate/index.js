@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import Layout from '../../components/Layout/Layout';
-import Sponsors from '../../components/Sponsors/Sponsors';
+import Sponsors from '../../components/Sponsors/sponsors';
 import IconPair from '../../components/IconPair/IconPair';
 import Title from '../../components/Title/Title';
 import { Container, Row, Col, Button, Stack } from "react-bootstrap";
@@ -12,12 +12,13 @@ import * as styles from './nominate.module.scss';
 const NominatePage = () => {
     return (
         <Layout>
+            <Container>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <Title className={styles.header}>
                 <h2>Nominate</h2>
                 <IconPair className={styles.icons}/>
             </Title>
-            <section className={styles.section}>
+            <section style={{color: "rgb(102,102,102)"}}>
                 <p><b>Note: </b>Nominations for the 2024 class and beyond is open. <b>Deadline: May 3, 2024</b></p>
                 <h2>Selection Criteria</h2>
                 <ul>
@@ -36,6 +37,7 @@ const NominatePage = () => {
                 <Button className={styles.button} href="https://zfrmz.com/PcjCQ9fgz9mjukf8hpv3" target="_blank" rel="noreferrer">President/Executive Nomination (click here, deadline: 5/3/24)</Button>
             </Stack>
             <Sponsors />
+            </Container>
         </Layout>
     );
 }
