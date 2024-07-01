@@ -2,18 +2,18 @@ import React, {useState} from "react"
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container, Row, Col, Navbar, Nav , NavDropdown } from 'react-bootstrap';
-import InducteeCard from "../components/InducteeCard/InducteeCard";
-import '../styles/main.scss'; 
+import InducteeCard from "../../components/InducteeCard/InducteeCard";
+import '../../styles/main.scss'; 
 import * as styles from './founders-series.module.scss'
-import Layout from "../components/Layout/Layout";
-import Sponsors from "../components/Sponsors/sponsors";
-import InducteeNav from "../components/InducteeNav/InducteeNav";
-import Title from "../components/Title/Title";
-import Body from "../components/Body/Body";
-import Button from "../components/Button/Button";
-import IconPair from "../components/IconPair/IconPair";
-import Video from "../components/Video/Video";
-import VideoNav from "../components/VideoNav/VideoNav";
+import Layout from "../../components/Layout/Layout";
+import Sponsors from "../../components/Sponsors/Sponsors";
+import InducteeNav from "../../components/InducteeNav/InducteeNav";
+import Title from "../../components/Title/Title";
+import Body from "../../components/Body/Body";
+import Button from "../../components/Button/Button";
+import IconPair from "../../components/IconPair/IconPair";
+import Video from "../../components/Video/Video";
+import VideoNav from "../../components/VideoNav/VideoNav";
 
 const FoundersSeries = ({ data }) => {
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
@@ -32,7 +32,7 @@ const FoundersSeries = ({ data }) => {
           <Col>
           <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
               <Title  style={{borderBottom: 'none'}}>Founders Series</Title>
-              <div className={`${styles.navBetween} d-flex align-items-center pb-5`} style={{borderBottom: '1px solid #bbb'}}>
+              <div className={`${styles.navBetween} d-flex align-items-center`} >
         <div style={{width: 900}}>
           {/*Nav for large screens and wider */}
           <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
@@ -79,7 +79,7 @@ const FoundersSeries = ({ data }) => {
         </Row>
         <Row>
           <div className={styles.heading}>
-            In order to share the success stories of Kentucky's entrepreneurs on a larger scale, we launched a video series where we interviewed each HOF inductee.
+            <Body>In order to share the success stories of Kentucky's entrepreneurs on a larger scale, we launched a video series where we interviewed each HOF inductee.</Body>
           </div>
         </Row>
         <Row>
