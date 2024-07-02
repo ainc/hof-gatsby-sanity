@@ -10,10 +10,16 @@
 .image-container {
     position: relative;
 }
-.box{
-    width: 50%;
-    align-items: center;
-    justify-content: center;
+.box {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .box {
+      width: 100%;
+  }
 }
 .imageWrapper {
     position: relative;

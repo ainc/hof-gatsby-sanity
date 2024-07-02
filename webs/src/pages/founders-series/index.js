@@ -6,7 +6,7 @@ import InducteeCard from "../../components/InducteeCard/InducteeCard";
 import '../../styles/main.scss'; 
 import * as styles from './founders-series.module.scss'
 import Layout from "../../components/Layout/Layout";
-import Sponsors from "../../components/Sponsors/Sponsors";
+import Sponsors from "../../components/Sponsors/sponsors";
 import InducteeNav from "../../components/InducteeNav/InducteeNav";
 import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
@@ -28,12 +28,13 @@ const FoundersSeries = ({ data }) => {
   return (
     <Layout>
       <Container>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <Row>
           <Col>
           <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
               <Title  style={{borderBottom: 'none'}}>Founders Series</Title>
               <div className={`${styles.navBetween} d-flex align-items-center`} >
-        <div style={{width: 900}}>
+        <div>
           {/*Nav for large screens and wider */}
           <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
             <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
