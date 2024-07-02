@@ -12,12 +12,6 @@ h4 {
     font-weight: 200;
 }
 
-.podcastHeader {
-    display: flex;
-    margin-top: 20px;
-    padding-bottom: 77px;
-}
-
 .recentHeader {
     display: flex;
     margin-right: 60px;
@@ -26,16 +20,11 @@ h4 {
 
 }
 
-.podcastVideo {
-    width: 100%;
-    //height: 340px;
-}
 
 .thumbnail {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
     border: 8px solid white;
     max-width: 100%;
-
 }
 
 a {
@@ -47,11 +36,13 @@ p {
     font-size: 16px;
 }
 
-
+.ceremonyVideos {
+    list-style-type: none;
+    padding-left: 0 !important;
+}
 
 .pressContent h4, .pressContent p {
     margin-top: 5px !important;
-
     font-family: 'Muli';
     line-height: 26px;
 }

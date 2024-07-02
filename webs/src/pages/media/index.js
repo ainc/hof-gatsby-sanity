@@ -8,7 +8,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import Title from '../../components/Title/Title';
 import * as styles from './media.module.scss'
 import IconPair from '../../components/IconPair/IconPair';
-
+import image from '../../images/founders_logo_white_smallest.png';
 
 const MediaPage = ({data}) => {
     const allPress = data.allSanityPress.nodes || {};
@@ -39,13 +39,13 @@ const MediaPage = ({data}) => {
           <Container>
             <Row >
                 <Col md={8} sm={12}>
-                    <Title className='py-5'>Podcast</Title>
+                    <Title style={{paddingBottom: '2.75rem', paddingTop: "-1rem"}} className='pt-5'>Podcast</Title>
                     <div className="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" className='pt-3'frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <Title className='py-5'>Book</Title>
                     <div className="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/uUbLe0U6Fdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/uUbLe0U6Fdk" className='pt-3' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <section className='mt-3'>
                         <h3>Stories inside include:</h3>
@@ -70,21 +70,21 @@ const MediaPage = ({data}) => {
                         </p>
                         <p>For inquiries about using the book for a class on business, entrepreneurship and/or Kentucky history, please email <a href="mailto:garrett.fahrbach@entrepreneurhof.com">garrett.fahrbach@entrepreneurhof.com</a></p>
                     </section>
-                    <Title className={styles.podcastHeader}>
+                    <Title className='py-5'>
                         Recent Press
                     </Title>
                     
                     <PressComp allPress={allPress} /> 
                 </Col>
                 <Col md={4} sm={12}>
-                <div className='d-flex justify-content-between align-items-center mb-n1 position-relative' style={{borderBottom: '1px solid #bbb', paddingBottom: "-3px"}}>
-                    <Title className='pt-5 pb-5' styles={{borderBottom: '1px solid #bbb', paddingBottom: '-3px'}}>
+                <div className='d-flex justify-content-between align-items-center position-relative pb-n2' style={{paddingBottom: "-30px"}}>
+                    <Title className='pt-4 w-100 d-flex justify-content-between align-items-center pb-5' styles={{borderBottom: '1px solid #bbb', paddingBottom: '-3px'}}>
                         Recent
-                        
+                        <IconPair/>
                     </Title>
-                    <IconPair className='position-absolute end-0'/>
+                    
                 </div>            
-                <ul style={{listStyleType: 'none'}}>
+                <ul className={styles.ceremonyVideos}>
                         {allCeremony.map(node => (
                             <li key={node.name}>
                                 <p>{node.name}</p>
