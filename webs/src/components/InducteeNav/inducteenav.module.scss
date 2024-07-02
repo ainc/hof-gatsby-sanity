@@ -30,3 +30,16 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.title-style a{
+    color: #666;
+}
+.title-style a:focus{
+    color: #666;
+}
+
+.nav-between{
+    @media (max-width: 1024px){
+        justify-content: space-between;
+    }
+}

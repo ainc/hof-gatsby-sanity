@@ -19,7 +19,7 @@ const Header = () => {
               <Navbar.Brand href="/"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
               <Nav as='ul'>
                 <Nav.Link as='li' className='mx-2'><a href="/media" className={styles.links}>Media</a></Nav.Link>
-                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Book</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="/book" className={styles.links}>Book</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Founders Series</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>The Fellowship</a></Nav.Link>
                 <NavDropdown title={<span className={styles.links}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenuLg}>
@@ -55,7 +55,7 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto" as="ul">
               <Nav.Link href="/media" className={styles.links} as='li'>Media</Nav.Link>
-              <Nav.Link href="/book" className={styles.links} as='li'>Book</Nav.Link>
+              <Nav.Link as='li'><a href="/book" className={styles.links}>Book</a></Nav.Link>
               <Nav.Link href="/founders-series" className={styles.links} as='li'>Founders Series</Nav.Link>
               <Nav.Link href="/fellowship" className={styles.links} as='li'>The Fellowship</Nav.Link>
               <NavDropdown title={<span className={styles.links}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenu}>
