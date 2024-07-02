@@ -4,7 +4,9 @@ import './title.scss'
 const Title = (props) => {
     return (
       <h2 {...props} className={`title ${props.className}`}>
+        
         {props.children}
+
       </h2>
     )
 }
