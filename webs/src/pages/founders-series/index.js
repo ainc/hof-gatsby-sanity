@@ -6,7 +6,7 @@ import InducteeCard from "../../components/InducteeCard/InducteeCard";
 import '../../styles/main.scss'; 
 import * as styles from './founders-series.module.scss'
 import Layout from "../../components/Layout/Layout";
-import Sponsors from "../../components/Sponsors/sponsors";
+import Sponsors from "../../components/Sponsors/Sponsors";
 import InducteeNav from "../../components/InducteeNav/InducteeNav";
 import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
@@ -28,52 +28,49 @@ const FoundersSeries = ({ data }) => {
   return (
     <Layout>
       <Container>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <Row>
           <Col>
-          <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
-              <Title  style={{borderBottom: 'none'}}>Founders Series</Title>
+            <div className='d-flex justify-content-between py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
+              <Title  className='w-25' style={{borderBottom: 'none'}}>Founders Series</Title>
               <div className={`${styles.navBetween} d-flex align-items-center`} >
-        <div>
-          {/*Nav for large screens and wider */}
-          <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
-            <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2023")} tabIndex='-1'>2023</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2022")} tabIndex='-1'>2022</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2021")} tabIndex='-1'>2021</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2020")} tabIndex='-1'>2020</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2019")} tabIndex='-1'>2019</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2018")} tabIndex='-1'>2018</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2017")} tabIndex='-1'>2017</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2016")} tabIndex='-1'>2016</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2015")} tabIndex='-1'>2015</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2014")} tabIndex='-1'>2014</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2013")} tabIndex='-1'>2013</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2012")} tabIndex='-1'>2012</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2011")} tabIndex='-1'>2011</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("2010")} tabIndex='-1'>2010</Nav.Item>
-            <Nav.Item as="li" onClick={() => handleYearClick("-1")} tabIndex='-1'>Noteworthy Entrepreneurs</Nav.Item>
-          </Nav>
-          {/*Nav for medium screens and smaller */}
-          <Nav as="ul" className={`d-lg-none`}>
-            <NavDropdown  className={styles.titleStyle} title={selectedYear || "Select Year"} id="collapsable-nav-dropdown">
-              <NavDropdown.Item onClick={() => handleYearClick(null)}>
-                All
-              </NavDropdown.Item>   
-              <NavDropdown.Item onClick={() => handleYearClick("2023")}>
-                2023
-              </NavDropdown.Item>    
-              <NavDropdown.Item onClick={() => handleYearClick("2022")}>
-                2022
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => handleYearClick("2021")}>
-                2021
-              </NavDropdown.Item>             
-            {/* Add more years here */}
-            </NavDropdown>
-          </Nav>
-        </div>
-      </div>
+                {/*Nav for large screens and wider */}
+                <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
+                  <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2023")} tabIndex='-1'>2023</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2022")} tabIndex='-1'>2022</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2021")} tabIndex='-1'>2021</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2020")} tabIndex='-1'>2020</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2019")} tabIndex='-1'>2019</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2018")} tabIndex='-1'>2018</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2017")} tabIndex='-1'>2017</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2016")} tabIndex='-1'>2016</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2015")} tabIndex='-1'>2015</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2014")} tabIndex='-1'>2014</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2013")} tabIndex='-1'>2013</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2012")} tabIndex='-1'>2012</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2011")} tabIndex='-1'>2011</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("2010")} tabIndex='-1'>2010</Nav.Item>
+                  <Nav.Item as="li" onClick={() => handleYearClick("-1")} tabIndex='-1'>Noteworthy Entrepreneurs</Nav.Item>
+                </Nav>
+                {/*Nav for medium screens and smaller */}
+                <Nav as="ul" className={`d-lg-none`}>
+                  <NavDropdown  className={styles.titleStyle} title={selectedYear || "Select Year"} id="collapsable-nav-dropdown">
+                    <NavDropdown.Item onClick={() => handleYearClick(null)}>
+                      All
+                    </NavDropdown.Item>   
+                    <NavDropdown.Item onClick={() => handleYearClick("2023")}>
+                      2023
+                    </NavDropdown.Item>    
+                    <NavDropdown.Item onClick={() => handleYearClick("2022")}>
+                      2022
+                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => handleYearClick("2021")}>
+                      2021
+                    </NavDropdown.Item>             
+                  {/* Add more years here */}
+                  </NavDropdown>
+                </Nav>
+              </div>
               <IconPair />
             </div>
           </Col>
