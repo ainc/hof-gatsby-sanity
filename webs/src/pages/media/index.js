@@ -39,9 +39,11 @@ const MediaPage = ({data}) => {
           <Container>
             <Row >
                 <Col md={8} sm={12}>
-                    <Title style={{paddingBottom: '2.75rem', paddingTop: "-1rem"}} className='pt-5'>Podcast</Title>
+                <div className='py-5 my-3 d-flex' style={{borderBottom: '1px solid #bbb'}}>
+                    <Title style={{borderBottom: 'none'}}>Podcast</Title>
+                </div>
                     <div className="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" className='pt-3'frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" className='pt-3' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <Title className='py-5'>Book</Title>
                     <div className="ratio ratio-16x9">
@@ -77,16 +79,13 @@ const MediaPage = ({data}) => {
                     <PressComp allPress={allPress} /> 
                 </Col>
                 <Col md={4} sm={12}>
-                <div className='d-flex justify-content-between align-items-center position-relative pb-n2' style={{paddingBottom: "-30px"}}>
-                    <Title className='pt-4 w-100 d-flex justify-content-between align-items-center pb-5' styles={{borderBottom: '1px solid #bbb', paddingBottom: '-3px'}}>
-                        Recent
-                        <IconPair/>
-                    </Title>
-                    
-                </div>            
+                <div className='d-flex justify-content-between py-5 my-1 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
+                    <Title  style={{borderBottom: 'none'}}>Recent</Title>
+                    <IconPair />
+                </div>          
                 <ul className={styles.ceremonyVideos}>
                         {allCeremony.map(node => (
-                            <li key={node.name}>
+                            <li key={node.name} className='py-2'>
                                 <p>{node.name}</p>
                                 <a className={styles.videoLink} href={node.videoLink} target="_blank" rel="shadowbox">
                                     <div className='ratio ratio-16x9'>
