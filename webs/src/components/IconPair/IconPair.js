@@ -9,7 +9,7 @@ import FoundersLogo from '../../images/founders_logo.png'
 
 const IconPair = ( props ) => {
     return(
-        <div>
+        <div className="d-flex">
             <a href='https://awesomeinc.org/fellowship/' target="_blank">
                 <StaticImage placeholder='blurred' src='../../images/Logo_Square.png'  className='mx-1' style={{maxHeight: '75px', maxWidth: '50px'}} />
             </a>
