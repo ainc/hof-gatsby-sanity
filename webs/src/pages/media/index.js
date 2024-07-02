@@ -24,7 +24,7 @@ const MediaPage = ({data}) => {
                 currentYear = articleYear;
 
                 return (
-                    <Title className={styles.pressContent}>
+                    <Title >
                         {yearHeading}
                         <a href={node.link}><h4>{node.title}</h4></a>
                         <p>{node.date} - {node.publisher}</p>
@@ -37,14 +37,17 @@ const MediaPage = ({data}) => {
     return (
         <Layout>
           <Container>
-
             <Row >
                 <Col md={8} sm={12}>
                     <Title className='py-5'>Podcast</Title>
-                    <iframe className={styles.podcastVideo} src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div className="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                     <Title className='py-5'>Book</Title>
-                    <iframe className={styles.podcastVideo} src="https://www.youtube.com/embed/uUbLe0U6Fdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <section className={styles.mediaInfo}>
+                    <div className="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/uUbLe0U6Fdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <section className='mt-3'>
                         <h3>Stories inside include:</h3>
                         <ul>
                             <li>What Jim Host (Host Communications) did after going from having $1,800,000 to being in debt $560,000
@@ -74,24 +77,28 @@ const MediaPage = ({data}) => {
                     <PressComp allPress={allPress} /> 
                 </Col>
                 <Col md={4} sm={12}>
-                <div className='d-flex justify-content-between mx-4 py-4 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
-                    <Title  style={{borderBottom: 'none'}}>Recent</Title>
-                    <IconPair />
+                <div className='d-flex justify-content-between align-items-center mb-n1 position-relative' style={{borderBottom: '1px solid #bbb', paddingBottom: "-3px"}}>
+                    <Title className='pt-5 pb-5' styles={{borderBottom: '1px solid #bbb', paddingBottom: '-3px'}}>
+                        Recent
+                        
+                    </Title>
+                    <IconPair className='position-absolute end-0'/>
                 </div>            
-                <ul className={styles.ceremonyVideos}>
+                <ul style={{listStyleType: 'none'}}>
                         {allCeremony.map(node => (
                             <li key={node.name}>
                                 <p>{node.name}</p>
                                 <a className={styles.videoLink} href={node.videoLink} target="_blank" rel="shadowbox">
+                                    <div className='ratio ratio-16x9'>
                                     <GatsbyImage
                                         className={styles.thumbnail} 
                                         image={node.image.asset.gatsbyImageData} 
                                         alt={node.name} 
                                         
                                     />
-                                    <div className={styles.play}>
+                                    </div>
+                                    <div className='position-absolute start-50 top-50 translate-middle'>
                                         <StaticImage 
-                                            className={styles.iconPlayCircle}
                                             src='../../images/founders_logo_white_smallest.png'
                                         />
                                         <p className={styles.videoText}>{node.name}</p>

@@ -14,9 +14,7 @@ h4 {
 
 .podcastHeader {
     display: flex;
-    margin: 40px;
     margin-top: 20px;
-    margin-left: 100px;
     padding-bottom: 77px;
 }
 
@@ -28,53 +26,16 @@ h4 {
 
 }
 
-.pressHeader {
-    display: flex;
-    margin-right: 40px;
-    margin-top: 20px;
-    margin-left: 100px;
-    padding-bottom: 77px;
-}
-
-.awesomeLogo {
-    margin: 0px;
-    width: 45px;
-    height: 50px;
- 
-}
-
-.founderLogo {
-    width: 50px;
-    height: 50px;
-    margin-left: 15px;
-}
-
-.logos {
-    margin-left: 50%;
-}
 .podcastVideo {
-    width: 760px;
-    height: 340px;
-    margin-left: 100px;
+    width: 100%;
+    //height: 340px;
 }
 
 .thumbnail {
-    width: 350px;
-    height: 197px;
-    padding: 8px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
     border: 8px solid white;
     max-width: 100%;
 
-}
-
-.mediaInfo {
-    margin-left: 100px;
-    margin-right: 80px;
-    margin-top: 20px;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 0 !important;
 }
 
 a {
@@ -82,27 +43,15 @@ a {
     text-decoration: none;
 }
 
-.ceremonyVideos {
-    list-style-type: none;
-}
-
 p {
     font-size: 16px;
 }
 
-.iconPlayCircle {
-    content: url('../../images/founders_logo_white_smallest.png');
-    position: relative;
-    opacity: 30%;
-}
 
-.pressContent {
-    margin-left: 100px;
-}
 
 .pressContent h4, .pressContent p {
     margin-top: 5px !important;
-    margin-left: 20px;
+
     font-family: 'Muli';
     line-height: 26px;
 }
@@ -115,7 +64,7 @@ p {
 .videoLink {
     position: relative;
     text-align: center;
-    margin-top: -8px;
+    margin-top: -6px;
     margin-bottom: 10px;
 }
 
