@@ -9,9 +9,22 @@ export default {
         type: 'string'
       },
       {
-        name: 'videoLink',
-        title: 'Video Link',
+        name: 'videoEmbedLink',
+        title: 'Video Embed Link',
         type: 'url'
+      },
+      {
+        name: 'preview',
+        title: 'Preview',
+        type: 'image'
+      },
+      {
+        name: 'year',
+          title: 'Year',
+          type: 'date',
+          options: {
+            dateFormat: 'YYYY'
+          }
       }
     ]
   }
