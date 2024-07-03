@@ -24,7 +24,12 @@
     position: relative;
     
 }
-
+.button:hover {
+    background-color: rgb(200, 200, 200);
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    border-color: #666;
+}
 .buttonContainer{
     display: flex;
     flex-direction: column;
