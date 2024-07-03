@@ -1,15 +1,17 @@
 import {defineCliConfig} from 'sanity/cli'
 
-export default defineCliConfig([{
+export default defineCliConfig({
   api: {
     projectId: 'b1gnc6rj',
-    dataset: 'production'
-  }
-},
-{
-  api: {
-    projectId: 'b1gnc6rj',
-    dataset: 'development'
-  }
-}
-])
+  },
+  graphql: [
+    {
+      workspace: 'production-workspace',
+      dataset: 'production',
+    },
+    {
+      workspace: 'development-workspace',
+      dataset: 'development',
+    }
+  ]
+})
