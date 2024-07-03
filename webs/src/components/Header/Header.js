@@ -21,7 +21,7 @@ const Header = () => {
                 <Nav.Link as='li' className='mx-2'><a href="/media" className={styles.links}>Media</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="/book" className={styles.links}>Book</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="/founders-series" className={styles.links}>Founders Series</a></Nav.Link>
-                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>The Fellowship</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="/fellowship" className={styles.links}>The Fellowship</a></Nav.Link>
                 <NavDropdown title={<span className={styles.links}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenuLg}>
                   <NavDropdown.Item  className={styles.dropdownItems} href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI">
                     Hall of Fame
