@@ -23,8 +23,7 @@ export default {
     {
       title: 'Bio',
       name: 'bio',
-      type: 'array',
-      of: [{type: 'block'}]
+      type: 'text',
     },
     {
       name: 'profileVideo',

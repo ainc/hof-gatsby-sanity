@@ -24,7 +24,7 @@ async function createInducteeBioPages(graphql, actions) {
             current
           }
           bio
-        }
+        } 
       }
     }
   }`);
