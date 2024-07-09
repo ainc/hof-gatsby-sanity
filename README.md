@@ -63,3 +63,10 @@ Now you can do the following things:
 - [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
 - [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
 - [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+  
+## What to Do to When Making Changes to Production Structure
+
+1.  Make changes in Sanity Studio to the structure.
+2.  Run the following commands to transfer the changes made to the structure in the production database to the development database.
+>   yarn clone
+
