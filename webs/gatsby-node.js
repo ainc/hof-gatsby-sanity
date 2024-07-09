@@ -23,7 +23,11 @@ async function createInducteeBioPages(graphql, actions) {
           slug {
             current
           }
-          bio
+          bio{
+            children{
+              text
+            }
+          }
         } 
       }
     }
