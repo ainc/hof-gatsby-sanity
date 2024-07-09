@@ -9,6 +9,7 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
+    "clone": "sanity dataset export production production && sanity dataset import production.tar.gz development --replace",
     "deploy-graphql": "sanity graphql deploy"
   },
   "keywords": [
@@ -19,7 +20,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "sanity": "^3.47.0",
+    "sanity": "^3.49.0",
     "styled-components": "^6.0.7"
   },
   "devDependencies": {
