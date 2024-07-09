@@ -20,11 +20,12 @@ export default {
       },
       validation: (Rule) => Rule.required(),
   },
-    {
-      title: 'Bio',
-      name: 'bio',
-      type: 'text',
-    },
+  {
+    title: 'Bio',
+    name: 'bio',
+    type: 'array', 
+    of: [{type: 'block'}]
+  },
     {
       name: 'profileVideo',
       title: 'Profile Video Link',
