@@ -8,7 +8,7 @@ const crypto = require('crypto');
 // Initialize the Sanity client
 const client = sanityClient({
   projectId: 'b1gnc6rj',  // Replace with your Sanity project ID
-  dataset: 'production',      // Replace with your Sanity dataset name
+  dataset: 'development',      // Replace with your Sanity dataset name
   token: 'skibTC9jtILPwMyaSNzDZMlhMpI2SseBCke4WCBnsfyNaGGltpDxFrvpmOIrsnJIFpRWLBrooCTjyyJlHzZJIf7Owd998a1YlKVbRgCYBAShHnXVuulSf555rb44undcdZogY3mzc9WuvekGDRAUwD2l6pSH3jwHRwF8U9VPM2hazuDT82p5',    // Replace with your Sanity token
   useCdn: false                // `false` if you want to ensure fresh data
 });
