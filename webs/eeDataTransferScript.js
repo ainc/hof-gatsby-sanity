@@ -17,6 +17,7 @@ const client = sanityClient({
 const jsonDataFilePath = './emerging.json';
 const localImagesPath = './src/images/ee';  // Path to your local images folder
 
+
 fs.readFile(jsonDataFilePath, 'utf8', async (err, data) => {
   if (err) {
     console.error('Error reading JSON file:', err);
@@ -42,31 +43,21 @@ fs.readFile(jsonDataFilePath, 'utf8', async (err, data) => {
         mainPic = await uploadLocalImage(path.join(localImagesPath, imageName), entry.display_name, 'main');
       }
 
-
       // Prepare the document to be sent to Sanity
       const sanityDoc = {
-        _type: 'inductee',
+        _type: 'emergingEntrepreneur',
         inductee: {
           _type: 'inducteeTemplate',
           name: entry.display_name,
           company: entry.company,
-          tagline: entry.tagline,
           year: entry.year_class,
           profilePhoto: mainPic ? { _type: 'image', asset: { _type: 'reference', _ref: mainPic } } : null,
         },
-        slug: {
-          _type: 'slug',
-          current: entry.abbreviated_name
-        },
-        bio: formatBio(entry.bio),  // Converts bio text to Sanity block content
-        profileVideo: entry.profileVideo.videoLink,
-        profileVideoImage: profileVideoImageId ? { _type: 'image', asset: { _type: 'reference', _ref: profileVideoImageId } } : null,
-        inductionCeremonyVideo: entry.inductionVideo.videoLink,
-        InductionVideoImage: inductionVideoImageId ? { _type: 'image', asset: { _type: 'reference', _ref: inductionVideoImageId } } : null
+        linkedin: entry.ext_url
       };
 
       // Check if the document already exists
-      const existingDoc = await client.fetch('*[_type == "inductee" && inductee.name == $name][0]', {
+      const existingDoc = await client.fetch('*[_type == "emergingEntrepreneur" && inductee.name == $name][0]', {
         name: entry.display_name
       });
 
@@ -105,27 +96,4 @@ async function uploadLocalImage(localImagePath, personName, imageType) {
     console.error(`Error uploading local image ${localImagePath} for ${personName}:`, error);
     return null;
   }
-}
-
-// Function to convert bio text to Sanity block content
-function formatBio(bioText) {
-  if (!bioText) return [];
-  return [
-    {
-      _type: 'block',
-      _key: generateKey(),
-      children: [
-        {
-          _type: 'span',
-          _key: generateKey(),
-          text: bioText,
-        }
-      ]
-    }
-  ];
-}
-
-// Function to generate a unique key
-function generateKey() {
-  return crypto.randomBytes(16).toString('hex');
 }
