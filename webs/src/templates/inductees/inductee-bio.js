@@ -5,13 +5,14 @@ import '../../styles/main.scss'
 import * as styles from './inductee-bio.module.scss'
 import Sponsors from '../../components/Sponsors/sponsors'
 import Layout from '../../components/Layout/Layout'
-
+import {PortableText} from '@portabletext/react'
+import Body from '../../components/Body/Body'
 const InducteeBio = ({ pageContext }) => {
 
     const inducteeInfo = pageContext.post;
 
     const inducteeImage = getImage(inducteeInfo.inductee.profilePhoto.asset.gatsbyImageData)
-
+    console.log(inducteeInfo.bio[0].children[0].text)
     return (
     <Layout>
         <Container>
@@ -29,7 +30,7 @@ const InducteeBio = ({ pageContext }) => {
                 <Col>
                     <h2>{inducteeInfo.inductee.name}</h2>
                     <h3>{inducteeInfo.inductee.title}, {inducteeInfo.inductee.company}</h3>
-                    <p>{inducteeInfo.bio}</p>
+                    <Body>{inducteeInfo.bio[0].children[0].text}</Body>
                 </Col>
             </Row>
             {inducteeInfo.profileVideo && inducteeInfo.inductionCeremonyVideo && (

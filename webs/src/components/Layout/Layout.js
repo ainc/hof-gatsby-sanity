@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
         <div>
             <SEO />
             <Header />
-            <main style={{margin: '0', padding: '0'}}>
+            <main style={{margin: '0', padding: '0', background: "#e6e6e6 url('../../images/body_bg.jpg') center repeat-y"}}>
                 {children}
             </main>
             <Footer />
