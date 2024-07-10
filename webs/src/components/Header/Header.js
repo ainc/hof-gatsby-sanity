@@ -39,7 +39,7 @@ const Header = () => {
                     President/Executive
                   </NavDropdown.Item>
                 </NavDropdown>                
-                <Nav.Link as='li' className='mx-2'><a href="/inductionDinner" className={styles.links}>Induction Dinner</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="/induction-dinner" className={styles.links}>Induction Dinner</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Sponsors</a></Nav.Link>
               </Nav>
             </Navbar>
