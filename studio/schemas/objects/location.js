@@ -24,10 +24,17 @@ export default {
             title: 'Zip Code'
         },
         {
+            name: 'link',
+            type: 'url',
+            title: 'Relevant Link',
+            description: 'ex. link for Directions/Parking or link to book hotel'
+        },
+        {
             name: 'contact',
             type: 'contactInfo',
             title: 'Contact Info',
             description: 'For venue'
         }
+        
     ]
 }

@@ -26,6 +26,14 @@ export default {
         name: 'profilePhoto',
         title: 'Profile Photo',
         type: 'image'
+      }, 
+      {
+        name: 'year',
+          title: 'Year',
+          type: 'date',
+          options: {
+            dateFormat: 'YYYY'
+          }
       }
     ]
   }

@@ -4,6 +4,8 @@ import link from "./objects/link"
 import inducteeTemplate from "./objects/inducteeTemplate"
 import location from "./objects/location"
 import contactInfo from "./objects/contactInfo"
+import dinnerPrice from "./objects/dinnerPrice"
+import hotel from "./objects/hotel"
 // Documents
 import inductees from "./documents/inductees"
 import emergingEntrepreneurs from "./documents/emergingEntrepreneurs"
@@ -23,6 +25,8 @@ export const schemaTypes = [
     inducteeTemplate,
     location,
     contactInfo,
+    dinnerPrice,
+    hotel,
     //documents
     inductees, 
     emergingEntrepreneurs,

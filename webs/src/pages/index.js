@@ -6,7 +6,7 @@ import InducteeCard from "../components/InducteeCard/InducteeCard";
 import '../styles/main.scss'; 
 import * as styles from './index.module.scss'
 import Layout from "../components/Layout/Layout";
-import Sponsors from "../components/Sponsors/Sponsors";
+import Sponsors from "../components/Sponsors/sponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
 import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
@@ -93,8 +93,13 @@ const IndexPage = ({ data }) => {
           </Col>
         </Row>
       </Container>
-      <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
+      <div id = "InducteeSection">
+        <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
+      </ div>
       <InducteeNav title="Emerging Entrepreneurs" data={Emerging} selectedYear={emergingSelectedYear} setSelectedYear={setEmergingSelectedYear}/>
+      <div id = "SponsorSection">
+        <Sponsors />
+      </div>
       <Container>
         <Row>
           <Col>
