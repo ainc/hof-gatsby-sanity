@@ -1,31 +1,31 @@
 export default {
-    name: 'inductee',
-    title: 'Inductees',
-    type: 'document',
-    fields: [
-      {
-        name: 'inductee',
-        type: 'inducteeTemplate',
-        title: 'Inductee',
-        validation: (Rule) => Rule.required(),
-      },
-      {
-        name: 'slug',
-        type: 'slug',
-        title: 'Slug',
-        description: "You must click the 'generate' button after entering the name in order to create the url for the inductee.",
-        options: {
-          source: 'inductee.name',
-          maxLength: 96
-        },
-        validation: (Rule) => Rule.required(),
+  name: 'inductee',
+  title: 'Inductees',
+  type: 'document',
+  fields: [
+    {
+      name: 'inductee',
+      type: 'inducteeTemplate',
+      title: 'Inductee',
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Bio',
-      name: 'bio',
-      type: 'array',
-      of: [{type: 'block'}]
-    },
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      description: "You must click the 'generate' button after entering the name in order to create the url for the inductee.",
+      options: {
+        source: 'inductee.name',
+        maxLength: 96
+      },
+      validation: (Rule) => Rule.required(),
+  },
+  {
+    title: 'Bio',
+    name: 'bio',
+    type: 'array', 
+    of: [{type: 'block'}]
+  },
     {
       name: 'profileVideo',
       title: 'Profile Video Link',

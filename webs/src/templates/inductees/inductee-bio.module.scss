@@ -4,12 +4,53 @@
     width: 200px;
     background-size: cover;
     background-position: center;
-    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
     padding: 8px;
     background: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.videoContainer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    padding: 8px;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.videoContainer GatsbyImage {
+    padding: 8px;
+    width: 100%;
+    height: 210px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .image-container {
     position: relative;
 }
+
+.company {
+    font-size: 16px;
+    font-weight: 200;
+    color: rgb(136, 136, 136)
+}
+
+.videosTitle {
+    border-bottom: 1px solid #bbb;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.videosTitle h3 {
+    margin: auto;
+    margin-bottom: -12px;
+    background: rgb(230, 230, 230);
+    width: 170px;
+}
+

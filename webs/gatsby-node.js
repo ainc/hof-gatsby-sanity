@@ -20,15 +20,25 @@ async function createInducteeBioPages(graphql, actions) {
           }
           inductionCeremonyVideo
           profileVideo
+          profileVideoImage{
+            asset {
+             gatsbyImageData
+             }
+          }
+          InductionVideoImage {
+            asset {
+              gatsbyImageData
+            }
+          }
           slug {
             current
           }
-          bio {
-            children {
+          bio{
+            children{
               text
             }
           }
-        }
+        } 
       }
     }
   }`);
@@ -47,7 +57,7 @@ async function createInducteeBioPages(graphql, actions) {
             path: path,
             component: inducteeBio,
             context: { 
-                post: node, 
+                post: edge.node, 
             },
         });
     });
