@@ -124,7 +124,7 @@ const InductionDinnerPage = ({ data }) => {
             </Row>
           </Container>
             
-            <Sponsors />
+          <Sponsors />
         </Layout>
     )
 
