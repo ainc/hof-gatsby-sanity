@@ -20,26 +20,37 @@ export default {
         },
         validation: (Rule) => Rule.required(),
     },
-      {
-        name: 'bio',
-        title: 'Bio',
-        type: 'text'
-      },
-      {
-        name: 'profileVideo',
-        title: 'Profile Video Link',
-        type: 'url'
-      },
-      {
-        name: 'inductionCeremonyVideo',
-        title: 'Induction Ceremony Video Link',
-        type: 'url'
-      }
-    ],
-    preview: {
-      select: {
-        title: 'inductee.name',
-      }
+    {
+      title: 'Bio',
+      name: 'bio',
+      type: 'array',
+      of: [{type: 'block'}]
+    },
+    {
+      name: 'profileVideo',
+      title: 'Profile Video Link',
+      type: 'url'
+    },
+    {
+      name: 'profileVideoImage',
+      title: 'profile Video Image',
+      type: 'image'
+    },
+    {
+      name: 'inductionCeremonyVideo',
+      title: 'Induction Ceremony Video Link',
+      type: 'url'
+    },
+    {
+      name: 'InductionVideoImage',
+      title: 'Induction Video Image',
+      type: 'image'
+    }
+  ],
+  preview: {
+    select: {
+      title: 'inductee.name',
     }
   }
+}
   

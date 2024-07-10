@@ -23,7 +23,11 @@ async function createInducteeBioPages(graphql, actions) {
           slug {
             current
           }
-          bio
+          bio {
+            children {
+              text
+            }
+          }
         }
       }
     }
@@ -33,6 +37,7 @@ async function createInducteeBioPages(graphql, actions) {
     
     //Create individual blog post
     const postEdges = result.data.allSanityInductee.edges;
+    const inducteeBio = path.resolve("./src/templates/inductees/inductee-bio.js");
 
     postEdges.forEach((edge) => {
         // const id = edge.node.id;
@@ -40,9 +45,9 @@ async function createInducteeBioPages(graphql, actions) {
 
         createPage({
             path: path,
-            component: require.resolve("./src/templates/inductees/inductee-bio.js"),
+            component: inducteeBio,
             context: { 
-                post: edge.node, 
+                post: node, 
             },
         });
     });
