@@ -68,6 +68,6 @@ Now you can do the following things:
 
 1.  Make changes in Sanity Studio to the structure.
 2.  Run the following commands to transfer the changes made to the structure in the production database to the development database.
-> cd studio
+> cd studio    
 > npm run clone
 
