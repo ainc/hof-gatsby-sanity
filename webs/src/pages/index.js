@@ -93,8 +93,13 @@ const IndexPage = ({ data }) => {
           </Col>
         </Row>
       </Container>
-      <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
+      <div id = "InducteeSection">
+        <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
+      </ div>
       <InducteeNav title="Emerging Entrepreneurs" data={Emerging} selectedYear={emergingSelectedYear} setSelectedYear={setEmergingSelectedYear}/>
+      <div id = "SponsorSection">
+        <Sponsors />
+      </div>
       <Container>
         <Row>
           <Col>
