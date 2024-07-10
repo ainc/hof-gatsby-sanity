@@ -169,4 +169,4 @@ export const query = graphql`
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>Kentucky Entrepreneur Hall of Fame</title>

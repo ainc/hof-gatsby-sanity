@@ -139,6 +139,7 @@ export const query = graphql`
     }
 `;
 
+export const Head = () => <title>Media</title>
 
 
 export default MediaPage;

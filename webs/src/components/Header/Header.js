@@ -40,7 +40,7 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>                
                 <Nav.Link as='li' className='mx-2'><a href="/induction-dinner" className={styles.links}>Induction Dinner</a></Nav.Link>
-                <Nav.Link as='li' className='mx-2'><a href="#" className={styles.links}>Sponsors</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="#sponsors" className={styles.links}>Sponsors</a></Nav.Link>
               </Nav>
             </Navbar>
         </Container>
@@ -76,7 +76,7 @@ const Header = () => {
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="/induction-dinner" className={styles.links} as='li'>Induction Dinner</Nav.Link>
-              <Nav.Link href="/sponsors" className={styles.links} as='li'>Sponsors</Nav.Link>
+              <Nav.Link href="#sponsors" className={styles.links} as='li'>Sponsors</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
