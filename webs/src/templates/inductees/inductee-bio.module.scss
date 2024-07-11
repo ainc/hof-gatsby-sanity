@@ -26,8 +26,8 @@
 
 .videoContainer GatsbyImage {
     padding: 8px;
-    width: 100%;
-    height: 210px;
+   // width: 100%;
+   // height: 210px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -54,3 +54,19 @@
     width: 170px;
 }
 
+.playIcon {
+    opacity: 40%;
+}
+
+.videoText {
+    color:rgb(255, 255, 255);
+    opacity: 40%;
+}
+
+.videoContainer:hover .videoText {
+    opacity: 90%;
+}
+
+.videoContainer:hover .playIcon {
+    opacity: 100%;
+}
