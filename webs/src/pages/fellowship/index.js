@@ -36,3 +36,5 @@ const FellowshipPage = () => {
 }
 
 export default FellowshipPage;
+
+export const Head = () => <title>Fellowship</title>
