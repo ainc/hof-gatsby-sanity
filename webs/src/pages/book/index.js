@@ -222,4 +222,4 @@ export const query = graphql`
 
 export default BookPage;
 
-export const Head = () => <title>Book Page</title>
+export const Head = () => <title>HOF Book</title>
