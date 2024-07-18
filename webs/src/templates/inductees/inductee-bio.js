@@ -5,7 +5,7 @@ import '../../styles/main.scss'
 import * as styles from './inductee-bio.module.scss'
 import Sponsors from '../../components/Sponsors/sponsors'
 import Layout from '../../components/Layout/Layout'
-import {PortableText} from '@portabletext/react'
+
 import Body from '../../components/Body/Body'
 const InducteeBio = ({ pageContext }) => {
 
