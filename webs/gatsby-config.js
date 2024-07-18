@@ -1,14 +1,15 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-  console.log(process.env.NODE_ENV)
+console.log(process.env.NODE_ENV)
 require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV}`
-
+  path: `.env.${process.env.NODE_ENV || 'production'}`
 })
+
+
 const clientConfig = require('./client-config')
-  const token = process.env.SANITY_READ_TOKEN
-  const isProd = process.env.NODE_ENV === 'production'
+const token = process.env.SANITY_READ_TOKEN
+const isProd = process.env.NODE_ENV === 'production'
   
   module.exports = {
     siteMetadata: {
