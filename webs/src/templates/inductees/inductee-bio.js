@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
+import React from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {Row, Col, Container, Card} from 'react-bootstrap'
 import '../../styles/main.scss'
 import * as styles from './inductee-bio.module.scss'
-import Sponsors from '../../components/Sponsors/sponsors'
+import Sponsors from '../../components/Sponsors/Sponsors'
 import Layout from '../../components/Layout/Layout'
 
 import Body from '../../components/Body/Body'

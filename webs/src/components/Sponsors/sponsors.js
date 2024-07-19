@@ -1,5 +1,5 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -31,7 +31,7 @@ const Sponsors = () => {
                 <h3>Presenting Sponsor</h3>
                 {presentingSponsor.map((node, index) => (
                     <Col md={12} className='my-5'>
-                        <a href={node.link} target='_blank' className='mt-3'>
+                        <a href={node.link} target='_blank' className='mt-3' rel="noreferrer">
                             <GatsbyImage image={node.image.asset.gatsbyImageData} alt={node.name} style={{maxWidth: '40%'}}/>
                         </a>
                     </Col>
@@ -41,7 +41,7 @@ const Sponsors = () => {
                 <h3>Gold Sponsor</h3>
                 {goldSponsor.map((node, index) => (
                     <Col className='my-3'>
-                        <a href={node.link} target='_blank' className='mt-3'>
+                        <a href={node.link} target='_blank' className='mt-3' rel="noreferrer">
                             <GatsbyImage image={node.image.asset.gatsbyImageData} alt={node.name} style={{maxWidth: '55%'}}/>
                         </a>
                     </Col>
@@ -51,7 +51,7 @@ const Sponsors = () => {
                 <h3>Silver Sponsor</h3>
                 {silverSponsor.map((node, index) => (
                     <Col className='my-3'>
-                        <a href={node.link} target='_blank' className='mt-3'>
+                        <a href={node.link} target='_blank' className='mt-3' rel="noreferrer">
                             <GatsbyImage image={node.image.asset.gatsbyImageData} alt={node.name} style={{maxWidth: '60%'}}/>
                         </a>
                     </Col>
