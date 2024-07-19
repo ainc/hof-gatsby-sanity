@@ -38,7 +38,7 @@ function SEO({ description, lang, meta, keywords, title, path, jsImports }) {
             data.allSanityPageTitles.edges.find(page => page.node.filePath === useLocation().pathname+ "/").node.pageTitle 
           ) : (
             //if there is no page title for the current page from sanity, use the default title
-            "Entrepreneur Hall Of Fame"
+            "Kentucky Entrepreneur Hall Of Fame"
           )
     
         );
