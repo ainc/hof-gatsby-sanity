@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { Container, Row, Col } from 'react-bootstrap';
 import '../../styles/main.scss';
 import * as styles from './book.module.scss'
-import Sponsors from "../../components/Sponsors/TempSponsors";
+import Sponsors from "../../components/Sponsors/Sponsors";
 import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
 import Layout from "../../components/Layout/Layout";
