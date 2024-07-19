@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from 'gatsby'
 import { Container, Col } from 'react-bootstrap';
 import Layout from "../../components/Layout/Layout";
-import Sponsors from "../../components/Sponsors/Sponsors";
+import Sponsors from "../../components/Sponsors/TempSponsors";
 import Title from "../../components/Title/Title";
 import '../../styles/main.scss';
 import * as styles from './im.module.scss'

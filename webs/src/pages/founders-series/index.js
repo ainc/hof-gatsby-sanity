@@ -4,7 +4,7 @@ import { Container, Row, Col, Nav , NavDropdown } from 'react-bootstrap';
 import '../../styles/main.scss'; 
 import * as styles from './founders-series.module.scss'
 import Layout from "../../components/Layout/Layout";
-import Sponsors from "../../components/Sponsors/Sponsors";
+import Sponsors from "../../components/Sponsors/TempSponsors";
 import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
 import IconPair from "../../components/IconPair/IconPair";

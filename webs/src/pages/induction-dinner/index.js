@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import '../../styles/main.scss';
 import * as styles from './inductionDinner.module.scss'
 import Layout from '../../components/Layout/Layout';
-import Sponsors from '../../components/Sponsors/Sponsors';
+import Sponsors from '../../components/Sponsors/TempSponsors';
 import Title from '../../components/Title/Title';
 import Body from '../../components/Body/Body';
 import Button from '../../components/Button/Button'

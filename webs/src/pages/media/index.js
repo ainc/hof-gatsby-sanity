@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Layout from '../../components/Layout/Layout';
-import Sponsors from '../../components/Sponsors/Sponsors';
+import Sponsors from '../../components/Sponsors/TempSponsors';
 import { graphql } from 'gatsby';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
 import { Container, Row, Col } from "react-bootstrap";

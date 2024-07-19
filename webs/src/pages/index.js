@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import '../styles/main.scss'; 
 import * as styles from './index.module.scss'
 import Layout from "../components/Layout/Layout";
-import Sponsors from "../components/Sponsors/Sponsors";
+import Sponsors from "../components/Sponsors/TempSponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
 import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
