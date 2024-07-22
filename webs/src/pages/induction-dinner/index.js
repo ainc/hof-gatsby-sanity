@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
-import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../../styles/main.scss';
 import * as styles from './inductionDinner.module.scss'
 import Layout from '../../components/Layout/Layout';
@@ -118,7 +118,7 @@ const InductionDinnerPage = ({ data }) => {
               <Col className='mx-4 py-3'>
                 <h2 className={styles.induction}>Event Questions?</h2>
                 <h3 className={styles.bodyText}>Contact Lori Jo Goff</h3>
-                <a className={styles.linkText} href="mailto:lgoff@kychamber.com" target="_blank">lgoff@kychamber.com</a>
+                <a className={styles.linkText} href="mailto:lgoff@kychamber.com" target="_blank" rel='noreferrer'>lgoff@kychamber.com</a>
                 <h3 className={styles.bodyText}>502-848-8727</h3>
               </Col>
             </Row>

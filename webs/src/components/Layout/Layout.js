@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import {Row, Col, Container, Navbar} from 'react-bootstrap'
+import React from 'react'
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SEO from '../SEO/seo';

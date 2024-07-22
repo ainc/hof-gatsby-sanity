@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import React from "react"
+import { Card, Row, Col } from 'react-bootstrap';
 import { GatsbyImage } from 'gatsby-plugin-image'
 import * as styles from './inducteecard.module.scss'
 
@@ -9,14 +9,14 @@ const InducteeCard = (props) => {
     <Card className={styles.inducteeCard}>
         <div className={styles.imageContainer}>
             <GatsbyImage image={props.img} alt={props.name} />
-            <a href={props.link} className={styles.cardOverlay}>
+            <a href={props.link} className={styles.cardOverlay} aria-label='Inductee Bio'>
                 <Row>
                     <Col>
                         <span className={styles.name}>{props.name} <br />
                             <span className={styles.company}>{props.company}</span>
                         </span>
                     <span class="view-bio">
-                         <i className='icon-eye-open'></i> View Bio
+                         <i className='icon-eye-open' aria-label='View Bio'></i> View Bio
                     </span>
                     </Col>
                 </Row>
