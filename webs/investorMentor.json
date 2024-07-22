@@ -1,0 +1,121 @@
+[
+  {
+    "name": "John Willmoth",
+    "type": "Investor",
+    "linkedin": "https://www.linkedin.com/in/john-willmoth-91a7195/",
+    "profilePhoto": "img/mentors_investors/john-willmoth.jpg",
+    "year": "2023"
+  },
+  {
+    "name": "David Hasler",
+    "type": "Mentor",
+    "linkedin": "https://www.linkedin.com/in/dhasler/",
+    "profilePhoto": "img/mentors_investors/david-hasler.jpg",
+    "year": "2023"
+  },
+  {
+    "name": "Stephen Gray",
+    "type": "Executive",
+    "linkedin": "https://www.linkedin.com/in/stephen-gray-242a9/",
+    "profilePhoto": "img/mentors_investors/stephen-gray.jpg",
+    "year": "2023"
+  },
+  {
+    "name": "William (Bill) H. Lomicka",
+    "type": "Investor",
+    "linkedin": "",
+    "profilePhoto": "img/mentors_investors/bill-lomicka.jpg",
+    "year": "2022"
+  },
+  {
+    "name": "Jackson Andrews",
+    "type": "Mentor",
+    "linkedin": "https://www.linkedin.com/in/jacksonandrewsv/",
+    "profilePhoto": "img/mentors_investors/jackson-andrews.jpg",
+    "year": "2022"
+  },
+  {
+    "name": "Spencer Coates",
+    "type": "Executive",
+    "linkedin": "",
+    "profilePhoto": "img/mentors_investors/spencer-coates.jpg",
+    "year": "2022"
+  },
+  {
+    "name": "Dan Beldy",
+    "type": "Investor",
+    "linkedin": "https://www.linkedin.com/in/danbeldy/",
+    "profilePhoto": "img/mentors_investors/dan-beldy.jpg",
+    "year": "2021"
+  },
+  {
+    "name": "Eric Hartman",
+    "type": "Mentor",
+    "linkedin": "https://www.linkedin.com/in/hartmanky/",
+    "profilePhoto": "img/mentors_investors/eric-hartman.jpeg",
+    "year": "2021"
+  },
+  {
+    "name": "Luther Deaton",
+    "type": "Executive",
+    "linkedin": "",
+    "profilePhoto": "img/mentors_investors/luther-deaton.jpg",
+    "year": "2021"
+  },
+  {
+    "name":"Michael Schlotman",
+    "type":"Investor",
+    "linkedin":"https://www.linkedin.com/in/schlotman-mike-a50a1a92/",
+    "profilePhoto":"img/mentors_investors/mike-schlotman.jpg",
+    "year":"2019"
+  },
+  {
+    "name":"Greg Langdon",
+    "type":"Mentor",
+    "linkedin":"https://www.linkedin.com/in/greglangdon/",
+    "profilePhoto":"img/mentors_investors/greg-langdon.jpeg",
+    "year":"2019"
+  },
+  {
+    "name":"David Goodnight",
+    "type":"Investor",
+    "linkedin":"https://www.linkedin.com/in/davidgoodnight/",
+    "profilePhoto":"img/mentors_investors/david-goodnight.jpg",
+    "year":"2018"
+  },
+  {
+    "name":"Steve Huey",
+    "type":"Mentor",
+    "linkedin":"https://www.linkedin.com/in/steven-huey-580b0/",
+    "profilePhoto":"img/mentors_investors/steve-huey.jpg",
+    "year":"2018"
+  },
+  {
+    "name":"Bryce Butler",
+    "type":"Investor",
+    "linkedin":"https://www.linkedin.com/in/brycebutler/",
+    "profilePhoto":"img/mentors_investors/bryce_butler.jpg",
+    "year":"2017"
+  },
+  {
+    "name":"Elizabeth Rounsavall",
+    "type":"Mentor",
+    "linkedin":"https://www.linkedin.com/in/elizabethrounsavall/",
+    "profilePhoto":"img/mentors_investors/elizabeth_rounsavall.jpg",
+    "year":"2017"
+  },
+  {
+    "name":"Chris Young",
+    "type":"Investor",
+    "linkedin":"https://www.linkedin.com/in/chris-young-4990941/",
+    "profilePhoto":"img/mentors_investors/chris_young.jpg",
+    "year":"2016"
+  },
+  {
+    "name":"George Ward",
+    "type":"Mentor",
+    "linkedin":"https://www.linkedin.com/in/george-ward-5004828/",
+    "profilePhoto":"img/mentors_investors/george_ward.jpg",
+    "year":"2016"
+  }
+]
