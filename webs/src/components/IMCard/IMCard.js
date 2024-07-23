@@ -20,7 +20,7 @@ const IMCard = (props) => {
             </div>
         </Card>
         <div className={styles.linkedin}>
-        <a href={props.linkedin}>
+        <a href={props.linkedin} className={styles.linkedint}>
             LinkedIn
         </a>
         </div>
