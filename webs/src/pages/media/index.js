@@ -87,12 +87,15 @@ const MediaPage = ({data}) => {
                                 <p>{node.name}</p>
                                 <a className={styles.videoLink} href={node.videoLink} target="_blank" rel="noreferrer">
                                     <div className='ratio ratio-16x9'>
+                                    <div className={styles.thumbnail} >
                                     <GatsbyImage
-                                        className={styles.thumbnail} 
+                                        
                                         image={node.image.asset.gatsbyImageData} 
                                         alt={node.name} 
                                         
                                     />
+                                    </div>
+                                    
                                     </div>
                                     <div className='position-absolute start-50 top-50 translate-middle'>
                                         <StaticImage 
