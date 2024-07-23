@@ -11,9 +11,6 @@ function SEO({ description, lang, meta, keywords, title, path, jsImports }) {
               title
               description
               keywords
-              author {
-                name
-              }
             }
             allSanityPageTitles {
               edges {

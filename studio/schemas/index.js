@@ -17,6 +17,7 @@ import foundersVideo from "./documents/Founders Series/foundersVideo"
 import footer from "./documents/footer"
 import event from "./documents/event"
 import documents from "./documents/documents"
+import siteSettings from "./documents/siteSettings"
 
 export const schemaTypes = [
     //objects
@@ -28,6 +29,7 @@ export const schemaTypes = [
     dinnerPrice,
     hotel,
     //documents
+    siteSettings,
     inductees, 
     emergingEntrepreneurs,
     investorMentor, 
