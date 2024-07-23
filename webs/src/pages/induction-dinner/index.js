@@ -114,7 +114,7 @@ const InductionDinnerPage = ({ data }) => {
                 <a className={styles.linkText} href={documents.postEventReport.asset.url}>View/Download Last Year's Post-event Report</a>
               </Col>
             </Row>
-            <Row className={styles.end}>
+            <Row className={styles}>
               <Col className='mx-4 py-3'>
                 <h2 className={styles.induction}>Event Questions?</h2>
                 <h3 className={styles.bodyText}>Contact Lori Jo Goff</h3>
