@@ -7,6 +7,11 @@ body {
     color: #666;
 }
 
+h3 {
+    margin: 0px;
+    padding: 5px;
+}
+
 h4 {
     font-size: 18px;
     font-weight: 200;
@@ -43,6 +48,7 @@ p {
 
 .pressContent h4, .pressContent p {
     margin-top: 5px !important;
+    padding-left: 25px;
     font-family: 'Muli';
     line-height: 26px;
 }
