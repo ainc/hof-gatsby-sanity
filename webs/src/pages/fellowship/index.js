@@ -1,8 +1,6 @@
 import * as React from 'react';
-
 import Layout from '../../components/Layout/Layout';
 import Sponsors from '../../components/Sponsors/Sponsors';
-import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Title from '../../components/Title/Title';
 import * as styles from './fellowship.module.scss'
@@ -22,10 +20,10 @@ const FellowshipPage = () => {
                             potential receive access to mentors and investors, legal services, and technical talent.</p>
     	                <p>Our mission is to raise awareness of the impact that entrepreneurship has made in the Commonwealth and encourage others to pursue similar ambitious endeavors.</p>
     	                <p>With mentorship and support of the Kentucky Entrepreneurship Hall of Fame inductees, Fellowship companies have raised over $154m in outside funding as well as created over 784 jobs for the state of Kentucky.</p>
-    	                <Button className={styles.button} href="https://awesomeinc.org/fellowship" target="_blank">Learn more about the Fellowship Program</Button>
+    	                <a href="https://awesomeinc.org/fellowship" target="_blank" rel="noreferrer"><Button className={styles.button}>Learn more about the Fellowship Program</Button></a>
                     </Col>
                     <Col lg={6} sm={12}>
-                        <a target="_blank" href="http://www.timwebbphotography.com/p377969083" style={{color: '#666'}}  className='float-end mt-3'>See All Photos <i class='icon-caret-right'></i></a>
+                        <a target="_blank" rel="noreferrer" href="http://www.timwebbphotography.com/p377969083" style={{color: '#666'}}  className='float-end mt-3'>See All Photos <i class='icon-caret-right'></i></a>
                     </Col>
                 </Row>
 

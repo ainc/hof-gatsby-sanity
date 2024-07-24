@@ -1,12 +1,9 @@
-import React, {useState} from "react"
+import React from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { Container, Row, Col, Navbar, Nav , NavDropdown } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 import Layout from "../../components/Layout/Layout";
-import Sponsors from "../../components/Sponsors/sponsors";
-import IconPair from "../../components/IconPair/IconPair";
+import Sponsors from "../../components/Sponsors/Sponsors";
 import Title from "../../components/Title/Title";
-import Body from "../../components/Body/Body";
 import '../../styles/main.scss';
 import * as styles from './im.module.scss'
 import IMCard from "../../components/IMCard/IMCard";
@@ -22,7 +19,7 @@ const InverstorMentor = ({ data }) => {
         <div className={styles.spacing}>
         {allIM.map(node => {
             const year = node.year;
-            const yearHeading = year !== currentYear ? <h3 className={styles.yearHeader}>{year}</h3> : null;
+            const yearHeading = year !== currentYear ? <h3>{year}</h3> : null;
             currentYear = year;
             if (yearHeading !== null){
               return (
