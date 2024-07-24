@@ -100,7 +100,7 @@ const IndexPage = ({ data }) => {
         <Row>
           <Col>
             <Body className='mx-4'><span className="fw-bold">Note:</span> The companies or organizations listed for each Emerging Entrepreneur are those with which the honoree was most closely associated at the time of recognition.</Body>
-            <Title className='mx-4 py-5'><a className='link' href='/investors-mentors'>Investors and Mentors of the Year</a></Title>
+            <Title className='mx-4 py-5' style={{borderBottom: 'none'}}><a className='link' href='/investors-mentors'>Investors and Mentors of the Year</a></Title>
           </Col>
         </Row>
       </Container>
