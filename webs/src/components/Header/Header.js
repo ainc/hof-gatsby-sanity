@@ -1,6 +1,6 @@
 import { StaticImage } from 'gatsby-plugin-image';
-import React, {useState, useEffect} from 'react';
-import {Row, Col, Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import React from 'react';
+import {Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import * as styles from './header.module.scss';
 
 const Header = () => {

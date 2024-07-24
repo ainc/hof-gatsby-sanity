@@ -1,14 +1,12 @@
 import * as React from 'react';
-
 import Layout from '../../components/Layout/Layout';
 import Sponsors from '../../components/Sponsors/Sponsors';
 import { graphql } from 'gatsby';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Title from '../../components/Title/Title';
 import * as styles from './media.module.scss'
 import IconPair from '../../components/IconPair/IconPair';
-import image from '../../images/founders_logo_white_smallest.png';
 
 const MediaPage = ({data}) => {
     const allPress = data.allSanityPress.nodes || {};
@@ -43,11 +41,11 @@ const MediaPage = ({data}) => {
                     <Title style={{borderBottom: 'none'}}>Podcast</Title>
                 </div>
                     <div className="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" className='pt-3' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk" className='pt-3' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title='Podcast Video'></iframe>
                     </div>
                     <Title className='py-5'>Book</Title>
                     <div className="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/uUbLe0U6Fdk" className='pt-3' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/uUbLe0U6Fdk" className='pt-3' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title='Book Video'></iframe>
                     </div>
                     <section className='mt-3'>
                         <h3>Stories inside include:</h3>
@@ -87,14 +85,17 @@ const MediaPage = ({data}) => {
                         {allCeremony.map(node => (
                             <li key={node.name} className='py-2'>
                                 <p>{node.name}</p>
-                                <a className={styles.videoLink} href={node.videoLink} target="_blank" rel="shadowbox">
+                                <a className={styles.videoLink} href={node.videoLink} target="_blank" rel="noreferrer">
                                     <div className='ratio ratio-16x9'>
+                                    <div className={styles.thumbnail} >
                                     <GatsbyImage
-                                        className={styles.thumbnail} 
+                                        
                                         image={node.image.asset.gatsbyImageData} 
                                         alt={node.name} 
                                         
                                     />
+                                    </div>
+                                    
                                     </div>
                                     <div className='position-absolute start-50 top-50 translate-middle'>
                                         <StaticImage 

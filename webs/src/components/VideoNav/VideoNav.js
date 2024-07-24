@@ -1,11 +1,7 @@
 import React, {useState} from "react"
-import { graphql } from 'gatsby'
-import { GatsbyImage} from 'gatsby-plugin-image'
-import { Container, Row, Col, Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import InducteeCard from "../InducteeCard/InducteeCard";
+import { Container, Nav, NavDropdown } from 'react-bootstrap';
 import Title from "../Title/Title";
 import * as styles from './videonav.module.scss';
-import Body from "../Body/Body";
 
 const VideoNav = ( props ) => {
   const data = props.data
