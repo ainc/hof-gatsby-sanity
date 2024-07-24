@@ -13,14 +13,7 @@ function SEO({ description, lang, meta, keywords, title, path, jsImports }) {
               description
               keywords
             }
-            allSanityPageTitles {
-              edges {
-                  node {
-                      filePath
-                  }
-                }
-              }
-            }
+          }
           `
         )
 
