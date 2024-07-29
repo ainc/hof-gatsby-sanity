@@ -60,7 +60,7 @@ const Header = () => {
     <div className='d-lg-none'>
       <Navbar collapseOnSelect expand="lg" variant="dark"  className={styles.background}>
         <Container>
-          <Navbar.Brand href="#"><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></Navbar.Brand>
+          <Navbar.Brand><a href='/'><StaticImage placeholder='blurred' src='../../images/hof-logo.png' alt="KEHOF logo" style={{maxWidth: '80px'}} /></a></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className='border-white text-white'/>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto" as="ul">
