@@ -1,6 +1,6 @@
 import { StaticImage } from 'gatsby-plugin-image';
-import React, {useState, useEffect} from 'react';
-import {Row, Col, Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import React from 'react';
+import {Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import * as styles from './header.module.scss';
 
 const Header = () => {
@@ -39,6 +39,8 @@ const Header = () => {
                     President/Executive
                   </NavDropdown.Item>
                 </NavDropdown>                
+                <Nav.Link as='li' className='mx-2'><a href="/induction-dinner" className={styles.links}>Induction Dinner</a></Nav.Link>
+                <Nav.Link as='li' className='mx-2'><a href="#sponsors" className={styles.links}>Sponsors</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="/induction-dinner" className={styles.links}>Induction Dinner</a></Nav.Link>
                 <Nav.Link as='li' className='mx-2'><a href="#sponsors" className={styles.links}>Sponsors</a></Nav.Link>
               </Nav>
@@ -85,8 +87,8 @@ const Header = () => {
                 </a>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link className={styles.links} as='li'><a href="/induction-dinner">Induction Dinner</a></Nav.Link>
-              <Nav.Link className={styles.links} as='li'><a href="#sponsors">Sponsors</a></Nav.Link>
+              <Nav.Link href="/induction-dinner" className={styles.links} as='li'>Induction Dinner</Nav.Link>
+              <Nav.Link href="/sponsors" className={styles.links} as='li'>Sponsors</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

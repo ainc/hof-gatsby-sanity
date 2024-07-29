@@ -1,19 +1,14 @@
 import React, {useState} from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { Container, Row, Col, Navbar, Nav , NavDropdown } from 'react-bootstrap';
-import InducteeCard from "../../components/InducteeCard/InducteeCard";
+import { Container, Row, Col, Nav , NavDropdown } from 'react-bootstrap';
 import '../../styles/main.scss'; 
 import * as styles from './founders-series.module.scss'
 import Layout from "../../components/Layout/Layout";
 import Sponsors from "../../components/Sponsors/Sponsors";
-import InducteeNav from "../../components/InducteeNav/InducteeNav";
 import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
-import Button from "../../components/Button/Button";
 import IconPair from "../../components/IconPair/IconPair";
 import Video from "../../components/Video/Video";
-import VideoNav from "../../components/VideoNav/VideoNav";
 
 const FoundersSeries = ({ data }) => {
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year

@@ -1,7 +1,7 @@
-import React, {useState} from "react"
+import React from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { Container, Row, Col, btn, Navbar, Nav } from 'react-bootstrap';
+import { StaticImage } from 'gatsby-plugin-image'
+import { Container, Row, Col } from 'react-bootstrap';
 import '../../styles/main.scss';
 import * as styles from './book.module.scss'
 import Sponsors from "../../components/Sponsors/Sponsors";
@@ -33,7 +33,7 @@ const BookPage = ({ data }) => {
                     alt="Unbridled Series Vol. 1 Cover"
                     src='../../images/UBS-V1-Cover.jpg'
                   />
-                  <a href='https://www.amazon.com/dp/1619616815/' target='_blank'>
+                  <a href='https://www.amazon.com/dp/1619616815/' target='_blank' aria-label='Book Link' rel="noreferrer">
                     <button className={styles.UBSv1Button}>
                       <b>
                         Purchase Here: Unbridled Spirit Volume 1
@@ -47,7 +47,7 @@ const BookPage = ({ data }) => {
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../../images/UBS-V2-Cover.jpg'
                 />
-                 <a href='https://www.amazon.com/Unbridled-Spirit-Kentuckys-Successful-Entrepreneurs/dp/1544536704' target='_blank'>
+                 <a href='https://www.amazon.com/Unbridled-Spirit-Kentuckys-Successful-Entrepreneurs/dp/1544536704' target='_blank' rel="noreferrer">
                   <button className={styles.UBSv2Button}>
                     <b>
                       Purchase Here: Unbridled Spirit Volume 2
@@ -65,7 +65,7 @@ const BookPage = ({ data }) => {
               generation of entrepreneurs from the Bluegrass State.</Body>
             </div>
         </Row>
-        <Row  className={styles.UBSv2CoverRow}>
+        <Row>
           <div className='align-items-center'>
               <StaticImage className={styles.UBSv2CoverBig}
                     alt="Unbridled Series Vol. 2 Cover"
@@ -84,7 +84,7 @@ const BookPage = ({ data }) => {
             Entrepreneur Hall of Fame is proud to recount their stories and hard-earned
             wisdom in this exciting second volume of all-American success.</Body>
             <Body><ul><li>
-              <a className={styles.link} href='https://www.amazon.com/dp/1544536704' target='_blank'>Purchase Here: Unbridled Spirit Volume 2</a>
+              <a className={styles.link} href='https://www.amazon.com/dp/1544536704' target='_blank' rel="noreferrer">Purchase Here: Unbridled Spirit Volume 2</a>
               </li></ul></Body>  
             </div>
           </div>
@@ -134,27 +134,27 @@ const BookPage = ({ data }) => {
         <div className={`{styles.aboutAuthor} align-items-center`}>
           <Body><h3>Check out samples from the Audio version of Unbridled Spirit:</h3></Body>
           <Body><ul><li>
-              <a  className={styles.link} href='https://www.instagram.com/p/BuXfzSyhFsr/?utm_source=ig_web_button_share_sheet' target='_blank'>Junior Bridgeman</a>
+              <a  className={styles.link} href='https://www.instagram.com/p/BuXfzSyhFsr/?utm_source=ig_web_button_share_sheet' target='_blank' rel="noreferrer">Junior Bridgeman</a>
               </li>
               <li>
-              <a className={styles.link} href='https://www.instagram.com/p/BtzIZFAh6Ow/?utm_source=ig_web_button_share_sheet' target='_blank'>Lee Todd</a>
+              <a className={styles.link} href='https://www.instagram.com/p/BtzIZFAh6Ow/?utm_source=ig_web_button_share_sheet' target='_blank' rel="noreferrer">Lee Todd</a>
               </li>
               <li>
-              <a className={styles.link} href='https://www.instagram.com/p/BuEqiFYBh-o/?utm_source=ig_web_button_share_sheet' target='_blank'>Jim Host</a>
+              <a className={styles.link} href='https://www.instagram.com/p/BuEqiFYBh-o/?utm_source=ig_web_button_share_sheet' target='_blank' rel="noreferrer">Jim Host</a>
               </li>
               </ul></Body>  
             <Body>Pick up a copy of the audio book here:</Body>
             <Body><ul><li>
-              <a className={styles.link} href='http://amzn.to/2yrO97K' target='_blank'>Unbridled Spirit on Amazon</a>
+              <a className={styles.link} href='http://amzn.to/2yrO97K' target='_blank' rel="noreferrer">Unbridled Spirit on Amazon</a>
               </li>
               <li>
-              <a className={styles.link} href='https://adbl.co/2zJeaxo' target='_blank'>Unbridled Spirit on Audible (Sign in with your Amazon account too!)</a>
+              <a className={styles.link} href='https://adbl.co/2zJeaxo' target='_blank' rel="noreferrer">Unbridled Spirit on Audible (Sign in with your Amazon account too!)</a>
               </li>
               <li>
-              <a className={styles.link} href='https://itunes.apple.com/us/audiobook/unbridled-spirit-lessons-in-life-business-from-kentuckys/id1441679300' target='_blank'>Unbridled Spirit on iTunes</a>
+              <a className={styles.link} href='https://itunes.apple.com/us/audiobook/unbridled-spirit-lessons-in-life-business-from-kentuckys/id1441679300' target='_blank' rel="noreferrer">Unbridled Spirit on iTunes</a>
               </li>
               </ul></Body>  
-            <Body>Inquiries about using the book for a class on business, entrepreneurship and/or Kentucky history, please email <a className={styles.link} href='mailto:garrett.fahrbach@entrepreneurhof.com' target='_blank'>garrett.fahrbach@entrepreneurhof.com</a></Body>
+            <Body>Inquiries about using the book for a class on business, entrepreneurship and/or Kentucky history, please email <a className={styles.link} href='mailto:garrett.fahrbach@entrepreneurhof.com' target='_blank' rel="noreferrer">garrett.fahrbach@entrepreneurhof.com</a></Body>
         </div>
         </Row>
         <Sponsors />
@@ -222,4 +222,4 @@ export const query = graphql`
 
 export default BookPage;
 
-export const Head = () => <title>Book Page</title>
+export const Head = () => <title>HOF Book</title>

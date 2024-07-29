@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout';
 import Sponsors from '../../components/Sponsors/Sponsors';
 import IconPair from '../../components/IconPair/IconPair';
 import Title from '../../components/Title/Title';
-import { Container, Row, Col, Button, Stack } from "react-bootstrap";
+import { Container, Button, Stack } from "react-bootstrap";
 import * as styles from './nominate.module.scss';
 
 
@@ -41,3 +41,5 @@ const NominatePage = () => {
     );
 }
 export default NominatePage;
+
+export const Head = () => <title>Nominate</title>

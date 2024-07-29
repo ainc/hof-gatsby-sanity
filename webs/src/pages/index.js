@@ -1,8 +1,7 @@
 import React, {useState} from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap';
-import InducteeCard from "../components/InducteeCard/InducteeCard";
+import { StaticImage } from 'gatsby-plugin-image'
+import { Container, Row, Col } from 'react-bootstrap';
 import '../styles/main.scss'; 
 import * as styles from './index.module.scss'
 import Layout from "../components/Layout/Layout";
@@ -45,7 +44,7 @@ const IndexPage = ({ data }) => {
             <Body>The Kentucky Entrepreneur Hall of Fame is a physical and virtual destination that shares and celebrates the stories of Kentucky's most successful entrepreneurs.</Body>
             <Body>Our mission is to raise awareness of the impact that entrepreneurship has made in the Commonwealth and encourage others to pursue similar ambitious endeavors.</Body>
             <Body>Nominations are open for the current year's class. To nominate, fill out this form. Anyone can nominate.</Body>
-            <Body>If you have questions or would like to become involved please email us at <a className='link' href='mailto:ky@entrepreneurhof.com' target="_blank">ky@entrepreneurhof.com</a>.</Body>
+            <Body>If you have questions or would like to become involved please email us at <a className='link' href='mailto:ky@entrepreneurhof.com' target="_blank" rel="noreferrer">ky@entrepreneurhof.com</a>.</Body>
           </Col>
           <Col className='mx-4 py-5'>
             <Row>
@@ -93,13 +92,15 @@ const IndexPage = ({ data }) => {
           </Col>
         </Row>
       </Container>
-      <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
+      <div id = "InducteeSection">
+        <InducteeNav title="Inductees" data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear}/>
+      </ div>
       <InducteeNav title="Emerging Entrepreneurs" data={Emerging} selectedYear={emergingSelectedYear} setSelectedYear={setEmergingSelectedYear}/>
       <Container>
         <Row>
           <Col>
             <Body className='mx-4'><span className="fw-bold">Note:</span> The companies or organizations listed for each Emerging Entrepreneur are those with which the honoree was most closely associated at the time of recognition.</Body>
-            <Title className='mx-4 py-5'><a className='link' href='/investors-mentors'>Investors and Mentors of the Year</a></Title>
+            <Title className='mx-4 py-5' style={{borderBottom: 'none'}}><a className='link' href='/investors-mentors'>Investors and Mentors of the Year</a></Title>
           </Col>
         </Row>
       </Container>
@@ -167,4 +168,4 @@ export const query = graphql`
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>Kentucky Entrepreneur Hall of Fame</title>
