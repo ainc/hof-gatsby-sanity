@@ -22,7 +22,7 @@ const FoundersSeries = ({ data }) => {
 
   return (
     <Layout>
-      <Container>
+      <Container className=''>
         <Row>
           <Col>
             <div className='d-flex justify-content-between py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
@@ -108,7 +108,7 @@ const FoundersSeries = ({ data }) => {
             <Body>In order to share the success stories of Kentucky's entrepreneurs on a larger scale, we launched a video series where we interviewed each HOF inductee.</Body>
           </div>
         </Row>
-        <Row>
+        <Row className=''>
           {
             filteredInductees.map(node => (
               <Video link={node.videoEmbedLink} title={node.title} preview={node.preview}/>

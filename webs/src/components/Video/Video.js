@@ -11,9 +11,9 @@ const Video = ( props ) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return(
-        <div className={styles.box}>
-      <div className={styles.title}>{props.title}</div>
-      <div className={styles.imageWrapper}>
+        <div className={`d-flex flex-column ${styles.box}`}>
+        <div className={styles.title}>{props.title}</div>
+            <div className={styles.imageWrapper}>
                 <Button variant="light" onClick={handleShow}>
                     <GatsbyImage image={props.preview.asset.gatsbyImageData} alt={props.title} />
                     <img src={playButtonImage} alt="Play button" className={styles.playButton} />
