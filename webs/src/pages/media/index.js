@@ -98,7 +98,7 @@ const MediaPage = ({data}) => {
                                     
                                     </div>
                                     <div className='position-absolute start-50 top-50 translate-middle'>
-                                        <StaticImage 
+                                        <StaticImage placeholder="blurred"
                                             src='../../images/founders_logo_white_smallest.png'
                                         />
                                         <p className={styles.videoText}>{node.name}</p>

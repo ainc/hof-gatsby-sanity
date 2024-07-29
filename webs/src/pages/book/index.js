@@ -29,7 +29,7 @@ const BookPage = ({ data }) => {
         <Row className={`${styles.UBSRow} d-flex justify-content-center align-items-center text-center my-4`}>
             <Col className={styles.UBSColumn1}>
 
-                  <StaticImage className={styles.UBSv1Cover}
+                  <StaticImage className={styles.UBSv1Cover} placeholder="blurred"
                     alt="Unbridled Series Vol. 1 Cover"
                     src='../../images/UBS-V1-Cover.jpg'
                   />
@@ -43,7 +43,7 @@ const BookPage = ({ data }) => {
 
             </Col>
             <Col className={`${styles.UBSColumn2} text-center`}>
-              <StaticImage className={styles.UBSv2Cover}
+              <StaticImage className={styles.UBSv2Cover} placeholder="blurred"
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../../images/UBS-V2-Cover.jpg'
                 />
@@ -67,7 +67,7 @@ const BookPage = ({ data }) => {
         </Row>
         <Row>
           <div className='align-items-center'>
-              <StaticImage className={styles.UBSv2CoverBig}
+              <StaticImage className={styles.UBSv2CoverBig} placeholder="blurred"
                     alt="Unbridled Series Vol. 2 Cover"
                     src='../../images/UBS-V2-Cover.jpg'
                   />
@@ -91,7 +91,7 @@ const BookPage = ({ data }) => {
         </Row>
         <Row>
           <div className='align-items-center'>
-              <StaticImage className={styles.UBSv2CoverBig}
+              <StaticImage className={styles.UBSv2CoverBig} placeholder="blurred"
                     alt="Unbridled Series Vol. 1 Cover"
                     src='../../images/UBS-V1-Cover.jpg'
                   />
