@@ -26,6 +26,7 @@ const Sponsors = () => {
     const goldSponsor = query.allSanitySponsors.nodes.filter(node => node.sponsorType === "Gold");
     const silverSponsor = query.allSanitySponsors.nodes.filter(node => node.sponsorType === "Silver");
     return(
+    <section id='sponsors'>
         <Container>
             <Row className='d-flex justify-content-center align-items-center text-center my-4'>
                 <h3>Presenting Sponsor</h3>
@@ -58,6 +59,7 @@ const Sponsors = () => {
                 ))}
             </Row>
         </Container>
+        </section>
     )
 }
 
