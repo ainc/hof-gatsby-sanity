@@ -1,5 +1,6 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
+import * as styles from './sponsors.module.scss'
 import { Container, Row, Col } from 'react-bootstrap';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -26,7 +27,7 @@ const Sponsors = () => {
     const goldSponsor = query.allSanitySponsors.nodes.filter(node => node.sponsorType === "Gold");
     const silverSponsor = query.allSanitySponsors.nodes.filter(node => node.sponsorType === "Silver");
     return(
-        <Container id='sponsors'>
+        <Container id='sponsors' className={styles.border}>
             <Row className='d-flex justify-content-center align-items-center text-center my-4'>
                 <h3>Presenting Sponsor</h3>
                 {presentingSponsor.map((node, index) => (
