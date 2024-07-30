@@ -22,7 +22,7 @@ const MediaPage = ({data}) => {
                 currentYear = articleYear;
 
                 return (
-                    <Title >
+                    <Title>
                         {yearHeading}
                         <a href={node.link}><h4>{node.title}</h4></a>
                         <p>{node.date} - {node.publisher}</p>
@@ -36,7 +36,7 @@ const MediaPage = ({data}) => {
         <Layout>
           <Container>
             <Row >
-                <Col md={8} sm={12}>
+                <Col lg={8} md={7} sm={12}>
                 <div className='py-5 my-3 d-flex' style={{borderBottom: '1px solid #bbb'}}>
                     <Title style={{borderBottom: 'none'}}>Podcast</Title>
                 </div>
@@ -76,7 +76,7 @@ const MediaPage = ({data}) => {
                     
                     <PressComp allPress={allPress} /> 
                 </Col>
-                <Col md={4} sm={12}>
+                <Col lg={4} md={5} sm={12}>
                 <div className='d-flex justify-content-between py-5 my-1 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
                     <Title  style={{borderBottom: 'none'}}>Recent</Title>
                     <IconPair />
@@ -87,19 +87,19 @@ const MediaPage = ({data}) => {
                                 <p>{node.name}</p>
                                 <a className={styles.videoLink} href={node.videoLink} target="_blank" rel="noreferrer">
                                     <div className='ratio ratio-16x9'>
-                                    <div className={styles.thumbnail} >
-                                    <GatsbyImage
-                                        
-                                        image={node.image.asset.gatsbyImageData} 
-                                        alt={node.name} 
-                                        
-                                    />
+                                        <div className={styles.thumbnail} >
+                                        <GatsbyImage
+                                            className='w-100 h-100'
+                                            image={node.image.asset.gatsbyImageData} 
+                                            alt={node.name} 
+                                        />
+                                        </div>
                                     </div>
-                                    
-                                    </div>
-                                    <div className='position-absolute start-50 top-50 translate-middle'>
-                                        <StaticImage placeholder="blurred"
+                                    <div className={`${styles.play} position-absolute start-50 translate-middle`}>
+                                        <StaticImage 
+                                            placeholder="blurred"
                                             src='../../images/founders_logo_white_smallest.png'
+                                            className='opacity-50'
                                         />
                                         <p className={styles.videoText}>{node.name}</p>
                                     </div>
