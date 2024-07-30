@@ -22,7 +22,7 @@ const FoundersSeries = ({ data }) => {
 
   return (
     <Layout>
-      <Container>
+      <Container className=''>
         <Row>
           <Col>
             <div className='d-flex justify-content-between py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
@@ -61,6 +61,39 @@ const FoundersSeries = ({ data }) => {
                     </NavDropdown.Item>
                     <NavDropdown.Item onClick={() => handleYearClick("2021")}>
                       2021
+                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => handleYearClick("2020")}>
+                      2020
+                    </NavDropdown.Item> 
+                    <NavDropdown.Item onClick={() => handleYearClick("2019")}>
+                      2019
+                    </NavDropdown.Item>   
+                    <NavDropdown.Item onClick={() => handleYearClick("2018")}>
+                      2018
+                    </NavDropdown.Item>   
+                    <NavDropdown.Item onClick={() => handleYearClick("2017")}>
+                      2017
+                    </NavDropdown.Item>  
+                    <NavDropdown.Item onClick={() => handleYearClick("2016")}>
+                      2016
+                    </NavDropdown.Item>   
+                    <NavDropdown.Item onClick={() => handleYearClick("2015")}>
+                      2015
+                    </NavDropdown.Item>       
+                    <NavDropdown.Item onClick={() => handleYearClick("2014")}>
+                      2014
+                    </NavDropdown.Item>  
+                    <NavDropdown.Item onClick={() => handleYearClick("2013")}>
+                      2013
+                    </NavDropdown.Item>  
+                    <NavDropdown.Item onClick={() => handleYearClick("2012")}>
+                      2012
+                    </NavDropdown.Item>  
+                    <NavDropdown.Item onClick={() => handleYearClick("2011")}>
+                      2011
+                    </NavDropdown.Item>  
+                    <NavDropdown.Item onClick={() => handleYearClick("2010")}>
+                      2010
                     </NavDropdown.Item>             
                   {/* Add more years here */}
                   </NavDropdown>
@@ -75,7 +108,7 @@ const FoundersSeries = ({ data }) => {
             <Body>In order to share the success stories of Kentucky's entrepreneurs on a larger scale, we launched a video series where we interviewed each HOF inductee.</Body>
           </div>
         </Row>
-        <Row>
+        <Row className=''>
           {
             filteredInductees.map(node => (
               <Video link={node.videoEmbedLink} title={node.title} preview={node.preview}/>

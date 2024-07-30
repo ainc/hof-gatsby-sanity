@@ -6,6 +6,12 @@
     margin: 5px 0;
     font-family: Times New Roman, Times, Serif;
     text-rendering: optimizelegibility;
+    align-self: flex-start; // Align the title text to the left
+    @media (min-width: 1200px){
+      margin-left: 15%; // Align to the left of the image
+    }
+
+
 }
 .image-container {
     position: relative;
@@ -13,7 +19,6 @@
 .box {
   width: 50%;
   align-items: center;
-  justify-content: center;
 }
 
 @media (max-width: 767px) {
