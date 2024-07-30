@@ -1,5 +1,5 @@
 import React from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import {Row, Col, Container, Card} from 'react-bootstrap'
 import '../../styles/main.scss'
 import * as styles from './inductee-bio.module.scss'
@@ -22,8 +22,8 @@ const InducteeBio = ({ pageContext }) => {
             <Row>
                 <Title className='pt-3 pb-5'>Inductee</Title>
             </Row>
-            <Row style={{borderBottom: '1px solid #bbb'}} className='pb-5'>
-                <Col md={3}>
+            <Row  className='pb-5'>
+                <Col md={12} lg={3}>
                     <Card className={styles.inducteeCard}>
                         <div className={styles.imageContainer}>
                             {inducteeImage ? (
