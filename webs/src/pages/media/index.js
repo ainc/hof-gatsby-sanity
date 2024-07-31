@@ -24,7 +24,7 @@ const MediaPage = ({data}) => {
                 return (
                     <Title>
                         {yearHeading}
-                        <a href={node.link}><h4>{node.title}</h4></a>
+                        <a href={node.link} target='_blank'><h4>{node.title}</h4></a>
                         <p>{node.date} - {node.publisher}</p>
                     </Title>
                 );
