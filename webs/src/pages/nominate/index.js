@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Layout from '../../components/Layout/Layout';
-import Sponsors from '../../components/Sponsors/Sponsors';
+import Sponsors from '../../components/Sponsors/sponsors';
 import IconPair from '../../components/IconPair/IconPair';
 import Title from '../../components/Title/Title';
 import { Container, Button, Stack } from "react-bootstrap";

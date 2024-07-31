@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Layout from '../../components/Layout/Layout';
-import Sponsors from '../../components/Sponsors/Sponsors';
+import Sponsors from '../../components/Sponsors/sponsors';
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Title from '../../components/Title/Title';
 import * as styles from './fellowship.module.scss'

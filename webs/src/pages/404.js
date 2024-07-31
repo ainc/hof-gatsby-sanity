@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Layout from "../components/Layout/Layout";
-import Sponsors from "../components/Sponsors/Sponsors";
+import Sponsors from "../components/Sponsors/sponsors";
 import Title from "../components/Title/Title";
 
 const NotFoundPage = () => {
