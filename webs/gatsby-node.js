@@ -20,6 +20,16 @@ async function createInducteeBioPages(graphql, actions) {
           }
           inductionCeremonyVideo
           profileVideo
+          profileVideoImage{
+            asset {
+             gatsbyImageData
+             }
+          }
+          InductionVideoImage {
+            asset {
+              gatsbyImageData
+            }
+          }
           slug {
             current
           }
@@ -37,6 +47,7 @@ async function createInducteeBioPages(graphql, actions) {
     
     //Create individual blog post
     const postEdges = result.data.allSanityInductee.edges;
+    const inducteeBio = path.resolve("./src/templates/inductees/inductee-bio.js");
 
     postEdges.forEach((edge) => {
         // const id = edge.node.id;
@@ -44,7 +55,7 @@ async function createInducteeBioPages(graphql, actions) {
 
         createPage({
             path: path,
-            component: require.resolve("./src/templates/inductees/inductee-bio.js"),
+            component: inducteeBio,
             context: { 
                 post: edge.node, 
             },
