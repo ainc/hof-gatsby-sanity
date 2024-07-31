@@ -23,7 +23,7 @@ const FellowshipPage = () => {
     	                <a href="https://awesomeinc.org/fellowship" target="_blank" rel="noreferrer"><Button className={styles.button}>Learn more about the Fellowship Program</Button></a>
                     </Col>
                     <Col lg={6} sm={12}>
-                        <a target="_blank" rel="noreferrer" href="http://www.timwebbphotography.com/p377969083" style={{color: '#666'}}  className='float-end mt-3'>See All Photos <i class='icon-caret-right'></i></a>
+                        <a target="_blank" rel="noreferrer" href="http://www.timwebbphotography.com/p377969083" style={{color: '#666'}}  className='float-end'>See All Photos <i class='icon-caret-right'></i></a>
                     </Col>
                 </Row>
 
