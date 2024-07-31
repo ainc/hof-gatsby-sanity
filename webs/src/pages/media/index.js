@@ -87,12 +87,14 @@ const MediaPage = ({data}) => {
                                 <p>{node.name}</p>
                                 <a className={styles.videoLink} href={node.videoLink} target="_blank" rel="noreferrer">
                                     <div className='ratio ratio-16x9'>
-                                        <div className={styles.thumbnail} >
-                                        <GatsbyImage
-                                            className='w-100 h-100'
-                                            image={node.image.asset.gatsbyImageData} 
-                                            alt={node.name} 
-                                        />
+                                        <div className={`${styles.thumbnail} w-100 h-100`} >
+                                            <div className='h-100 w-100'>
+                                                <GatsbyImage
+                                                image={node.image.asset.gatsbyImageData}
+                                                className={styles.ceremonyImage}
+                                                alt={node.name} 
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                     <div className={`${styles.play} position-absolute start-50 translate-middle`}>
