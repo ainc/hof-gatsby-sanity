@@ -8,7 +8,7 @@ const Header = () => {
     <>
     <div className={styles.alert}>
       <p>
-        Nominations for 2024 class are open. Deadline is May 3, 2024. <a href="/nominate" style={{color: '#666'}}>Nominate here</a>.
+      Register for the 2024 Induction Celebration (Nov 12, 2024) <a href="https://kychamber.wufoo.com/forms/2024-kentucky-entrepreneur-hall-of-fame" style={{color: '#666'}}>here</a>.
       </p>
     </div>
     {/*Header for large screens and wider */}
