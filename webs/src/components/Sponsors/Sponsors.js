@@ -9,7 +9,7 @@ const Sponsors = () => {
 
     const query = useStaticQuery(graphql`
     query SponsorsQuery {
-        allSanitySponsors {
+        allSanitySponsors(sort: {name: ASC}) {
           nodes {
             sponsorType
             name
@@ -21,7 +21,8 @@ const Sponsors = () => {
             link
           }
         }
-      }`);
+      }`
+    );
     
     const presentingSponsor = query.allSanitySponsors.nodes.filter(node => node.sponsorType === "Presenting");
     const goldSponsor = query.allSanitySponsors.nodes.filter(node => node.sponsorType === "Gold");
