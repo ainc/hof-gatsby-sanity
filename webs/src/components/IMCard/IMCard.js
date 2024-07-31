@@ -14,8 +14,8 @@ const IMCard = (props) => {
                     {props.name}
                 </div>
         <Card className={styles.inducteeCard}>
-            <div className={styles.imageContainer}>
-                <GatsbyImage image={props.img} alt={props.name} />
+            <div className={`${styles.imageContainer} w-100 h-100`}>
+                <GatsbyImage image={props.img} alt={props.name} className={styles.profilePhoto}/>
                 
             </div>
         </Card>
