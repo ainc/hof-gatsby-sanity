@@ -42,4 +42,4 @@ const NominatePage = () => {
 }
 export default NominatePage;
 
-export const Head = () => <title>Nominate</title>
+export const Head = () => <title>Nominate | Kentucky Entrepreneur Hall of Fame</title>

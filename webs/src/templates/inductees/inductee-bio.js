@@ -104,3 +104,5 @@ const InducteeBio = ({ pageContext }) => {
 };
 
 export default InducteeBio;
+
+export const Head = () => <title>Kentucky Entrepreneur Hall of Fame</title>

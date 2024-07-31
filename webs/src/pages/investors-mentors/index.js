@@ -77,4 +77,4 @@ query IMquery{
 
 export default InverstorMentor;
 
-export const Head = () => <title>Investors Mentors</title>
+export const Head = () => <title>Investors of the Year | Kentucky Entrepreneur Hall of Fame</title>
