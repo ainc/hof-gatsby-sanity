@@ -2,13 +2,12 @@ import React from 'react'
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SEO from '../SEO/seo';
-import * as styles from'./layout.scss';
 const Layout = ({ children }) => {
     return (
         <div>
             <SEO />
             <Header />
-            <main className={styles.background}>
+            <main style={{margin: '0', padding: '0', background: "#e6e6e6 url('../../images/body_bg.jpg') center repeat-y"}}>
                 {children}
             </main>
             <Footer />

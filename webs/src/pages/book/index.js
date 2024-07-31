@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { Container, Row, Col } from 'react-bootstrap';
 import '../../styles/main.scss';
 import * as styles from './book.module.scss'
-import Sponsors from "../../components/Sponsors/sponsors";
+import Sponsors from "../../components/Sponsors/Sponsors";
 import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
 import Layout from "../../components/Layout/Layout";
@@ -17,7 +17,6 @@ const BookPage = ({ data }) => {
     <Layout>
       <Container>
         <Row>
-        <Row>
           <Col>
             <div className='d-flex justify-content-between mx-4 py-5 align-items-center' style={{borderBottom: '1px solid #bbb'}}>
               <Title  style={{borderBottom: 'none'}}>Unbridled Series</Title>
@@ -25,9 +24,8 @@ const BookPage = ({ data }) => {
             </div>
           </Col>
         </Row>
-        </Row>
-        <Row className={`${styles.UBSRow} d-flex justify-content-center align-items-center text-center my-4`}>
-            <Col className={styles.UBSColumn1}>
+        <Row className={`${styles.UBSRow} justify-content-center align-items-center text-center my-4`}>
+            <Col className={styles.UBSColumn}>
 
                   <StaticImage className={styles.UBSv1Cover} placeholder="blurred"
                     alt="Unbridled Series Vol. 1 Cover"
@@ -40,9 +38,8 @@ const BookPage = ({ data }) => {
                       </b>
                     </button>
                   </a>
-
             </Col>
-            <Col className={`${styles.UBSColumn2} text-center`}>
+            <Col className={`${styles.UBSColumn} text-center`}>
               <StaticImage className={styles.UBSv2Cover} placeholder="blurred"
                   alt="Unbridled Series Vol. 2 Cover"
                   src='../../images/UBS-V2-Cover.jpg'
@@ -71,6 +68,7 @@ const BookPage = ({ data }) => {
                     alt="Unbridled Series Vol. 2 Cover"
                     src='../../images/UBS-V2-Cover.jpg'
                   />
+            
             <div className={`{styles.UBSDescription} align-items-center`}>
               <Body>In this inspiring second installment of the Amazon bestseller, Unbridled Spirit,
               the Kentucky Entrepreneur Hall of Fame recognizes and celebrates the

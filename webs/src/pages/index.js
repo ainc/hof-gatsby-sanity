@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import '../styles/main.scss'; 
 import * as styles from './index.module.scss'
 import Layout from "../components/Layout/Layout";
-import Sponsors from "../components/Sponsors/sponsors";
+import Sponsors from "../components/Sponsors/Sponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
 import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
@@ -111,7 +111,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query IndexPageQuery {
-    allSanityInductee(sort: {inductee: {year: DESC}}) {
+    allSanityInductee {
       nodes {
         inductee {
           name
@@ -131,7 +131,7 @@ export const query = graphql`
         }
       }
     }
-    allSanityEmergingEntrepreneur(sort: {inductee: {year: DESC}}) {
+    allSanityEmergingEntrepreneur {
       nodes {
         inductee {
           name
