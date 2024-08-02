@@ -14,7 +14,7 @@ const FellowshipPage = () => {
                     <h2>Awesome Inc Fellowship Program</h2>
                     <IconPair />
                 </Title>
-                <Row className='pb-5 pt-3' style={{borderBottom: '1px solid #bbb'}}>
+                <Row className='pb-5 pt-3'>
                     <Col lg={6} sm={12}>
                         <p>The Fellowship program is a Kentucky Entrepreneur Hall of Fame initiative designed to accelerate the growth of Kentucky’s next wave of high potential entrepreneurs and tech startups. Companies with demonstrated market
                             potential receive access to mentors and investors, legal services, and technical talent.</p>
