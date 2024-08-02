@@ -96,8 +96,8 @@ const InducteeNav = ( props ) => {
             </Nav>
           </div>
         </div>
-        <div className='py-3'>
-          <ul className={styles.inducteesList}>
+        <div className='py-3 d-flex justify-content-center'>
+          <ul className={`${styles.inducteesList}`}>
             {filteredInductees.map((node, index) => (
               <li key={index}>
                 <InducteeCard img={node.inductee.profilePhoto.asset.gatsbyImageData} name={node.inductee.name} company={node.inductee.company} link={props.title === "Inductees" ? node.slug.current : node.linkedin}/>
