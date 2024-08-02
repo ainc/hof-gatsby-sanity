@@ -101,7 +101,7 @@ const InductionDinnerPage = ({ data }) => {
             <Row>
               <Col className='mx-4 py-3'>
                 <h2 className={styles.induction}>Sponsors</h2>
-                <a className={styles.linkText} href='/#SponsorSection'>Meet the event sponsors here</a>
+                <a className={styles.linkText} href='#sponsors'>Meet the event sponsors here</a>
               </Col>
             </Row>
             <Row>

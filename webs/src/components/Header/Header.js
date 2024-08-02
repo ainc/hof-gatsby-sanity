@@ -59,31 +59,21 @@ const Header = () => {
               <Nav.Link as='li'><a href="/founders-series" className={styles.links}>Founders Series</a></Nav.Link>
               <Nav.Link as='li'><a href="/fellowship" className={styles.links}>The Fellowship</a></Nav.Link>
               <NavDropdown title={<span className={styles.links}>Nominate</span>} id="collapsable-nav-dropdown" className={styles.dropdownMenu}>
-                <NavDropdown.Item>
-                <a className={styles.links} href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI">
-                  Hall of Fame
-                </a>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                <a className={styles.links} href="https://forms.zohopublic.com/virtualoffice9155/form/EmergingEntrepreneurNominationKentuckyEntrepreneur/formperma/WlfEONIkD_KdXHI5lfj9kXvZ8SUBgQTaC9bIf9AnGXk">
-                  Emerging
-                </a>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                <a className={styles.links} href="https://zfrmz.com/HiHnbru8T7pFNW1rTFpw">
-                  Mentor
-                </a>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                <a className={styles.links} href="https://zfrmz.com/FcyrqHK54OYvk507ovTQ">
-                  Investor
-                </a>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                <a className={styles.links} href="https://zfrmz.com/PcjCQ9fgz9mjukf8hpv3">
-                  President/Executive
-                </a>
-                </NavDropdown.Item>
+                  <NavDropdown.Item  className={styles.dropdownItems} href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI" target='_blank'>
+                    Hall of Fame
+                  </NavDropdown.Item>
+                  <NavDropdown.Item  className={styles.dropdownItems} href="https://forms.zohopublic.com/virtualoffice9155/form/EmergingEntrepreneurNominationKentuckyEntrepreneur/formperma/WlfEONIkD_KdXHI5lfj9kXvZ8SUBgQTaC9bIf9AnGXk" target='_blank'>
+                    Emerging
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItems} href="https://zfrmz.com/HiHnbru8T7pFNW1rTFpw" target="_blank">
+                    Mentor
+                  </NavDropdown.Item>
+                  <NavDropdown.Item  className={styles.dropdownItems} href="https://zfrmz.com/FcyrqHK54OYvk507ovTQ" target="_blank">
+                    Investor
+                  </NavDropdown.Item>
+                  <NavDropdown.Item  className={styles.dropdownItems} href="https://zfrmz.com/PcjCQ9fgz9mjukf8hpv3" target="_blank">
+                    President/Executive
+                  </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link as='li'><a href="/induction-dinner" className={styles.links}>Induction Dinner</a></Nav.Link>
               <Nav.Link as='li'><a href="#sponsors" className={styles.links}>Sponsors</a></Nav.Link>
