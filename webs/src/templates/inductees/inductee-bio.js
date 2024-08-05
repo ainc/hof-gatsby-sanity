@@ -66,8 +66,7 @@ const InducteeBio = ({ pageContext }) => {
                                 </a>
                                 ) : (
                                     <div>
-                                        <StaticImage src='../../images/Logo_Square.png' alt='Placeholder' />
-                                        <p className={styles.videoText}>Video not available</p>
+                                        <StaticImage src='../../images/Logo_Square.png' alt='Placeholder' objectFit='contain' placeholder='blurred'/>
                                     </div>
                                 )}
                             </Container>
@@ -88,8 +87,7 @@ const InducteeBio = ({ pageContext }) => {
                                 </a>
                                 ) : (
                                     <div>
-                                        <StaticImage src='../../images/Logo_Square.png' alt='Placeholder' />
-                                        <p className={styles.videoText}>Video not available</p>
+                                        <StaticImage className={`ratio ratio-16x9`} src='../../images/Logo_Square.png' alt='Placeholder' placeholder='blurred' objectFit='contain'/>
                                     </div>
                                 )}
                             </Container>

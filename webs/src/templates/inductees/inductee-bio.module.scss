@@ -70,3 +70,7 @@
 .videoContainer:hover .playIcon {
     opacity: 100%;
 }
+
+.contain{
+    object-fit: contain !important;
+}

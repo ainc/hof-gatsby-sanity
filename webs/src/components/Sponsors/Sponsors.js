@@ -49,7 +49,7 @@ const Sponsors = () => {
                     </Col>
                 ))}
             </Row>
-            <Row className='d-flex justify-content-center align-items-center text-center my-4'>
+            <Row className='d-flex justify-content-center align-items-center text-center'>
                 <h3>Silver Sponsor</h3>
                 {silverSponsor.map((node, index) => (
                     <Col className='my-3'>
