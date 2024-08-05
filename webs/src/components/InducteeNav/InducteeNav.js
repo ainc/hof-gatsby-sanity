@@ -7,11 +7,15 @@ import * as styles from './inducteenav.module.scss';
 const InducteeNav = ( props ) => {
   const data = props.data
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
+  const [animation, setAnimation] = useState(null);
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
     setSelectedYear(year); // Update state when a year is clicked
     props.setSelectedYear(year);
+    if (data.node.inductee.year !== year) {
+      data.node.inductee.year.setAnimation(styles.leaving)
+    }
   };
   
   // Filter inductees based on the selected year
@@ -100,7 +104,7 @@ const InducteeNav = ( props ) => {
           <ul className={`${styles.inducteesList}`}>
             {filteredInductees.map((node, index) => (
               <li key={index}>
-                <InducteeCard img={node.inductee.profilePhoto.asset.gatsbyImageData} name={node.inductee.name} company={node.inductee.company} link={props.title === "Inductees" ? node.slug.current : node.linkedin}/>
+                <InducteeCard img={node.inductee.profilePhoto.asset.gatsbyImageData} name={node.inductee.name} company={node.inductee.company} link={props.title === "Inductees" ? node.slug.current : node.linkedin} className={animation}/>
               </li>
             ))}
           </ul>

@@ -52,3 +52,29 @@
     position: relative;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
+
+.leaving {
+    animation-name: leaving;
+}
+
+.entering {
+    animation-name: animation--entering;
+}
+
+@keyframes animation--leaving {
+    from {
+        scale: 100%;
+    }
+    to {
+        scale: 0;
+    }
+}
+
+@keyframes animation--entering {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 100%;
+    }
+}
