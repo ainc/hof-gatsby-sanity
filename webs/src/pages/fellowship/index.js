@@ -14,7 +14,7 @@ const FellowshipPage = () => {
                     <h2>Awesome Inc Fellowship Program</h2>
                     <IconPair />
                 </Title>
-                <Row className='pb-5 pt-3' style={{borderBottom: '1px solid #bbb'}}>
+                <Row className='pb-5 pt-3'>
                     <Col lg={6} sm={12}>
                         <p>The Fellowship program is a Kentucky Entrepreneur Hall of Fame initiative designed to accelerate the growth of Kentucky’s next wave of high potential entrepreneurs and tech startups. Companies with demonstrated market
                             potential receive access to mentors and investors, legal services, and technical talent.</p>
@@ -23,7 +23,7 @@ const FellowshipPage = () => {
     	                <a href="https://awesomeinc.org/fellowship" target="_blank" rel="noreferrer"><Button className={styles.button}>Learn more about the Fellowship Program</Button></a>
                     </Col>
                     <Col lg={6} sm={12}>
-                        <a target="_blank" rel="noreferrer" href="http://www.timwebbphotography.com/p377969083" style={{color: '#666'}}  className='float-end mt-3'>See All Photos <i class='icon-caret-right'></i></a>
+                        <a target="_blank" rel="noreferrer" href="http://www.timwebbphotography.com/p377969083" style={{color: '#666'}}  className='float-end'>See All Photos <i class='icon-caret-right'></i></a>
                     </Col>
                 </Row>
 
@@ -35,4 +35,4 @@ const FellowshipPage = () => {
 
 export default FellowshipPage;
 
-export const Head = () => <title>Fellowship</title>
+export const Head = () => <title>Fellowship | Kentucky Entrepreneur Hall of Fame</title>

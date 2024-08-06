@@ -139,4 +139,4 @@ export const query = graphql`
 
 export default FoundersSeries;
 
-export const Head = () => <title>Founders Series</title>
+export const Head = () => <title>Founders Series | Kentucky Entrepreneur Hall of Fame</title>

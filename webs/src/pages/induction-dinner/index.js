@@ -196,4 +196,4 @@ export const query = graphql`
 
 export default InductionDinnerPage;
 
-export const Head = () => <title>Induction Dinner</title>;
+export const Head = () => <title>Induction Dinner | Kentucky Entrepreneur Hall of Fame</title>;

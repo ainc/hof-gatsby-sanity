@@ -142,7 +142,7 @@ export const query = graphql`
     }
 `;
 
-export const Head = () => <title>Media</title>
+export const Head = () => <title>Media | Kentucky Entrepreneur Hall of Fame</title>
 
 
 export default MediaPage;

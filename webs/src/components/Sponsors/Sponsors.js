@@ -29,7 +29,7 @@ const Sponsors = () => {
     const silverSponsor = query.allSanitySponsors.nodes.filter(node => node.sponsorType === "Silver");
     return(
         <Container id='sponsors' className={styles.border}>
-            <Row className='d-flex justify-content-center align-items-center text-center my-4'>
+            <Row className='d-flex justify-content-center align-items-center text-center py-3'>
                 <h3>Presenting Sponsor</h3>
                 {presentingSponsor.map((node, index) => (
                     <Col md={12} className='my-5'>
@@ -39,7 +39,7 @@ const Sponsors = () => {
                     </Col>
                 ))}
             </Row>
-            <Row className='d-flex justify-content-center align-items-center text-center my-4'>
+            <Row className='d-flex justify-content-center align-items-center text-center py-3'>
                 <h3>Gold Sponsor</h3>
                 {goldSponsor.map((node, index) => (
                     <Col className='my-3'>
@@ -49,7 +49,7 @@ const Sponsors = () => {
                     </Col>
                 ))}
             </Row>
-            <Row className='d-flex justify-content-center align-items-center text-center my-4'>
+            <Row className='d-flex justify-content-center align-items-center text-center py-3'>
                 <h3>Silver Sponsor</h3>
                 {silverSponsor.map((node, index) => (
                     <Col className='my-3'>
