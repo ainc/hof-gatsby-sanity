@@ -30,6 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0;
 }
 
 .title-style a{
@@ -53,44 +54,3 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-.animation {
-    animation-duration: 50000ms;
-}
-
-.leaving {
-    animation-name: animation--leave;
-    animation-duration: 50000ms;
-}
-
-.entering {
-    animation-name: animation--enter;
-    animation-duration: 50000ms;
-}
-
-@keyframes animation--leave {
-    0% { scale: 100%; }
-    100% { scale: 0%; }
-}
-
-@keyframes animation--enter {
-    0% { scale: 0%; }
-    100% { scale: 100%; }
-}
-
-.fadeEnter {
-    scale: 0.01;
-}
-
-.fadeEnterActive {
-    scale: 1;
-    transition: scale 500ms ease-in;
-}
-
-.fadeExit {
-    scale: 1;
-}
-
-.fadeExitActive {
-    scale: 0.01;
-    transition: scale 500ms ease-out;
-}

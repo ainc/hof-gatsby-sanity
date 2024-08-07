@@ -48,7 +48,7 @@ const InducteeNav = (props) => {
     if (isotope.current) {
     filterKey === '*'
       ? isotope.current.arrange({filter: `*`})
-      : isotope.current.arrange({filter: `${filterKey}`})
+      : isotope.current.arrange({filter: `.${filterKey}`})
     }
   }, [isotope, filterKey])
 
@@ -137,8 +137,7 @@ const InducteeNav = (props) => {
           </div>
         </div>
         <div className='py-3 d-flex justify-content-center'>
-          <ul className={`inductee-list ${styles.inducteesList}`}>
-            
+          <ul className={`w-100 mx-auto inductee-list ${styles.inducteesList}`}>
             {filteredInductees.map((node, index) => (
                 <li key={index}>
                   <InducteeCard 
@@ -148,7 +147,6 @@ const InducteeNav = (props) => {
                     link={props.title === "Inductees" ? node.slug.current : node.linkedin}
                     year={node.inductee.year}
                     className={`filter-item year-${node.inductee.year}`}
-                    //styles={{animationDuration: '3000ms'}}
                   ></InducteeCard>
                 </li>
             ))}
