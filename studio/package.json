@@ -9,7 +9,7 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "clone": "sanity dataset export production production && sanity dataset import production.tar.gz development --replace",
+    "clone": "sanity dataset export production production && sanity dataset import production/production.tar.gz development --replace",
     "deploy-graphql": "sanity graphql deploy"
   },
   "keywords": [
