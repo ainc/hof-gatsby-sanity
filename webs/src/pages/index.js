@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => {
           </Col>
         </Row>
       </Container>
-      <InducteeNav title="Inductees" etype='inductee' data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear} className={styles.inducteeNav}/>
+      <InducteeNav title="Inductees" etype='inductee' data={Inductees} selectedYear={inducteeSelectedYear} setSelectedYear={setInducteeSelectedYear} />
       <InducteeNav title="Emerging Entrepreneurs" etype='emerging' data={Emerging} selectedYear={emergingSelectedYear} setSelectedYear={setEmergingSelectedYear}/>
       <Container>
         <Row>
