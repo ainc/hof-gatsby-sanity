@@ -10,24 +10,20 @@ const InducteeNav = (props) => {
 
   const data = props.data
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
-  const [animation, setAnimation] = useState(null);
   const navsRef = useRef(null);
-  const animationRef = useRef(null);
-   // const [isotope, setIsotope] = React.useState(null);
   const [filterKey, setFilterKey] = React.useState('*');
   const isotope = useRef(null);
+
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
     //setSelectedYear(year); // Update state when a year is clicked
     //props.setSelectedYear(year);
-    handleFilter(year ? `year-${year}` : '*');
+    handleFilter(year ? `${props.etype}-year-${year}` : '*');
   };
   
-  
-
   React.useEffect(() => {
     try {
-    isotope.current = new Isotope('.inductee-list', {
+    isotope.current = new Isotope(`.${props.etype}-inductee-list`, {
       itemSelector: '.filter-item',
       layoutMode: 'fitRows',
     })
@@ -137,7 +133,7 @@ const InducteeNav = (props) => {
           </div>
         </div>
         <div className='py-3 d-flex justify-content-center'>
-          <ul className={`w-100 mx-auto inductee-list ${styles.inducteesList}`}>
+          <ul className={`mx-auto w-100 ${props.etype}-inductee-list justify-content-center align-items-center ${styles.inducteesList}`}>
             {filteredInductees.map((node, index) => (
                 <li key={index}>
                   <InducteeCard 
@@ -146,7 +142,7 @@ const InducteeNav = (props) => {
                     company={node.inductee.company} 
                     link={props.title === "Inductees" ? node.slug.current : node.linkedin}
                     year={node.inductee.year}
-                    className={`filter-item year-${node.inductee.year}`}
+                    className={`filter-item ${props.etype}-year-${node.inductee.year}`}
                   ></InducteeCard>
                 </li>
             ))}
