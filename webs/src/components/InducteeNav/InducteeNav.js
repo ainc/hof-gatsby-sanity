@@ -132,7 +132,7 @@ const InducteeNav = (props) => {
             </Nav>
           </div>
         </div>
-        <div className='py-3 d-flex justify-content-center'>
+        <div className='py-3 mx-5 d-flex justify-content-center'>
           <ul className={`mx-auto w-100 ${props.etype}-inductee-list justify-content-center align-items-center ${styles.inducteesList}`}>
             {filteredInductees.map((node, index) => (
                 <li key={index}>
