@@ -1,5 +1,4 @@
 import React, {useState, useRef} from "react"
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Container, Nav, NavDropdown } from 'react-bootstrap';
 import Isotope from "isotope-layout"
 import InducteeCard from "../InducteeCard/InducteeCard";
@@ -9,7 +8,7 @@ import * as styles from './inducteenav.module.scss';
 const InducteeNav = (props) => {
 
   const data = props.data
-  const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
+  const [ selectedYear, setSelectedYear ] = useState(null); // Initialize state for selected year
   const navsRef = useRef(null);
   const [filterKey, setFilterKey] = React.useState('*');
   const isotope = useRef(null);
@@ -74,8 +73,9 @@ fitRows._getItemLayoutPosition = function( item ) {
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
     //setSelectedYear(year); // Update state when a year is clicked
-    //props.setSelectedYear(year);
-    handleFilter(year ? `${props.etype}-year-${year}` : '*');
+    setSelectedYear(year);
+    handleFilter(year ? `${props.etype}-year-${year}` : `:not(.${props.etype}-year-2020)`);
+  
   };
   
   React.useEffect(() => {
@@ -100,7 +100,7 @@ fitRows._getItemLayoutPosition = function( item ) {
   React.useEffect(() => {
     if (isotope.current) {
     filterKey === '*'
-      ? isotope.current.arrange({filter: `*`})
+      ? isotope.current.arrange({filter: `:not(.${props.etype}-year-2020)`})
       : isotope.current.arrange({filter: `.${filterKey}`})
     }
   }, [isotope, filterKey])
@@ -108,8 +108,8 @@ fitRows._getItemLayoutPosition = function( item ) {
   const handleFilter = (key) => {setFilterKey(key);}
 
   // Filter inductees based on the selected year
-  if(props.selectedYear !== "2020"){
-    const filteredInductees = props.selectedYear ? data.filter(node => node.inductee.year === props.selectedYear) : data;
+
+    const filteredInductees = data;
 
     return (
       <Container className='d-flex flex-column'>
@@ -189,8 +189,8 @@ fitRows._getItemLayoutPosition = function( item ) {
             </Nav>
           </div>
         </div>
-        <div className='py-3 mx-5 d-flex justify-content-center'>
-          <ul className={`mx-auto w-100 ${props.etype}-inductee-list justify-content-center align-items-center ${styles.inducteesList}`}>
+        <div className='py-3 justify-content-center'>
+          <ul className={`mx-auto w-100 ${props.etype}-inductee-list ${styles.inducteesList}`}>
             {filteredInductees.map((node, index) => (
                 <li key={index}>
                   <InducteeCard 
@@ -203,62 +203,17 @@ fitRows._getItemLayoutPosition = function( item ) {
                   ></InducteeCard>
                 </li>
             ))}
+            <li>
+              <div className={`filter-item ${props.etype}-year-2020 py-3`}>
+                <div className={`${styles.tbox}`}>
+                  Wondering why there is no 2020 class? Unfortunately, the ceremony was canceled in 2020 and we weren't able to induct any entrepreneurs. But fear not, entrepreneurship and innovation didn't come to a halt. Future classes are going to be even stronger in Kentucky!
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </Container>
     )
-  }else{
-    return(
-      <Container className='d-flex flex-column'>
-        <div className={`${styles.navBetween} d-flex align-items-center pb-5`} style={{borderBottom: '1px solid #bbb'}}>
-          <div>
-            <Title className="mx-3" style={{borderBottom: 'none'}}>{props.title}</Title>
-          </div>
-          <div>
-            {/*Nav for large screens and wider */}
-            <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
-              <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2023")} tabIndex='-1'>2023</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2022")} tabIndex='-1'>2022</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2021")} tabIndex='-1'>2021</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2020")} tabIndex='-1'>2020</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2019")} tabIndex='-1'>2019</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2018")} tabIndex='-1'>2018</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2017")} tabIndex='-1'>2017</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2016")} tabIndex='-1'>2016</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2015")} tabIndex='-1'>2015</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2014")} tabIndex='-1'>2014</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2013")} tabIndex='-1'>2013</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2012")} tabIndex='-1'>2012</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2011")} tabIndex='-1'>2011</Nav.Item>
-              <Nav.Item as="li" onClick={() => handleYearClick("2010")} tabIndex='-1'>2010</Nav.Item>
-            </Nav>
-            {/*Nav for medium screens and smaller */}
-            <Nav as="ul" className={`d-lg-none`}>
-              <NavDropdown  className={styles.titleStyle} title={selectedYear || "Select Year"} id="collapsable-nav-dropdown">
-                <NavDropdown.Item onClick={() => handleYearClick(null)}>
-                  All
-                </NavDropdown.Item>   
-                <NavDropdown.Item onClick={() => handleYearClick("2023")}>
-                  2023
-                </NavDropdown.Item>    
-                <NavDropdown.Item onClick={() => handleYearClick("2022")}>
-                  2022
-                </NavDropdown.Item>         
-              {/* Add more years here */}
-              </NavDropdown>
-            </Nav>
-          </div>
-        </div>
-        <div className='py-3'>
-          <div className={styles.tbox}>
-         Wondering why there is no 2020 class? Unfortunately, the ceremony was canceled in 2020 and we weren't able to induct any entrepreneurs. But fear not, entrepreneurship and innovation didn't come to a halt. Future classes are going to be even stronger in Kentucky!
-          </div>
-          
-        </div>
-      </Container>
-    )
-  }
 }
 
 
