@@ -13,7 +13,7 @@ const InductionDinnerPage = ({ data }) => {
 
     const event = data.allSanityEvent.nodes.at(-1);
     const documents = data.allSanityDocuments.nodes.at(-1);
-    
+    const link = data.allSanityFooter.nodes.at(-1).sponsorLink;
     // Split the string by commas and trim any extra whitespace
     const renderScheduleWithBreaks = (inputString) => {
         
@@ -111,7 +111,9 @@ const InductionDinnerPage = ({ data }) => {
                      We're here to help you make valuable connections and create measurable results.</h3>
                 <a className={styles.linkText} href={documents.sponsorOpportunites.asset.url}>View/Download Sponsorship Pkg.</a><br />
                 <a className={styles.linkText} href={documents.advertisingRate.asset.url}>View/Download Advertising Rate Card</a><br />
-                <a className={styles.linkText} href={documents.postEventReport.asset.url}>View/Download Last Year's Post-event Report</a>
+                <a className={styles.linkText} href={documents.postEventReport.asset.url}>View/Download Last Year's Post-event Report</a><br />
+                <a className={styles.linkText} href={link}>Register here to become a sponsor</a>
+
               </Col>
             </Row>
             <Row className={styles}>
@@ -170,7 +172,11 @@ export const query = graphql`
       }
     }
   }
-
+  allSanityFooter {
+    nodes {
+      sponsorLink
+    }
+  }
   allSanityDocuments {
     nodes {
       postEventReport {

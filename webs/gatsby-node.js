@@ -66,3 +66,14 @@ async function createInducteeBioPages(graphql, actions) {
 exports.createPages = async ({ graphql, actions, reporter }) => {
     await createInducteeBioPages(graphql, actions)
 }
+
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+  const config = getConfig()
+  const miniCssExtractPlugin = config.plugins.find(
+    plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
+  )
+  if (miniCssExtractPlugin) {
+    miniCssExtractPlugin.options.ignoreOrder = true
+  }
+  actions.replaceWebpackConfig(config)
+}
