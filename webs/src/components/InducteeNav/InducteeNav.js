@@ -72,10 +72,12 @@ fitRows._getItemLayoutPosition = function( item ) {
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
-    //setSelectedYear(year); // Update state when a year is clicked
+    if (!year) {
+      handleFilter('*');
+    } else {
+      handleFilter(`${props.etype}-year-${year}`);
+    }
     setSelectedYear(year);
-    handleFilter(year ? `${props.etype}-year-${year}` : `:not(.${props.etype}-year-2020)`);
-  
   };
   
   React.useEffect(() => {
@@ -83,6 +85,7 @@ fitRows._getItemLayoutPosition = function( item ) {
     isotope.current = new Isotope(`.${props.etype}-inductee-list`, {
       itemSelector: '.filter-item',
       layoutMode: 'fitRows',
+      transitionDuration: '0.6s', // Adjust this value to make the animation slower
     })
   } catch (error) {
     console.error("Error initializing Isotope:", error);
@@ -99,14 +102,28 @@ fitRows._getItemLayoutPosition = function( item ) {
 
   React.useEffect(() => {
     if (isotope.current) {
-    filterKey === '*'
-      ? isotope.current.arrange({filter: `:not(.${props.etype}-year-2020)`})
-      : isotope.current.arrange({filter: `.${filterKey}`})
+      if (filterKey === '*') {
+        isotope.current.arrange({
+          filter: function(itemElem) {
+            return !itemElem.classList.contains(`${props.etype}-year-2020`);
+          }
+        });
+      } else {
+        isotope.current.arrange({
+          filter: `.${filterKey}`
+        });
+      }
     }
-  }, [isotope, filterKey])
+  }, [filterKey]);
 
-  const handleFilter = (key) => {setFilterKey(key);}
-
+  const handleFilter = (key) => {
+    if (key === '*') {
+      // Show all items except the 2020 class
+      setFilterKey('*');
+    } else {
+      setFilterKey(key);
+    }
+  };
   // Filter inductees based on the selected year
 
     const filteredInductees = data;
