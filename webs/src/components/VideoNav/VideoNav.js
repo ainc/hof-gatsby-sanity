@@ -15,7 +15,15 @@ const VideoNav = ( props ) => {
   
   // Filter inductees based on the selected year
   props.filtered = props.selectedYear ? data.filter(node => node.inductee.year === props.selectedYear) : data;
-
+  const years = [];
+  for(let i = 0; i < data.length; i++){
+    if(!(years.includes(data[i].inductee.year))){
+      years.push(data[i].inductee.year);
+      if(data[i].inductee.year == '2021' && !(years.includes('2020'))){
+        years.push('2020');
+      }
+    }
+  }
   return (
     <Container className='d-flex flex-column'>
       <div className={`${styles.navBetween} d-flex align-items-center pb-5`} style={{borderBottom: '1px solid #bbb'}}>
