@@ -10,7 +10,7 @@ const InducteeNav = ( props ) => {
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
-    setSelectedYear(year); // Update state when a year is clicked
+    setSelectedYear(year); // Update state when a year is clicked 
     props.setSelectedYear(year);
   };
   
