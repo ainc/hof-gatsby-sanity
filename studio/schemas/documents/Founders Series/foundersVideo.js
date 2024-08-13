@@ -6,7 +6,8 @@ export default {
       {
         name: 'title',
         title: 'Title',
-        type: 'string'
+        type: 'string',
+        description: 'Enter 0 as the year for Noteworthy Entrepreneurs'
       },
       {
         name: 'videoEmbedLink',
@@ -24,7 +25,8 @@ export default {
           type: 'date',
           options: {
             dateFormat: 'YYYY'
-          }
+          },
+          description: 'Enter 0 as the year for Noteworthy Entrepreneurs'
       }
     ]
   }
