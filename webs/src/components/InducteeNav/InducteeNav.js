@@ -14,6 +14,17 @@ const InducteeNav = ( props ) => {
     props.setSelectedYear(year);
   };
   
+  const years = [];
+  for(let i = 0; i < data.length; i++){
+    if(!(years.includes(data[i].inductee.year))){
+      years.push(data[i].inductee.year);
+      if(data[i].inductee.year == '2021' && !(years.includes('2020'))){
+        years.push('2020');
+      }
+    }
+  }
+  
+
   // Filter inductees based on the selected year
   if(props.selectedYear !== "2020"){
     const filteredInductees = props.selectedYear ? data.filter(node => node.inductee.year === props.selectedYear) : data;
