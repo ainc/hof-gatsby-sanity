@@ -9,7 +9,7 @@ const InducteeNav = (props) => {
 
   const data = props.data
   const [ selectedYear, setSelectedYear ] = useState(null); // Initialize state for selected year
-  const navsRef = useRef(null);
+  const navsRef = useRef(null); 
   const [filterKey, setFilterKey] = React.useState('*');
   const isotope = useRef(null);
 
