@@ -25,11 +25,12 @@
     font-size: 26px;
 }
 
-.inducteesList{
+.inductees-list{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
+
 }
 
 .title-style a{
@@ -52,4 +53,3 @@
     position: relative;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
-

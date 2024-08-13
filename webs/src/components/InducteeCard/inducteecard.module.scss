@@ -135,25 +135,3 @@
     font-size: 12px;
     font-weight: normal;
 }
-
-.animation {
-    animation-duration: 50000ms;
-}
-
-.leaving {
-    animation-name: animation--leave;
-}
-
-.entering {
-    animation-name: animation--enter;
-}
-
-@keyframes animation--leave {
-    0% { scale: 100%; }
-    100% { scale: 0%; }
-}
-
-@keyframes animation--enter {
-    0% { scale: 0%; }
-    100% { scale: 100%; }
-}
