@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useRef} from "react"
 import { graphql } from 'gatsby'
 import { Container, Row, Col, Nav , NavDropdown } from 'react-bootstrap';
 import '../../styles/main.scss'; 
@@ -9,16 +9,120 @@ import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
 import IconPair from "../../components/IconPair/IconPair";
 import Video from "../../components/Video/Video";
+import Isotope from "isotope-layout"
 
 const FoundersSeries = ({ data }) => {
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
+  const [filterKey, setFilterKey] = React.useState('*');
+  const isotope = useRef(null);
 
+  var fitRows = Isotope.LayoutMode.modes.fitRows.prototype;
+  fitRows._resetLayout = function() {
+
+    // pre-calculate offsets for centering each row
+    this.x = 0;
+    this.y = 0;
+    this.maxY = 0;
+    this._getMeasurement( 'gutter', 'outerWidth' );
+    this.centerX = [];
+    this.currentRow = 0;
+    this.initializing = true;
+    for ( var i=0, len = this.items.length; i < len; i++ ) {
+        var item = this.items[i];
+        this._getItemLayoutPosition(item);
+    }
+    this.centerX[this.currentRow].offset = (this.isotope.size.innerWidth +this.gutter-this.x) / 2;
+    this.initializing = false;
+    this.currentRow = 0;
+
+    // centered offsets were calculated, reset layout
+    this.x = 0;
+    this.y = 0;
+    this.maxY = 0;
+    this._getMeasurement( 'gutter', 'outerWidth' );
+  };
+  fitRows._getItemLayoutPosition = function( item ) {
+    item.getSize();
+    var itemWidth = item.size.outerWidth + this.gutter;
+    // if this element cannot fit in the current row
+    var containerWidth = this.isotope.size.innerWidth + this.gutter;
+    if ( this.x !== 0 && itemWidth + this.x > containerWidth ) {
+
+      if (this.initializing)
+          this.centerX[this.currentRow].offset = (containerWidth-this.x) / 2;
+      this.currentRow++;
+
+      this.x = 0;
+      this.y = this.maxY;
+    }
+
+    if (this.initializing && this.x === 0) {
+      this.centerX.push({ offset: 0});
+    }
+    //if (this.centerX[this.currentRow].offset < 0)
+    //  this.centerX[this.currentRow].offset = 0;
+
+    var position = {
+      x: this.x+(this.initializing?0:this.centerX[this.currentRow].offset),
+      y: this.y
+    };
+
+    this.maxY = Math.max( this.maxY, this.y + item.size.outerHeight );
+    this.x += itemWidth;
+
+    return position;
+  };
+  
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
     setSelectedYear(year); // Update state when a year is clicked
+    if (!year) {
+      handleFilter('*');
+    } else {
+      handleFilter(`year-${year}`);
+    }
   };
 
-  const filteredInductees = selectedYear ? data.allSanityFoundersSeries.nodes.filter(node => node.year === selectedYear) : data.allSanityFoundersSeries.nodes;
+  React.useEffect(() => {
+    try {
+    isotope.current = new Isotope(`.inductee-list`, {
+      itemSelector: '.filter-item',
+      layoutMode: 'fitRows',
+      filter: '*',
+      transitionDuration: '0.6s', // Adjust this value to make the animation slower
+    })
+  } catch (error) {
+    console.error("Error initializing Isotope:", error);
+  }
+
+    // cleanup
+    return () => 
+      {
+        if (isotope.current) {
+          isotope.current.destroy();
+        }
+      }
+  }, [])
+
+  React.useEffect(() => {
+    if (isotope.current) {
+      if (filterKey === '*') {
+        isotope.current.arrange({
+          filter: `*`
+        });
+      } else {
+        isotope.current.arrange({
+          filter: `.${filterKey}`
+        });
+      }
+    }
+  }, [filterKey]);
+
+  const handleFilter = (key) => {
+    setFilterKey(key);
+  };
+
+  const filteredInductees = data.allSanityFoundersSeries.nodes;
 
   return (
     <Layout>
@@ -108,13 +212,17 @@ const FoundersSeries = ({ data }) => {
             <Body>In order to share the success stories of Kentucky's entrepreneurs on a larger scale, we launched a video series where we interviewed each HOF inductee.</Body>
           </div>
         </Row>
-        <Row className=''>
+        <ul className={`inductee-list ${styles.videoList}`}>
           {
             filteredInductees.map(node => (
-              <Video link={node.videoEmbedLink} title={node.title} preview={node.preview}/>
+              <li className={`filter-item year-${node.year}`}>
+                <div className='w-100'>
+                  <Video link={node.videoEmbedLink} title={node.title} preview={node.preview} styles={{width: '100%'}}/>
+                </div>
+              </li>
             ))
           }
-        </Row>
+        </ul>
       </Container>
       <Sponsors />
     </Layout>

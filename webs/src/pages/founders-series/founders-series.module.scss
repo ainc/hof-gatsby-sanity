@@ -56,3 +56,21 @@
         justify-content: space-between;
     }
 }
+.videoList{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.videoList li {
+    justify-content: center;
+
+    @media (min-width: 768px){
+        width: 50%;
+    }
+}
+
+ul {
+    padding: 0;
+}

@@ -7,17 +7,17 @@
     font-family: Times New Roman, Times, Serif;
     text-rendering: optimizelegibility;
     align-self: flex-start; // Align the title text to the left
+    margin-left: 5%;
     @media (min-width: 1200px){
       margin-left: 15%; // Align to the left of the image
     }
-
-
+    height: 45px;
 }
 .image-container {
     position: relative;
 }
 .box {
-  width: 50%;
+  width: 100%;
   align-items: center;
 }
 
