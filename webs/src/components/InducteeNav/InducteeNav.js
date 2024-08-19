@@ -53,7 +53,7 @@ fitRows._getItemLayoutPosition = function( item ) {
     this.y = this.maxY;
   }
 
-  if (this.initializing && this.x == 0) {
+  if (this.initializing && this.x === 0) {
     this.centerX.push({ offset: 0});
   }
   //if (this.centerX[this.currentRow].offset < 0)
@@ -98,7 +98,7 @@ fitRows._getItemLayoutPosition = function( item ) {
           isotope.current.destroy();
         }
       }
-  }, [])
+  }, [props.etype])
 
   React.useEffect(() => {
     if (isotope.current) {
@@ -114,7 +114,7 @@ fitRows._getItemLayoutPosition = function( item ) {
         });
       }
     }
-  }, [filterKey]);
+  }, [filterKey, props.etype]);
 
   const handleFilter = (key) => {
     if (key === '*') {
