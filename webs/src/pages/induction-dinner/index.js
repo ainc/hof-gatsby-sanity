@@ -8,6 +8,7 @@ import Sponsors from '../../components/Sponsors/Sponsors';
 import Title from '../../components/Title/Title';
 import Body from '../../components/Body/Body';
 import Button from '../../components/Button/Button'
+import PresentingSponsorBlock from '../../components/PresentingSponsorBlock/PresentingSponsorBlock';
 
 const InductionDinnerPage = ({ data }) => {
 
@@ -30,7 +31,10 @@ const InductionDinnerPage = ({ data }) => {
           <Container>
             <Row>
               <Col>
-                <Title className='mx-4 py-5'>{event.date.split(', ')[1]} Induction Celebration Dinner</Title>
+                <Title className='mx-4 py-5'>
+                  {event.date.split(', ')[1]} Induction Celebration Dinner
+                  <PresentingSponsorBlock />
+                </Title>
               </Col>
             </Row>
             <Row>

@@ -12,6 +12,7 @@ import Body from "../components/Body/Body";
 import Button from "../components/Button/Button";
 import FlickerImages from "../components/FlickerImages/FlickerImages";
 import IconPair from "../components/IconPair/IconPair";
+import PresentingSponsorBlock from "../components/PresentingSponsorBlock/PresentingSponsorBlock";
 
 const IndexPage = ({ data }) => {
   const Inductees = data.allSanityInductee.nodes;
@@ -74,7 +75,10 @@ const IndexPage = ({ data }) => {
         </Row>
         <Row>
           <Col>
-            <Title className='mx-4 py-5'>Induction Dinner</Title>
+            <Title className='mx-4 py-5'>
+              Induction Dinner
+              <PresentingSponsorBlock />
+            </Title>
           </Col>
         </Row>
         <Row className={`${styles.flexColSm} d-flex`}>
