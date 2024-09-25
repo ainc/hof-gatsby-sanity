@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { graphql, useStaticQuery } from 'gatsby';
+import * as styles from './presentingsponsorblock.module.scss';
 
 const PresentingSponsorBlock = () => {
 
@@ -27,28 +28,29 @@ const PresentingSponsorBlock = () => {
   return (
     <>
       {presentingSponsor.map((node, index) => (
-        <div>
+        <div className={`${styles.sponsorBlockDiv}`}>
 
-        <p>
+        <p className={`${styles.sponsorBlockText}`}>
         presented by 
-          <span style={{marginLeft: "10px",}}>
-           
-          <GatsbyImage 
-              image={node.image.asset.gatsbyImageData}  
-              imgStyle={{ 
-                objectFit: 'contain',
-                width: '200px',
-                height: '40px',
-              }} 
-              style={{
-                width: '200px',
-                height: '40px',
-              }}
-              layout= 'fixed'
-              alt="Hall of Fame Presenting Sponsor" 
-            />
-          </span>
+          
         </p>
+        <span style={{ marginLeft: "10px", }}>
+
+             <GatsbyImage
+                 image={node.image.asset.gatsbyImageData}
+                 imgStyle={{
+                     objectFit: 'contain',
+                     width: '160px',
+                     height: '40px',
+                 }}
+                 style={{
+                     width: '160px',
+                     height: '40px',
+                 }}
+                 layout='fixed'
+                 alt="Hall of Fame Presenting Sponsor"
+             />
+        </span>
 
           
         </div>
