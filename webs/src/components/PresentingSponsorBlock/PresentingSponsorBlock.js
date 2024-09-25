@@ -13,9 +13,7 @@ const PresentingSponsorBlock = () => {
             name
             image {
               asset {
-                gatsbyImageData(
-                width: 200
-                )
+                gatsbyImageData
               }
             }
             link
@@ -39,7 +37,14 @@ const PresentingSponsorBlock = () => {
               image={node.image.asset.gatsbyImageData}  
               imgStyle={{ 
                 objectFit: 'contain',
+                width: '200px',
+                height: '40px',
               }} 
+              style={{
+                width: '200px',
+                height: '40px',
+              }}
+              layout= 'fixed'
               alt="Hall of Fame Presenting Sponsor" 
             />
           </span>
