@@ -35,7 +35,7 @@ const PresentingSponsorBlock = () => {
           
         </p>
         <span style={{ marginLeft: "10px", }}>
-
+          <a href={node.link} target="_blank">
              <GatsbyImage
                  image={node.image.asset.gatsbyImageData}
                  imgStyle={{
@@ -50,6 +50,7 @@ const PresentingSponsorBlock = () => {
                  layout='fixed'
                  alt="Hall of Fame Presenting Sponsor"
              />
+          </a>
         </span>
 
           
