@@ -28,6 +28,7 @@ const InducteeNav = ( props ) => {
             {/*Nav for large screens and wider */}
             <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
               <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
+              <Nav.Item as="li" onClick={() => handleYearClick("2024")} tabIndex='-1'>2024</Nav.Item>
               <Nav.Item as="li" onClick={() => handleYearClick("2023")} tabIndex='-1'>2023</Nav.Item>
               <Nav.Item as="li" onClick={() => handleYearClick("2022")} tabIndex='-1'>2022</Nav.Item>
               <Nav.Item as="li" onClick={() => handleYearClick("2021")} tabIndex='-1'>2021</Nav.Item>
@@ -49,6 +50,9 @@ const InducteeNav = ( props ) => {
                 <NavDropdown.Item onClick={() => handleYearClick(null)}>
                   All
                 </NavDropdown.Item>   
+                <NavDropdown.Item onClick={() => handleYearClick("2024")}>
+                  2024
+                </NavDropdown.Item> 
                 <NavDropdown.Item onClick={() => handleYearClick("2023")}>
                   2023
                 </NavDropdown.Item>    
@@ -118,6 +122,7 @@ const InducteeNav = ( props ) => {
             {/*Nav for large screens and wider */}
             <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
               <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex='-1'>All</Nav.Item>
+              <Nav.Item as="li" onClick={() => handleYearClick("2024")} tabIndex='-1'>2024</Nav.Item>
               <Nav.Item as="li" onClick={() => handleYearClick("2023")} tabIndex='-1'>2023</Nav.Item>
               <Nav.Item as="li" onClick={() => handleYearClick("2022")} tabIndex='-1'>2022</Nav.Item>
               <Nav.Item as="li" onClick={() => handleYearClick("2021")} tabIndex='-1'>2021</Nav.Item>
