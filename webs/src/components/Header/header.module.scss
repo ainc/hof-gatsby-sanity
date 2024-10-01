@@ -46,7 +46,7 @@
     color: white !important;
 }
 .dropdown-menu div{
-    background: #af0a0a !important;
+    background: url('../../images/bg.jpg') center center repeat-y !important;
     border: none !important;
 }
 
@@ -61,6 +61,9 @@
     color: black;
     text-decoration: none;
     font-family: 'Times New Roman, Times, Serif';
+    @media (max-width: 1000px){
+        color: white;
+    }
 }
 .dropdown-items:focus{
     background-color: #af0a0a

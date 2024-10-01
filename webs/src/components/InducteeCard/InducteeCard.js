@@ -64,7 +64,7 @@ const InducteeCard = (props) => {
     };
     
     return (
-    <Card className={`${styles.inducteeCard} ${hoverDirection} ${props.className}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <Card className={`${styles.inducteeCard} ${hoverDirection}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <div className={styles.imageContainer}>
             <GatsbyImage image={props.img} alt={props.name} />
             <a href={props.link} className={styles.cardOverlay} aria-label='Inductee Bio'>
