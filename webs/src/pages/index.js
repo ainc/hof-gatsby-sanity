@@ -115,7 +115,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query IndexPageQuery {
-    allSanityInductee(sort: {inductee: {year: DESC}}) {
+    allSanityInductee(sort: [{inductee: {year: DESC}}, {inductee: {name: ASC}}]) {
       nodes {
         inductee {
           name
