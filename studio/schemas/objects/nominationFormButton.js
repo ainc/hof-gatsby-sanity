@@ -1,7 +1,7 @@
 export default {
   name: 'nominationFormButton',
   title: 'Nomination Form Button',
-  type: 'document',
+  type: 'object',
   fields: [
     {
       name: 'text',
@@ -29,4 +29,24 @@ export default {
         }),
     },
   ],
+  // preview: {
+  //   select: {
+  //     title: 'text',
+  //     deadline: 'deadline',
+  //   },
+  //   prepare(selection) {
+  //     const {title, deadline} = selection
+  //     let formattedDate = ''
+
+  //     if (deadline) {
+  //       const [year, month, day] = deadline.split('-').map(Number)
+  //       formattedDate = `Deadline: ${month}/${day}/${year.toString().slice(-2)}`
+  //     }
+
+  //     return {
+  //       title: title,
+  //       subtitle: formattedDate,
+  //     }
+  //   },
+  // },
 }

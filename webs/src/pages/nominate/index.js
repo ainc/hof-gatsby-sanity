@@ -4,9 +4,28 @@ import Sponsors from '../../components/Sponsors/Sponsors';
 import IconPair from '../../components/IconPair/IconPair';
 import Title from '../../components/Title/Title';
 import { Container, Button, Stack } from 'react-bootstrap';
+import { graphql, useStaticQuery } from 'gatsby';
+import { format } from 'date-fns';
 import * as styles from './nominate.module.scss';
 
 const NominatePage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allSanityNominationFormButtonList {
+        nodes {
+          button {
+            _key
+            _type
+            text
+            deadline
+            url
+          }
+        }
+      }
+    }
+  `);
+  const buttons = data.allSanityNominationFormButtonList.nodes[0].button;
+
   return (
     <Layout>
       <Container>
@@ -33,46 +52,22 @@ const NominatePage = () => {
           </ul>
         </section>
         <Stack gap={3} className={styles.buttonContainer} lg={12}>
-          <Button
-            className={styles.button}
-            href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Hall of Fame Nominations (click here, deadline: 5/3/24)
-          </Button>
-          <Button
-            className={styles.button}
-            href="https://forms.zohopublic.com/virtualoffice9155/form/EmergingEntrepreneurNominationKentuckyEntrepreneur/formperma/WlfEONIkD_KdXHI5lfj9kXvZ8SUBgQTaC9bIf9AnGXk"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Emerging Entrepreneur Nominations (click here, deadline: 5/3/24)
-          </Button>
-          <Button
-            className={styles.button}
-            href="https://zfrmz.com/HiHnbru8T7pFNW1rTFpw"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Mentor of the Year Award (click here, deadline: 5/3/24)
-          </Button>
-          <Button
-            className={styles.button}
-            href="https://zfrmz.com/FcyrqHK54OYvk507ovTQ"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Investor of the Year (click here, deadline: 5/3/24)
-          </Button>
-          <Button
-            className={styles.button}
-            href="https://zfrmz.com/PcjCQ9fgz9mjukf8hpv3"
-            target="_blank"
-            rel="noreferrer"
-          >
-            President/Executive Nomination (click here, deadline: 5/3/24)
-          </Button>
+          {buttons.map((button) => {
+            const [year, month, day] = button.deadline.split('-').map(Number);
+            const localDate = new Date(year, month - 1, day);
+            const formattedDate = format(localDate, 'M/d/yy');
+            return (
+              <Button
+                className={styles.button}
+                key={button._id}
+                href={button.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {button.text} (click here, deadline: {formattedDate})
+              </Button>
+            );
+          })}
         </Stack>
         <Sponsors />
       </Container>
