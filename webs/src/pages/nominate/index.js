@@ -29,11 +29,11 @@ const NominatePage = () => {
                 </ul>
             </section>
             <Stack gap={3} className={styles.buttonContainer} lg={12}>
-                <Button className={styles.button} href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI" target="_blank" rel="noreferrer">Hall of Fame Nominations (click here, deadline: 5/3/24)</Button>
-                <Button className={styles.button} href="https://forms.zohopublic.com/virtualoffice9155/form/EmergingEntrepreneurNominationKentuckyEntrepreneur/formperma/WlfEONIkD_KdXHI5lfj9kXvZ8SUBgQTaC9bIf9AnGXk" target="_blank" rel="noreferrer">Emerging Entrepreneur Nominations (click here, deadline: 5/3/24)</Button>
-                <Button className={styles.button} href="https://zfrmz.com/HiHnbru8T7pFNW1rTFpw" target="_blank" rel="noreferrer">Mentor of the Year Award (click here, deadline: 5/3/24)</Button>
-                <Button className={styles.button} href="https://zfrmz.com/FcyrqHK54OYvk507ovTQ" target="_blank" rel="noreferrer">Investor of the Year (click here, deadline: 5/3/24)</Button>
-                <Button className={styles.button} href="https://zfrmz.com/PcjCQ9fgz9mjukf8hpv3" target="_blank" rel="noreferrer">President/Executive Nomination (click here, deadline: 5/3/24)</Button>
+                <Button className={styles.button} href="https://forms.zohopublic.com/virtualoffice9155/form/NominationKentuckyEntrepreneurHallofFame/formperma/RbkleuPk2I_uJqvvP0aAi2DrXVrfwso-QKVOWR6h_EI" target="_blank" rel="noreferrer">Hall of Fame Nominations (click here, deadline: 5/3/2025)</Button>
+                <Button className={styles.button} href="https://forms.zohopublic.com/virtualoffice9155/form/EmergingEntrepreneurNominationKentuckyEntrepreneur/formperma/WlfEONIkD_KdXHI5lfj9kXvZ8SUBgQTaC9bIf9AnGXk" target="_blank" rel="noreferrer">Emerging Entrepreneur Nominations (click here, deadline: 5/3/2025)</Button>
+                <Button className={styles.button} href="https://zfrmz.com/HiHnbru8T7pFNW1rTFpw" target="_blank" rel="noreferrer">Mentor of the Year Award (click here, deadline: 5/3/2025)</Button>
+                <Button className={styles.button} href="https://zfrmz.com/FcyrqHK54OYvk507ovTQ" target="_blank" rel="noreferrer">Investor of the Year (click here, deadline: 5/3/2025)</Button>
+                <Button className={styles.button} href="https://zfrmz.com/PcjCQ9fgz9mjukf8hpv3" target="_blank" rel="noreferrer">President/Executive Nomination (click here, deadline: 5/3/2025)</Button>
             </Stack>
             <Sponsors />
             </Container>
