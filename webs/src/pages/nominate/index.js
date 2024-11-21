@@ -77,3 +77,4 @@ const NominatePage = () => {
 export default NominatePage;
 
 export const Head = () => <title>Nominate</title>;
+
