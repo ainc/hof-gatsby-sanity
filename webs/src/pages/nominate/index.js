@@ -39,8 +39,8 @@ const NominatePage = () => {
         </Title>
         <section style={{ color: 'rgb(102,102,102)' }}>
           <p>
-            <b>Note: </b>Nominations for the 2024 class and beyond is open.{' '}
-            <b>Deadline: May 3, 2024</b>
+            <b>Note: </b>Nominations for the 2025 class and beyond is open.{' '}
+            <b>Deadline: May 3, 2025</b>
           </p>
           <h2>Selection Criteria</h2>
           <ul>
