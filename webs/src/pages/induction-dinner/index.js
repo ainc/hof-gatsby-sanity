@@ -115,7 +115,7 @@ const InductionDinnerPage = ({ data }) => {
                      We're here to help you make valuable connections and create measurable results.</h3>
                 <a className={styles.linkText} href={documents.sponsorOpportunites.asset.url}>View/Download Sponsorship Pkg.</a><br />
                 <a className={styles.linkText} href={documents.advertisingRate.asset.url}>View/Download Advertising Rate Card</a><br />
-                <a className={styles.linkText} href={documents.postEventReport.asset.url}>View/Download Last Year's Post-event Report</a><br />
+                <a className={styles.linkText} href={documents.postEventReport.asset.url}>View/Download the 2024 Post-event Report</a><br />
                 <a className={styles.linkText} href={link}>Register here to become a sponsor</a>
 
               </Col>
