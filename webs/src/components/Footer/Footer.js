@@ -87,7 +87,7 @@ const Footer = () => {
                         <Row>
                             <Col>
                                 <h3>Post Event Report</h3>
-                                <p><a href={postEventReport.asset.url} target='_blank'>2023 Post-Event Report</a></p>
+                                <p><a href={postEventReport.asset.url} target='_blank'>2024 Post-Event Report</a></p>
                             </Col>
                         </Row>
                         <Row>
