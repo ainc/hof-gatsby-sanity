@@ -1,141 +1,178 @@
 .inductee-card {
-    position: relative;
-    height: 200px; /* Adjust the height as needed */
-    width: 200px;
-    background-size: cover;
-    background-position: center;
-    margin: 10px;
-    padding: 8px;
-    background: #fff;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  height: 200px; /* Adjust the height as needed */
+  width: 200px;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .image-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: safe center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: safe center;
 }
 
 .card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(213, 1, 1, 0.8); /* Adjust background color and opacity as needed */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    transform: translateY(-100%);
-    animation-duration: 300ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: -1 1px 0 rgba(0,0,0,0.1), 0 -10px 0 rgba(255,255,255,0.3);
-    text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    213,
+    1,
+    1,
+    0.8
+  ); /* Adjust background color and opacity as needed */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  transform: translateY(-100%);
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow:
+    -1 1px 0 rgba(0, 0, 0, 0.1),
+    0 -10px 0 rgba(255, 255, 255, 0.3);
+  text-decoration: none;
 }
 
 .hoverLeft .card-overlay {
-    animation-name: animation--enter-left;
+  animation-name: animation--enter-left;
 }
 
 .hoverRight .card-overlay {
-    animation-name: animation--enter-right;
+  animation-name: animation--enter-right;
 }
 
 .hoverTop .card-overlay {
-    animation-name: animation--enter-top;
-} 
+  animation-name: animation--enter-top;
+}
 
 .hoverBottom .card-overlay {
-    animation-name: animation--enter-bottom;
+  animation-name: animation--enter-bottom;
 }
 
 .hoverLeftExit .card-overlay {
-    animation-name: animation--leave-left;
+  animation-name: animation--leave-left;
 }
 
 .hoverRightExit .card-overlay {
-    animation-name: animation--leave-right;
+  animation-name: animation--leave-right;
 }
 
 .hoverTopExit .card-overlay {
-    animation-name: animation--leave-top;
-} 
-
-.hoverBottomExit .card-overlay {
-    animation-name: animation--leave-bottom;
+  animation-name: animation--leave-top;
 }
 
-
+.hoverBottomExit .card-overlay {
+  animation-name: animation--leave-bottom;
+}
 
 // Animations
 @keyframes animation--enter-top {
-    0% { transform: translate3d(0, -100%, 0); }
-    100% { transform: none; }
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes animation--enter-right {
-    0% { transform: translate3d(-100%, 0, 0); }
-    100% { transform: none; }
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes animation--enter-left {
-    0% { transform: translate3d(100%, 0, 0); }
-    100% { transform: none; }
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 @keyframes animation--enter-bottom {
-    0% { transform: translate3d(0, 100%, 0); }
-    100% { transform: none; }
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: none;
+  }
 }
 
-
-
 @keyframes animation--leave-top {
-    0% { transform: none; }
-    100% { transform: translate3d(0, -100%, ); }
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translate3d(0, -100%);
+  }
 }
 
 @keyframes animation--leave-right {
-    0% { transform: none; }
-    100% { transform: translate3d(-100%, 0, 0); }
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
 @keyframes animation--leave-left {
-    0% { transform: none; }
-    100% { transform: translate3d(100%, 0, 0); }
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
 }
 
 @keyframes animation--leave-bottom {
-    0% { transform: none; }
-    100% { transform: translate3d(0, 100%, 0); }
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
 }
 
 .image-container:hover .card-overlay {
-    transform: translateX(0) translateY(0);
+  transform: translateX(0) translateY(0);
 }
 
-.name{
-    display: block;
-    padding: 10px 0;
-    margin: 20px 20px 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: rgba(255,255,255,0.9);
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.5);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.1), 0 -10px 0 rgba(255,255,255,0.3);
+.name {
+  display: block;
+  padding: 10px 0;
+  margin: 20px 20px 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.1),
+    0 -10px 0 rgba(255, 255, 255, 0.3);
 }
-.company{
-    font-style:italic;
-    font-size: 12px;
-    font-weight: normal;
+.company {
+  font-style: italic;
+  font-size: 12px;
+  font-weight: normal;
 }

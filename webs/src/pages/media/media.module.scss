@@ -1,101 +1,99 @@
-@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url("https://fonts.googleapis.com/css?family=Muli");
 
 body {
-    font-family: 'Muli', Arial, sans-serif;
-    background: #e6e6e6;
-    line-height: 24px;
-    color: #666;
+  font-family: "Muli", Arial, sans-serif;
+  background: #e6e6e6;
+  line-height: 24px;
+  color: #666;
 }
 
 h3 {
-    margin: 0px;
-    padding: 5px;
+  margin: 0px;
+  padding: 5px;
 }
 
 h4 {
-    font-size: 18px;
-    font-weight: 200;
+  font-size: 18px;
+  font-weight: 200;
 }
 
 .recentHeader {
-    display: flex;
-    margin-right: 60px;
-    margin-top: 20px;
-    padding-bottom: 70px;
-
+  display: flex;
+  margin-right: 60px;
+  margin-top: 20px;
+  padding-bottom: 70px;
 }
 
 .thumbnail {
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
-    border: 8px solid white;
-
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  border: 8px solid white;
 }
 
 a {
-    color: rgb(175, 10, 9);
-    text-decoration: none;
+  color: rgb(175, 10, 9);
+  text-decoration: none;
 }
 
 p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .ceremonyVideos {
-    list-style-type: none;
-    padding-left: 0 !important;
+  list-style-type: none;
+  padding-left: 0 !important;
 }
 
-.pressContent h4, .pressContent p {
-    margin-top: 5px !important;
-    font-family: 'Muli';
-    line-height: 26px;
+.pressContent h4,
+.pressContent p {
+  margin-top: 5px !important;
+  font-family: "Muli";
+  line-height: 26px;
 }
 
 .yearHeader {
-    padding-top: 20px !important;
-    margin-top: 0px !important;
+  padding-top: 20px !important;
+  margin-top: 0px !important;
 }
 
 .videoLink {
-    position: relative;
-    text-align: center;
-    margin-top: -6px;
-    margin-bottom: 10px;
+  position: relative;
+  text-align: center;
+  margin-top: -6px;
+  margin-bottom: 10px;
 }
 
 .videoText {
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.4);
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    @media (min-width: 425px) {
-        //font-size: 14px;
-        //line-height: 18px;
-    }
-    @media (min-width: 769px) {
-        font-size: 22px;
-    }
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  @media (min-width: 425px) {
+    //font-size: 14px;
+    //line-height: 18px;
+  }
+  @media (min-width: 769px) {
+    font-size: 22px;
+  }
 }
 
 .play {
-    justify-content: center;
-    top: 45%;
-    
-    @media (max-width: 768px) {
-        left: 50%;
-        top: 40%;
-        width: 20%;
-    }
+  justify-content: center;
+  top: 45%;
 
+  @media (max-width: 768px) {
+    left: 50%;
+    top: 40%;
+    width: 20%;
+  }
 }
 
-.videoLink:hover .videoText{
-    color: rgba(255, 255, 255, 0.8);
+.videoLink:hover .videoText {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .ceremonyImage {
-    width: inherit;
-    height: inherit;
+  width: inherit;
+  height: inherit;
 }

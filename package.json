@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "hof-gatsby-sanity",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ainc/hof-gatsby-sanity.git",
+  "author": "<nwils000@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "webs",
+    "studio"
+  ],
+  "scripts": {
+    "postinstall": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss}": "prettier --write"
+  }
+}

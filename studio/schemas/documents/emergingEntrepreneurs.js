@@ -19,6 +19,6 @@ export default {
   preview: {
     select: {
       title: 'inductee.name',
-    }
-  }
+    },
+  },
 }

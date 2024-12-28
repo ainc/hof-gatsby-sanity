@@ -6,7 +6,7 @@ export default {
     // 'create',
     'update',
     // 'delete',
-    'publish'
+    'publish',
   ],
   fields: [
     {
@@ -14,17 +14,17 @@ export default {
       type: 'string',
       title: 'Title',
       initialValue: 'Footer',
-      hidden: true
+      hidden: true,
     },
     {
       name: 'sponsorLink',
       type: 'url',
-      title: 'Sponsor Link'
+      title: 'Sponsor Link',
     },
     {
       name: 'sponsorContact',
       type: 'contactInfo',
-      title: 'Sponsor Contact'
-    }
-  ]
+      title: 'Sponsor Contact',
+    },
+  ],
 }

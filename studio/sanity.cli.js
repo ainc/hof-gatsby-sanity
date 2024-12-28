@@ -9,12 +9,11 @@ export default defineCliConfig({
       workspace: 'production-workspace',
       dataset: 'production',
       id: 'production',
-
     },
     {
       workspace: 'development-workspace',
       dataset: 'development',
-      id: 'development'
-    }
-  ]
+      id: 'development',
+    },
+  ],
 })
