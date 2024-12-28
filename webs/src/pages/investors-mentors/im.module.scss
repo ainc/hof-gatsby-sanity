@@ -1,27 +1,33 @@
-.spacing{
-    display: inline-flex;
-    justify-content: center;
-    flex-flow: row wrap;
+.spacing {
+  display: inline-flex;
+  justify-content: center;
+  flex-flow: row wrap;
 }
-.across{
-    flex: 0 0 100%;
-    display: inline-block;
-    width: 100%;
-    flex-grow: 1;
+.across {
+  flex: 0 0 100%;
+  display: inline-block;
+  width: 100%;
+  flex-grow: 1;
 }
-.space{
-    font-family: Times New Roman, Times, Serif;
-    border-bottom: 1px solid #bbb;
-    padding-bottom: 60px;
-    margin: 15px 0 30px;
-    height: 52px;
-    padding-top: 10px;
-    padding-bottom: 90px;
-    margin: 15px 0px 30px;
+.space {
+  font-family:
+    Times New Roman,
+    Times,
+    Serif;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 60px;
+  margin: 15px 0 30px;
+  height: 52px;
+  padding-top: 10px;
+  padding-bottom: 90px;
+  margin: 15px 0px 30px;
 }
-h3{
-    font-family: Times New Roman, Times, Serif;
-    font-size: 28px;
-    padding-bottom: 60px;
-    margin: 15px 0px 30px;
+h3 {
+  font-family:
+    Times New Roman,
+    Times,
+    Serif;
+  font-size: 28px;
+  padding-bottom: 60px;
+  margin: 15px 0px 30px;
 }

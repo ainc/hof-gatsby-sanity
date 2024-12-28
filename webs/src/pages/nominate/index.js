@@ -1,12 +1,12 @@
-import * as React from 'react';
-import Layout from '../../components/Layout/Layout';
-import Sponsors from '../../components/Sponsors/Sponsors';
-import IconPair from '../../components/IconPair/IconPair';
-import Title from '../../components/Title/Title';
-import { Container, Button, Stack } from 'react-bootstrap';
-import { graphql, useStaticQuery } from 'gatsby';
-import { format } from 'date-fns';
-import * as styles from './nominate.module.scss';
+import * as React from "react";
+import Layout from "../../components/Layout/Layout";
+import Sponsors from "../../components/Sponsors/Sponsors";
+import IconPair from "../../components/IconPair/IconPair";
+import Title from "../../components/Title/Title";
+import { Container, Button, Stack } from "react-bootstrap";
+import { graphql, useStaticQuery } from "gatsby";
+import { format } from "date-fns";
+import * as styles from "./nominate.module.scss";
 
 const NominatePage = () => {
   const data = useStaticQuery(graphql`
@@ -37,9 +37,9 @@ const NominatePage = () => {
           <h2>Nominate</h2>
           <IconPair className={styles.icons} />
         </Title>
-        <section style={{ color: 'rgb(102,102,102)' }}>
+        <section style={{ color: "rgb(102,102,102)" }}>
           <p>
-            <b>Note: </b>Nominations for the 2024 class and beyond is open.{' '}
+            <b>Note: </b>Nominations for the 2024 class and beyond is open.{" "}
             <b>Deadline: May 3, 2024</b>
           </p>
           <h2>Selection Criteria</h2>
@@ -53,9 +53,9 @@ const NominatePage = () => {
         </section>
         <Stack gap={3} className={styles.buttonContainer} lg={12}>
           {buttons.map((button) => {
-            const [year, month, day] = button.deadline.split('-').map(Number);
+            const [year, month, day] = button.deadline.split("-").map(Number);
             const localDate = new Date(year, month - 1, day);
-            const formattedDate = format(localDate, 'M/d/yy');
+            const formattedDate = format(localDate, "M/d/yy");
             return (
               <Button
                 className={styles.button}
@@ -77,4 +77,3 @@ const NominatePage = () => {
 export default NominatePage;
 
 export const Head = () => <title>Nominate</title>;
-
