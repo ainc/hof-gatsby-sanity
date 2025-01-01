@@ -6,7 +6,7 @@ import * as styles from "./header.module.scss";
 const Header = () => {
   return (
     <>
-      <div className={styles.alert}>
+      {/* <div className={styles.alert}>
         <p>
           Register for the 2024 Induction Celebration (Nov 12, 2024){" "}
           <a
@@ -17,7 +17,7 @@ const Header = () => {
           </a>
           .
         </p>
-      </div>
+      </div> */}
       {/*Header for large screens and wider */}
       <Container fluid className={`${styles.background} d-none d-lg-block`}>
         <Container>
