@@ -7,28 +7,34 @@ export default {
       name: 'note',
       title: 'Note',
       type: 'text',
-      description: 'This is a customizable note or message to display above the form buttons.',
+      description: 'A customizable note or message to display above the buttons.',
+    },
+    {
+      name: 'deadline',
+      title: 'Nomination Deadline',
+      type: 'string',
+      description: 'The deadline for nominations in a human-readable format (e.g., May 3, 2024).',
     },
     {
       name: 'buttons',
       title: 'Nomination Form Buttons',
       type: 'array',
       of: [{type: 'nominationFormButton'}],
-      description:
-        'An array of nomination form buttons, each with text, deadline, and URL (Uniform Resource Locator).',
+      description: 'An array of nomination form buttons, each with text, deadline, and URL.',
     },
   ],
   preview: {
     select: {
       note: 'note',
+      deadline: 'deadline',
       buttonCount: 'buttons.length',
     },
     prepare(selection) {
-      const {note, buttonCount} = selection
+      const {note, deadline, buttonCount} = selection
       const shortNote = note && note.length > 40 ? note.slice(0, 40) + '…' : note
       return {
-        title: `Nomination Form Page`,
-        subtitle: `${buttonCount || 0} button${buttonCount === 1 ? '' : 's'} | Note: ${shortNote || 'No note'}`,
+        title: 'Nomination Form Page',
+        subtitle: `${buttonCount || 0} button${buttonCount === 1 ? '' : 's'} | Deadline: ${deadline || 'No deadline'}`,
       }
     },
   },

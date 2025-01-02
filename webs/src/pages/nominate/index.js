@@ -13,6 +13,7 @@ const NominatePage = () => {
     query {
       sanityNominationFormPage {
         note
+        deadline
         buttons {
           _key
           text
@@ -23,7 +24,11 @@ const NominatePage = () => {
     }
   `);
 
-  const { note = "", buttons = [] } = data?.sanityNominationFormPage || {};
+  const {
+    note = "",
+    deadline = "",
+    buttons = [],
+  } = data?.sanityNominationFormPage || {};
 
   return (
     <Layout>
@@ -39,7 +44,12 @@ const NominatePage = () => {
         <section style={{ color: "rgb(102,102,102)" }}>
           {note && (
             <p>
-              <b>Note: </b> {note}
+              <b>Note: </b> {note}{" "}
+              {deadline && (
+                <span>
+                  <b>Deadline: {deadline}</b>
+                </span>
+              )}
             </p>
           )}
           <h2>Selection Criteria</h2>
@@ -52,7 +62,7 @@ const NominatePage = () => {
           </ul>
         </section>
         <Stack gap={3} className={styles.buttonContainer} lg={12}>
-          {/* Render buttons only if they exist and have data */}
+          {/* Render buttons */}
           {buttons.length > 0 ? (
             buttons.map((button) => {
               const formattedDate = button.deadline
