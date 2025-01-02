@@ -23,19 +23,4 @@ export default {
       description: 'An array of nomination form buttons, each with text, deadline, and URL.',
     },
   ],
-  preview: {
-    select: {
-      note: 'note',
-      deadline: 'deadline',
-      buttonCount: 'buttons.length',
-    },
-    prepare(selection) {
-      const {note, deadline, buttonCount} = selection
-      const shortNote = note && note.length > 40 ? note.slice(0, 40) + '…' : note
-      return {
-        title: 'Nomination Form Page',
-        subtitle: `${buttonCount || 0} button${buttonCount === 1 ? '' : 's'} | Deadline: ${deadline || 'No deadline'}`,
-      }
-    },
-  },
 }
