@@ -23,7 +23,7 @@ const NominatePage = () => {
     }
   `);
 
-  const { note, buttons } = data.sanityNominationFormPage;
+  const { note = "", buttons = [] } = data?.sanityNominationFormPage || {};
 
   return (
     <Layout>
@@ -52,22 +52,30 @@ const NominatePage = () => {
           </ul>
         </section>
         <Stack gap={3} className={styles.buttonContainer} lg={12}>
-          {buttons.map((button) => {
-            const [year, month, day] = button.deadline.split("-").map(Number);
-            const localDate = new Date(year, month - 1, day);
-            const formattedDate = format(localDate, "M/d/yy");
-            return (
-              <Button
-                className={styles.button}
-                key={button._key}
-                href={button.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {button.text} (click here, deadline: {formattedDate})
-              </Button>
-            );
-          })}
+          {/* Render buttons only if they exist and have data */}
+          {buttons.length > 0 ? (
+            buttons.map((button) => {
+              const formattedDate = button.deadline
+                ? format(new Date(button.deadline), "M/d/yy")
+                : "No deadline";
+
+              return (
+                <Button
+                  className={styles.button}
+                  key={button._key}
+                  href={button.url || "#"}
+                  target="_blank"
+                  rel="noreferrer"
+                  disabled={!button.url}
+                >
+                  {button.text || "Untitled Button"}{" "}
+                  {button.deadline && `(Deadline: ${formattedDate})`}
+                </Button>
+              );
+            })
+          ) : (
+            <p>No nomination buttons available at this time.</p>
+          )}
         </Stack>
         <Sponsors />
       </Container>
