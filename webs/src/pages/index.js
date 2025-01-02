@@ -59,7 +59,7 @@ const IndexPage = ({ data }) => {
             </Body>
             <Body>
               Nominations are open for the current year's class. To nominate,
-              <a href="/nominate">fill out this form.</a> Anyone can nominate.
+              <a href="/nominate"> fill out this form.</a> Anyone can nominate.
             </Body>
             <Body>
               If you have questions or would like to become involved please
