@@ -66,7 +66,14 @@ const NominatePage = () => {
           {buttons.length > 0 ? (
             buttons.map((button) => {
               const formattedDate = button.deadline
-                ? format(new Date(button.deadline), "M/d/yy")
+                ? format(
+                    new Date(
+                      new Date(button.deadline).setDate(
+                        new Date(button.deadline).getDate() + 1,
+                      ),
+                    ),
+                    "M/d/yy",
+                  )
                 : "No deadline";
 
               return (
@@ -84,7 +91,7 @@ const NominatePage = () => {
               );
             })
           ) : (
-            <p>No nomination buttons available at this time.</p>
+            <p>No nomination forms available at this time.</p>
           )}
         </Stack>
         <Sponsors />
