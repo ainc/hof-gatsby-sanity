@@ -20,6 +20,7 @@ import documents from './documents/documents'
 import siteSettings from './documents/siteSettings'
 import nominationFormButton from './objects/nominationFormButton'
 import nominationFormPage from './documents/nominationFormPage'
+import headerAlert from './documents/headerAlert'
 
 export const schemaTypes = [
   //objects
@@ -43,5 +44,6 @@ export const schemaTypes = [
   footer,
   event,
   nominationFormPage,
+  headerAlert,
   documents,
 ]
