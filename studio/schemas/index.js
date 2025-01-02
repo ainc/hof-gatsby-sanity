@@ -19,7 +19,7 @@ import event from './documents/event'
 import documents from './documents/documents'
 import siteSettings from './documents/siteSettings'
 import nominationFormButton from './objects/nominationFormButton'
-import nominationFormButtonList from './documents/nominationFormButtonList'
+import nominationFormPage from './documents/nominationFormPage'
 
 export const schemaTypes = [
   //objects
@@ -42,6 +42,6 @@ export const schemaTypes = [
   foundersVideo,
   footer,
   event,
-  nominationFormButtonList,
+  nominationFormPage,
   documents,
 ]

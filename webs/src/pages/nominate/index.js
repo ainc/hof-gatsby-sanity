@@ -11,20 +11,19 @@ import * as styles from "./nominate.module.scss";
 const NominatePage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allSanityNominationFormButtonList {
-        nodes {
-          button {
-            _key
-            _type
-            text
-            deadline
-            url
-          }
+      sanityNominationFormPage {
+        note
+        buttons {
+          _key
+          text
+          deadline
+          url
         }
       }
     }
   `);
-  const buttons = data.allSanityNominationFormButtonList.nodes[0].button;
+
+  const { note, buttons } = data.sanityNominationFormPage;
 
   return (
     <Layout>
@@ -38,10 +37,11 @@ const NominatePage = () => {
           <IconPair className={styles.icons} />
         </Title>
         <section style={{ color: "rgb(102,102,102)" }}>
-          <p>
-            <b>Note: </b>Nominations for the 2025 class and beyond is open.{' '}
-            <b>Deadline: May 3, 2025</b>
-          </p>
+          {note && (
+            <p>
+              <b>Note: </b> {note}
+            </p>
+          )}
           <h2>Selection Criteria</h2>
           <ul>
             <li>Revenue & profit achieved</li>
@@ -59,7 +59,7 @@ const NominatePage = () => {
             return (
               <Button
                 className={styles.button}
-                key={button._id}
+                key={button._key}
                 href={button.url}
                 target="_blank"
                 rel="noreferrer"
@@ -74,6 +74,7 @@ const NominatePage = () => {
     </Layout>
   );
 };
+
 export default NominatePage;
 
 export const Head = () => <title>Nominate</title>;
