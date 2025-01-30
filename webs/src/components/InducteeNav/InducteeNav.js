@@ -6,13 +6,28 @@ import * as styles from "./inducteenav.module.scss";
 
 const InducteeNav = (props) => {
   const data = props.data;
-  const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
+  const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected 
+  const [selectedIndustry, setSelectedIndustry] = useState(null)
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
     setSelectedYear(year); // Update state when a year is clicked
     props.setSelectedYear(year);
+    props.setSelectedIndustry(null); 
   };
+
+  // Function to handle industry selection - pass in state values as props because each instance of the component needs to handle its own state
+  const handleIndustryClick = (industry) => {
+    setSelectedIndustry(industry); // Update state when a industry is clicked
+    props.setSelectedIndustry(industry);
+    props.setSelectedYear(null);
+    console.log(data)
+  };
+
+  // Filter inductees based on the selected industry
+  const filteredInducteesByIndustry = props.selectedIndustry
+    ? data.filter((node) => node.inductee.industry === props.selectedIndustry)
+    : data;
 
   // Filter inductees based on the selected year
   if (props.selectedYear !== "2020") {
@@ -146,6 +161,30 @@ const InducteeNav = (props) => {
               >
                 2010
               </Nav.Item>
+
+              <br></br><br></br>
+
+              <Nav.Item
+                as="li"
+                onClick={() => handleIndustryClick(null)}
+                tabIndex="-1"
+              >
+                All
+              </Nav.Item>
+              <Nav.Item
+                as="li"
+                onClick={() => handleIndustryClick("Technology")}
+                tabIndex="-1"
+              >
+                Technology
+              </Nav.Item>
+              <Nav.Item
+                as="li"
+                onClick={() => handleIndustryClick("Food")}
+                tabIndex="-1"
+              >
+                Food
+              </Nav.Item>
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -209,7 +248,21 @@ const InducteeNav = (props) => {
         </div>
         <div className="py-3 mx-5 d-flex justify-content-center">
           <ul className={`${styles.inducteesList}`}>
-            {filteredInductees.map((node, index) => (
+
+            {selectedIndustry === null ? filteredInductees.map((node, index) => (
+              <li key={index}>
+                <InducteeCard
+                  img={node.inductee.profilePhoto.asset.gatsbyImageData}
+                  name={node.inductee.name}
+                  company={node.inductee.company}
+                  link={
+                    props.title === "Inductees"
+                      ? node.slug.current
+                      : node.linkedin
+                  }
+                />
+              </li>
+            )) : filteredInducteesByIndustry.map((node, index) => (
               <li key={index}>
                 <InducteeCard
                   img={node.inductee.profilePhoto.asset.gatsbyImageData}
