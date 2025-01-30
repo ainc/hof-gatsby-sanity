@@ -1,73 +1,223 @@
 # hof-gatsby-sanity
 
-## Big Picture Goal
-Remake [the Hall of Fame website](https://www.entrepreneurhof.com/) using React, Gatsby, and Sanity.
+## Overview
 
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
+This project uses a **Yarn monorepo** with two primary workspaces:
+- **webs**: A Gatsby site (front-end).
+- **studio**: A Sanity Content Studio (schema and content management).
 
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+Because **pushing directly to `main` is impossible**, changes must be managed through **issues**, **feature branches**, and **pull requests (PRs)**. This workflow ensures clarity, collaboration, and minimal downtime when integrating changes.
 
-## 🚀 Quick Start (Using Yarn)
+---
 
-1. **Install dependencies (in the root folder).**  
-    yarn install
+## 1. Initial Setup
 
-2. **Start developing (Gatsby site).**  
-   - Navigate to the `webs` folder and run:  
-        cd webs  
-        yarn develop  
-   - Your site should be running at http://localhost:8000
+1. **Clone the repo**  
+   ```
+   git clone <your-repo-url>  
+   ```
 
-3. **Open the code and start customizing!**  
-   - Your Gatsby code is in the `webs` folder.
-   - Any changes will hot-reload in the browser.
+2. **Install dependencies (in the root folder)**  
+   ``` 
+   cd hof-gatsby-sanity  
+   yarn install  
+   ```
 
-## Sanity Workflow
+3. **Verify Yarn is installed**  
+   ``` 
+   yarn --version  
+   ```
 
-Sanity can overwrite schema changes if multiple branches modify schemas simultaneously. To avoid issues:
+---
 
-1. Plan out all necessary schema for development.
-2. Add the new schema, commit, and push to the `main` branch on GitHub.
-3. Redeploy the GraphQL API:  
-    yarn workspace studio deploy-graphql  
-   (or run the same command from the `studio` folder if preferred).
-4. Other users should pull the updated schema before adding any new schema.
-5. Continue front-end development using the updated schema.
+## 2. Issue-Driven Development
 
-## Learn More About Gatsby
+**Before making any changes**, create a GitHub issue describing the task or feature:
 
-- Documentation: https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
-- Tutorials: https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
-- Guides: https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
-- API Reference: https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
-- Plugin Library: https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
-- Cheat Sheet: https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
+1. **Create an issue**:
+   - Provide a clear title and description of the task, including any affected areas (`webs`, `studio`, or both).
+   
+2. **Create a branch off the issue**:
+   ```
+   git checkout -b feat/<issue-number>-<short-description>  
+   ```
+   - Example: `feat/42-add-new-schema-field`
 
-## 🚀 Quick Start (Netlify)
+---
 
-You can deploy this starter with one click on Netlify:
+## 3. Local Development
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+### 3.1 Gatsby Site (`webs`)
 
-## Sanity Clean Content Studio
+1. **Navigate to `webs`**  
+   ```
+   cd webs  
+   yarn develop  
+   ``` 
+   - The Gatsby dev (development) server runs at [http://localhost:8000](http://localhost:8000).
 
-Congratulations! You have installed the Sanity Content Studio, which is a real-time content editing environment connected to the Sanity backend.
+2. **Edit code** in the `webs` folder.  
+   - Changes appear automatically (hot reload).
 
-You can do the following:
+### 3.2 Sanity Studio (`studio`)
 
-- Read the “getting started” docs: https://www.sanity.io/docs/introduction/getting-started?utm_source=readme  
-- Join the community Slack: https://slack.sanity.io/?utm_source=readme  
-- Extend and build plugins: https://www.sanity.io/docs/content-studio/extending?utm_source=readme  
+1. **Navigate to `studio`**  
+   ``` 
+   cd studio  
+   yarn dev  
+   ``` 
+   - The Studio runs at [http://localhost:3333](http://localhost:3333).
 
-## Making Changes to Production Structure
+2. **Schema or content updates**  
+   - Edit files in `studio/schemas` and see changes in the local Studio.
 
-1. Make changes in the Sanity Studio that affect the production structure.
-2. Transfer those changes to the development database by running:  
-    cd studio  
-    yarn clone  
+---
+
+## 4. Changes That Affect Both Studio and Webs
+
+If schema changes in Sanity require corresponding updates in Gatsby, handle them together in a single feature branch.
+
+### Step-by-Step Process
+
+1. **Create a branch off the issue**:
+   ``` 
+   git checkout -b feat/<issue-number>-<description>  
+   ```
+   - Example: `feat/15-update-schema-and-frontend`
+
+2. **Edit the schema** in `studio`:
+   - Make the necessary updates and test locally:
+     ```
+     cd studio  
+     yarn dev  
+     ```
+
+3. **Update Gatsby** in `webs`:
+   - Adjust GraphQL queries/components to match the schema changes.
+   - Test by running `yarn develop` in `webs`.
+
+4. **Commit changes (both `studio` and `webs`)**:
+   ``` 
+   git add .  
+   git commit -m "Update schema and front-end for issue <#>"  
+   ```
+
+5. **Push and open a PR**:
+   ``` 
+   git push origin feat/<issue-number>-<description>  
+   ```
+   - Open a PR linking back to the issue.
+
+6. **Merge and Deploy**:
+   - After the PR is approved:
+     - Merge into `main`.
+     - Redeploy the GraphQL schema:
+       ``` 
+       cd studio  
+       yarn workspace studio deploy-graphql  
+       ```
+     - Deploy the updated Gatsby site.
+
+---
+
+## 5. Handling Independent Updates
+
+### 5.1 Studio-Only Changes
+
+If changes only affect the Studio:
+
+1. **Create an issue and branch**:
+   ```
+   git checkout -b feat/<issue-number>-<studio-description>  
+   ```
+
+2. **Edit schema** or content structures in `studio`:
+   - Run `yarn dev` and test locally.
+
+3. **Commit and push**:
+   ``` 
+   git add .  
+   git commit -m "Studio-only changes for issue <#>"  
+   git push origin feat/<issue-number>-<studio-description>  
+   ```
+
+4. **Open a PR**, merge, and redeploy the GraphQL schema if necessary:
+   ```  
+   yarn workspace studio deploy-graphql  
+   ```
+
+### 5.2 Gatsby-Only Changes
+
+If changes only affect the Gatsby site:
+
+1. **Create an issue and branch**:
+   ```  
+   git checkout -b feat/<issue-number>-<webs-description>  
+   ```
+
+2. **Edit code** in `webs`:
+   - Run `yarn develop` and test locally.
+
+3. **Commit and push**:
+   ``` 
+   git add .  
+   git commit -m "Webs-only changes for issue <#>"  
+   git push origin feat/<issue-number>-<webs-description>  
+   ```
+
+4. **Open a PR**, merge, and deploy the updated Gatsby site.
+
+---
+
+## 6. Syncing Production to Development
+
+If the **production** environment has updates needed in **development**:
+
+1. **Update production data** in the live Studio.
+
+2. **Clone production into development**:
+   ``` 
+   cd studio  
+   yarn clone  
+   ```
+   - This exports the production dataset and imports it into the development dataset.
+
+3. **Restart local environments** to ensure all data is up to date.
+
+---
+
+## 7. Best Practices
+
+1. **Use Issues for Every Task**  
+   - Before starting any work, create an issue describing the task or change.  
+   - Reference the issue in your branch name and commit messages.
+
+2. **Keep PRs Small and Focused**  
+   - Avoid combining unrelated changes in one PR.  
+
+3. **Test Locally First**  
+   - Ensure schema updates and front-end changes are thoroughly tested locally before creating a PR.
+
+4. **Deploy in Sync**  
+   - Merge schema changes first (or simultaneously) before deploying front-end updates that depend on them.
+
+5. **Communicate**  
+   - Share changes that could impact other developers, especially schema modifications.
+
+---
+
+## Additional Resources
+
+- **Gatsby Docs**: [https://www.gatsbyjs.com/docs/](https://www.gatsbyjs.com/docs/)  
+- **Sanity Docs**: [https://www.sanity.io/docs](https://www.sanity.io/docs)  
+
+---
+
+## Learn More
+
+- [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
