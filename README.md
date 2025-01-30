@@ -1,73 +1,73 @@
 # hof-gatsby-sanity
-## Big Picture goal: Remake [the hall of fame website](https://www.entrepreneurhof.com/) in the React/Gatsby/Sanity framework
+
+## Big Picture Goal
+Remake [the Hall of Fame website](https://www.entrepreneurhof.com/) using React, Gatsby, and Sanity.
+
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
 </p>
+
 <h1 align="center">
   Gatsby Minimal Starter
 </h1>
 
-## 🚀 Quick start
+## 🚀 Quick Start (Using Yarn)
 
-1.  **Start developing.**
+1. **Install dependencies (in the root folder).**  
+    yarn install
 
-    Navigate into your new site’s directory and start it up.
+2. **Start developing (Gatsby site).**  
+   - Navigate to the `webs` folder and run:  
+        cd webs  
+        yarn develop  
+   - Your site should be running at http://localhost:8000
 
-    ```shell
-    cd webs
-    npm run develop
-    ```
-
-2.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
+3. **Open the code and start customizing!**  
+   - Your Gatsby code is in the `webs` folder.
+   - Any changes will hot-reload in the browser.
 
 ## Sanity Workflow
 
-Sanity runs into issues with overwriting work when trying to update schemas simultaneously on different branches. The ideal workflow for updating schema is as follows:
+Sanity can overwrite schema changes if multiple branches modify schemas simultaneously. To avoid issues:
 
-1.  Plan out all necessary schema for development.
-    
-2.  Add schema and push to the main branch on Github before any changes are made by other users.
+1. Plan out all necessary schema for development.
+2. Add the new schema, commit, and push to the `main` branch on GitHub.
+3. Redeploy the GraphQL API:  
+    yarn workspace studio deploy-graphql  
+   (or run the same command from the `studio` folder if preferred).
+4. Other users should pull the updated schema before adding any new schema.
+5. Continue front-end development using the updated schema.
 
-3.  Redeploy graphql API  (`sanity graphql deploy`)
-    
-4.  Other users should pull your schema changes before adding any new schema.
-    
-5.  Continue development on the front-end accessing the already committed schema.
+## Learn More About Gatsby
 
+- Documentation: https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
+- Tutorials: https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
+- Guides: https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
+- API Reference: https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
+- Plugin Library: https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
+- Cheat Sheet: https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter  
 
-4.  **Learn more**
+## 🚀 Quick Start (Netlify)
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+You can deploy this starter with one click on Netlify:
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
 
 ## Sanity Clean Content Studio
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+Congratulations! You have installed the Sanity Content Studio, which is a real-time content editing environment connected to the Sanity backend.
 
-Now you can do the following things:
+You can do the following:
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
-  
-## What to Do to When Making Changes to Production Structure
+- Read the “getting started” docs: https://www.sanity.io/docs/introduction/getting-started?utm_source=readme  
+- Join the community Slack: https://slack.sanity.io/?utm_source=readme  
+- Extend and build plugins: https://www.sanity.io/docs/content-studio/extending?utm_source=readme  
 
-1.  Make changes in Sanity Studio to the structure.
-2.  Run the following commands to transfer the changes made to the structure in the production database to the development database.
-> cd studio    
-> npm run clone
+## Making Changes to Production Structure
 
+1. Make changes in the Sanity Studio that affect the production structure.
+2. Transfer those changes to the development database by running:  
+    cd studio  
+    yarn clone  
