@@ -114,7 +114,7 @@ If schema changes in Sanity require corresponding updates in Gatsby, handle them
      - Redeploy the GraphQL schema:
        ``` 
        cd studio  
-       yarn workspace studio deploy-graphql  
+       yarn deploy-graphql
        ```
      - Deploy the updated Gatsby site.
 
@@ -143,7 +143,7 @@ If changes only affect the Studio:
 
 4. **Open a PR**, merge, and redeploy the GraphQL schema if necessary:
    ```  
-   yarn workspace studio deploy-graphql  
+   yarn deploy-graphql
    ```
 
 ### 5.2 Gatsby-Only Changes
