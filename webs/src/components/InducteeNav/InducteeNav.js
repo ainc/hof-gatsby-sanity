@@ -9,6 +9,7 @@ const InducteeNav = (props) => {
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected 
   const [selectedIndustry, setSelectedIndustry] = useState(null)
   const years = ['2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']
+  const industries = ['Technology', 'Healthcare', 'Energy', 'Food']
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
@@ -77,20 +78,17 @@ const InducteeNav = (props) => {
               >
                 All
               </Nav.Item>
-              <Nav.Item
-                as="li"
-                onClick={() => handleIndustryClick("Technology")}
-                tabIndex="-1"
-              >
-                Technology
-              </Nav.Item>
-              <Nav.Item
-                as="li"
-                onClick={() => handleIndustryClick("Food")}
-                tabIndex="-1"
-              >
-                Food
-              </Nav.Item>
+
+              {industries.map(industry => (
+                <Nav.Item
+                  as="li"
+                  onClick={() => handleIndustryClick(industry)}
+                  tabIndex="-1"
+                >
+                  {industry}
+                </Nav.Item>
+              ))}
+
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -109,7 +107,17 @@ const InducteeNav = (props) => {
                   </NavDropdown.Item>
                 ))}
 
-                {/* Add more years here */}
+                <br></br><br></br>
+
+                <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
+                  {industry}
+                </NavDropdown.Item>
+
+                {industries.map(industry => (
+                  <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
+                    {industry}
+                  </NavDropdown.Item>
+                ))}
               </NavDropdown>
             </Nav>
           </div>
@@ -181,6 +189,24 @@ const InducteeNav = (props) => {
                 </Nav.Item>
               ))}
 
+              <Nav.Item
+                as="li"
+                onClick={() => handleIndustryClick(null)}
+                tabIndex="-1"
+              >
+                All
+              </Nav.Item>
+
+              {industries.map(industry => (
+                <Nav.Item
+                  as="li"
+                  onClick={() => handleIndustryClick(industry)}
+                  tabIndex="-1"
+                >
+                  {industry}
+                </Nav.Item>
+              ))}
+
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -196,6 +222,16 @@ const InducteeNav = (props) => {
                 {years.map(year => {
                   <NavDropdown.Item onClick={() => handleYearClick(year)}>
                     {year}
+                  </NavDropdown.Item>
+                })}
+
+                <NavDropdown.Item onClick={() => handleIndustryClick(null)}>
+                  All
+                </NavDropdown.Item>
+
+                {years.map(year => {
+                  <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
+                    {industry}
                   </NavDropdown.Item>
                 })}
 
