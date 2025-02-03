@@ -15,6 +15,7 @@ const InducteeNav = (props) => {
   const handleYearClick = (year) => {
     setSelectedYear(year); // Update state when a year is clicked
     props.setSelectedYear(year);
+    setSelectedIndustry(null)
     props.setSelectedIndustry(null);
   };
 
@@ -22,8 +23,8 @@ const InducteeNav = (props) => {
   const handleIndustryClick = (industry) => {
     setSelectedIndustry(industry); // Update state when a industry is clicked
     props.setSelectedIndustry(industry);
+    setSelectedYear(null)
     props.setSelectedYear(null);
-    console.log(data)
   };
 
   // Filter inductees based on the selected industry
