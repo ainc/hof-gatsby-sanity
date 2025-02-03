@@ -109,8 +109,8 @@ const InducteeNav = (props) => {
 
                 <br></br><br></br>
 
-                <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
-                  {industry}
+                <NavDropdown.Item onClick={() => handleIndustryClick(null)}>
+                  All
                 </NavDropdown.Item>
 
                 {industries.map(industry => (
@@ -229,7 +229,7 @@ const InducteeNav = (props) => {
                   All
                 </NavDropdown.Item>
 
-                {years.map(year => {
+                {industries.map(industry => {
                   <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
                     {industry}
                   </NavDropdown.Item>
