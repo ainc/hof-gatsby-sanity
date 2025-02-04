@@ -20,6 +20,8 @@ const IndexPage = ({ data }) => {
   const event = data.allSanityEvent.nodes.at(-1);
   const [inducteeSelectedYear, setInducteeSelectedYear] = useState(null);
   const [emergingSelectedYear, setEmergingSelectedYear] = useState(null);
+  const [inducteeSelectedIndustry, setInducteeSelectedIndustry] = useState(null);
+  const [emergingSelectedIndustry, setEmergingSelectedIndustry] = useState(null);
   return (
     <Layout>
       <div className={styles.background}>
@@ -152,6 +154,8 @@ const IndexPage = ({ data }) => {
           data={Inductees}
           selectedYear={inducteeSelectedYear}
           setSelectedYear={setInducteeSelectedYear}
+          selectedIndustry={inducteeSelectedIndustry}
+          setSelectedIndustry={setInducteeSelectedIndustry}
         />
       </div>
       <InducteeNav
@@ -159,6 +163,8 @@ const IndexPage = ({ data }) => {
         data={Emerging}
         selectedYear={emergingSelectedYear}
         setSelectedYear={setEmergingSelectedYear}
+        selectedIndustry={emergingSelectedIndustry}
+        setSelectedIndustry={setEmergingSelectedIndustry}
       />
       <Container>
         <Row>
@@ -213,6 +219,7 @@ export const query = graphql`
           company
           title
           year(formatString: "YYYY")
+          industry
           profilePhoto {
             asset {
               gatsbyImageData

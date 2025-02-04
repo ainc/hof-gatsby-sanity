@@ -7,12 +7,26 @@ import * as styles from "./inducteenav.module.scss";
 const InducteeNav = (props) => {
   const data = props.data;
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
+  const [selectedIndustry, setSelectedIndustry] = useState(null)
+
+  const industries = ['Technology', 'Healthcare', 'Energy', 'Food']
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
     setSelectedYear(year); // Update state when a year is clicked
     props.setSelectedYear(year);
   };
+
+  // Function to handle industry selection - pass in state values as props because each instance of the component needs to handle its own state
+  const handleIndustryClick = (industry) => {
+    setSelectedIndustry(industry); // Update state when a industry is clicked
+    props.setSelectedIndustry(industry);
+  };
+
+  // Filter inductees based on the selected industry
+  const filteredInducteesByIndustry = props.selectedIndustry
+    ? data.filter((node) => node.inductee.industry === props.selectedIndustry)
+    : data;
 
   // Filter inductees based on the selected year
   if (props.selectedYear !== "2020") {
@@ -146,6 +160,26 @@ const InducteeNav = (props) => {
               >
                 2010
               </Nav.Item>
+
+              <br></br><br></br>
+
+              <Nav.Item
+                as="li"
+                onClick={() => handleIndustryClick(null)}
+                tabIndex="-1"
+              >
+                All
+              </Nav.Item>
+
+              {industries.map(industry => (
+                <Nav.Item
+                  as="li"
+                  onClick={() => handleIndustryClick(industry)}
+                  tabIndex="-1"
+                >
+                  {industry}
+                </Nav.Item>
+              ))}
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -202,7 +236,19 @@ const InducteeNav = (props) => {
                 <NavDropdown.Item onClick={() => handleYearClick("2010")}>
                   2010
                 </NavDropdown.Item>
-                {/* Add more years here */}
+
+                <br></br><br></br>
+
+                <NavDropdown.Item onClick={() => handleIndustryClick(null)}>
+                  All
+                </NavDropdown.Item>
+
+                {industries.map(industry => (
+                  <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
+                    {industry}
+                  </NavDropdown.Item>
+                ))}
+
               </NavDropdown>
             </Nav>
           </div>
@@ -354,6 +400,26 @@ const InducteeNav = (props) => {
               >
                 2010
               </Nav.Item>
+
+              <br></br><br></br>
+
+              <Nav.Item
+                as="li"
+                onClick={() => handleIndustryClick(null)}
+                tabIndex="-1"
+              >
+                All
+              </Nav.Item>
+
+              {industries.map(industry => (
+                <Nav.Item
+                  as="li"
+                  onClick={() => handleIndustryClick(industry)}
+                  tabIndex="-1"
+                >
+                  {industry}
+                </Nav.Item>
+              ))}
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -371,7 +437,19 @@ const InducteeNav = (props) => {
                 <NavDropdown.Item onClick={() => handleYearClick("2022")}>
                   2022
                 </NavDropdown.Item>
-                {/* Add more years here */}
+
+                <br></br><br></br>
+
+                <NavDropdown.Item onClick={() => handleIndustryClick(null)}>
+                  All
+                </NavDropdown.Item>
+
+                {industries.map(industry => (
+                  <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
+                    {industry}
+                  </NavDropdown.Item>
+                ))}
+
               </NavDropdown>
             </Nav>
           </div>
