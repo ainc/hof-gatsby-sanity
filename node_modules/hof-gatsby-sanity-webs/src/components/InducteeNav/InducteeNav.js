@@ -2,29 +2,51 @@ import React, { useState } from "react";
 import { Container, Nav, NavDropdown } from "react-bootstrap";
 import InducteeCard from "../InducteeCard/InducteeCard";
 import Title from "../Title/Title";
+import { motion, AnimatePresence } from 'motion/react'
 import * as styles from "./inducteenav.module.scss";
+import InducteeAnimation from "../InducteeAnimations/InducteeAnimations";
 
 const InducteeNav = (props) => {
   const data = props.data;
-  const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected 
+
+  const [selectedYear, setSelectedYear] = useState(null)
   const [selectedIndustry, setSelectedIndustry] = useState(null)
+
+  const [fadingOut, setFadingOut] = useState(false)
+
   const years = ['2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']
   const industries = ['Technology', 'Healthcare', 'Energy', 'Food']
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
-    setSelectedYear(year); // Update state when a year is clicked
-    props.setSelectedYear(year);
-    setSelectedIndustry(null)
-    props.setSelectedIndustry(null);
+
+    setFadingOut(true)
+
+    setTimeout(() => {
+      setSelectedYear(year); // Update state when a year is clicked
+      props.setSelectedYear(year);
+
+      setFadingOut(false)
+
+      setSelectedIndustry(null)
+      props.setSelectedIndustry(null)
+    }, 250)
   };
 
   // Function to handle industry selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleIndustryClick = (industry) => {
-    setSelectedIndustry(industry); // Update state when a industry is clicked
-    props.setSelectedIndustry(industry);
-    setSelectedYear(null)
-    props.setSelectedYear(null);
+
+    setFadingOut(true)
+
+    setTimeout(() => {
+      setSelectedIndustry(industry); // Update state when a industry is clicked
+      props.setSelectedIndustry(industry);
+
+      setFadingOut(false)
+
+      setSelectedYear(null)
+      props.setSelectedYear(null)
+    }, 250)
   };
 
   // Filter inductees based on the selected industry
@@ -124,36 +146,57 @@ const InducteeNav = (props) => {
           </div>
         </div>
         <div className="py-3 mx-5 d-flex justify-content-center">
-          <ul className={`${styles.inducteesList}`}>
+          <motion.ul className={`${styles.inducteesList}`}>
+            <AnimatePresence mode='wait'>
+              {selectedIndustry === null ? !fadingOut && filteredInductees.map((node) => (
 
-            {selectedIndustry === null ? filteredInductees.map((node, index) => (
-              <li key={index}>
-                <InducteeCard
-                  img={node.inductee.profilePhoto.asset.gatsbyImageData}
-                  name={node.inductee.name}
-                  company={node.inductee.company}
-                  link={
-                    props.title === "Inductees"
-                      ? node.slug.current
-                      : node.linkedin
-                  }
-                />
-              </li>
-            )) : filteredInducteesByIndustry.map((node, index) => (
-              <li key={index}>
-                <InducteeCard
-                  img={node.inductee.profilePhoto.asset.gatsbyImageData}
-                  name={node.inductee.name}
-                  company={node.inductee.company}
-                  link={
-                    props.title === "Inductees"
-                      ? node.slug.current
-                      : node.linkedin
-                  }
-                />
-              </li>
-            ))}
-          </ul>
+                <motion.li key={node.inductee.name}
+                  initial={{ scale: 0.75, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.75 , opacity: 0}}
+                  transition={{ duration: 0.250 }}>
+
+                  <InducteeAnimation>
+
+                    <InducteeCard
+                      img={node.inductee.profilePhoto.asset.gatsbyImageData}
+                      name={node.inductee.name}
+                      company={node.inductee.company}
+                      link={
+                        props.title === "Inductees"
+                          ? node.slug.current
+                          : node.linkedin
+                      }
+                    />
+
+                  </InducteeAnimation>
+
+                </motion.li>
+              )) : !fadingOut && filteredInducteesByIndustry.map((node) => (
+
+                <motion.li key={node.inductee.name}
+                  initial={{ scale: 0.75, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.75, opacity: 0 }}
+                  transition={{ duration: 0.250 }}>
+
+                  <InducteeAnimation>
+                    <InducteeCard
+                      img={node.inductee.profilePhoto.asset.gatsbyImageData}
+                      name={node.inductee.name}
+                      company={node.inductee.company}
+                      link={
+                        props.title === "Inductees"
+                          ? node.slug.current
+                          : node.linkedin
+                      }
+                    />
+                  </InducteeAnimation>
+
+                </motion.li>
+              ))}
+            </AnimatePresence>
+          </motion.ul>
         </div>
       </Container>
     );
