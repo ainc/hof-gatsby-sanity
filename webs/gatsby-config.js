@@ -3,7 +3,7 @@
  */
 console.log(process.env.NODE_ENV);
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`,
+  path: `.env.${process.env.NODE_ENV || "production"}`,
 });
 
 const clientConfig = require("./client-config");
