@@ -27,6 +27,16 @@ export default {
       },
     },
     {
+      name: 'industry',
+      title: 'Industry',
+      type: 'string',
+      options: {
+        list: [
+          'Technology', 'Healthcare', 'Energy', 'Food'
+        ]
+      },
+    },
+    {
       name: 'profilePhoto',
       title: 'Profile Photo',
       type: 'image',

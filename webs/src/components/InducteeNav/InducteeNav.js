@@ -6,14 +6,44 @@ import * as styles from "./inducteenav.module.scss";
 
 const InducteeNav = (props) => {
   const data = props.data;
-  const years = ['2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']
+  const years = [
+    "2024",
+    "2023",
+    "2022",
+    "2021",
+    "2020",
+    "2019",
+    "2018",
+    "2017",
+    "2016",
+    "2015",
+    "2014",
+    "2013",
+    "2012",
+    "2011",
+    "2010",
+  ];
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
+  const [selectedIndustry, setSelectedIndustry] = useState(null);
+
+  const industries = ["Technology", "Healthcare", "Energy", "Food"];
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
     setSelectedYear(year); // Update state when a year is clicked
     props.setSelectedYear(year);
   };
+
+  // Function to handle industry selection - pass in state values as props because each instance of the component needs to handle its own state
+  const handleIndustryClick = (industry) => {
+    setSelectedIndustry(industry); // Update state when a industry is clicked
+    props.setSelectedIndustry(industry);
+  };
+
+  // Filter inductees based on the selected industry
+  const filteredInducteesByIndustry = props.selectedIndustry
+    ? data.filter((node) => node.inductee.industry === props.selectedIndustry)
+    : data;
 
   // Filter inductees based on the selected year
   if (props.selectedYear !== "2020") {
@@ -43,7 +73,7 @@ const InducteeNav = (props) => {
                 All
               </Nav.Item>
 
-              {years.map(year => (
+              {years.map((year) => (
                 <Nav.Item
                   as="li"
                   onClick={() => handleYearClick(year)}
@@ -52,9 +82,6 @@ const InducteeNav = (props) => {
                   {year}
                 </Nav.Item>
               ))}
-
-
-
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -67,12 +94,11 @@ const InducteeNav = (props) => {
                   All
                 </NavDropdown.Item>
 
-                {years.map(year => (
+                {years.map((year) => (
                   <NavDropdown.Item onClick={() => handleYearClick(year)}>
                     {year}
                   </NavDropdown.Item>
                 ))}
-
               </NavDropdown>
             </Nav>
           </div>
@@ -120,7 +146,7 @@ const InducteeNav = (props) => {
                 All
               </Nav.Item>
 
-              {years.map(year => (
+              {years.map((year) => (
                 <Nav.Item
                   as="li"
                   onClick={() => handleYearClick(year)}
@@ -129,7 +155,6 @@ const InducteeNav = (props) => {
                   {year}
                 </Nav.Item>
               ))}
-
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -142,12 +167,11 @@ const InducteeNav = (props) => {
                   All
                 </NavDropdown.Item>
 
-                {years.map(year => (
+                {years.map((year) => (
                   <NavDropdown.Item onClick={() => handleYearClick(year)}>
                     {year}
                   </NavDropdown.Item>
                 ))}
-
               </NavDropdown>
             </Nav>
           </div>
