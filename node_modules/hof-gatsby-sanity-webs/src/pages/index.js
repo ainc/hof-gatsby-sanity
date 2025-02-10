@@ -220,6 +220,7 @@ export const query = graphql`
           company
           title
           year(formatString: "YYYY")
+          industry
           profilePhoto {
             asset {
               gatsbyImageData
