@@ -6,27 +6,11 @@ import * as styles from "./inducteenav.module.scss";
 
 const InducteeNav = (props) => {
   const data = props.data;
-  const years = [
-    "2024",
-    "2023",
-    "2022",
-    "2021",
-    "2020",
-    "2019",
-    "2018",
-    "2017",
-    "2016",
-    "2015",
-    "2014",
-    "2013",
-    "2012",
-    "2011",
-    "2010",
-  ];
+  const years = ['2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
-  const [selectedIndustry, setSelectedIndustry] = useState(null);
+  const [selectedIndustry, setSelectedIndustry] = useState(null)
 
-  const industries = ["Technology", "Healthcare", "Energy", "Food"];
+  const industries = ['Technology', 'Healthcare', 'Energy', 'Food']
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
@@ -72,21 +56,6 @@ const InducteeNav = (props) => {
               >
                 All
               </Nav.Item>
-<<<<<<<<< Temporary merge branch 1
-
-              {years.map(year => (
-                <Nav.Item
-                  as="li"
-                  onClick={() => handleYearClick(year)}
-                  tabIndex="-1"
-                >
-                  {year}
-                </Nav.Item>
-              ))}
-
-
-
-=========
               <Nav.Item
                 as="li"
                 onClick={() => handleYearClick("2024")}
@@ -192,27 +161,6 @@ const InducteeNav = (props) => {
               >
                 2010
               </Nav.Item>
-
-              <br></br><br></br>
-
-              <Nav.Item
-                as="li"
-                onClick={() => handleIndustryClick(null)}
-                tabIndex="-1"
-              >
-                All
-              </Nav.Item>
-
-              {industries.map(industry => (
-                <Nav.Item
-                  as="li"
-                  onClick={() => handleIndustryClick(industry)}
-                  tabIndex="-1"
-                >
-                  {industry}
-                </Nav.Item>
-              ))}
->>>>>>>>> Temporary merge branch 2
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -224,12 +172,6 @@ const InducteeNav = (props) => {
                 <NavDropdown.Item onClick={() => handleYearClick(null)}>
                   All
                 </NavDropdown.Item>
-<<<<<<<<< Temporary merge branch 1
-
-                {years.map(year => (
-                  <NavDropdown.Item onClick={() => handleYearClick(year)}>
-                    {year}
-=========
                 <NavDropdown.Item onClick={() => handleYearClick("2024")}>
                   2024
                 </NavDropdown.Item>
@@ -275,20 +217,7 @@ const InducteeNav = (props) => {
                 <NavDropdown.Item onClick={() => handleYearClick("2010")}>
                   2010
                 </NavDropdown.Item>
-
-                <br></br><br></br>
-
-                <NavDropdown.Item onClick={() => handleIndustryClick(null)}>
-                  All
-                </NavDropdown.Item>
-
-                {industries.map(industry => (
-                  <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
-                    {industry}
->>>>>>>>> Temporary merge branch 2
-                  </NavDropdown.Item>
-                ))}
-
+                {/* Add more years here */}
               </NavDropdown>
             </Nav>
           </div>
@@ -335,19 +264,6 @@ const InducteeNav = (props) => {
               >
                 All
               </Nav.Item>
-<<<<<<<<< Temporary merge branch 1
-
-              {years.map(year => (
-                <Nav.Item
-                  as="li"
-                  onClick={() => handleYearClick(year)}
-                  tabIndex="-1"
-                >
-                  {year}
-                </Nav.Item>
-              ))}
-
-=========
               <Nav.Item
                 as="li"
                 onClick={() => handleYearClick("2024")}
@@ -453,27 +369,6 @@ const InducteeNav = (props) => {
               >
                 2010
               </Nav.Item>
-
-              <br></br><br></br>
-
-              <Nav.Item
-                as="li"
-                onClick={() => handleIndustryClick(null)}
-                tabIndex="-1"
-              >
-                All
-              </Nav.Item>
-
-              {industries.map(industry => (
-                <Nav.Item
-                  as="li"
-                  onClick={() => handleIndustryClick(industry)}
-                  tabIndex="-1"
-                >
-                  {industry}
-                </Nav.Item>
-              ))}
->>>>>>>>> Temporary merge branch 2
             </Nav>
             {/*Nav for medium screens and smaller */}
             <Nav as="ul" className={`d-lg-none`}>
@@ -485,32 +380,13 @@ const InducteeNav = (props) => {
                 <NavDropdown.Item onClick={() => handleYearClick(null)}>
                   All
                 </NavDropdown.Item>
-<<<<<<<<< Temporary merge branch 1
-
-                {years.map(year => (
-                  <NavDropdown.Item onClick={() => handleYearClick(year)}>
-                    {year}
-=========
                 <NavDropdown.Item onClick={() => handleYearClick("2023")}>
                   2023
                 </NavDropdown.Item>
                 <NavDropdown.Item onClick={() => handleYearClick("2022")}>
                   2022
                 </NavDropdown.Item>
-
-                <br></br><br></br>
-
-                <NavDropdown.Item onClick={() => handleIndustryClick(null)}>
-                  All
-                </NavDropdown.Item>
-
-                {industries.map(industry => (
-                  <NavDropdown.Item onClick={() => handleIndustryClick(industry)}>
-                    {industry}
->>>>>>>>> Temporary merge branch 2
-                  </NavDropdown.Item>
-                ))}
-
+                {/* Add more years here */}
               </NavDropdown>
             </Nav>
           </div>
