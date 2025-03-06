@@ -19,7 +19,13 @@ Because **pushing directly to `main` is impossible**, changes must be managed th
 
 2. **Install dependencies (in the root folder)**  
    ``` 
-   cd hof-gatsby-sanity  
+   cd hof-gatsby-sanity 
+   cd webs 
+   yarn install  
+   ```
+   ``` 
+   cd hof-gatsby-sanity 
+   cd studio
    yarn install  
    ```
 
