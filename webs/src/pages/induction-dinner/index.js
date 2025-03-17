@@ -60,7 +60,7 @@ const InductionDinnerPage = ({ data }) => {
               ambitious endeavors.
             </h3>
             <a className={styles.linkText} href="/#InducteeSection">
-              View this year’s inductees here
+              View past inductees here
             </a>
           </Col>
         </Row>
@@ -137,9 +137,6 @@ const InductionDinnerPage = ({ data }) => {
               <br />
               Room Cutoff date: {event.hotelInfo.roomCutoffDate}
             </h3>
-            <a className={styles.linkText} href={event.hotelInfo.location.link}>
-              Book your overnight room here
-            </a>
           </Col>
         </Row>
         <Row>
