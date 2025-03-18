@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Container, Nav, NavDropdown } from "react-bootstrap";
 import InducteeCard from "../InducteeCard/InducteeCard";
 import Title from "../Title/Title";
+import { motion, AnimatePresence } from 'motion/react'
 import * as styles from "./inducteenav.module.scss";
+import InducteeAnimation from "../InducteeAnimations/InducteeAnimations";
 
 const InducteeNav = (props) => {
   const data = props.data;
@@ -14,20 +16,17 @@ const InducteeNav = (props) => {
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
-    setSelectedYear(year); // Update state when a year is clicked
-    props.setSelectedYear(year);
-  };
 
-  // Function to handle industry selection - pass in state values as props because each instance of the component needs to handle its own state
-  const handleIndustryClick = (industry) => {
-    setSelectedIndustry(industry); // Update state when a industry is clicked
-    props.setSelectedIndustry(industry);
-  };
+    setFadingOut(true)
 
-  // Filter inductees based on the selected industry
-  const filteredInducteesByIndustry = props.selectedIndustry
-    ? data.filter((node) => node.inductee.industry === props.selectedIndustry)
-    : data;
+    setTimeout(() => {
+      setSelectedYear(year); // Update state when a year is clicked
+      props.setSelectedYear(year);
+
+      setFadingOut(false)
+
+    }, 250)
+  };
 
   // Filter inductees based on the selected year
   if (props.selectedYear !== "2020") {
@@ -223,22 +222,34 @@ const InducteeNav = (props) => {
           </div>
         </div>
         <div className="py-3 mx-5 d-flex justify-content-center">
-          <ul className={`${styles.inducteesList}`}>
-            {filteredInductees.map((node, index) => (
-              <li key={index}>
-                <InducteeCard
-                  img={node.inductee.profilePhoto.asset.gatsbyImageData}
-                  name={node.inductee.name}
-                  company={node.inductee.company}
-                  link={
-                    props.title === "Inductees"
-                      ? node.slug.current
-                      : node.linkedin
-                  }
-                />
-              </li>
-            ))}
-          </ul>
+          <motion.ul className={`${styles.inducteesList}`}>
+            <AnimatePresence mode='wait'>
+              {filteredInductees.map((node) => (
+                <motion.li key={node.inductee.name}
+                  initial={{ scale: 0.75, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.75, opacity: 0 }}
+                  transition={{ duration: 0.250 }}>
+
+                  <InducteeAnimation>
+
+                    <InducteeCard
+                      img={node.inductee.profilePhoto.asset.gatsbyImageData}
+                      name={node.inductee.name}
+                      company={node.inductee.company}
+                      link={
+                        props.title === "Inductees"
+                          ? node.slug.current
+                          : node.linkedin
+                      }
+                    />
+
+                  </InducteeAnimation>
+
+                </motion.li>
+              ))}
+            </AnimatePresence>
+          </motion.ul>
         </div>
       </Container>
     );
