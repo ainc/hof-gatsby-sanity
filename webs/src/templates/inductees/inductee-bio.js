@@ -107,6 +107,7 @@ const InducteeBio = ({ pageContext }) => {
                   ) : (
                     <div>
                       <StaticImage
+                        className={`ratio ratio-16x9`}
                         src="../../images/Logo_Square.png"
                         alt="Placeholder"
                         placeholder="blurred"
