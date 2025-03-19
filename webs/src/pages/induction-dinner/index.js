@@ -60,7 +60,7 @@ const InductionDinnerPage = ({ data }) => {
               ambitious endeavors.
             </h3>
             <a className={styles.linkText} href="/#InducteeSection">
-              View past year’s inductees here
+              View past inductees here
             </a>
           </Col>
         </Row>
