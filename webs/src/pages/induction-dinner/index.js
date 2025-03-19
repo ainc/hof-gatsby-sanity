@@ -137,9 +137,6 @@ const InductionDinnerPage = ({ data }) => {
               <br />
               Room Cutoff date: {event.hotelInfo.roomCutoffDate}
             </h3>
-            <a className={styles.linkText} href={event.hotelInfo.location.link}>
-              Book your overnight room here
-            </a>
           </Col>
         </Row>
         <Row>
