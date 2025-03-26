@@ -26,7 +26,7 @@ const InducteeNav = (props) => {
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
   const [selectedIndustry, setSelectedIndustry] = useState(null);
 
-  const industries = ["Technology", "Healthcare", "Energy", "Food"];
+  const industries = ["Technology", "Healthcare", "Energy", "Food", 'Finance', 'Other'];
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {
