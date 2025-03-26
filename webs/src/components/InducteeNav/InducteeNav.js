@@ -13,7 +13,7 @@ const InducteeNav = (props) => {
   const [selectedIndustry, setSelectedIndustry] = useState(null)
   const [fadingOut, setFadingOut] = useState(false)
 
-  const industries = ['Technology', 'Healthcare', 'Energy', 'Food', 'Other']
+  const industries = ['Technology', 'Healthcare', 'Energy', 'Food', 'Finance', 'Other']
 
   // Function to handle year selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleYearClick = (year) => {

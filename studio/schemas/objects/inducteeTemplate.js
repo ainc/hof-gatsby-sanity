@@ -32,7 +32,7 @@ export default {
       type: 'string',
       options: {
         list: [
-          'Technology', 'Healthcare', 'Energy', 'Food'
+          'Technology', 'Healthcare', 'Energy', 'Food', 'Finance', 'Other'
         ]
       },
     },
