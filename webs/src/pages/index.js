@@ -203,6 +203,7 @@ export const query = graphql`
             }
           }
           year(formatString: "YYYY")
+          industry
           title
         }
         inductionCeremonyVideo
