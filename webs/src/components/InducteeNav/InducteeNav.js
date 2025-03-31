@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Container, Nav, NavDropdown } from "react-bootstrap";
-import InducteeCard from "../InducteeCard/InducteeCard";
-import Title from "../Title/Title";
+import React, { useState } from "react"
+import { Container, Nav, NavDropdown } from "react-bootstrap"
+import InducteeCard from "../InducteeCard/InducteeCard"
+import Title from "../Title/Title"
 import { motion, AnimatePresence } from 'motion/react'
-import * as styles from "./inducteenav.module.scss";
-import InducteeAnimation from "../InducteeAnimations/InducteeAnimations";
+import * as styles from "./inducteenav.module.scss"
+import InducteeAnimation from "../InducteeAnimations/InducteeAnimations"
 
 const InducteeNav = (props) => {
-  const data = props.data;
+  const data = props.data
   const years = ['2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']
-  const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
+  const [selectedYear, setSelectedYear] = useState(null) // Initialize state for selected year
   const [selectedIndustry, setSelectedIndustry] = useState(null)
   const [fadingOut, setFadingOut] = useState(false)
 
@@ -21,15 +21,15 @@ const InducteeNav = (props) => {
     setFadingOut(true)
 
     setTimeout(() => {
-      setSelectedYear(year); // Update state when a year is clicked
-      props.setSelectedYear(year);
+      setSelectedYear(year) // Update state when a year is clicked
+      props.setSelectedYear(year)
 
       setFadingOut(false)
 
       setSelectedIndustry(null)
       props.setSelectedIndustry(null)
     }, 250)
-  };
+  }
 
   // Function to handle industry selection - pass in state values as props because each instance of the component needs to handle its own state
   const handleIndustryClick = (industry) => {
@@ -37,26 +37,25 @@ const InducteeNav = (props) => {
     setFadingOut(true)
 
     setTimeout(() => {
-      setSelectedIndustry(industry); // Update state when a industry is clicked
-      props.setSelectedIndustry(industry);
-
+      setSelectedIndustry(industry) // Update state when a industry is clicked
+      props.setSelectedIndustry(industry)
       setFadingOut(false)
 
       setSelectedYear(null)
       props.setSelectedYear(null)
     }, 250)
-  };
+  }
 
   // Filter inductees based on the selected industry
   const filteredInducteesByIndustry = props.selectedIndustry
     ? data.filter((node) => node.inductee.industry === props.selectedIndustry)
-    : data;
+    : data
 
   // Filter inductees based on the selected year
   if (props.selectedYear !== "2020") {
     const filteredInductees = props.selectedYear
       ? data.filter((node) => node.inductee.year === props.selectedYear)
-      : data;
+      : data
 
     return (
       <Container className="d-flex flex-column">
@@ -189,7 +188,7 @@ const InducteeNav = (props) => {
           </motion.ul>
         </div>
       </Container>
-    );
+    )
   } else {
     return (
       <Container className="d-flex flex-column">
@@ -277,8 +276,8 @@ const InducteeNav = (props) => {
           </div>
         </div>
       </Container>
-    );
+    )
   }
-};
+}
 
-export default InducteeNav;
+export default InducteeNav
