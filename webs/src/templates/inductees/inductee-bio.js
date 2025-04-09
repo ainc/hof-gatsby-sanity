@@ -45,7 +45,15 @@ const InducteeBio = ({ pageContext }) => {
             <h3 className={styles.company}>
               {inducteeInfo.inductee.title} {inducteeInfo.inductee.company}
             </h3>
-            <Body>{inducteeInfo.bio[0].children[0].text}</Body>
+            <Body>
+            {inducteeInfo.bio.map((block, blockIndex) => (
+              <div key={blockIndex}>
+                {block.children.map((child, childIndex) => (
+                  <span key={childIndex}>{child.text}</span>
+                ))}
+              </div>
+            ))}
+          </Body>
             <a href="/" style={{ color: "rgb(102, 102, 102)" }}>
               <i class="icon-caret-left"></i> Back to Inductees
             </a>

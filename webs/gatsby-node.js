@@ -30,13 +30,13 @@ async function createInducteeBioPages(graphql, actions) {
                 gatsbyImageData
               }
             }
-            slug {
-              current
-            }
             bio {
               children {
                 text
+                marks
               }
+              _key
+              _type
             }
           }
         }
