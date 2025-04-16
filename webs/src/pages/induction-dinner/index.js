@@ -159,7 +159,7 @@ const InductionDinnerPage = ({ data }) => {
             </h3>
             <a
               className={styles.linkText}
-              href="https://kychamber.wufoo.com/forms/2025-ky-entrepreneur-hall-of-fame-sponsorship/"
+              href={documents.sponsorOpportunites.asset.url}
             >
               View/Download Sponsorship Pkg.
             </a>
