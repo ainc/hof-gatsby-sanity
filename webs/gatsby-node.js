@@ -36,7 +36,10 @@ async function createInducteeBioPages(graphql, actions) {
             bio {
               children {
                 text
+                marks
               }
+              _key
+              _type
             }
           }
         }
