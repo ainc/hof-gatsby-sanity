@@ -71,6 +71,7 @@ const Sponsors = () => {
           </Col>
         ))}
       </Row>
+      {silverSponsor.length > 0 && (
       <Row className="d-flex justify-content-center align-items-center text-center">
         <h3>Silver Sponsor</h3>
         {silverSponsor.map((node, index) => (
@@ -90,6 +91,7 @@ const Sponsors = () => {
           </Col>
         ))}
       </Row>
+      )}
     </Container>
   );
 };
