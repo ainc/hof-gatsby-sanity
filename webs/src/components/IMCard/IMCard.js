@@ -3,7 +3,7 @@ import { Card, Container, Row, Col } from "react-bootstrap";
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as styles from "./imcard.module.scss";
 
-const IMCard = (props) => {
+const RoleCard = (props) => {
   if (props.linkedin !== null) {
     return (
       <div className={styles.center}>
@@ -40,4 +40,4 @@ const IMCard = (props) => {
   }
 };
 
-export default IMCard;
+export default RoleCard;
