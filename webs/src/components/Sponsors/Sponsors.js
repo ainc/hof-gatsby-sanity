@@ -25,6 +25,9 @@ const Sponsors = () => {
   const presentingSponsor = query.allSanitySponsors.nodes.filter(
     (node) => node.sponsorType === "Presenting",
   );
+  const platinumSponsor = query.allSanitySponsors.nodes.filter(
+    (node) => node.sponsorType == "Platinum",
+  );
   const goldSponsor = query.allSanitySponsors.nodes.filter(
     (node) => node.sponsorType === "Gold",
   );
@@ -50,6 +53,22 @@ const Sponsors = () => {
               />
             </a>
           </Col>
+        ))}
+      </Row>
+      <Row className="d-flex justify-content-center align-items-center text-center my-4">
+        <h3>Platinum Sponsor</h3>
+        {platinumSponsor.map((node, index) => (
+          <a href={node.link}
+            target="_blank"
+            className="mt-3"
+            rel="noreferrer"
+          >
+            <GatsbyImage
+              image={node.image.asset.gatsbyImageData}
+              alt={node.name}
+              style={{ maxWidth: "50%"}}
+              />
+          </a>
         ))}
       </Row>
       <Row className="d-flex justify-content-center align-items-center text-center my-4">
