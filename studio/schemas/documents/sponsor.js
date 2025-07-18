@@ -13,7 +13,7 @@ export default {
       title: 'Sponsor Type',
       type: 'string',
       options: {
-        list: ['Presenting', 'Gold', 'Silver'],
+        list: ['Presenting', 'Platinum', 'Gold', 'Silver'],
         layout: 'radio',
       },
     },
