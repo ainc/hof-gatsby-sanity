@@ -36,6 +36,7 @@ const Sponsors = () => {
   );
   return (
     <Container id="sponsors" className={styles.border}>
+      {presentingSponsor.length > 0 && (
       <Row className="d-flex justify-content-center align-items-center text-center my-4">
         <h3>Presenting Sponsor</h3>
         {presentingSponsor.map((node, index) => (
@@ -55,6 +56,8 @@ const Sponsors = () => {
           </Col>
         ))}
       </Row>
+      )}
+      {platinumSponsor.length > 0 && (
       <Row className="d-flex justify-content-center align-items-center text-center my-4">
         <h3>Platinum Sponsor</h3>
         {platinumSponsor.map((node, index) => (
@@ -71,6 +74,8 @@ const Sponsors = () => {
           </a>
         ))}
       </Row>
+      )}
+      {goldSponsor.length > 0 && (
       <Row className="d-flex justify-content-center align-items-center text-center my-4">
         <h3>Gold Sponsor</h3>
         {goldSponsor.map((node, index) => (
@@ -90,6 +95,7 @@ const Sponsors = () => {
           </Col>
         ))}
       </Row>
+      )}
       {silverSponsor.length > 0 && (
       <Row className="d-flex justify-content-center align-items-center text-center">
         <h3>Silver Sponsor</h3>
