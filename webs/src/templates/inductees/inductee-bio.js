@@ -57,74 +57,81 @@ const InducteeBio = ({ pageContext }) => {
             <a href="/" style={{ color: "rgb(102, 102, 102)" }}>
               <i class="icon-caret-left"></i> Back to Inductees
             </a>
-            <Row className={styles.videosTitle}>
-              <h3>Videos</h3>
-            </Row>
-            <Row className="pt-3">
-              {/* 
-                            Add ternary expression for sanity stuff,
-                            If no content, display a placeholder 
-                            to make sure pages build despite missing content
-                         */}
-              <Col lg={6} sm={12}>
-                <h3>Profile Video</h3>
-                <Container className={styles.videoContainer}>
-                  {inducteeInfo.profileVideo && profileVideoImage ? (
-                    <a href={inducteeInfo.profileVideo}>
-                      <GatsbyImage
-                        className="ratio ratio-16x9"
-                        image={profileVideoImage}
-                      />
-                      <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
-                        <StaticImage
-                          src="../../images/founders_logo_white_smallest.png"
-                          className={styles.playIcon}
-                        />
-                        <p className={styles.videoText}>WATCH THE VIDEO</p>
-                      </div>
-                    </a>
-                  ) : (
-                    <div>
-                      <StaticImage
-                        src="../../images/Logo_Square.png"
-                        alt="Placeholder"
-                        objectFit="contain"
-                        placeholder="blurred"
-                      />
-                    </div>
+            {/* Only show Videos section if at least one video exists */}
+            {(inducteeInfo.profileVideo || inducteeInfo.inductionCeremonyVideo) && (
+              <>
+                <Row className={styles.videosTitle}>
+                  <h3>Videos</h3>
+                </Row>
+                <Row className="pt-3">
+                  {/* Profile Video - only show if it exists */}
+                  {inducteeInfo.profileVideo && (
+                    <Col lg={inducteeInfo.inductionCeremonyVideo ? 6 : 12} sm={12}>
+                      <h3>Profile Video</h3>
+                      <Container className={styles.videoContainer}>
+                        {profileVideoImage ? (
+                          <a href={inducteeInfo.profileVideo}>
+                            <GatsbyImage
+                              className="ratio ratio-16x9"
+                              image={profileVideoImage}
+                            />
+                            <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
+                              <StaticImage
+                                src="../../images/founders_logo_white_smallest.png"
+                                className={styles.playIcon}
+                              />
+                              <p className={styles.videoText}>WATCH THE VIDEO</p>
+                            </div>
+                          </a>
+                        ) : (
+                          <div>
+                            <StaticImage
+                              src="../../images/Logo_Square.png"
+                              alt="Placeholder"
+                              objectFit="contain"
+                              placeholder="blurred"
+                            />
+                          </div>
+                        )}
+                      </Container>
+                    </Col>
                   )}
-                </Container>
-              </Col>
-              <Col lg={6} sm={12}>
-                <h3>Induction Ceremony</h3>
-                <Container className={styles.videoContainer}>
-                  {inducteeInfo.inductionCeremonyVideo && inductionImage ? (
-                    <a href={inducteeInfo.inductionCeremonyVideo}>
-                      <GatsbyImage
-                        className="ratio ratio-16x9"
-                        image={inductionImage}
-                      />
-                      <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
-                        <StaticImage
-                          src="../../images/founders_logo_white_smallest.png"
-                          className={styles.playIcon}
-                        />
-                        <p className={styles.videoText}>WATCH THE VIDEO</p>
-                      </div>
-                    </a>
-                  ) : (
-                    <div>
-                      <StaticImage
-                        src="../../images/Logo_Square.png"
-                        alt="Placeholder"
-                        placeholder="blurred"
-                        objectFit="contain"
-                      />
-                    </div>
+
+                  {/* Induction Ceremony Video - only show if it exists */}
+                  {inducteeInfo.inductionCeremonyVideo && (
+                    <Col lg={inducteeInfo.profileVideo ? 6 : 12} sm={12}>
+                      <h3>Induction Ceremony</h3>
+                      <Container className={styles.videoContainer}>
+                        {inductionImage ? (
+                          <a href={inducteeInfo.inductionCeremonyVideo}>
+                            <GatsbyImage
+                              className="ratio ratio-16x9"
+                              image={inductionImage}
+                            />
+                            <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
+                              <StaticImage
+                                src="../../images/founders_logo_white_smallest.png"
+                                className={styles.playIcon}
+                              />
+                              <p className={styles.videoText}>WATCH THE VIDEO</p>
+                            </div>
+                          </a>
+                        ) : (
+                          <div>
+                            <StaticImage
+                              src="../../images/Logo_Square.png"
+                              alt="Placeholder"
+                              placeholder="blurred"
+                              objectFit="contain"
+                            />
+                          </div>
+                        )}
+                      </Container>
+                    </Col>
                   )}
-                </Container>
-              </Col>
-            </Row>
+                </Row>
+              </>
+            )}
           </Col>
         </Row>
         <Sponsors />
