@@ -199,7 +199,7 @@ export const query = graphql`
           company
           profilePhoto {
             asset {
-              gatsbyImageData
+              gatsbyImageData(width: 400, height: 300, layout: CONSTRAINED, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
           year(formatString: "YYYY")
@@ -223,7 +223,7 @@ export const query = graphql`
           industry
           profilePhoto {
             asset {
-              gatsbyImageData
+              gatsbyImageData(width: 400, height: 300, layout: CONSTRAINED, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }

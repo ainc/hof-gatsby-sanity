@@ -209,7 +209,7 @@ export const query = graphql`
         videoLink
         image {
           asset {
-            gatsbyImageData
+            gatsbyImageData(width: 400, height: 300, layout: CONSTRAINED, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
         }
       }

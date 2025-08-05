@@ -80,7 +80,7 @@ export const query = graphql`
         linkedin
         profilePhoto {
           asset {
-            gatsbyImageData
+            gatsbyImageData(width: 100, height: 100, layout: FIXED, placeholder: BLURRED, formats: [WEBP, AVIF])
           }
         }
         type
