@@ -1,6 +1,10 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+// Disable Netlify adapter to prevent build failures
+process.env.GATSBY_CONTINUE_BUILD_ON_MISSING_ADAPTER = "true";
+
 console.log(process.env.NODE_ENV);
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV || "production"}`,
@@ -30,5 +34,6 @@ module.exports = {
         graphqlTag: "default",
       },
     },
+
   ],
 };
