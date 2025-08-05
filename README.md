@@ -212,10 +212,178 @@ If the **production** environment has updates needed in **development**:
 
 ---
 
+## 8. Image Optimization
+
+This project uses **Gatsby's image optimization** with **Sanity CMS** for optimal performance and user experience.
+
+### 8.1 Current Setup
+
+The project includes:
+- ✅ `gatsbyImageData` from Sanity for optimized images
+- ✅ `GatsbyImage` component for automatic optimization
+- ✅ `getImage()` helper function for image processing
+- ✅ Proper image plugins in `gatsby-config.js`
+- ✅ Reusable `OptimizedImage` component
+- ✅ Image optimization utilities
+
+### 8.2 Best Practices
+
+#### GraphQL Query Optimization
+
+Always specify dimensions and formats in your GraphQL queries:
+
+```graphql
+profilePhoto {
+  asset {
+    gatsbyImageData(
+      width: 300
+      height: 300
+      placeholder: BLURRED
+      formats: [AUTO, WEBP, AVIF]
+    )
+  }
+}
+```
+
+#### Common Image Dimensions
+
+Use these standard dimensions for different contexts:
+
+- **Profile Photos**: 300x300px
+- **Card Images**: 400x250px
+- **Hero Images**: 1200x600px
+- **Video Thumbnails**: 430x275px
+- **Thumbnails**: 150x150px
+
+#### Image Formats
+
+Always include multiple formats for better browser support:
+- `AUTO` - Original format
+- `WEBP` - Modern, efficient format
+- `AVIF` - Latest, most efficient format
+
+#### Placeholder Types
+
+- `BLURRED` - Shows a blurred version while loading
+- `DOMINANT_COLOR` - Shows the dominant color
+- `NONE` - No placeholder
+
+### 8.3 Usage Examples
+
+#### Basic Image Component
+
+```jsx
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+const MyComponent = ({ data }) => {
+  const image = getImage(data.profilePhoto.asset.gatsbyImageData);
+  
+  return (
+    <GatsbyImage 
+      image={image} 
+      alt="Profile photo"
+      loading="lazy"
+    />
+  );
+};
+```
+
+#### Using the OptimizedImage Component
+
+```jsx
+import OptimizedImage from "../components/OptimizedImage/OptimizedImage";
+
+const MyComponent = ({ data }) => {
+  return (
+    <OptimizedImage
+      image={data.profilePhoto}
+      alt="Profile photo"
+      className="profile-photo"
+      sizes="(max-width: 768px) 100vw, 300px"
+    />
+  );
+};
+```
+
+#### Responsive Images
+
+For responsive images, use the `sizes` attribute:
+
+```graphql
+asset {
+  gatsbyImageData(
+    placeholder: BLURRED
+    formats: [AUTO, WEBP, AVIF]
+    sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  )
+}
+```
+
+### 8.4 Performance Tips
+
+1. **Lazy Loading**: Always use `loading="lazy"` for images below the fold
+2. **Proper Alt Text**: Include descriptive alt text for accessibility
+3. **Sizes Attribute**: Use appropriate sizes for responsive images
+4. **Format Selection**: Let the browser choose the best format with `AUTO`
+5. **Placeholder**: Use `BLURRED` placeholders for better perceived performance
+
+### 8.5 Sanity Studio Configuration
+
+In your Sanity schema, ensure image fields have proper validation:
+
+```js
+{
+  name: 'profilePhoto',
+  title: 'Profile Photo',
+  type: 'image',
+  options: {
+    hotspot: true, // Enables focal point selection
+  },
+  fields: [
+    {
+      name: 'alt',
+      type: 'string',
+      title: 'Alternative text',
+      description: 'Important for SEO and accessibility',
+      validation: Rule => Rule.required(),
+    },
+  ],
+}
+```
+
+### 8.6 Troubleshooting
+
+#### Common Issues
+
+1. **Images not loading**: Check if `gatsbyImageData` is properly queried
+2. **Blurry images**: Ensure dimensions are appropriate for the display size
+3. **Slow loading**: Use lazy loading and proper placeholder types
+4. **Missing alt text**: Always include descriptive alt text
+
+#### Debugging
+
+Use the browser's developer tools to:
+- Check network tab for image requests
+- Verify image formats being served
+- Test responsive behavior
+- Validate accessibility
+
+### 8.7 Monitoring
+
+Track image performance using:
+- Lighthouse audits
+- Core Web Vitals
+- Network tab analysis
+- User experience metrics
+
+---
+
 ## Additional Resources
 
 - **Gatsby Docs**: [https://www.gatsbyjs.com/docs/](https://www.gatsbyjs.com/docs/)  
-- **Sanity Docs**: [https://www.sanity.io/docs](https://www.sanity.io/docs)  
+- **Sanity Docs**: [https://www.sanity.io/docs](https://www.sanity.io/docs)
+- **Image Optimization Guide**: See section 8 above for detailed image optimization practices
+- **Gatsby Image Plugin**: [https://www.gatsbyjs.com/plugins/gatsby-plugin-image/](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/)  
 
 ---
 

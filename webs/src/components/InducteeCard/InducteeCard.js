@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Card, Row, Col } from "react-bootstrap";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as styles from "./inducteecard.module.scss";
 
 const InducteeCard = (props) => {
   const [hoverDirection, setHoverDirection] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const getHoverDirection = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -62,6 +63,10 @@ const InducteeCard = (props) => {
     }
   };
 
+  // Get optimized image data
+  const optimizedImage = props.img ? getImage(props.img) : null;
+  const altText = props.name ? `${props.name} - ${props.company || 'Kentucky Entrepreneur Hall of Fame Inductee'}` : 'Inductee Profile';
+
   return (
     <Card
       className={`${styles.inducteeCard} ${hoverDirection}`}
@@ -69,11 +74,23 @@ const InducteeCard = (props) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.imageContainer}>
-        <GatsbyImage image={props.img} alt={props.name} />
+        {optimizedImage ? (
+          <GatsbyImage 
+            image={optimizedImage} 
+            alt={altText}
+            loading="lazy"
+            onLoad={() => setImageLoaded(true)}
+            className={imageLoaded ? styles.imageLoaded : styles.imageLoading}
+          />
+        ) : (
+          <div className={styles.placeholder}>
+            <div className={styles.placeholderText}>No Image</div>
+          </div>
+        )}
         <a
           href={props.link}
           className={styles.cardOverlay}
-          aria-label="Inductee Bio"
+          aria-label={`View ${props.name}'s bio`}
         >
           <Row>
             <Col>
@@ -81,7 +98,7 @@ const InducteeCard = (props) => {
                 {props.name} <br />
                 <span className={styles.company}>{props.company}</span>
               </span>
-              <span class="view-bio">
+              <span className="view-bio">
                 <i className="icon-eye-open" aria-label="View Bio"></i> View Bio
               </span>
             </Col>
