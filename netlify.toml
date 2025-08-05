@@ -34,3 +34,5 @@
   from = "/*"
   to = "/index.html"
   status = 200
+=======
+  GATSBY_CONTINUE_BUILD_ON_MISSING_ADAPTER = "true"

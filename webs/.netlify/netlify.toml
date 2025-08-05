@@ -1,3 +1,4 @@
+
 headersOrigin = "config"
 redirectsOrigin = "config"
 plugins = []
@@ -12,6 +13,7 @@ publishOrigin = "config"
 base = "C:\\Users\\raney\\Programming\\hof-gatsby-sanity\\webs"
 command = "node build.js"
 commandOrigin = "config"
+
 
 [build.environment]
 NODE_VERSION = "20"

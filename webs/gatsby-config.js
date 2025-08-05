@@ -36,5 +36,6 @@ module.exports = {
         graphqlTag: "default",
       },
     },
+
   ],
 };
