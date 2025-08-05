@@ -12,7 +12,12 @@ async function createInducteeBioPages(graphql, actions) {
               name
               profilePhoto {
                 asset {
-                  gatsbyImageData
+                  gatsbyImageData(
+                    width: 400
+                    height: 400
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
                 }
               }
               title
@@ -22,12 +27,22 @@ async function createInducteeBioPages(graphql, actions) {
             profileVideo
             profileVideoImage {
               asset {
-                gatsbyImageData
+                gatsbyImageData(
+                  width: 430
+                  height: 275
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
             InductionVideoImage {
               asset {
-                gatsbyImageData
+                gatsbyImageData(
+                  width: 430
+                  height: 275
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
             slug {
