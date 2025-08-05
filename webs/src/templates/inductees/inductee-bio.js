@@ -8,9 +8,11 @@ import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
 import { PortableText } from "@portabletext/react";
 import Body from "../../components/Body/Body";
+
 const InducteeBio = ({ pageContext }) => {
   const inducteeInfo = pageContext.post;
 
+  // Optimize image processing
   const inducteeImage = inducteeInfo.inductee.profilePhoto
     ? getImage(inducteeInfo.inductee.profilePhoto.asset.gatsbyImageData)
     : null;
@@ -20,7 +22,55 @@ const InducteeBio = ({ pageContext }) => {
   const inductionImage = inducteeInfo.InductionVideoImage
     ? getImage(inducteeInfo.InductionVideoImage.asset.gatsbyImageData)
     : null;
-  console.log(inducteeInfo.bio[0].children[0].text);
+
+  // Pre-calculate video existence for better performance
+  const hasProfileVideo = Boolean(inducteeInfo.profileVideo);
+  const hasInductionVideo = Boolean(inducteeInfo.inductionCeremonyVideo);
+  const hasAnyVideo = hasProfileVideo || hasInductionVideo;
+
+  // Calculate column sizes once
+  const getColumnSize = (hasOtherVideo) => hasOtherVideo ? 6 : 12;
+
+  // Video component for reusability
+  const VideoSection = ({ 
+    title, 
+    videoUrl, 
+    videoImage, 
+    hasOtherVideo 
+  }) => (
+    <Col lg={getColumnSize(hasOtherVideo)} sm={12}>
+      <h3>{title}</h3>
+      <Container className={styles.videoContainer}>
+        {videoImage ? (
+          <a href={videoUrl} aria-label={`Watch ${title}`}>
+            <GatsbyImage
+              className="ratio ratio-16x9"
+              image={videoImage}
+              alt={`${title} thumbnail`}
+            />
+            <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
+              <StaticImage
+                src="../../images/founders_logo_white_smallest.png"
+                className={styles.playIcon}
+                alt="Play button"
+              />
+              <p className={styles.videoText}>WATCH THE VIDEO</p>
+            </div>
+          </a>
+        ) : (
+          <div>
+            <StaticImage
+              src="../../images/Logo_Square.png"
+              alt="Video placeholder"
+              placeholder="blurred"
+              objectFit="contain"
+            />
+          </div>
+        )}
+      </Container>
+    </Col>
+  );
+
   return (
     <Layout>
       <Container>
@@ -32,10 +82,15 @@ const InducteeBio = ({ pageContext }) => {
             <Card className={styles.inducteeCard}>
               <div className={styles.imageContainer}>
                 {inducteeImage ? (
-                  <GatsbyImage image={inducteeImage} />
+                  <GatsbyImage 
+                    image={inducteeImage} 
+                    alt={`${inducteeInfo.inductee.name} profile photo`}
+                  />
                 ) : (
-                  // Ternary expression
-                  <StaticImage src="../../images/Logo_Square.png" />
+                  <StaticImage 
+                    src="../../images/Logo_Square.png" 
+                    alt="Profile placeholder"
+                  />
                 )}
               </div>
             </Card>
@@ -46,88 +101,41 @@ const InducteeBio = ({ pageContext }) => {
               {inducteeInfo.inductee.title} {inducteeInfo.inductee.company}
             </h3>
             <Body>
-            {inducteeInfo.bio.map((block, blockIndex) => (
-              <div key={blockIndex}>
-                {block.children.map((child, childIndex) => (
-                  <span key={childIndex}>{child.text}</span>
-                ))}
-              </div>
-            ))}
-          </Body>
+              {inducteeInfo.bio.map((block, blockIndex) => (
+                <div key={blockIndex}>
+                  {block.children.map((child, childIndex) => (
+                    <span key={childIndex}>{child.text}</span>
+                  ))}
+                </div>
+              ))}
+            </Body>
             <a href="/" style={{ color: "rgb(102, 102, 102)" }}>
-              <i class="icon-caret-left"></i> Back to Inductees
+              <i className="icon-caret-left"></i> Back to Inductees
             </a>
-            {/* Only show Videos section if at least one video exists */}
-            {(inducteeInfo.profileVideo || inducteeInfo.inductionCeremonyVideo) && (
+            
+            {/* Only render video section if videos exist */}
+            {hasAnyVideo && (
               <>
                 <Row className={styles.videosTitle}>
                   <h3>Videos</h3>
                 </Row>
                 <Row className="pt-3">
-                  {/* Profile Video - only show if it exists */}
-                  {inducteeInfo.profileVideo && (
-                    <Col lg={inducteeInfo.inductionCeremonyVideo ? 6 : 12} sm={12}>
-                      <h3>Profile Video</h3>
-                      <Container className={styles.videoContainer}>
-                        {profileVideoImage ? (
-                          <a href={inducteeInfo.profileVideo}>
-                            <GatsbyImage
-                              className="ratio ratio-16x9"
-                              image={profileVideoImage}
-                            />
-                            <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
-                              <StaticImage
-                                src="../../images/founders_logo_white_smallest.png"
-                                className={styles.playIcon}
-                              />
-                              <p className={styles.videoText}>WATCH THE VIDEO</p>
-                            </div>
-                          </a>
-                        ) : (
-                          <div>
-                            <StaticImage
-                              src="../../images/Logo_Square.png"
-                              alt="Placeholder"
-                              objectFit="contain"
-                              placeholder="blurred"
-                            />
-                          </div>
-                        )}
-                      </Container>
-                    </Col>
+                  {hasProfileVideo && (
+                    <VideoSection
+                      title="Profile Video"
+                      videoUrl={inducteeInfo.profileVideo}
+                      videoImage={profileVideoImage}
+                      hasOtherVideo={hasInductionVideo}
+                    />
                   )}
-
-                  {/* Induction Ceremony Video - only show if it exists */}
-                  {inducteeInfo.inductionCeremonyVideo && (
-                    <Col lg={inducteeInfo.profileVideo ? 6 : 12} sm={12}>
-                      <h3>Induction Ceremony</h3>
-                      <Container className={styles.videoContainer}>
-                        {inductionImage ? (
-                          <a href={inducteeInfo.inductionCeremonyVideo}>
-                            <GatsbyImage
-                              className="ratio ratio-16x9"
-                              image={inductionImage}
-                            />
-                            <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
-                              <StaticImage
-                                src="../../images/founders_logo_white_smallest.png"
-                                className={styles.playIcon}
-                              />
-                              <p className={styles.videoText}>WATCH THE VIDEO</p>
-                            </div>
-                          </a>
-                        ) : (
-                          <div>
-                            <StaticImage
-                              src="../../images/Logo_Square.png"
-                              alt="Placeholder"
-                              placeholder="blurred"
-                              objectFit="contain"
-                            />
-                          </div>
-                        )}
-                      </Container>
-                    </Col>
+                  
+                  {hasInductionVideo && (
+                    <VideoSection
+                      title="Induction Ceremony"
+                      videoUrl={inducteeInfo.inductionCeremonyVideo}
+                      videoImage={inductionImage}
+                      hasOtherVideo={hasProfileVideo}
+                    />
                   )}
                 </Row>
               </>
