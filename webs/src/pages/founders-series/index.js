@@ -246,7 +246,7 @@ export const query = graphql`
         title
         preview {
           asset {
-            gatsbyImageData(width: 430, height: 275, layout: CONSTRAINED, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            gatsbyImageData(width: 430, height: 275)
           }
         }
         year(formatString: "YYYY")
