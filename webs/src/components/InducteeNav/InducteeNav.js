@@ -8,7 +8,7 @@ import InducteeAnimation from "../InducteeAnimations/InducteeAnimations"
 
 const InducteeNav = (props) => {
   const data = props.data
-  const years = ['2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']
+  const years = ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010']
   const [selectedYear, setSelectedYear] = useState(null) // Initialize state for selected year
   const [selectedIndustry, setSelectedIndustry] = useState(null)
   const [fadingOut, setFadingOut] = useState(false)
