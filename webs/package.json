@@ -11,6 +11,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
+    "build:netlify": "node build.js",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
