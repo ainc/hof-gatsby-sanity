@@ -4,7 +4,15 @@ import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import favicon from "../../images/favicon.ico";
 
-function SEO({ description, lang, meta, keywords, title, path, jsImports }) {
+function SEO({
+  description,
+  lang = "en",
+  meta = [],
+  keywords = [],
+  title,
+  path,
+  jsImports,
+}) {
   const data = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
@@ -18,9 +26,11 @@ function SEO({ description, lang, meta, keywords, title, path, jsImports }) {
   const metaDescription =
     description || (data.site && data.site.description) || "";
   const siteTitle = (data.site && data.site.title) || "";
+
   return (
     <Helmet
       htmlAttributes={{ lang }}
+      title={title || siteTitle}
       titleTemplate={title === siteTitle ? "%s" : `%s | ${siteTitle}`}
       meta={[
         {
@@ -44,37 +54,32 @@ function SEO({ description, lang, meta, keywords, title, path, jsImports }) {
           content: metaDescription,
         },
         {
-          name: "og:image",
-          content: { favicon },
+          property: "og:image",
+          content: favicon,
         },
-      ]
-        .concat(
-          keywords && keywords.length > 0
-            ? {
+        ...(keywords.length > 0
+          ? [
+              {
                 name: "keywords",
                 content: keywords.join(", "),
-              }
-            : [],
-        )
-        .concat(meta)}
+              },
+            ]
+          : []),
+        ...meta,
+      ]}
     >
       <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
-      <jsImports />
+      {jsImports && jsImports.map((src, i) => <script key={i} src={src} />)}
     </Helmet>
   );
 }
 
-SEO.defaultProps = {
-  lang: "en",
-  meta: [],
-  keywords: [],
-};
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   path: PropTypes.string,
   jsImports: PropTypes.arrayOf(PropTypes.string),
 };

@@ -20,5 +20,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss}": "prettier --write"
+  },
+  "dependencies": {
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1"
   }
 }
