@@ -1,6 +1,6 @@
 [build]
   base = "webs"
-  command = "gatsby build"
+  command = "yarn build"
   publish = "public"
 
 [build.environment]
