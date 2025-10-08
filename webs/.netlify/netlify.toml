@@ -15,7 +15,6 @@ commandOrigin = "config"
 
 [build.environment]
 NODE_VERSION = "20"
-GATSBY_CONTINUE_BUILD_ON_MISSING_ADAPTER = "true"
 GATSBY_SANITY_DATASET = "production"
 NPM_FLAGS = "--version"
 YARN_FLAGS = "--version"
@@ -49,19 +48,19 @@ for = "/static/*"
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/styles.bdd6090ba3484231b79b.css/"
+for = "/styles.e17fcc235f8c5ca68fb4.css/"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-index-js-0b28d87d527d752a5691.js"
+for = "/component---src-pages-index-js-6775f4d663ce03d18603.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-index-js-0b28d87d527d752a5691.js.map"
+for = "/component---src-pages-index-js-6775f4d663ce03d18603.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
@@ -85,163 +84,163 @@ for = "/framework-3576abd7332dde9e72aa.js.map"
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/commons-060c9bf4e2a8cddfb9f5.js"
+for = "/commons-1aa0c9f3fe0a88b3686b.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/commons-060c9bf4e2a8cddfb9f5.js.LICENSE.txt"
+for = "/commons-1aa0c9f3fe0a88b3686b.js.LICENSE.txt"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/commons-060c9bf4e2a8cddfb9f5.js.map"
+for = "/commons-1aa0c9f3fe0a88b3686b.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/396-cb7d53bb63033126bbf9.js"
+for = "/312-43aaf9112eb5e37e5451.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/396-cb7d53bb63033126bbf9.js.LICENSE.txt"
+for = "/312-43aaf9112eb5e37e5451.js.LICENSE.txt"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/396-cb7d53bb63033126bbf9.js.map"
+for = "/312-43aaf9112eb5e37e5451.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/app-0813d677a51627db76f1.js"
+for = "/app-03e7afde88e8aefadd55.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/app-0813d677a51627db76f1.js.LICENSE.txt"
+for = "/app-03e7afde88e8aefadd55.js.LICENSE.txt"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/app-0813d677a51627db76f1.js.map"
+for = "/app-03e7afde88e8aefadd55.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-nominate-index-js-2ff3b3a1a7155f7ba420.js"
+for = "/component---src-pages-nominate-index-js-80631390c3e8de5fbbc0.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-nominate-index-js-2ff3b3a1a7155f7ba420.js.map"
+for = "/component---src-pages-nominate-index-js-80631390c3e8de5fbbc0.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-founders-series-index-js-3d75817e73ac44bceee3.js"
+for = "/component---src-pages-founders-series-index-js-555578de2899f0b80a84.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-founders-series-index-js-3d75817e73ac44bceee3.js.map"
+for = "/component---src-pages-founders-series-index-js-555578de2899f0b80a84.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-book-index-js-e1fafc534fa81bab4484.js"
+for = "/component---src-pages-book-index-js-33d88859e6729b9617f7.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-book-index-js-e1fafc534fa81bab4484.js.map"
+for = "/component---src-pages-book-index-js-33d88859e6729b9617f7.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-media-index-js-f8a88fbeea6ed0167617.js"
+for = "/component---src-pages-media-index-js-6a6c41353d5124beaf38.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-media-index-js-f8a88fbeea6ed0167617.js.map"
+for = "/component---src-pages-media-index-js-6a6c41353d5124beaf38.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-templates-inductees-inductee-bio-js-867a78871367f70821f2.js"
+for = "/component---src-templates-inductees-inductee-bio-js-760d94f5c28062a8bdbd.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-templates-inductees-inductee-bio-js-867a78871367f70821f2.js.map"
+for = "/component---src-templates-inductees-inductee-bio-js-760d94f5c28062a8bdbd.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-fellowship-index-js-f8bcde7f3fa86d03e9c5.js"
+for = "/component---src-pages-fellowship-index-js-a5f263b53f596768a73b.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-fellowship-index-js-f8bcde7f3fa86d03e9c5.js.map"
+for = "/component---src-pages-fellowship-index-js-a5f263b53f596768a73b.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-induction-dinner-index-js-bb817278eaa9c9451568.js"
+for = "/component---src-pages-induction-dinner-index-js-06b620e6311656f2ef70.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-induction-dinner-index-js-bb817278eaa9c9451568.js.map"
+for = "/component---src-pages-induction-dinner-index-js-06b620e6311656f2ef70.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/webpack-runtime-a9079d3333e9fb3222c9.js"
+for = "/component---src-pages-investors-mentors-index-js-87c7940177ba9fa4d95c.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/webpack-runtime-a9079d3333e9fb3222c9.js.map"
+for = "/component---src-pages-investors-mentors-index-js-87c7940177ba9fa4d95c.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-investors-mentors-index-js-63e538d9ab4dcac79733.js"
+for = "/webpack-runtime-35458eac85822b706d22.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-investors-mentors-index-js-63e538d9ab4dcac79733.js.map"
+for = "/webpack-runtime-35458eac85822b706d22.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
@@ -259,13 +258,13 @@ for = "/672-9c0700c93772f00cbf55.js.map"
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-404-js-6956dcdb0fc9ff19b01e.js"
+for = "/component---src-pages-404-js-14529a7d9f81d4515205.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-404-js-6956dcdb0fc9ff19b01e.js.map"
+for = "/component---src-pages-404-js-14529a7d9f81d4515205.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"

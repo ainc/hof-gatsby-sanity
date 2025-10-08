@@ -40,7 +40,7 @@ const Header = () => {
             <Navbar.Brand href="/">
               <StaticImage
                 placeholder="blurred"
-                src="../../images/KEHOF 15 Year White 1.png"
+                src="../../images/KEHOF_15_Year_White_1.png"
                 alt="KEHOF logo"
                 style={{ maxWidth: "200px" }}
               />

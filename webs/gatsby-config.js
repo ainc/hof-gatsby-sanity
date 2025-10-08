@@ -21,7 +21,6 @@ module.exports = {
     title: `hof-gatsby-sanity`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  adapter: null, // Disable Netlify adapter auto-installation
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
