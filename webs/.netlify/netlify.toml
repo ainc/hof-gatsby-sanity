@@ -49,19 +49,19 @@ for = "/static/*"
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/styles.55f0e2b16815d8a9aa62.css/"
+for = "/styles.bdd6090ba3484231b79b.css/"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-index-js-d9699a7b42e9af54b6c5.js"
+for = "/component---src-pages-index-js-0b28d87d527d752a5691.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/component---src-pages-index-js-d9699a7b42e9af54b6c5.js.map"
+for = "/component---src-pages-index-js-0b28d87d527d752a5691.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
@@ -223,13 +223,13 @@ for = "/component---src-pages-induction-dinner-index-js-bb817278eaa9c9451568.js.
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/webpack-runtime-ac972d9314513b31d92e.js"
+for = "/webpack-runtime-a9079d3333e9fb3222c9.js"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/webpack-runtime-ac972d9314513b31d92e.js.map"
+for = "/webpack-runtime-a9079d3333e9fb3222c9.js.map"
 
 [headers.values]
 cache-control = "public, max-age=31536000, immutable"
