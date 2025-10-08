@@ -10,11 +10,12 @@ plugins = []
 publish = "C:\\Users\\raney\\Programming\\hof-gatsby-sanity\\webs\\public"
 publishOrigin = "config"
 base = "C:\\Users\\raney\\Programming\\hof-gatsby-sanity\\webs"
-command = "node build.js"
+command = "gatsby build"
 commandOrigin = "config"
 
 [build.environment]
 NODE_VERSION = "20"
+GATSBY_CONTINUE_BUILD_ON_MISSING_ADAPTER = "true"
 GATSBY_SANITY_DATASET = "production"
 NPM_FLAGS = "--version"
 YARN_FLAGS = "--version"

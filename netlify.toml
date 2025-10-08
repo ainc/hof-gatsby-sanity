@@ -1,6 +1,6 @@
 [build]
   base = "webs"
-  command = "node build.js"
+  command = "gatsby build"
   publish = "public"
 
 [build.environment]
