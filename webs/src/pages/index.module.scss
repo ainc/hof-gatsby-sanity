@@ -1,3 +1,7 @@
+// src/pages/index.module.scss
+
+@import "../styles/mixins/mixins"; // includes variables, responsive, font, etc.
+
 @font-face {
   font-family: "AmericanPurpose";
   src: url("../font/american_purpose-webfont.eot");
@@ -9,81 +13,105 @@
   font-weight: normal;
   font-style: normal;
 }
+
+// Background
 .background {
   background: url("../images/bg.jpg") center center repeat-y;
   background-size: cover;
 }
 
+// Billboard
 .billboard {
   color: #fff;
   text-align: center;
   width: 45vw;
   overflow: hidden;
-  margin: 0px auto;
+  margin: 0 auto;
   opacity: 1;
-  @media (max-width: 1440px) {
-    width: 60vw;
+
+  @include screen-max {
+    width: 45vw; // large screens
   }
-  @media (max-width: 1024px) {
-    width: 80vw;
+
+  @include screen-md {
+    width: 60vw; // medium screens
   }
-  @media (max-width: 425px) {
-    width: 100vw;
+
+  @include screen-sm {
+    width: 100vw; // small screens
   }
 }
 
+// Title 1
 .title1 {
   font-family: "AmericanPurpose", Arial, Sans-Serif;
   font-weight: 100;
   border-bottom: 1px solid #fff;
   color: white;
-  @media (min-width: 427px) {
+
+  @include screen-max {
     font-size: 59px;
     line-height: 62px;
   }
-  @media (max-width: 426px) {
+
+  @include screen-xs {
     font-size: 26px;
     line-height: 32px;
   }
 }
+
+// Title 2
 .title2 {
   font-family: "AmericanPurpose", Arial, Sans-Serif;
   font-weight: 100;
-  @media (min-width: 427px) {
+
+  @include screen-max {
     font-size: 111px;
     line-height: 128px;
   }
-  @media (max-width: 426px) {
+
+  @include screen-xs {
     font-size: 49px;
     line-height: 70px;
   }
 }
 
+// Tagline
 .tagline {
   font-family: "Times New Roman", Times, Serif;
   font-weight: 100;
-  @media (min-width: 427px) {
+
+  @include screen-max {
     font-size: 27px;
     margin-top: -18px;
   }
-  @media (max-width: 426px) {
+
+  @include screen-xs {
     font-size: 20px;
   }
 }
 
+// Flex column for small screens
 .flex-col-sm {
-  @media (max-width: 767px) {
+  @include screen-sm {
     flex-direction: column !important;
     justify-content: center;
   }
 }
+
 .flex-col-sm img {
-  @media (max-width: 767px) {
+  @include screen-sm {
     max-width: 350px;
     height: auto;
   }
-  @media (min-width: 768px) {
+
+  @include screen-md {
     max-width: 500px;
+    height: auto;
+  }
+
+  @include screen-max {
+    max-width: 500px; // optional, keep default
     height: auto;
   }
 }
