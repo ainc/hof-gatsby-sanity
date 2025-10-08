@@ -14,7 +14,14 @@ import FlickerImages from "../components/FlickerImages/FlickerImages";
 import IconPair from "../components/IconPair/IconPair";
 import PresentingSponsorBlock from "../components/PresentingSponsorBlock/PresentingSponsorBlock";
 
+import RotatingImages from "../components/RotatingImages";
+
 const IndexPage = ({ data }) => {
+    const images = [
+    "/images/HOF_Hero_image_1.jpg",
+    "/images/HOF_Hero_image_2.jpg",
+    "/images/HOF_Hero_image_3.jpg",
+  ];
   const Inductees = data.allSanityInductee.nodes;
   const Emerging = data.allSanityEmergingEntrepreneur.nodes;
   const event = data.allSanityEvent.nodes.at(-1);
@@ -23,25 +30,40 @@ const IndexPage = ({ data }) => {
   const [inducteeSelectedIndustry, setInducteeSelectedIndustry] = useState(null);
   const [emergingSelectedIndustry, setEmergingSelectedIndustry] = useState(null);
   return (
-    <Layout>
-      <div className={styles.background}>
-        <Container className={`${styles.billboard} py-5`}>
-          <h2>
-            <div className={styles.title1}>KENTUCKY ENTREPRENEUR</div>
-            <div className={styles.title2}>HALL OF FAME</div>
-            <div className={styles.tagline}>
-              Honoring Kentucky's Most Successful Entrepreneurs
-            </div>
-          </h2>
-        </Container>
+    
+ <Layout>
+  <RotatingImages
+    images={[
+      "/images/HOF_Hero_image_1.jpg",
+      "/images/HOF_Hero_image_2.jpg",
+      "/images/HOF_Hero_image_3.jpg",
+    ]}
+  >
+    <div className={styles.heroContent}>
+      <div className={styles.titleBlock}>
+        <div className={styles.title1}>KENTUCKY ENTREPRENEUR HALL OF FAME</div>
+        
+        <div className={styles.tagline}>
+  <em>Honoring Kentucky's Most Successful Entrepreneurs</em>
+</div>
       </div>
-      <Container>
-        <Row>
-          <Col>
-            <div
-              className="d-flex justify-content-between mx-4 py-5 align-items-center"
-              style={{ borderBottom: "1px solid #bbb" }}
-            >
+
+      <div className={styles.nominateWrapper}>
+        <a href="/nominate" className={styles.nominateBtn}>
+          NOMINATE AN ENTREPRENEUR TODAY
+        </a>
+      </div>
+    </div>
+  </RotatingImages>
+
+ 
+  <Container>
+    <Row>
+      <Col>
+        <div
+          className="d-flex justify-content-between mx-4 py-5 align-items-center"
+          style={{ borderBottom: "1px solid #bbb" }}
+        >
               <Title style={{ borderBottom: "none" }}>About Us</Title>
               <IconPair />
             </div>

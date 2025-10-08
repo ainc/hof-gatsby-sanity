@@ -9,9 +9,12 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .background {
-  background: url("../images/bg.jpg") center center repeat-y;
-  background-size: cover;
+ 
+  background-size: cover;  
+  background-color: #000;  
+
 }
 
 .billboard {
@@ -32,11 +35,28 @@
   }
 }
 
+
+.heroContent {
+  position: relative;
+  z-index: 20;
+  height: 100%;
+  width: 100%;
+}
+
+
+.titleBlock {
+  position: absolute;
+  bottom: 180px;  
+  left: 80px;    
+  text-align: left;
+  color: white;
+}
+
 .title1 {
   font-family: "AmericanPurpose", Arial, Sans-Serif;
   font-weight: 100;
-  border-bottom: 1px solid #fff;
   color: white;
+  text-decoration: none; 
   @media (min-width: 427px) {
     font-size: 59px;
     line-height: 62px;
@@ -46,9 +66,11 @@
     line-height: 32px;
   }
 }
+
 .title2 {
   font-family: "AmericanPurpose", Arial, Sans-Serif;
   font-weight: 100;
+  text-decoration: none; 
   @media (min-width: 427px) {
     font-size: 111px;
     line-height: 128px;
@@ -62,14 +84,34 @@
 .tagline {
   font-family: "Times New Roman", Times, Serif;
   font-weight: 100;
+  margin-top: 0.5rem;
+  text-decoration: none;
   @media (min-width: 427px) {
     font-size: 27px;
-    margin-top: -18px;
   }
   @media (max-width: 426px) {
     font-size: 20px;
   }
 }
+
+
+.nominateWrapper {
+  position: absolute;
+  bottom: 80px; 
+  left: 80px;
+}
+
+.nominateBtn {
+  background: #C2202A;
+  color: white;
+  padding: 19px 30px;
+  border-radius: 50px;
+  text-decoration: none; 
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+}
+
 
 .flex-col-sm {
   @media (max-width: 767px) {
@@ -77,6 +119,7 @@
     justify-content: center;
   }
 }
+
 .flex-col-sm img {
   @media (max-width: 767px) {
     max-width: 350px;

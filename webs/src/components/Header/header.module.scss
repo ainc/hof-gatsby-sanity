@@ -10,24 +10,18 @@
   padding: 0;
 }
 
-.alert {
-  display: flex;
-  justify-content: center;
-  height: 30px;
-  border-bottom: 1px solid #f11a1a;
-  background-color: #f2dede;
-  color: #b94a48;
-  border-color: #eed3d7;
-  padding: 5px;
-  @media (max-width: 560px) {
+
+@media (max-width: 560px) {
+  .alert {
     height: 55px;
     text-align: center;
   }
 }
+
 .social-bar {
   height: 30px;
   border-bottom: 1px solid #f11a1a;
-  margin: 0 auto; /* Center the inner div horizontally */
+  margin: 0 auto; 
   width: 100%;
 }
 
@@ -35,8 +29,9 @@
   color: white;
   text-decoration: none;
   font-family: "Times New Roman, Times, Serif";
-  padding: 20px 0;
+  padding: 20px 10px;
 }
+
 .links:hover {
   border-top: 4px solid #f11a1a;
 }
@@ -44,14 +39,16 @@
 .dropdown-menu {
   color: white !important;
 }
+
 .dropdown-menu div {
   background: url("../../images/bg.jpg") center center repeat-y !important;
   border: none !important;
 }
 
 .dropdown-menu-lg .dropdown-menu {
-  background-color: white !important; /* Ensure the background is white */
+  background-color: white !important;
 }
+
 .dropdown-menu-lg > a::after {
   color: white;
 }
@@ -60,10 +57,79 @@
   color: black;
   text-decoration: none;
   font-family: "Times New Roman, Times, Serif";
-  @media (max-width: 1000px) {
+}
+
+@media (max-width: 1000px) {
+  .dropdown-items {
     color: white;
   }
 }
+
 .dropdown-items:focus {
   background-color: #af0a0a;
+}
+
+.homepage .background {
+  background-color: transparent;
+  background-size: cover;
+}
+
+.homepage .nav {
+display: flex;
+  justify-content: space-between;  
+  width: 85%;  
+  position: absolute;
+  padding: 0;
+  z-index: 10;
+}
+
+.homepage .nav .links {
+   
+  color: white;
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  padding: 20px 10px;
+}
+.homepage .social-bar,
+.homepage .dropdown-menu,
+.homepage .dropdown-menu div,
+.homepage .dropdown-menu-lg .dropdown-menu,
+
+.homepage .links:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.homepage .dropdown-menu {
+  color: white;
+}
+
+.homepage .dropdown-menu div {
+  background: none;
+  border: none;
+}
+
+.homepage .dropdown-menu-lg .dropdown-menu {
+  background: transparent;
+}
+
+.homepage .dropdown-menu-lg > a::after {
+  color: white;
+}
+
+.homepage .dropdown-items {
+  color: rgb(10, 10, 10);
+}
+
+@media (max-width: 1000px) {
+  .homepage .dropdown-items {
+    color: white;
+  }
+}
+
+.homepage .dropdown-items:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.homepage .alert {
+  display: none;
 }
