@@ -13,11 +13,11 @@
   font-weight: normal;
   font-style: normal;
 }
-
-// Background
 .background {
-  background: url("../images/bg.jpg") center center repeat-y;
-  background-size: cover;
+ 
+  background-size: cover;  
+  background-color: #000;  
+
 }
 
 // Billboard
@@ -42,14 +42,29 @@
   }
 }
 
+
+.heroContent {
+  position: relative;
+  z-index: 20;
+  height: 100%;
+  width: 100%;
+}
+
+
+.titleBlock {
+  position: absolute;
+  bottom: 180px;  
+  left: 80px;    
+  text-align: left;
+  color: white;
+}
+
 // Title 1
 .title1 {
   font-family: "AmericanPurpose", Arial, Sans-Serif;
   font-weight: 100;
-  border-bottom: 1px solid #fff;
   color: white;
-
-  @include screen-max {
+  @media (min-width: 427px) {
     font-size: 59px;
     line-height: 62px;
   }
@@ -59,13 +74,10 @@
     line-height: 32px;
   }
 }
-
-// Title 2
 .title2 {
   font-family: "AmericanPurpose", Arial, Sans-Serif;
   font-weight: 100;
-
-  @include screen-max {
+  @media (min-width: 427px) {
     font-size: 111px;
     line-height: 128px;
   }
@@ -80,16 +92,33 @@
 .tagline {
   font-family: "Times New Roman", Times, Serif;
   font-weight: 100;
-
-  @include screen-max {
+  @media (min-width: 427px) {
     font-size: 27px;
-    margin-top: -18px;
   }
 
   @include screen-xs {
     font-size: 20px;
   }
 }
+
+
+.nominateWrapper {
+  position: absolute;
+  bottom: 80px; 
+  left: 80px;
+}
+
+.nominateBtn {
+  background: #C2202A;
+  color: white;
+  padding: 19px 30px;
+  border-radius: 50px;
+  text-decoration: none; 
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+}
+
 
 // Flex column for small screens
 .flex-col-sm {
