@@ -1,48 +1,134 @@
+@import "../../styles/mixins/mixins"; // includes screen-xs, screen-sm, screen-md, screen-lg, screen-max
+
+
 .background {
   background: url("../../images/bg.jpg") center center repeat-y;
   background-size: cover;
+   
 }
 
+/* Navigation */
 .nav {
   color: white;
   display: flex;
   justify-content: space-between;
   padding: 0;
-}
+  
 
+  @include screen-xs {
+    flex-direction: column;
+    align-items: center;
+  }
 
-@media (max-width: 560px) {
-  .alert {
-    height: 55px;
-    text-align: center;
+  @include screen-sm {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  @include screen-md {
+    justify-content: space-between;
+  }
+
+  @include screen-lg {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  @include screen-max {
+    justify-content: space-between;
+    padding: 0 40px;
   }
 }
 
+/* Alert */
+.alert {
+  @include screen-xs {
+    height: 55px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  @include screen-sm {
+    height: 60px;
+    font-size: 1rem;
+  }
+
+  @include screen-md {
+    height: 65px;
+  }
+
+  @include screen-lg {
+    height: 70px;
+  }
+
+  @include screen-max {
+    height: 75px;
+  }
+}
+
+/* Social Bar */
 .social-bar {
   height: 30px;
   border-bottom: 1px solid #f11a1a;
-  margin: 0 auto; 
+  margin: 0 auto;
   width: 100%;
+
+  @include screen-xs {
+    height: 25px;
+  }
+
+  @include screen-md {
+    height: 30px;
+  }
+
+  @include screen-lg {
+    height: 35px;
+  }
+
+  @include screen-max {
+    height: 40px;
+  }
 }
 
+/*Nav Links */
 .links {
   color: white;
   text-decoration: none;
-  font-family: "Times New Roman, Times, Serif";
+  font-family: "Times New Roman", Times, Serif;
   padding: 20px 10px;
+
+  &:hover {
+    border-top: 4px solid #f11a1a;
+  }
+
+  @include screen-xs {
+    padding: 10px 5px;
+    font-size: 0.8rem;
+  }
+
+  @include screen-sm {
+    padding: 15px 8px;
+    font-size: 0.9rem;
+  }
+
+  @include screen-md {
+    padding: 18px 10px;
+    font-size: 1rem;
+  }
+
+  @include screen-lg {
+    padding: 20px 12px;
+  }
 }
 
-.links:hover {
-  border-top: 4px solid #f11a1a;
-}
-
+/*Dropdown Menus */
 .dropdown-menu {
   color: white !important;
-}
 
-.dropdown-menu div {
-  background: url("../../images/bg.jpg") center center repeat-y !important;
-  border: none !important;
+  div {
+    background: url("../../images/bg.jpg") center center repeat-y !important;
+    border: none !important;
+  }
 }
 
 .dropdown-menu-lg .dropdown-menu {
@@ -53,83 +139,134 @@
   color: white;
 }
 
+/* Dropdown Items */
 .dropdown-items {
   color: black;
   text-decoration: none;
-  font-family: "Times New Roman, Times, Serif";
-}
+  font-family: "Times New Roman", Times, Serif;
 
-@media (max-width: 1000px) {
-  .dropdown-items {
-    color: white;
+  &:focus {
+    background-color: #af0a0a;
+  }
+
+  @include screen-xs {
+    color: rgb(7, 0, 0);
+    font-size: 0.8rem;
+  }
+
+  @include screen-sm {
+    color: rgb(10, 9, 9);
+    font-size: 0.9rem;
+  }
+
+  @include screen-md {
+    color: black;
+    font-size: 1rem;
+  }
+
+  @include screen-lg {
+    color: black;
+  }
+
+  @include screen-max {
+    color: black;
   }
 }
 
-.dropdown-items:focus {
-  background-color: #af0a0a;
-}
-
-.homepage .background {
-  background-color: transparent;
-  background-size: cover;
-}
-
-.homepage .nav {
-display: flex;
-  justify-content: space-between;  
-  width: 85%;  
-  position: absolute;
-  padding: 0;
-  z-index: 10;
-}
-
-.homepage .nav .links {
+/*Homepage Overrides */
+.homepage {
+  .background {
+     background-color: transparent;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;   // ensures full viewport height
+    background-position: center;
+    background-repeat: no-repeat;
+    
    
-  color: white;
-  text-decoration: none;
-  font-family: "Times New Roman", Times, serif;
-  padding: 20px 10px;
-}
-.homepage .social-bar,
-.homepage .dropdown-menu,
-.homepage .dropdown-menu div,
-.homepage .dropdown-menu-lg .dropdown-menu,
+  } 
 
-.homepage .links:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;            /* make it full width */
+    padding: 0 40px;        /* controls side spacing */
+    position: absolute;
+    top: 0;
+    left: 6%;
+    z-index: 10;
 
-.homepage .dropdown-menu {
-  color: white;
-}
+    /* Smaller screens */
+    @include screen-xs {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 10px;
+    }
 
-.homepage .dropdown-menu div {
-  background: none;
-  border: none;
-}
+    @include screen-sm {
+      padding: 0 20px;
+    }
 
-.homepage .dropdown-menu-lg .dropdown-menu {
-  background: transparent;
-}
+    @include screen-md {
+      padding: 0 30px;
+    }
 
-.homepage .dropdown-menu-lg > a::after {
-  color: white;
-}
+    @include screen-lg {
+      padding: 0 40px; /* adjust this number to fine-tune left spacing */
+    }
 
-.homepage .dropdown-items {
-  color: rgb(10, 10, 10);
-}
+    @include screen-max {
+      padding: 0 50px;
+    }
+  }
 
-@media (max-width: 1000px) {
-  .homepage .dropdown-items {
+  .nav .links {
     color: white;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    
+  }
+
+  .social-bar,
+  .dropdown-menu,
+  .dropdown-menu div,
+  .dropdown-menu-lg .dropdown-menu,
+  .links:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdown-menu {
+    color: white;
+
+    div {
+      background: none;
+      border: none;
+    }
+  }
+
+  .dropdown-menu-lg .dropdown-menu {
+    background: transparent;
+  }
+
+  .dropdown-menu-lg > a::after {
+    color: white;
+  }
+
+  .dropdown-items {
+    color: rgb(10, 10, 10);
+
+    @include screen-xs {
+      color: rgb(21, 11, 11);
+    }
+
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .alert {
+    display: none;
   }
 }
 
-.homepage .dropdown-items:focus {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.homepage .alert {
-  display: none;
-}
