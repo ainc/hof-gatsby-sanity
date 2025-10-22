@@ -37,7 +37,7 @@
   }
 
   @include screen-sm {
-    width: 100vw; // small screens
+    width: 100%; // small screens
   }
 }
 
@@ -186,8 +186,8 @@
 
   /* Billboard width for mobile */
   .billboard {
-    width: 90vw;
-    margin: 0 5vw;
+    width: 100%;
+    margin: 0;
   }
 
   /* Image adjustments */
