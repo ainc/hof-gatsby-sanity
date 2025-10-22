@@ -32,6 +32,9 @@ const IndexPage = ({ data }) => {
   return (
     
  <Layout>
+  {/* Hero section  */}
+  <Container fluid>
+    <Row>
   <RotatingImages
     images={[
       "/images/HOF_Hero_image_1.jpg",
@@ -55,7 +58,8 @@ const IndexPage = ({ data }) => {
       </div>
     </div>
   </RotatingImages>
-
+  </Row>
+</Container>
  
   <Container>
     <Row>
