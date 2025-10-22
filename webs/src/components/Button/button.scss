@@ -1,3 +1,5 @@
+@import "../../styles/mixins/mixins";
+
 .button {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 20px;
@@ -9,8 +11,34 @@
   font-weight: 700;
   padding: 1% 2%;
   line-height: 20px;
-  @media (max-width: 426px) {
+
+  //  Extra small screens (<480px)
+  @include screen-xs {
+    padding: 1% 6%;
+    font-size: medium;
+  }
+
+  //  Small screens (480–767px)
+  @include screen-sm {
     padding: 1% 5%;
     font-size: large;
+  }
+
+  //  Medium screens (768–991px)
+  @include screen-md {
+    padding: 1% 4%;
+    font-size: large;
+  }
+
+  //  Large screens (992–1200px)
+  @include screen-lg {
+    padding: 1% 3%;
+    font-size: x-large;
+  }
+
+  //  Extra large screens (>1201px)
+  @include screen-max {
+    padding: 1% 2%;
+    font-size: x-large;
   }
 }
