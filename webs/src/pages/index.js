@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
   const [inducteeSelectedIndustry, setInducteeSelectedIndustry] = useState(null);
   const [emergingSelectedIndustry, setEmergingSelectedIndustry] = useState(null);
   return (
-    
+  
  <Layout>
   {/* Hero section  */}
   <Container fluid>
@@ -58,6 +58,7 @@ const IndexPage = ({ data }) => {
       </div>
     </div>
   </RotatingImages>
+  </Row>
 </Container>
  
   <Container>
