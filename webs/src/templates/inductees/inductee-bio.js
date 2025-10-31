@@ -42,11 +42,17 @@ const InducteeBio = ({ pageContext }) => {
       <h3>{title}</h3>
       <Container className={styles.videoContainer}>
         {videoImage ? (
-          <a href={videoUrl} aria-label={`Watch ${title}`}>
+          <iframe
+            src={videoUrl.replace("watch?v=", "embed/")}
+            title={`${title} video`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="ratio ratio-16x9"
+          >
             <GatsbyImage
-              className="ratio ratio-16x9"
               image={videoImage}
               alt={`${title} thumbnail`}
+              onClick={(e) => e.currentTarget.classList.add("clicked")}
             />
             <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
               <StaticImage
@@ -56,7 +62,7 @@ const InducteeBio = ({ pageContext }) => {
               />
               <p className={styles.videoText}>WATCH THE VIDEO</p>
             </div>
-          </a>
+          </iframe>
         ) : (
           <div>
             <StaticImage
