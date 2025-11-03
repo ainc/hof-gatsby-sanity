@@ -8,6 +8,7 @@ import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
 import { PortableText } from "@portabletext/react";
 import Body from "../../components/Body/Body";
+import { useState } from "react";
 
 const InducteeBio = ({ pageContext }) => {
   const inducteeInfo = pageContext.post;
@@ -37,45 +38,73 @@ const InducteeBio = ({ pageContext }) => {
     videoUrl, 
     videoImage, 
     hasOtherVideo 
-  }) => (
-    <Col lg={getColumnSize(hasOtherVideo)} sm={12}>
-      <h3>{title}</h3>
-      <Container className={styles.videoContainer}>
-        {videoImage ? (
-          <iframe
-            src={videoUrl.replace("watch?v=", "embed/")}
-            title={`${title} video`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="ratio ratio-16x9"
-          >
-            <GatsbyImage
-              image={videoImage}
-              alt={`${title} thumbnail`}
-              onClick={(e) => e.currentTarget.classList.add("clicked")}
-            />
-            <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
-              <StaticImage
-                src="../../images/founders_logo_white_smallest.png"
-                className={styles.playIcon}
-                alt="Play button"
+  }) => {
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const handlePlay = (e) => {
+      setIsPlaying(true);
+    };
+
+    const embedUrl = videoUrl
+      ? videoUrl.replace("watch?v=", "embed/") + (isPlaying ? "?autoplay=1" : "")
+      : "";
+
+    return (
+      <Col lg={getColumnSize(hasOtherVideo)} sm={12}>
+        <h3>{title}</h3>
+        <Container className={styles.videoContainer}>
+          {videoImage ? (
+            <>
+              {/* IFRAME (actual video) */}
+              <iframe
+                src={embedUrl}
+                title={`${title} video`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
-              <p className={styles.videoText}>WATCH THE VIDEO</p>
+
+              {/* THUMBNAIL OVERLAY */}
+              <div
+                className={`${styles.overlayWrapper} ${isPlaying ? styles.clicked : ""}`}
+                onClick={handlePlay}
+              >
+                <GatsbyImage
+                  image={videoImage}
+                  alt={`${title} thumbnail`}
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </div>
+
+              {/* PLAY ICON + TEXT (on top of overlay) */}
+              {!isPlaying && (
+                <div
+                  className={`${styles.playOverlay} position-absolute top-50 start-50 translate-middle text-center mt-2`}
+                  onClick={handlePlay}
+                >
+                  <StaticImage
+                    src="../../images/founders_logo_white_smallest.png"
+                    className={styles.playIcon}
+                    alt="Play button"
+                  />
+                  <p className={styles.videoText}>WATCH THE VIDEO</p>
+                </div>
+              )}
+            </>
+          ) : (
+            <div>
+              <StaticImage
+                src="../../images/Logo_Square.png"
+                alt="Video placeholder"
+                placeholder="blurred"
+                objectFit="contain"
+              />
             </div>
-          </iframe>
-        ) : (
-          <div>
-            <StaticImage
-              src="../../images/Logo_Square.png"
-              alt="Video placeholder"
-              placeholder="blurred"
-              objectFit="contain"
-            />
-          </div>
-        )}
-      </Container>
-    </Col>
-  );
+          )}
+        </Container>
+      </Col>
+    );
+  };
+
 
   return (
     <Layout>
