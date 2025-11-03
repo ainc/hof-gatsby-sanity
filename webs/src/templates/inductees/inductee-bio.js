@@ -39,44 +39,32 @@ const InducteeBio = ({ pageContext }) => {
     videoImage, 
     hasOtherVideo 
   }) => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
-    const handlePlay = (e) => {
-      setIsPlaying(true);
-    };
+    const handlePlay = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
 
     const embedUrl = videoUrl
-      ? videoUrl.replace("watch?v=", "embed/") + (isPlaying ? "?autoplay=1" : "")
+      ? videoUrl.replace("watch?v=", "embed/") + "?autoplay=1"
       : "";
 
     return (
-      <Col lg={getColumnSize(hasOtherVideo)} sm={12}>
-        <h3>{title}</h3>
-        <Container className={styles.videoContainer}>
-          {videoImage ? (
-            <>
-              {/* IFRAME (actual video) */}
-              <iframe
-                src={embedUrl}
-                title={`${title} video`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+      <>
+        <Col lg={getColumnSize(hasOtherVideo)} sm={12}>
+          <h3>{title}</h3>
+          <Container className={styles.videoContainer}>
+            {videoImage ? (
+              <>
+                {/* Thumbnail overlay */}
+                <div className={styles.overlayWrapper} onClick={handlePlay}>
+                  <GatsbyImage
+                    image={videoImage}
+                    alt={`${title} thumbnail`}
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </div>
 
-              {/* THUMBNAIL OVERLAY */}
-              <div
-                className={`${styles.overlayWrapper} ${isPlaying ? styles.clicked : ""}`}
-                onClick={handlePlay}
-              >
-                <GatsbyImage
-                  image={videoImage}
-                  alt={`${title} thumbnail`}
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </div>
-
-              {/* PLAY ICON + TEXT (on top of overlay) */}
-              {!isPlaying && (
+                {/* Play icon + text */}
                 <div
                   className={`${styles.playOverlay} position-absolute top-50 start-50 translate-middle text-center mt-2`}
                   onClick={handlePlay}
@@ -88,20 +76,37 @@ const InducteeBio = ({ pageContext }) => {
                   />
                   <p className={styles.videoText}>WATCH THE VIDEO</p>
                 </div>
-              )}
-            </>
-          ) : (
-            <div>
-              <StaticImage
-                src="../../images/Logo_Square.png"
-                alt="Video placeholder"
-                placeholder="blurred"
-                objectFit="contain"
+              </>
+            ) : (
+              <div>
+                <StaticImage
+                  src="../../images/Logo_Square.png"
+                  alt="Video placeholder"
+                  placeholder="blurred"
+                  objectFit="contain"
+                />
+              </div>
+            )}
+          </Container>
+        </Col>
+
+        {/* Popup video modal */}
+        {showModal && (
+          <div className={styles.videoModal} onClick={handleClose}>
+            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+              <button className={styles.closeButton} onClick={handleClose}>
+                ×
+              </button>
+              <iframe
+                src={embedUrl}
+                title={`${title} video`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
             </div>
-          )}
-        </Container>
-      </Col>
+          </div>
+        )}
+      </>
     );
   };
 
