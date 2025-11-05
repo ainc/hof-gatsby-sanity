@@ -55,7 +55,7 @@ const Header = () => {
             <Navbar.Collapse id="main-navbar-nav">
               <Nav as="ul" className="ms-auto">
                 <Nav.Link as="li" className="mx-2">
-                  <a href="/#InducteeSection" className={styles.links}>Inductess</a>
+                  <a href="/#InducteeSection" className={styles.links}>Inductees</a>
                 </Nav.Link>
                 <Nav.Link as="li" className="mx-2">
                   <a href="/media" className={styles.links}>Media</a>
