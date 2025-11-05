@@ -102,6 +102,7 @@ const InducteeBio = ({ pageContext }) => {
                 src={embedUrl}
                 title={`${title} video`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="origin-when-cross-origin"
                 allowFullScreen
               />
             </div>
