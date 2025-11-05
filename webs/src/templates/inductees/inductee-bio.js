@@ -45,7 +45,9 @@ const InducteeBio = ({ pageContext }) => {
     const handleClose = () => setShowModal(false);
 
     const embedUrl = videoUrl
-      ? videoUrl.replace("watch?v=", "embed/") + "?autoplay=1"
+      ? videoUrl
+          .replace("watch?v=", "embed/")
+          .replace(/\?si=.*/, "") + "?autoplay=1&mute=1&rel=0"
       : "";
 
     return (
