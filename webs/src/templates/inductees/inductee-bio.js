@@ -44,9 +44,9 @@ const InducteeBio = ({ pageContext }) => {
     const handleClose = () => setShowModal(false);
 
     const embedUrl = videoUrl
-      ? videoUrl
-          .replace("watch?v=", "embed/")
-          .replace(/\?si=.*/, "") + "?autoplay=1&mute=1&rel=0"
+      ? videoUrl.includes("watch?v=")
+        ? videoUrl.replace("watch?v=", "embed/") + "?autoplay=1&mute=1&rel=0"
+        : videoUrl + (videoUrl.includes("?") ? "&" : "?") + "autoplay=1&mute=1&rel=0"
       : "";
 
     return (
@@ -102,7 +102,7 @@ const InducteeBio = ({ pageContext }) => {
                 src={embedUrl}
                 title={`${title} video`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerpolicy="origin-when-cross-origin"
+                referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
               />
             </div>
