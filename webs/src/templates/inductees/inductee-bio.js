@@ -40,7 +40,6 @@ const InducteeBio = ({ pageContext }) => {
     hasOtherVideo 
   }) => {
     const [showModal, setShowModal] = useState(false);
-
     const handlePlay = () => setShowModal(true);
     const handleClose = () => setShowModal(false);
 
