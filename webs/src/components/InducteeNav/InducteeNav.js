@@ -7,14 +7,18 @@ import * as styles from "./inducteenav.module.scss"
 import InducteeAnimation from "../InducteeAnimations/InducteeAnimations"
 
 const InducteeNav = (props) => {
-  const data = props.data
+  // Filter out duplicates based on name
+  const uniqueInductees = props.data.filter(
+    (node, index, arr) =>
+      index === arr.findIndex((n) => n.inductee.name === node.inductee.name)
+  )
 
   // Dynamically extract unique years and industries
-  const years = Array.from(new Set([...data.map((node) => node.inductee.year), "2020"]))
+  const years = Array.from(new Set([...uniqueInductees.map((n) => n.inductee.year), "2020"]))
     .filter(Boolean)
     .sort((a, b) => b - a) // newest first
 
-  const industries = Array.from(new Set(data.map((node) => node.inductee.industry)))
+  const industries = Array.from(new Set(uniqueInductees.map((n) => n.inductee.industry)))
     .filter(Boolean)
     .sort()
 
@@ -48,16 +52,16 @@ const InducteeNav = (props) => {
 
   // Filter data based on selection
   const filteredInductees =
-    props.selectedYear && props.selectedYear !== "2020"
-      ? data.filter((node) => node.inductee.year === props.selectedYear)
-      : data
+    selectedYear && selectedYear !== "2020"
+      ? uniqueInductees.filter((node) => node.inductee.year === selectedYear)
+      : uniqueInductees
 
-  const filteredInducteesByIndustry = props.selectedIndustry
-    ? data.filter((node) => node.inductee.industry === props.selectedIndustry)
-    : data
+  const filteredInducteesByIndustry = selectedIndustry
+    ? uniqueInductees.filter((node) => node.inductee.industry === selectedIndustry)
+    : uniqueInductees
 
   // Determine if the selected year is 2020
-  const isYear2020 = props.selectedYear === "2020"
+  const isYear2020 = selectedYear === "2020"
 
   return (
     <Container className="d-flex flex-column">
