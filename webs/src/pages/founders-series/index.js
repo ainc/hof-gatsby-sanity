@@ -9,6 +9,7 @@ import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
 import IconPair from "../../components/IconPair/IconPair";
 import Video from "../../components/Video/Video";
+import { motion, AnimatePresence } from "framer-motion";
 
 const FoundersSeries = ({ data }) => {
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
@@ -225,13 +226,25 @@ const FoundersSeries = ({ data }) => {
           </div>
         </Row>
         <Row className="">
-          {filteredInductees.map((node) => (
-            <Video
-              link={node.videoEmbedLink}
-              title={node.title}
-              preview={node.preview}
-            />
-          ))}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedYear || "all"} // key triggers animation when year changes
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="d-flex flex-wrap justify-content-center"
+            >
+              {filteredInductees.map((node) => (
+                <Video
+                  key={node.title}
+                  link={node.videoEmbedLink}
+                  title={node.title}
+                  preview={node.preview}
+                />
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </Row>
       </Container>
       <Sponsors />
