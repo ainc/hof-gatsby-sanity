@@ -232,7 +232,7 @@ const FoundersSeries = ({ data }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              transition={{ duration: 0.25 }}
               className="d-flex flex-wrap justify-content-center"
             >
               {filteredInductees.map((node) => (
