@@ -26,7 +26,7 @@ const Sponsors = () => {
     (node) => node.sponsorType === "Presenting",
   );
   const platinumSponsor = query.allSanitySponsors.nodes.filter(
-    (node) => node.sponsorType == "Platinum",
+    (node) => node.sponsorType === "Platinum",
   );
   const goldSponsor = query.allSanitySponsors.nodes.filter(
     (node) => node.sponsorType === "Gold",
@@ -40,7 +40,7 @@ const Sponsors = () => {
       <Row className="d-flex justify-content-center align-items-center text-center my-4">
         <h3>Presenting Sponsor</h3>
         {presentingSponsor.map((node, index) => (
-          <Col md={12} className="my-5">
+          <Col md={12} className="my-5" key={node.name || index}>
             <a
               href={node.link}
               target="_blank"
@@ -61,7 +61,7 @@ const Sponsors = () => {
       <Row className="d-flex justify-content-center align-items-center text-center my-4">
         <h3>Platinum Sponsor</h3>
         {platinumSponsor.map((node, index) => (
-          <Col md={12} className="my-5">
+          <Col md={12} className="my-5" key={node.name || index}>
             <a href={node.link}
               target="_blank"
               className="mt-3"
@@ -81,7 +81,7 @@ const Sponsors = () => {
       <Row className="d-flex justify-content-center align-items-center text-center my-4">
         <h3>Gold Sponsor</h3>
         {goldSponsor.map((node, index) => (
-          <Col className="my-5">
+          <Col className="my-5" key={node.name || index}>
             <a
               href={node.link}
               target="_blank"
@@ -102,7 +102,7 @@ const Sponsors = () => {
       <Row className="d-flex justify-content-center align-items-center text-center">
         <h3>Silver Sponsor</h3>
         {silverSponsor.map((node, index) => (
-          <Col className="my-5">
+          <Col className="my-5" key={node.name || index}>
             <a
               href={node.link}
               target="_blank"
