@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import React from "react";
+// import { Card, Container, Row, Col } from "react-bootstrap";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import * as styles from "./presentingsponsorblock.module.scss";
@@ -29,10 +29,10 @@ const PresentingSponsorBlock = () => {
   return (
     <>
       {presentingSponsor.map((node, index) => (
-        <div className={`${styles.sponsorBlockDiv}`}>
+        <div key={node.name || index} className={`${styles.sponsorBlockDiv}`}>
           <p className={`${styles.sponsorBlockText}`}>presented by</p>
           <span style={{ marginLeft: "10px" }}>
-            <a href={node.link} target="_blank">
+            <a href={node.link} target="_blank" rel="noreferrer">
               <GatsbyImage
                 image={node.image.asset.gatsbyImageData}
                 imgStyle={{
