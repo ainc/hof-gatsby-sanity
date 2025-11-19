@@ -39,7 +39,7 @@ for = "/*"
 cache-control = "public, max-age=0, must-revalidate"
 x-xss-protection = "1; mode=block"
 x-content-type-options = "nosniff"
-referrer-policy = "same-origin"
+referrer-policy = "strict-origin-when-cross-origin"
 x-frame-options = "DENY"
 
 [[headers]]

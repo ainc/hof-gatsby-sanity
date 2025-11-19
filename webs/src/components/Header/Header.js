@@ -47,8 +47,11 @@ const Header = () => {
 
             {/* Collapsible nav section */}
             <Navbar.Collapse id="main-navbar-nav">
-              <Nav className="ms-auto">
-                <Nav.Link as="li">
+              <Nav as="ul" className="ms-auto">
+                <Nav.Link as="li" className="mx-2">
+                  <a href="/#InducteeSection" className={styles.links}>Inductees</a>
+                </Nav.Link>
+                <Nav.Link as="li" className="mx-2">
                   <a href="/media" className={styles.links}>Media</a>
                 </Nav.Link>
                 <Nav.Link as="li">

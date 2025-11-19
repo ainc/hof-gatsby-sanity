@@ -8,6 +8,7 @@ import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
 import { PortableText } from "@portabletext/react";
 import Body from "../../components/Body/Body";
+import { useState } from "react";
 
 const InducteeBio = ({ pageContext }) => {
   const inducteeInfo = pageContext.post;
@@ -37,39 +38,80 @@ const InducteeBio = ({ pageContext }) => {
     videoUrl, 
     videoImage, 
     hasOtherVideo 
-  }) => (
-    <Col lg={getColumnSize(hasOtherVideo)} sm={12}>
-      <h3>{title}</h3>
-      <Container className={styles.videoContainer}>
-        {videoImage ? (
-          <a href={videoUrl} aria-label={`Watch ${title}`}>
-            <GatsbyImage
-              className="ratio ratio-16x9"
-              image={videoImage}
-              alt={`${title} thumbnail`}
-            />
-            <div className="position-absolute top-50 start-50 translate-middle text-center mt-2">
-              <StaticImage
-                src="../../images/founders_logo_white_smallest.png"
-                className={styles.playIcon}
-                alt="Play button"
+  }) => {
+    const [showModal, setShowModal] = useState(false);
+    const handlePlay = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
+
+    const embedUrl = videoUrl
+      ? videoUrl.includes("watch?v=")
+        ? videoUrl.replace("watch?v=", "embed/") + "?autoplay=1&mute=1&rel=0"
+        : videoUrl + (videoUrl.includes("?") ? "&" : "?") + "autoplay=1&mute=1&rel=0"
+      : "";
+
+    return (
+      <>
+        <Col lg={getColumnSize(hasOtherVideo)} sm={12}>
+          <h3>{title}</h3>
+          <Container className={styles.videoContainer}>
+            {videoImage ? (
+              <>
+                {/* Thumbnail overlay */}
+                <div className={styles.overlayWrapper} onClick={handlePlay}>
+                  <GatsbyImage
+                    image={videoImage}
+                    alt={`${title} thumbnail`}
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </div>
+
+                {/* Play icon + text */}
+                <div
+                  className={`${styles.playOverlay} position-absolute top-50 start-50 translate-middle text-center mt-2`}
+                  onClick={handlePlay}
+                >
+                  <StaticImage
+                    src="../../images/founders_logo_white_smallest.png"
+                    className={styles.playIcon}
+                    alt="Play button"
+                  />
+                  <p className={styles.videoText}>WATCH THE VIDEO</p>
+                </div>
+              </>
+            ) : (
+              <div>
+                <StaticImage
+                  src="../../images/Logo_Square.png"
+                  alt="Video placeholder"
+                  placeholder="blurred"
+                  objectFit="contain"
+                />
+              </div>
+            )}
+          </Container>
+        </Col>
+
+        {/* Popup video modal */}
+        {showModal && (
+          <div className={styles.videoModal} onClick={handleClose}>
+            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+              <button className={styles.closeButton} onClick={handleClose}>
+                ×
+              </button>
+              <iframe
+                src={embedUrl}
+                title={`${title} video`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
               />
-              <p className={styles.videoText}>WATCH THE VIDEO</p>
             </div>
-          </a>
-        ) : (
-          <div>
-            <StaticImage
-              src="../../images/Logo_Square.png"
-              alt="Video placeholder"
-              placeholder="blurred"
-              objectFit="contain"
-            />
           </div>
         )}
-      </Container>
-    </Col>
-  );
+      </>
+    );
+  };
+
 
   return (
     <Layout>
