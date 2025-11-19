@@ -29,15 +29,9 @@ const Header = () => {
 
   return (
     <>
-      
-      <Container
-        fluid
-        className={`${styles.background} ${isHomepage ? styles.homepage : ""}`}
-      >
-        <Container>
-          
-          <Navbar expand="lg" className={`${styles.nav} py-1 px-2`}>
-
+      <Container fluid className={`${styles.background} ${isHomepage ? styles.homepage : ""}`}>
+        <Navbar expand="lg" bg="transparent" variant="dark" className={`${styles.nav} w-100`}>
+          <Container>
             {/* Logo */}
             <Navbar.Brand href="/">
               <StaticImage
@@ -51,7 +45,7 @@ const Header = () => {
             {/* Hamburger toggle for mobile */}
             <Navbar.Toggle aria-controls="main-navbar-nav" />
 
-            {/*Collapsible nav section */}
+            {/* Collapsible nav section */}
             <Navbar.Collapse id="main-navbar-nav">
               <Nav as="ul" className="ms-auto">
                 <Nav.Link as="li" className="mx-2">
@@ -60,13 +54,13 @@ const Header = () => {
                 <Nav.Link as="li" className="mx-2">
                   <a href="/media" className={styles.links}>Media</a>
                 </Nav.Link>
-                <Nav.Link as="li" className="mx-2">
+                <Nav.Link as="li">
                   <a href="/book" className={styles.links}>Book</a>
                 </Nav.Link>
-                <Nav.Link as="li" className="mx-2">
+                <Nav.Link as="li">
                   <a href="/founders-series" className={styles.links}>Founders Series</a>
                 </Nav.Link>
-                <Nav.Link as="li" className="mx-2">
+                <Nav.Link as="li">
                   <a href="/fellowship" className={styles.links}>The Fellowship</a>
                 </Nav.Link>
 
@@ -112,16 +106,16 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link as="li" className="mx-2">
+                <Nav.Link as="li">
                   <a href="/induction-dinner" className={styles.links}>Induction Dinner</a>
                 </Nav.Link>
-                <Nav.Link as="li" className="mx-2">
+                <Nav.Link as="li">
                   <a href="#sponsors" className={styles.links}>Sponsors</a>
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
-          </Navbar>
-        </Container>
+          </Container>
+        </Navbar>
       </Container>
     </>
   );
