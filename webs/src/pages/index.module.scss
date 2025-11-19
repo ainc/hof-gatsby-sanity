@@ -1,4 +1,4 @@
-@import "../styles/mixins/mixins"; // includes variables, responsive, font, etc.
+@import "../styles/mixins/mixins";
 
 /* -----------------------------------
    Fonts
@@ -29,13 +29,13 @@
 .billboard {
   color: #fff;
   text-align: center;
-  width: 45vw;
+  width: 100%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0;
   opacity: 1;
 
-  @include screen-max { width: 45vw; }
-  @include screen-md  { width: 60vw; }
+  @include screen-max { width: 100%; }
+  @include screen-md  { width: 100%; }
   @include screen-sm  { width: 100%; }
 }
 
@@ -49,12 +49,14 @@
   width: 100%;
 }
 
-
-
+/* -----------------------------------
+   Title Block
+----------------------------------- */
 .titleBlock {
   position: absolute;
   bottom: 100px;
-  left: 80px;
+  left: 0;
+  padding-left: 0;
   text-align: left;
   color: white;
 }
@@ -68,19 +70,16 @@
   color: white;
   font-size: 26px;
   line-height: 32px;
- 
 
   @media (min-width: 768px) { font-size: 40px; line-height: 25px; }
   @media (min-width: 1024px){ font-size: 50px; line-height: 30px; }
   @media (min-width: 2560px){ font-size: 70px; line-height: 30px; }
 }
 
-
 .tagline {
   font-family: "Times New Roman", Times, Serif;
   font-weight: 100;
   font-size: 14px;
- 
 
   @media (min-width: 768px) { font-size: 25px; line-height: 40px; }
   @media (min-width: 1024px){ font-size: 30px; line-height: 40px; }
@@ -92,11 +91,9 @@
 ----------------------------------- */
 .nominateWrapper {
   position: absolute;
-  
-  left: 80px;
-
-  @media (min-width: 768px) and (max-width: 1023px) { left: 80px; bottom: 30px; }
-  @media (min-width: 1024px) { left: 80px; bottom: 20px; }
+  bottom: 20px;
+  left: 0;
+  padding-left: 0;
 }
 
 .nominateBtn {
@@ -107,10 +104,8 @@
   font-weight: bold;
   display: inline-block;
   transition: all 0.3s ease;
-
   font-size: 1rem;
   padding: 19px 30px;
-
 
   @media (min-width: 768px) and (max-width: 1023px) { font-size: 0.95rem; padding: 16px 26px; }
   @media (min-width: 1024px) and (max-width: 2559px) { font-size: 1rem; padding: 19px 30px; }
@@ -137,11 +132,17 @@
    Mobile Adjustments (≤767px)
 ----------------------------------- */
 @media (max-width: 767px) {
-  .titleBlock { bottom: 40px; left: 15px; }
+  .titleBlock { bottom: 40px; left: 0; padding-left: 0; }
   .title1 { font-size: 15px !important; line-height: 10px !important; margin-bottom: 5px; }
-  .tagline { font-size: 11px; margin-bottom: 0px; }
-  .nominateWrapper { bottom: 0.5px; left: 10px; }
+  .tagline { font-size: 11px; margin-bottom: 0; }
+  .nominateWrapper { bottom: 0.5px; left: 0; padding-left: 0; }
   .nominateBtn { font-size: 0.5rem; padding: 5px 8px; }
   .billboard { width: 100%; margin: 0; }
   .flex-col-sm img { max-width: 250px; height: auto; margin: 0 auto; }
+ 
+  body.dropdown-open .title1,
+  body.dropdown-open .tagline {
+    display: none !important;
+  }
 }
+

@@ -29,12 +29,14 @@ const IndexPage = ({ data }) => {
   const [emergingSelectedYear, setEmergingSelectedYear] = useState(null);
   const [inducteeSelectedIndustry, setInducteeSelectedIndustry] = useState(null);
   const [emergingSelectedIndustry, setEmergingSelectedIndustry] = useState(null);
+
+  
   return (
   
+    
  <Layout>
-  {/* Hero section  */}
-  <Container fluid>
-    <Row>
+ {/* Hero section */}
+<Container fluid className={styles.heroBackground}>
   <RotatingImages
     images={[
       "/images/HOF_Hero_image_1.jpg",
@@ -42,13 +44,15 @@ const IndexPage = ({ data }) => {
       "/images/HOF_Hero_image_3.jpg",
     ]}
   >
-    <div className={styles.heroContent}>
+    {/* Inner container aligns with navbar */}
+    <Container className={styles.heroContent}>
       <div className={styles.titleBlock}>
-        <div className={styles.title1}>KENTUCKY ENTREPRENEUR HALL OF FAME</div>
-        
+        <div className={styles.title1}>
+          KENTUCKY ENTREPRENEUR HALL OF FAME
+        </div>
         <div className={styles.tagline}>
-  <em>Honoring Kentucky's Most Successful Entrepreneurs</em>
-</div>
+          <em>Honoring Kentucky's Most Successful Entrepreneurs</em>
+        </div>
       </div>
 
       <div className={styles.nominateWrapper}>
@@ -56,11 +60,10 @@ const IndexPage = ({ data }) => {
           NOMINATE AN ENTREPRENEUR TODAY
         </a>
       </div>
-    </div>
+    </Container>
   </RotatingImages>
-  </Row>
 </Container>
- 
+
   <Container>
     <Row>
       <Col>

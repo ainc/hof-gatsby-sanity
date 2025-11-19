@@ -10,7 +10,8 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 0;
+  padding: 0 !important;
+  margin: 0 !important;
 
   @include screen-xs {
     flex-direction: column;
@@ -28,16 +29,13 @@
 
   @include screen-lg {
     justify-content: space-between;
-    padding: 0 20px;
   }
 
   @include screen-max {
     justify-content: space-between;
-    padding: 0 40px;
+   
   }
 }
-
-
 
 /* Social Bar */
 .social-bar {
@@ -47,7 +45,7 @@
   width: 100%;
 }
 
-/*Nav Links */
+/* Nav Links */
 .links {
   color: white;
   text-decoration: none;
@@ -55,12 +53,11 @@
   padding: 20px 10px;
 
   &:hover {
-    border-top: 4px solid #f11a1a;
+    border-top: 4px solid #f6f3f3;
   }
-
 }
 
-/*Dropdown Menus */
+/* Dropdown Menus */
 .dropdown-menu {
   color: white !important;
 
@@ -95,7 +92,7 @@
 
   @include screen-sm {
     color: rgb(10, 9, 9);
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
 
   @include screen-md {
@@ -111,8 +108,7 @@
     color: black;
   }
 }
-
-/*Homepage Overrides */
+/* Homepage Overrides */
 .homepage {
   .background {
     background-color: transparent;
@@ -123,87 +119,57 @@
     background-repeat: no-repeat;
   }
 
- .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    padding: 0 40px;
-    position: absolute;
+  .nav {
+    position: absolute; // overlay hero
     top: 0;
+    left: 0;
+    width: 100%;       // full width like normal pages
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: space-between; // let Bootstrap spacing stay natural
+    align-items: center;
     z-index: 10;
+    background-color: transparent !important; // fully transparent
+  }
 
-    @include screen-xs {
-      left: 0;
-    }
+  .links {
 
-    @include screen-sm {
-      left: 80px;
-    }
+    color: white;
+    padding: 20px 10px;
 
-    @include screen-md {
-      left: 80px;
-    }
-
-    @include screen-lg {
-      left: 80px;
-    }
-
-    @include screen-max {
-      left: 80px;
-    }
-
-    /* Nav links style */
-    .links {
-      color: white;
-      text-decoration: none;
-      font-family: "Times New Roman", Times, serif;
-
-  @media (min-width: 300px) and (max-width: 320px) { font-size: .7rem } 
-  @media (min-width: 375px) and (max-width: 424px) { font-size: .9rem }  
-  @media (min-width: 426px) and (max-width: 768px) { font-size: .9rem }    
-  @media (min-width: 768px) and (max-width: 1023px) { font-size: 1.1rem }
-  @media (min-width: 1024px) and (max-width: 2559px) { font-size: .95rem }
-  @media (min-width: 2560px) { font-size: 1.5rem}
-
+    
+    &:hover {
+      border-top: 4px solid #f6f2f2; // keep hover underline
+      
     }
   }
 
-
-  .social-bar,
   .dropdown-menu,
   .dropdown-menu div,
-  .dropdown-menu-lg .dropdown-menu,
-  .links:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .dropdown-menu {
-    color: white;
-
-    div {
-      background: none;
-      border: none;
-    }
-  }
-
   .dropdown-menu-lg .dropdown-menu {
-    background: transparent;
-  }
-
-  .dropdown-menu-lg > a::after {
-    color: white;
+    background-color: transparent !important; // transparent dropdown
+    border: none !important;
   }
 
   .dropdown-items {
-    color: rgb(10, 10, 10);
-
-    @include screen-xs {
-      color: rgb(21, 11, 11);
-    }
+    color: rgb(7, 7, 7) !important; // keep dropdown text visible
+    background-color: transparent !important;
 
     &:focus {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.1); // subtle focus effect
     }
   }
+
+  .social-bar {
+    background-color: transparent !important; // remove red bar
+  }
 }
+
+/* Extra Large Screens: >1440px */
+@media (min-width: 1441px) {
+  .links {
+    font-size: 1.3rem; // adjust as needed
+    padding: 25px 15px; // optional, increase spacing too
+  }
+} 
