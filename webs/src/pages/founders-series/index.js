@@ -51,6 +51,13 @@ const FoundersSeries = ({ data }) => {
                   </Nav.Item>
                   <Nav.Item
                     as="li"
+                    onClick={() => handleYearClick("2024")}
+                    tabIndex="-1"
+                  >
+                    2024
+                  </Nav.Item>
+                  <Nav.Item
+                    as="li"
                     onClick={() => handleYearClick("2023")}
                     tabIndex="-1"
                   >
@@ -164,6 +171,9 @@ const FoundersSeries = ({ data }) => {
                   >
                     <NavDropdown.Item onClick={() => handleYearClick(null)}>
                       All
+                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => handleYearClick("2024")}>
+                      2024
                     </NavDropdown.Item>
                     <NavDropdown.Item onClick={() => handleYearClick("2023")}>
                       2023
