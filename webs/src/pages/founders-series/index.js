@@ -24,30 +24,68 @@ const FoundersSeries = ({ data }) => {
       )
     : data.allSanityFoundersSeries.nodes;
   
-  // Converts ANY YouTube link → clean embed URL with autoplay
   const getEmbedUrl = (url) => {
     if (!url) return "";
 
-  // Already an embed link → just append autoplay params
-  if (url.includes("/embed/")) {
-    return `${url}${url.includes("?") ? "&" : "?"}autoplay=1&mute=1&rel=0`;
-  }
+    try {
+      const parsed = new URL(url);
 
-  // Standard watch URL
-  if (url.includes("watch?v=")) {
-    const videoId = url.split("watch?v=")[1].split("&")[0];
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0`;
-  }
+      // --- CASE 1: Already an embed URL ---
+      if (parsed.pathname.startsWith("/embed/")) {
+        // Append autoplay/mute/rel without breaking existing params
+        parsed.searchParams.set("autoplay", "1");
+        parsed.searchParams.set("mute", "1");
+        parsed.searchParams.set("rel", "0");
+        return parsed.toString();
+      }
 
-  // youtu.be short links
-  if (url.includes("youtu.be/")) {
-    const videoId = url.split("youtu.be/")[1].split("?")[0];
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0`;
-  }
+      // --- CASE 2: Standard watch URL ---
+      if (parsed.pathname === "/watch" && parsed.searchParams.has("v")) {
+        const videoId = parsed.searchParams.get("v");
 
-  // Fallback — treat as embed-like
-  return `${url}${url.includes("?") ? "&" : "?"}autoplay=1&mute=1&rel=0`;
-};
+        const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
+
+        // Preserve important params (si, etc.)
+        parsed.searchParams.forEach((val, key) => {
+          if (key !== "v") embedUrl.searchParams.set(key, val);
+        });
+
+        embedUrl.searchParams.set("autoplay", "1");
+        embedUrl.searchParams.set("mute", "1");
+        embedUrl.searchParams.set("rel", "0");
+
+        return embedUrl.toString();
+      }
+
+      // --- CASE 3: youtu.be short URL ---
+      if (parsed.hostname === "youtu.be") {
+        const videoId = parsed.pathname.replace("/", "");
+
+        const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
+
+        parsed.searchParams.forEach((val, key) => {
+          embedUrl.searchParams.set(key, val);
+        });
+
+        embedUrl.searchParams.set("autoplay", "1");
+        embedUrl.searchParams.set("mute", "1");
+        embedUrl.searchParams.set("rel", "0");
+
+        return embedUrl.toString();
+      }
+
+      // --- Fallback: treat as embed-like ---
+      parsed.searchParams.set("autoplay", "1");
+      parsed.searchParams.set("mute", "1");
+      parsed.searchParams.set("rel", "0");
+
+      return parsed.toString();
+
+    } catch {
+      // If URL parsing fails, fallback to your original logic
+      return `${url}${url.includes("?") ? "&" : "?"}autoplay=1&mute=1&rel=0`;
+    }
+  };
 
   return (
     <Layout>
