@@ -175,7 +175,7 @@ const InductionDinnerPage = ({ data }) => {
               className={styles.linkText}
               href={documents.postEventReport.asset.url}
             >
-              View/Download the 2024 Post-event Report
+              View/Download the 2025 Post-event Report
             </a>
             <br />
             <a className={styles.linkText} href={link}>
