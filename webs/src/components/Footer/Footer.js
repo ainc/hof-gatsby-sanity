@@ -123,7 +123,7 @@ const Footer = () => {
                 <h3>Post Event Report</h3>
                 <p>
                   <a href={postEventReport.asset.url} target="_blank">
-                    2024 Post-Event Report
+                    2025 Post-Event Report
                   </a>
                 </p>
               </Col>
