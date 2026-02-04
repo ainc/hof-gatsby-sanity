@@ -14,7 +14,7 @@ const InductionDinnerPage = ({ data }) => {
   const event = data.allSanityEvent.nodes.at(-1);
   const documents = data.allSanityDocuments.nodes.at(-1);
   const link = data.allSanityFooter.nodes.at(-1).sponsorLink;
-  // Split the string by commas and trim any extra whitespace
+  // Split the string by commas and trim any extra whitespace in the file
   const renderScheduleWithBreaks = (inputString) => {
     return inputString.split(",").map((part, index) => (
       <React.Fragment key={index}>
