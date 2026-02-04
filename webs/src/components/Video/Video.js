@@ -40,6 +40,7 @@ const Video = (props) => {
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             webkitallowfullscreen="true"
             mozallowfullscreen="true"
+            referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
             title="Video"
           ></iframe>
