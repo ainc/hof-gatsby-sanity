@@ -6,6 +6,7 @@ import * as styles from "./inductee-bio.module.scss";
 import Sponsors from "../../components/Sponsors/Sponsors";
 import Layout from "../../components/Layout/Layout";
 import Title from "../../components/Title/Title";
+import { getEmbedUrl } from "../../components/Video/Video";
 import { PortableText } from "@portabletext/react";
 import Body from "../../components/Body/Body";
 import { useState } from "react";
@@ -43,11 +44,7 @@ const InducteeBio = ({ pageContext }) => {
     const handlePlay = () => setShowModal(true);
     const handleClose = () => setShowModal(false);
 
-    const embedUrl = videoUrl
-      ? videoUrl.includes("watch?v=")
-        ? videoUrl.replace("watch?v=", "embed/") + "?autoplay=1&mute=1&rel=0"
-        : videoUrl + (videoUrl.includes("?") ? "&" : "?") + "autoplay=1&mute=1&rel=0"
-      : "";
+    const embedUrl = getEmbedUrl(videoUrl);
 
     return (
       <>
