@@ -6,6 +6,19 @@ body {
   background-size: 100%;
 }
 
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Remove React Bootstrap Container padding */
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 h1,
 h2,
 h3,
