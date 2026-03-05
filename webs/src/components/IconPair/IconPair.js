@@ -15,6 +15,7 @@ const IconPair = (props) => {
           placeholder="blurred"
           src="../../images/Logo_Square.png"
           className="mx-1"
+          alt="Square Logo"
           style={{ maxHeight: "75px", maxWidth: "50px" }}
         />
       </a>
@@ -23,6 +24,7 @@ const IconPair = (props) => {
           placeholder="blurred"
           src="../../images/founders_logo.png"
           className="mx-1"
+          alt="Founders Logo"
         />
       </a>
     </div>

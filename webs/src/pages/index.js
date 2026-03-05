@@ -166,6 +166,7 @@ const IndexPage = ({ data }) => {
             <StaticImage
               placeholder="blurred"
               src="../images/2023-dinner.jpg"
+              alt="2023 Dinner"
             />
           </Col>
         </Row>

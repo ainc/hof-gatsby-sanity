@@ -178,6 +178,7 @@ const MediaPage = ({ data }) => {
                         placeholder="blurred"
                         src="../../images/founders_logo_white_smallest.png"
                         className="opacity-50"
+                        alt="Founders smallest white logo"
                       />
                       <p className={styles.videoText}>{node.name}</p>
                     </div>
