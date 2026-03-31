@@ -129,6 +129,8 @@ const FoundersSeries = ({ data }) => {
                     onClick={() => handleYearClick("2025")}
                     tabIndex="-1"
                   >
+                    2025
+                  </Nav.Item>
                   <Nav.Item
                     as="li"
                     onClick={() => handleYearClick("2024")}
