@@ -1,6 +1,8 @@
-@import "../styles/mixins/mixins"; // includes variables, responsive, font, etc.
+@import "../styles/mixins/mixins";
 
-/* Font */
+/* -----------------------------------
+   Fonts
+----------------------------------- */
 @font-face {
   font-family: "AmericanPurpose";
   src: url("../font/american_purpose-webfont.eot");
@@ -13,35 +15,33 @@
   font-style: normal;
 }
 
-/* Background */
+/* -----------------------------------
+   Background
+----------------------------------- */
 .background {
   background-size: cover;
   background-color: #000;
 }
 
-/* Billboard */
+/* -----------------------------------
+   Billboard
+----------------------------------- */
 .billboard {
   color: #fff;
   text-align: center;
-  width: 45vw;
+  width: 100%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0;
   opacity: 1;
 
-  @include screen-max {
-    width: 45vw; // large screens
-  }
-
-  @include screen-md {
-    width: 60vw; // medium screens
-  }
-
-  @include screen-sm {
-    width: 100vw; // small screens
-  }
+  @include screen-max { width: 100%; }
+  @include screen-md  { width: 100%; }
+  @include screen-sm  { width: 100%; }
 }
 
-/* Hero Content */
+/* -----------------------------------
+   Hero Content
+----------------------------------- */
 .heroContent {
   position: relative;
   z-index: 20;
@@ -49,81 +49,72 @@
   width: 100%;
 }
 
-/* Title Block */
+/* -----------------------------------
+   Title Block
+----------------------------------- */
 .titleBlock {
   position: absolute;
-  bottom: 180px;
-  left: 80px;
+  bottom: 100px;
+  left: 0;
+  padding-left: 0;
   text-align: left;
   color: white;
 }
 
-/* Title 1 */
+/* -----------------------------------
+   Titles
+----------------------------------- */
 .title1 {
   font-family: "AmericanPurpose", Arial, Sans-Serif;
   font-weight: 100;
   color: white;
+  font-size: 26px;
+  line-height: 32px;
 
-  @include screen-xs {
-    font-size: 26px;
-    line-height: 32px;
-  }
-
-  @media (min-width: 427px) {
-    font-size: 59px;
-    line-height: 62px;
-  }
+  @media (min-width: 768px) { font-size: 40px; line-height: 25px; }
+  @media (min-width: 1024px){ font-size: 50px; line-height: 30px; }
+  @media (min-width: 2560px){ font-size: 70px; line-height: 30px; }
 }
 
-/* Title 2 */
-.title2 {
-  font-family: "AmericanPurpose", Arial, Sans-Serif;
-  font-weight: 100;
-
-  @include screen-xs {
-    font-size: 49px;
-    line-height: 70px;
-  }
-
-  @media (min-width: 427px) {
-    font-size: 111px;
-    line-height: 128px;
-  }
-}
-
-/* Tagline */
 .tagline {
   font-family: "Times New Roman", Times, Serif;
   font-weight: 100;
+  font-size: 14px;
 
-  @include screen-xs {
-    font-size: 20px;
-  }
-
-  @media (min-width: 427px) {
-    font-size: 27px;
-  }
+  @media (min-width: 768px) { font-size: 25px; line-height: 40px; }
+  @media (min-width: 1024px){ font-size: 30px; line-height: 40px; }
+  @media (min-width: 2560px){ font-size: 40px; line-height: 100px; }
 }
 
-/* Nominate Button */
+/* -----------------------------------
+   Nominate Button
+----------------------------------- */
 .nominateWrapper {
   position: absolute;
-  bottom: 80px;
-  left: 80px;
+  bottom: 20px;
+  left: 0;
+  padding-left: 0;
 }
 
 .nominateBtn {
   background: #C2202A;
   color: white;
-  padding: 19px 30px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
   display: inline-block;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  padding: 19px 30px;
+
+  @media (min-width: 768px) and (max-width: 1023px) { font-size: 0.95rem; padding: 16px 26px; }
+  @media (min-width: 1024px) and (max-width: 2559px) { font-size: 1rem; padding: 19px 30px; }
+  @media (min-width: 2560px) { font-size: 1.5rem; padding: 25px 40px; }
 }
 
-/* Flex Column (Small Screens) */
+/* -----------------------------------
+   Flex Column Images (Small Screens)
+----------------------------------- */
 .flex-col-sm {
   @include screen-sm {
     flex-direction: column !important;
@@ -132,68 +123,26 @@
 }
 
 .flex-col-sm img {
-  @include screen-sm {
-    max-width: 350px;
-    height: auto;
-  }
+  @include screen-sm { max-width: 350px; height: auto; }
+  @include screen-md { max-width: 500px; height: auto; }
+  @include screen-max { max-width: 500px; height: auto; }
+}
 
-  @include screen-md {
-    max-width: 500px;
-    height: auto;
-  }
-
-  @include screen-max {
-    max-width: 500px; // optional, keep default
-    height: auto;
+/* -----------------------------------
+   Mobile Adjustments (≤767px)
+----------------------------------- */
+@media (max-width: 767px) {
+  .titleBlock { bottom: 40px; left: 0; padding-left: 0; }
+  .title1 { font-size: 15px !important; line-height: 10px !important; margin-bottom: 5px; }
+  .tagline { font-size: 11px; margin-bottom: 0; }
+  .nominateWrapper { bottom: 0.5px; left: 0; padding-left: 0; }
+  .nominateBtn { font-size: 0.5rem; padding: 5px 8px; }
+  .billboard { width: 100%; margin: 0; }
+  .flex-col-sm img { max-width: 250px; height: auto; margin: 0 auto; }
+ 
+  body.dropdown-open .title1,
+  body.dropdown-open .tagline {
+    display: none !important;
   }
 }
-/* 
-   Mobile Adjustments (≤768px)
-*/
-@media (max-width: 768px) {
 
-  /* Move titles lower-left and shrink */
-  .titleBlock {
-    bottom: 45px; /* move up a bit to avoid button overlap */
-    left: 15px;
-  }
-
-  .title1 {
-    font-size: 20px !important;
-    line-height: 22px !important;
-  }
-
-  .title2 {
-    font-size: 32px !important;
-    line-height: 38px !important;
-  }
-
-  .tagline {
-    font-size: 14px !important;
-    margin-bottom: 7px; /* add spacing below text */
-  }
-
-  /* Button positioning */
-  .nominateWrapper {
-    bottom: .5px;
-    left: 10px;
-  }
-
-  .nominateBtn {
-    font-size: 0.5rem;
-    padding: 10px 18px;
-  }
-
-  /* Billboard width for mobile */
-  .billboard {
-    width: 90vw;
-    margin: 0 5vw;
-  }
-
-  /* Image adjustments */
-  .flex-col-sm img {
-    max-width: 250px;
-    height: auto;
-    margin: 0 auto;
-  }
-}

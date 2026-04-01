@@ -1,10 +1,8 @@
 @import "../../styles/mixins/mixins"; // includes screen-xs, screen-sm, screen-md, screen-lg, screen-max
 
-
 .background {
   background: url("../../images/bg.jpg") center center repeat-y;
   background-size: cover;
-   
 }
 
 /* Navigation */
@@ -12,8 +10,8 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 0;
-  
+  padding: 0 !important;
+  margin: 0 !important;
 
   @include screen-xs {
     flex-direction: column;
@@ -31,38 +29,11 @@
 
   @include screen-lg {
     justify-content: space-between;
-    padding: 0 20px;
   }
 
   @include screen-max {
     justify-content: space-between;
-    padding: 0 40px;
-  }
-}
-
-/* Alert */
-.alert {
-  @include screen-xs {
-    height: 55px;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  @include screen-sm {
-    height: 60px;
-    font-size: 1rem;
-  }
-
-  @include screen-md {
-    height: 65px;
-  }
-
-  @include screen-lg {
-    height: 70px;
-  }
-
-  @include screen-max {
-    height: 75px;
+   
   }
 }
 
@@ -72,25 +43,9 @@
   border-bottom: 1px solid #f11a1a;
   margin: 0 auto;
   width: 100%;
-
-  @include screen-xs {
-    height: 25px;
-  }
-
-  @include screen-md {
-    height: 30px;
-  }
-
-  @include screen-lg {
-    height: 35px;
-  }
-
-  @include screen-max {
-    height: 40px;
-  }
 }
 
-/*Nav Links */
+/* Nav Links */
 .links {
   color: white;
   text-decoration: none;
@@ -98,30 +53,11 @@
   padding: 20px 10px;
 
   &:hover {
-    border-top: 4px solid #f11a1a;
-  }
-
-  @include screen-xs {
-    padding: 10px 5px;
-    font-size: 0.8rem;
-  }
-
-  @include screen-sm {
-    padding: 15px 8px;
-    font-size: 0.9rem;
-  }
-
-  @include screen-md {
-    padding: 18px 10px;
-    font-size: 1rem;
-  }
-
-  @include screen-lg {
-    padding: 20px 12px;
+    border-top: 4px solid #f6f3f3;
   }
 }
 
-/*Dropdown Menus */
+/* Dropdown Menus */
 .dropdown-menu {
   color: white !important;
 
@@ -156,7 +92,7 @@
 
   @include screen-sm {
     color: rgb(10, 9, 9);
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
 
   @include screen-md {
@@ -172,101 +108,68 @@
     color: black;
   }
 }
-
-/*Homepage Overrides */
+/* Homepage Overrides */
 .homepage {
   .background {
-     background-color: transparent;
+    background-color: transparent;
     background-size: cover;
     width: 100%;
-    min-height: 100vh;   // ensures full viewport height
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    
-   
-  } 
+  }
 
   .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;            /* make it full width */
-    padding: 0 40px;        /* controls side spacing */
-    position: absolute;
+    position: absolute; // overlay hero
     top: 0;
-    left: 6%;
+    left: 0;
+    width: 100%;       // full width like normal pages
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: space-between; // let Bootstrap spacing stay natural
+    align-items: center;
     z-index: 10;
-
-    /* Smaller screens */
-    @include screen-xs {
-      flex-direction: column;
-      align-items: center;
-      padding: 0 10px;
-    }
-
-    @include screen-sm {
-      padding: 0 20px;
-    }
-
-    @include screen-md {
-      padding: 0 30px;
-    }
-
-    @include screen-lg {
-      padding: 0 40px; /* adjust this number to fine-tune left spacing */
-    }
-
-    @include screen-max {
-      padding: 0 50px;
-    }
+    background-color: transparent !important; // fully transparent
   }
 
-  .nav .links {
+  .links {
+
     color: white;
-    text-decoration: none;
-    font-family: "Times New Roman", Times, serif;
+    padding: 20px 10px;
+
     
+    &:hover {
+      border-top: 4px solid #f6f2f2; // keep hover underline
+      
+    }
   }
 
-  .social-bar,
   .dropdown-menu,
   .dropdown-menu div,
-  .dropdown-menu-lg .dropdown-menu,
-  .links:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .dropdown-menu {
-    color: white;
-
-    div {
-      background: none;
-      border: none;
-    }
-  }
-
   .dropdown-menu-lg .dropdown-menu {
-    background: transparent;
-  }
-
-  .dropdown-menu-lg > a::after {
-    color: white;
+    background-color: transparent !important; // transparent dropdown
+    border: none !important;
   }
 
   .dropdown-items {
-    color: rgb(10, 10, 10);
-
-    @include screen-xs {
-      color: rgb(21, 11, 11);
-    }
+    color: rgb(7, 7, 7) !important; // keep dropdown text visible
+    background-color: transparent !important;
 
     &:focus {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.1); // subtle focus effect
     }
   }
 
-  .alert {
-    display: none;
+  .social-bar {
+    background-color: transparent !important; // remove red bar
   }
 }
 
+/* Extra Large Screens: >1440px */
+@media (min-width: 1441px) {
+  .links {
+    font-size: 1.3rem; // adjust as needed
+    padding: 25px 15px; // optional, increase spacing too
+  }
+} 
