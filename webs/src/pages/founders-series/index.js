@@ -23,6 +23,69 @@ const FoundersSeries = ({ data }) => {
         (node) => node.year === selectedYear,
       )
     : data.allSanityFoundersSeries.nodes;
+  
+  const getEmbedUrl = (url) => {
+    if (!url) return "";
+
+    try {
+      const parsed = new URL(url);
+
+      // --- CASE 1: Already an embed URL ---
+      if (parsed.pathname.startsWith("/embed/")) {
+        // Append autoplay/mute/rel without breaking existing params
+        parsed.searchParams.set("autoplay", "1");
+        parsed.searchParams.set("mute", "1");
+        parsed.searchParams.set("rel", "0");
+        return parsed.toString();
+      }
+
+      // --- CASE 2: Standard watch URL ---
+      if (parsed.pathname === "/watch" && parsed.searchParams.has("v")) {
+        const videoId = parsed.searchParams.get("v");
+
+        const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
+
+        // Preserve important params (si, etc.)
+        parsed.searchParams.forEach((val, key) => {
+          if (key !== "v") embedUrl.searchParams.set(key, val);
+        });
+
+        embedUrl.searchParams.set("autoplay", "1");
+        embedUrl.searchParams.set("mute", "1");
+        embedUrl.searchParams.set("rel", "0");
+
+        return embedUrl.toString();
+      }
+
+      // --- CASE 3: youtu.be short URL ---
+      if (parsed.hostname === "youtu.be") {
+        const videoId = parsed.pathname.replace("/", "");
+
+        const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
+
+        parsed.searchParams.forEach((val, key) => {
+          embedUrl.searchParams.set(key, val);
+        });
+
+        embedUrl.searchParams.set("autoplay", "1");
+        embedUrl.searchParams.set("mute", "1");
+        embedUrl.searchParams.set("rel", "0");
+
+        return embedUrl.toString();
+      }
+
+      // --- Fallback: treat as embed-like ---
+      parsed.searchParams.set("autoplay", "1");
+      parsed.searchParams.set("mute", "1");
+      parsed.searchParams.set("rel", "0");
+
+      return parsed.toString();
+
+    } catch {
+      // If URL parsing fails, fallback to your original logic
+      return `${url}${url.includes("?") ? "&" : "?"}autoplay=1&mute=1&rel=0`;
+    }
+  };
 
   const getEmbedUrl = (url) => {
     if (!url) return "";
