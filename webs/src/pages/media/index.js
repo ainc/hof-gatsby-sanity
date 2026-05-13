@@ -54,9 +54,10 @@ const MediaPage = ({ data }) => {
               <iframe
                 src="https://www.youtube.com/embed/videoseries?list=PL_YvoQ-KM3YHtlmn9_E841lpegYDVlXOk"
                 className="pt-3"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
                 title="Podcast Video"
               ></iframe>
             </div>
@@ -65,9 +66,10 @@ const MediaPage = ({ data }) => {
               <iframe
                 src="https://www.youtube.com/embed/uUbLe0U6Fdk"
                 className="pt-3"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
                 title="Book Video"
               ></iframe>
             </div>
