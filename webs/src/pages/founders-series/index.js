@@ -9,6 +9,7 @@ import Title from "../../components/Title/Title";
 import Body from "../../components/Body/Body";
 import IconPair from "../../components/IconPair/IconPair";
 import Video from "../../components/Video/Video";
+import { toYoutubeModalEmbedUrl } from "../../utils/youtubeEmbedUrl";
 
 const FoundersSeries = ({ data }) => {
   const [selectedYear, setSelectedYear] = useState(null); // Initialize state for selected year
@@ -24,80 +25,7 @@ const FoundersSeries = ({ data }) => {
       )
     : data.allSanityFoundersSeries.nodes;
 
-  const getEmbedUrl = (url) => {
-    if (!url) return "";
-
-    try {
-      const parsed = new URL(url);
-
-      // Normalize mobile domain
-      if (parsed.hostname === "m.youtube.com") {
-        parsed.hostname = "www.youtube.com";
-      }
-
-      // --- CASE 1: Already embed ---
-      if (parsed.pathname.startsWith("/embed/")) {
-        parsed.searchParams.set("autoplay", "1");
-        parsed.searchParams.set("mute", "1");
-        parsed.searchParams.set("rel", "0");
-        return parsed.toString();
-      }
-
-      // CASE 2: Standard watch URL
-      if (parsed.pathname === "/watch" && parsed.searchParams.has("v")) {
-        const videoId = parsed.searchParams.get("v");
-        const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
-
-        parsed.searchParams.forEach((val, key) => {
-          if (key !== "v") embedUrl.searchParams.set(key, val);
-        });
-
-        embedUrl.searchParams.set("autoplay", "1");
-        embedUrl.searchParams.set("mute", "1");
-        embedUrl.searchParams.set("rel", "0");
-
-        return embedUrl.toString();
-      }
-
-      // CASE 3: youtube short link
-      if (parsed.hostname === "youtu.be") {
-        const videoId = parsed.pathname.replace("/", "").split("?")[0];
-
-        const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
-
-        parsed.searchParams.forEach((val, key) => {
-          embedUrl.searchParams.set(key, val);
-        });
-
-        embedUrl.searchParams.set("autoplay", "1");
-        embedUrl.searchParams.set("mute", "1");
-        embedUrl.searchParams.set("rel", "0");
-
-        return embedUrl.toString();
-      }
-
-      // CASE 4: youtube Shorts URL
-      if (parsed.pathname.startsWith("/shorts/")) {
-        const videoId = parsed.pathname.split("/shorts/")[1];
-
-        const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
-
-        embedUrl.searchParams.set("autoplay", "1");
-        embedUrl.searchParams.set("mute", "1");
-        embedUrl.searchParams.set("rel", "0");
-
-        return embedUrl.toString();
-      }
-
-      // Fallback
-      parsed.searchParams.set("autoplay", "1");
-      parsed.searchParams.set("mute", "1");
-      parsed.searchParams.set("rel", "0");
-      return parsed.toString();
-    } catch (e) {
-      return `${url}${url.includes("?") ? "&" : "?"}autoplay=1&mute=1&rel=0`;
-    }
-  };
+  const getEmbedUrl = toYoutubeModalEmbedUrl;
 
   return (
     <Layout>

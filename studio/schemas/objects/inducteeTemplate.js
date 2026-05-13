@@ -38,7 +38,7 @@ export default {
     },
     {
       name: 'profilePhoto',
-      title: 'Profile Photo',
+    title: 'Profile Photo',
       type: 'image',
     },
   ],
