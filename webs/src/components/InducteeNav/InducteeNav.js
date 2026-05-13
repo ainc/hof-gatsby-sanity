@@ -20,7 +20,11 @@ const InducteeNav = (props) => {
 
   const industries = Array.from(new Set(uniqueInductees.map((n) => n.inductee.industry)))
     .filter(Boolean)
-    .sort()
+    .sort((a, b) => {
+      if (a === "Other") return 1
+      if (b === "Other") return -1
+      return a.localeCompare(b, undefined, { sensitivity: "base" })
+    })
 
   const [selectedYear, setSelectedYear] = useState(null)
   const [selectedIndustry, setSelectedIndustry] = useState(null)
