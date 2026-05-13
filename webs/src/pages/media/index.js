@@ -8,6 +8,46 @@ import Title from "../../components/Title/Title";
 import * as styles from "./media.module.scss";
 import IconPair from "../../components/IconPair/IconPair";
 
+/** YouTube watch / short URLs → embed URL (no autoplay; matches main column embeds). */
+const getCeremonyEmbedUrl = (url) => {
+  if (!url) return "";
+
+  try {
+    const parsed = new URL(url);
+
+    if (parsed.hostname === "m.youtube.com") {
+      parsed.hostname = "www.youtube.com";
+    }
+
+    if (parsed.pathname.startsWith("/embed/")) {
+      const out = new URL(parsed.toString());
+      if (!out.searchParams.has("rel")) out.searchParams.set("rel", "0");
+      return out.toString();
+    }
+
+    if (parsed.pathname === "/watch" && parsed.searchParams.has("v")) {
+      const videoId = parsed.searchParams.get("v");
+      return `https://www.youtube.com/embed/${videoId}?rel=0`;
+    }
+
+    if (parsed.hostname === "youtu.be") {
+      const videoId = parsed.pathname.replace(/^\//, "").split("?")[0];
+      return `https://www.youtube.com/embed/${videoId}?rel=0`;
+    }
+
+    if (parsed.pathname.startsWith("/shorts/")) {
+      const videoId = parsed.pathname.split("/shorts/")[1]?.split("/")[0];
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}?rel=0`;
+      }
+    }
+
+    return "";
+  } catch {
+    return "";
+  }
+};
+
 const MediaPage = ({ data }) => {
   const allPress = data.allSanityPress.nodes || {};
   const allCeremony = data.allSanityCeremonyVideo.nodes || {};
@@ -153,39 +193,70 @@ const MediaPage = ({ data }) => {
               <IconPair />
             </div>
             <ul className={styles.ceremonyVideos}>
-              {allCeremony.map((node) => (
-                <li key={node.name} className="py-2">
-                  <p>{node.name}</p>
-                  <a
-                    className={styles.videoLink}
-                    href={node.videoLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="ratio ratio-16x9">
-                      <div className={`${styles.thumbnail} w-100 h-100`}>
-                        <div className="h-100 w-100">
-                          <GatsbyImage
-                            image={node.image.asset.gatsbyImageData}
-                            className={styles.ceremonyImage}
-                            alt={node.name}
+              {allCeremony.map((node) => {
+                const embedSrc = getCeremonyEmbedUrl(node.videoLink);
+                return (
+                  <li key={node.name} className="py-2">
+                    <p>{node.name}</p>
+                    {embedSrc ? (
+                      <div className={styles.videoLink}>
+                        <div
+                          className={`ratio ratio-16x9 ${styles.thumbnail}`}
+                        >
+                          <iframe
+                            src={embedSrc}
+                            className="position-absolute top-0 start-0 w-100 h-100"
+                            frameBorder="0"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title={node.name}
                           />
                         </div>
+                        <p className="small mt-1 mb-0">
+                          <a
+                            href={node.videoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Open on YouTube
+                          </a>
+                        </p>
                       </div>
-                    </div>
-                    <div
-                      className={`${styles.play} position-absolute start-50 translate-middle`}
-                    >
-                      <StaticImage
-                        placeholder="blurred"
-                        src="../../images/founders_logo_white_smallest.png"
-                        className="opacity-50"
-                      />
-                      <p className={styles.videoText}>{node.name}</p>
-                    </div>
-                  </a>
-                </li>
-              ))}
+                    ) : (
+                      <a
+                        className={styles.videoLink}
+                        href={node.videoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="ratio ratio-16x9">
+                          <div className={`${styles.thumbnail} w-100 h-100`}>
+                            <div className="h-100 w-100">
+                              <GatsbyImage
+                                image={node.image.asset.gatsbyImageData}
+                                className={styles.ceremonyImage}
+                                alt={node.name}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={`${styles.play} position-absolute start-50 translate-middle`}
+                        >
+                          <StaticImage
+                            placeholder="blurred"
+                            src="../../images/founders_logo_white_smallest.png"
+                            className="opacity-50"
+                          />
+                          <p className={styles.videoText}>{node.name}</p>
+                        </div>
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </Col>
         </Row>

@@ -9,7 +9,6 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "develop:referrer-test": "cross-env SIMULATE_NETLIFY_REFERRER=true gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "build:netlify": "node build.js",
@@ -38,7 +37,6 @@
     "react-icons": "^5.0.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "sass": "^1.71.1",
     "sass-loader": "^14.1.1",
     "webpack": "^5.90.3"
