@@ -38,11 +38,12 @@ const InductionDinnerPage = ({ data }) => {
         <Row>
           <Col className="mx-4 py-3">
             <Body>
-              {event.date}
+              {event.date.replace(/(\b\w+\s)0(\d{1},)/, "$1$2")}
               <br />
               {event.location.venue}
               <br />
               {event.location.city}, KY
+         
             </Body>
           </Col>
         </Row>
@@ -139,14 +140,14 @@ const InductionDinnerPage = ({ data }) => {
             </h3>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col className="mx-4 py-3">
             <h2 className={styles.induction}>Sponsors</h2>
             <a className={styles.linkText} href="#sponsors">
               Meet the event sponsors here
             </a>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col className="mx-4 py-3">
             <h2 className={styles.induction}>

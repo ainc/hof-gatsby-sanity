@@ -141,16 +141,6 @@ const Footer = () => {
                 <p>Phone: {location.contact.phoneNumber}</p>
               </Col>
             </Row>
-            <Row>
-              <p style={{ fontWeight: "bold" }}>
-                <a
-                  href={query.allSanityEvent.nodes.at(-1).registrationLink}
-                  target="_blank"
-                >
-                  Register Today!
-                </a>
-              </p>
-            </Row>
           </Col>
           <Col className="mx-lg-4">
             <Row>

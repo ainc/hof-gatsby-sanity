@@ -35,91 +35,92 @@ const Sponsors = () => {
     (node) => node.sponsorType === "Silver",
   );
   return (
-    <Container id="sponsors" className={styles.border}>
-      {presentingSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center my-4">
-        <h3>Presenting Sponsor</h3>
-        {presentingSponsor.map((node, index) => (
-          <Col md={12} className="my-5">
-            <a
-              href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                style={{ maxWidth: "40%" }}
-              />
-            </a>
-          </Col>
-        ))}
-      </Row>
-      )}
-      {platinumSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center my-4">
-        <h3>Platinum Sponsor</h3>
-        {platinumSponsor.map((node, index) => (
-          <Col md={12} className="my-5">
-            <a href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                style={{ maxWidth: "50%"}}
-                />
-            </a>
-          </Col>
-        ))}
-      </Row>
-      )}
-      {goldSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center my-4">
-        <h3>Gold Sponsor</h3>
-        {goldSponsor.map((node, index) => (
-          <Col className="my-5">
-            <a
-              href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                style={{ maxWidth: "55%" }}
-              />
-            </a>
-          </Col>
-        ))}
-      </Row>
-      )}
-      {silverSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center">
-        <h3>Silver Sponsor</h3>
-        {silverSponsor.map((node, index) => (
-          <Col className="my-5">
-            <a
-              href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                style={{ maxWidth: "60%" }}
-              />
-            </a>
-          </Col>
-        ))}
-      </Row>
-      )}
-    </Container>
+    <></>
+    // <Container id="sponsors" className={styles.border}>
+    //   {presentingSponsor.length > 0 && (
+    //   <Row className="d-flex justify-content-center align-items-center text-center my-4">
+    //     <h3>Presenting Sponsor</h3>
+    //     {presentingSponsor.map((node, index) => (
+    //       <Col md={12} className="my-5">
+    //         <a
+    //           href={node.link}
+    //           target="_blank"
+    //           className="mt-3"
+    //           rel="noreferrer"
+    //         >
+    //           <GatsbyImage
+    //             image={node.image.asset.gatsbyImageData}
+    //             alt={node.name}
+    //             style={{ maxWidth: "40%" }}
+    //           />
+    //         </a>
+    //       </Col>
+    //     ))}
+    //   </Row>
+    //   )}
+    //   {platinumSponsor.length > 0 && (
+    //   <Row className="d-flex justify-content-center align-items-center text-center my-4">
+    //     <h3>Platinum Sponsor</h3>
+    //     {platinumSponsor.map((node, index) => (
+    //       <Col md={12} className="my-5">
+    //         <a href={node.link}
+    //           target="_blank"
+    //           className="mt-3"
+    //           rel="noreferrer"
+    //         >
+    //           <GatsbyImage
+    //             image={node.image.asset.gatsbyImageData}
+    //             alt={node.name}
+    //             style={{ maxWidth: "50%"}}
+    //             />
+    //         </a>
+    //       </Col>
+    //     ))}
+    //   </Row>
+    //   )}
+    //   {goldSponsor.length > 0 && (
+    //   <Row className="d-flex justify-content-center align-items-center text-center my-4">
+    //     <h3>Gold Sponsor</h3>
+    //     {goldSponsor.map((node, index) => (
+    //       <Col className="my-5">
+    //         <a
+    //           href={node.link}
+    //           target="_blank"
+    //           className="mt-3"
+    //           rel="noreferrer"
+    //         >
+    //           <GatsbyImage
+    //             image={node.image.asset.gatsbyImageData}
+    //             alt={node.name}
+    //             style={{ maxWidth: "55%" }}
+    //           />
+    //         </a>
+    //       </Col>
+    //     ))}
+    //   </Row>
+    //   )}
+    //   {silverSponsor.length > 0 && (
+    //   <Row className="d-flex justify-content-center align-items-center text-center">
+    //     <h3>Silver Sponsor</h3>
+    //     {silverSponsor.map((node, index) => (
+    //       <Col className="my-5">
+    //         <a
+    //           href={node.link}
+    //           target="_blank"
+    //           className="mt-3"
+    //           rel="noreferrer"
+    //         >
+    //           <GatsbyImage
+    //             image={node.image.asset.gatsbyImageData}
+    //             alt={node.name}
+    //             style={{ maxWidth: "60%" }}
+    //           />
+    //         </a>
+    //       </Col>
+    //     ))}
+    //   </Row>
+    //   )}
+    // </Container>
   );
 };
 
