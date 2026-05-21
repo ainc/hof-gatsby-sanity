@@ -66,7 +66,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col className="mx-lg-4" md={7}>
-            <Row>
+            {/* <Row>
               <Col>
                 <h3>Become a Sponsor</h3>
                 <p className="mb-0">
@@ -106,7 +106,7 @@ const Footer = () => {
                   to Review the Advertising Rate Card
                 </p>
               </Col>
-            </Row>
+            </Row> */}
             <Row>
               <Col>
                 <h3>Nominate an Entrepreneur</h3>
@@ -166,7 +166,7 @@ const Footer = () => {
         <Row className="mt-5">
           <Col className={`${styles.copyright} mx-lg-4`}>
             <p className="my-3">
-              Copyright © 2023 Kentucky Entrepreneur Hall Of Fame
+              Copyright © 2025 Kentucky Entrepreneur Hall Of Fame
             </p>
           </Col>
         </Row>

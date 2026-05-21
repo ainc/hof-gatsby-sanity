@@ -94,9 +94,10 @@ const InductionDinnerPage = ({ data }) => {
                 ${event.dinnerPrice.tableOfTenTicket.toLocaleString()}
               </span>
             </h3>
-            <a href={event.registrationLink}>
+            {/* <a href={event.registrationLink}>
               <Button className="">Register Now</Button>
-            </a>
+            </a> */}
+            <h3>Registration details coming soon</h3>
             <h5 class={styles.cancellations}>Cancellations/Substitutions</h5>
             <h6 className={styles.bodyText}>
               Cancellations must be received no later than five business days
@@ -121,7 +122,7 @@ const InductionDinnerPage = ({ data }) => {
               Directions/Parking
             </a>
 
-            <h3 className={styles.bold}>
+            {/* <h3 className={styles.bold}>
               <br />
               Hotel Accommodations
             </h3>
@@ -137,7 +138,7 @@ const InductionDinnerPage = ({ data }) => {
               Room Rate: ${event.hotelInfo.roomRate}
               <br />
               Room Cutoff date: {event.hotelInfo.roomCutoffDate}
-            </h3>
+            </h3> */}
           </Col>
         </Row>
         {/* <Row>
@@ -148,7 +149,7 @@ const InductionDinnerPage = ({ data }) => {
             </a>
           </Col>
         </Row> */}
-        <Row>
+        {/* <Row>
           <Col className="mx-4 py-3">
             <h2 className={styles.induction}>
               Sponsorship and Advertising Opportunities
@@ -183,20 +184,19 @@ const InductionDinnerPage = ({ data }) => {
               Register here to become a sponsor
             </a>
           </Col>
-        </Row>
+        </Row> */}
         <Row className={styles}>
           <Col className="mx-4 py-3">
             <h2 className={styles.induction}>Event Questions?</h2>
-            <h3 className={styles.bodyText}>Contact Lori Jo Goff</h3>
+            <h3 className={styles.bodyText}>Contact Kevin Mansur</h3>
             <a
               className={styles.linkText}
-              href="mailto:lgoff@kychamber.com"
+              href="mailto:ky@entrepreneurhof.com"
               target="_blank"
               rel="noreferrer"
             >
-              lgoff@kychamber.com
+              ky@entrepreneurhof.com
             </a>
-            <h3 className={styles.bodyText}>502-848-8727</h3>
           </Col>
         </Row>
       </Container>
