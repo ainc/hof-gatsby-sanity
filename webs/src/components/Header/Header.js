@@ -115,9 +115,6 @@ const Header = () => {
                 <Nav.Link as="li" className="mx-2">
                   <a href="/induction-dinner" className={styles.links}>Induction Dinner</a>
                 </Nav.Link>
-                // <Nav.Link as="li" className="mx-2">
-                //   <a href="#sponsors" className={styles.links}>Sponsors</a>
-                // </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
