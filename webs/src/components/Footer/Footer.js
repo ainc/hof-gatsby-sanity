@@ -66,7 +66,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col className="mx-lg-4" md={7}>
-            {/* <Row>
+            <Row>
               <Col>
                 <h3>Become a Sponsor</h3>
                 <p className="mb-0">
@@ -95,7 +95,7 @@ const Footer = () => {
                 </p>
               </Col>
             </Row>
-            <Row>
+            {/*<Row>
               <Col>
                 <h3>Sponsorship not an option for you? Consider Advertising</h3>
                 <p>
