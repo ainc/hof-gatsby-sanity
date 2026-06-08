@@ -94,10 +94,9 @@ const InductionDinnerPage = ({ data }) => {
                 ${event.dinnerPrice.tableOfTenTicket.toLocaleString()}
               </span>
             </h3>
-            {/* <a href={event.registrationLink}>
+            <a href={event.registrationLink}>
               <Button className="">Register Now</Button>
-            </a> */}
-            <h3>Registration details coming soon</h3>
+            </a>
             <h5 class={styles.cancellations}>Cancellations/Substitutions</h5>
             <h6 className={styles.bodyText}>
               Cancellations must be received no later than five business days
@@ -149,7 +148,7 @@ const InductionDinnerPage = ({ data }) => {
             </a>
           </Col>
         </Row> */}
-        {/* <Row>
+        <Row>
           <Col className="mx-4 py-3">
             <h2 className={styles.induction}>
               Sponsorship and Advertising Opportunities
@@ -184,7 +183,7 @@ const InductionDinnerPage = ({ data }) => {
               Register here to become a sponsor
             </a>
           </Col>
-        </Row> */}
+        </Row>
         <Row className={styles}>
           <Col className="mx-4 py-3">
             <h2 className={styles.induction}>Event Questions?</h2>
