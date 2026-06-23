@@ -161,6 +161,8 @@ const InductionDinnerPage = ({ data }) => {
             <a
               className={styles.linkText}
               href={documents.sponsorOpportunites.asset.url}
+              target="_blank"
+              rel="noreferrer"
             >
               View/Download Sponsorship Pkg.
             </a>
@@ -168,6 +170,8 @@ const InductionDinnerPage = ({ data }) => {
             <a
               className={styles.linkText}
               href={documents.advertisingRate.asset.url}
+              target="_blank"
+              rel="noreferrer"
             >
               View/Download Advertising Rate Card
             </a>
@@ -175,11 +179,18 @@ const InductionDinnerPage = ({ data }) => {
             <a
               className={styles.linkText}
               href={documents.postEventReport.asset.url}
+              target="_blank"
+              rel="noreferrer"
             >
               View/Download the 2025 Post-event Report
             </a>
             <br />
-            <a className={styles.linkText} href={link}>
+            <a
+              className={styles.linkText}
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+            >
               Register here to become a sponsor
             </a>
           </Col>
