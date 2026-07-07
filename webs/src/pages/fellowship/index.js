@@ -30,8 +30,8 @@ const FellowshipPage = () => {
             </p>
             <p>
               With mentorship and support of the Kentucky Entrepreneurship Hall
-              of Fame inductees, Fellowship companies have raised over $154m in
-              outside funding as well as created over 784 jobs for the state of
+              of Fame inductees, Fellowship companies have raised over $240.5m in
+              outside funding as well as created over 1,063 jobs for the state of
               Kentucky.
             </p>
             <a
