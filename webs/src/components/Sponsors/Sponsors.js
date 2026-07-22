@@ -34,6 +34,12 @@ const Sponsors = () => {
   const silverSponsor = query.allSanitySponsors.nodes.filter(
     (node) => node.sponsorType === "Silver",
   );
+  const bronzeSponsor = query.allSanitySponsors.nodes.filter(
+    (node) => node.sponsorType === "Bronze",
+  );
+  const pioneerSponsor = query.allSanitySponsors.nodes.filter(
+    (node) => node.sponsorType === "Pioneer",
+  );
   return (
     <Container id="sponsors" className={styles.border}>
       {presentingSponsor.length > 0 && (
@@ -102,6 +108,48 @@ const Sponsors = () => {
       <Row className="d-flex justify-content-center align-items-center text-center">
         <h3>Silver Sponsor</h3>
         {silverSponsor.map((node, index) => (
+          <Col className="my-5">
+            <a
+              href={node.link}
+              target="_blank"
+              className="mt-3"
+              rel="noreferrer"
+            >
+              <GatsbyImage
+                image={node.image.asset.gatsbyImageData}
+                alt={node.name}
+                style={{ maxWidth: "60%" }}
+              />
+            </a>
+          </Col>
+        ))}
+      </Row>
+      )}
+      {bronzeSponsor.length > 0 && (
+      <Row className="d-flex justify-content-center align-items-center text-center">
+        <h3>Bronze Sponsor</h3>
+        {bronzeSponsor.map((node, index) => (
+          <Col className="my-5">
+            <a
+              href={node.link}
+              target="_blank"
+              className="mt-3"
+              rel="noreferrer"
+            >
+              <GatsbyImage
+                image={node.image.asset.gatsbyImageData}
+                alt={node.name}
+                style={{ maxWidth: "60%" }}
+              />
+            </a>
+          </Col>
+        ))}
+      </Row>
+      )}
+      {pioneerSponsor.length > 0 && (
+      <Row className="d-flex justify-content-center align-items-center text-center">
+        <h3>Pioneer Sponsor</h3>
+        {pioneerSponsor.map((node, index) => (
           <Col className="my-5">
             <a
               href={node.link}
