@@ -49,8 +49,8 @@ const IndexPage = ({ data }) => {
       </div>
 
       <div className={styles.nominateWrapper}>
-        <a href="/nominate" className={styles.nominateBtn}>
-          NOMINATE AN ENTREPRENEUR TODAY
+        <a href="https://www.eventbrite.com/e/the-kentucky-entrepreneur-hall-of-fame-ceremony-dinner-2026-awesome-inc-tickets-1990889427872" target="_blank" rel="noreferrer" className={styles.nominateBtn}>
+          Register for the Induction Ceremony
         </a>
       </div>
     </div>
