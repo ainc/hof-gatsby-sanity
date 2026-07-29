@@ -24,22 +24,22 @@ const RotatingImages = ({ children }) => {
       <Slider {...settings} className={styles.heroSlider}>
         <div>
           <StaticImage
-            src="../images/HOF_Hero_image_1.jpg"
-            alt="Hall of Fame hero 1"
+            src="../images/HOF_2025-247.jpg"
+            alt="Speaker addressing the crowd at the Hall of Fame induction ceremony"
             className={styles.heroImage}
           />
         </div>
         <div>
           <StaticImage
-            src="../images/HOF_Hero_image_2.jpg"
-            alt="Hall of Fame hero 2"
+            src="../images/HOF_2025-264.jpg"
+            alt="Speaker at the podium beside the Hall of Fame presentation screen"
             className={styles.heroImage}
           />
         </div>
         <div>
           <StaticImage
-            src="../images/HOF_Hero_image_3.jpg"
-            alt="Hall of Fame hero 3"
+            src="../images/HOF_2025-273.jpg"
+            alt="Hall of Fame inductees applauding on stage"
             className={styles.heroImage}
           />
         </div>

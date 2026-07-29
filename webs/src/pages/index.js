@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "react-bootstrap";
 import "../styles/main.scss";
 import * as styles from "./index.module.scss";
@@ -9,19 +8,11 @@ import Sponsors from "../components/Sponsors/Sponsors";
 import InducteeNav from "../components/InducteeNav/InducteeNav";
 import Title from "../components/Title/Title";
 import Body from "../components/Body/Body";
-import Button from "../components/Button/Button";
 import FlickerImages from "../components/FlickerImages/FlickerImages";
 import IconPair from "../components/IconPair/IconPair";
-import PresentingSponsorBlock from "../components/PresentingSponsorBlock/PresentingSponsorBlock";
-
 import RotatingImages from "../components/RotatingImages";
 
 const IndexPage = ({ data }) => {
-    const images = [
-    "/images/HOF_Hero_image_1.jpg",
-    "/images/HOF_Hero_image_2.jpg",
-    "/images/HOF_Hero_image_3.jpg",
-  ];
   const Inductees = data.allSanityInductee.nodes;
   const Emerging = data.allSanityEmergingEntrepreneur.nodes;
   const event = data.allSanityEvent.nodes.at(-1);
@@ -32,13 +23,7 @@ const IndexPage = ({ data }) => {
   return (
     
  <Layout>
-  <RotatingImages
-    images={[
-      "/images/HOF_Hero_image_1.jpg",
-      "/images/HOF_Hero_image_2.jpg",
-      "/images/HOF_Hero_image_3.jpg",
-    ]}
-  >
+  <RotatingImages>
     <div className={styles.heroContent}>
       <div className={styles.titleBlock}>
         <div className={styles.title1}>KENTUCKY ENTREPRENEUR HALL OF FAME</div>
@@ -50,7 +35,7 @@ const IndexPage = ({ data }) => {
 
       <div className={styles.nominateWrapper}>
         <a href="https://www.eventbrite.com/e/the-kentucky-entrepreneur-hall-of-fame-ceremony-dinner-2026-awesome-inc-tickets-1990889427872" target="_blank" rel="noreferrer" className={styles.nominateBtn}>
-          Register for the Induction Ceremony
+          Attend the Induction Ceremony
         </a>
       </div>
     </div>
@@ -132,44 +117,49 @@ const IndexPage = ({ data }) => {
             </Row>
           </Col>
         </Row>
-        <Row>
-          <Col>
-            <Title className="mx-4 py-5">
-              Induction Dinner
-              <PresentingSponsorBlock />
-            </Title>
-          </Col>
-        </Row>
-        <Row className={`${styles.flexColSm} d-flex`}>
-          <Col className="mx-lg-4 py-5">
-            <Body>
-              The Induction Dinner exists to celebrate the new Kentucky
-              Entrepreneur Hall of Fame inductees and their stories. Join us as
-              we induct this year’s class of entrepreneurs.
-            </Body>
-            <Body>
-              <span className="fw-bold">Date:</span> {event.date}
-            </Body>
-            <Body>
-              <span className="fw-bold">Schedule:</span> 4:30 p.m. Reception | 6
-              p.m. Dinner
-            </Body>
-            <Body>
-              <span className="fw-bold">Location:</span> {event.location.venue},{" "}
-              {event.location.city}
-            </Body>
-            <a href="/induction-dinner">
-              <Button className="">More Info</Button>
-            </a>
-          </Col>
-          <Col className="mx-lg-4 py-5">
-            <StaticImage
-              placeholder="blurred"
-              src="../images/2023-dinner.jpg"
-            />
-          </Col>
-        </Row>
       </Container>
+      <div className={styles.ceremonyBanner}>
+        <h2 className={styles.ceremonyTitle}>Dinner &amp; Ceremony</h2>
+        <p className={styles.ceremonyIntro}>
+          The Induction Ceremony exists to celebrate the new Kentucky
+          Entrepreneur Hall of Fame inductees and their stories. Join us as we
+          induct this year’s class of entrepreneurs.
+        </p>
+        <p className={styles.ceremonyDetail}>
+          <span className={styles.ceremonyLabel}>Date:</span>{" "}
+          <span className={styles.ceremonyValue}>{event.date}</span>
+        </p>
+        {event.schedule && (
+          <p className={styles.ceremonyDetail}>
+            <span className={styles.ceremonyLabel}>Schedule:</span>{" "}
+            <span className={styles.ceremonyValue}>
+              {event.schedule
+                .split(",")
+                .map((item) => item.trim())
+                .join(" | ")}
+            </span>
+          </p>
+        )}
+        <p className={styles.ceremonyDetail}>
+          <span className={styles.ceremonyLabel}>Location:</span>{" "}
+          <span className={styles.ceremonyValue}>
+            {event.location.venue}, {event.location.city} KY
+          </span>
+        </p>
+        <div className={styles.ceremonyActions}>
+          <a
+            href="https://www.eventbrite.com/e/the-kentucky-entrepreneur-hall-of-fame-ceremony-dinner-2026-awesome-inc-tickets-1990889427872"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.ceremonyBtn}
+          >
+            Attend Induction Ceremony
+          </a>
+          <a href="/induction-dinner" className={styles.ceremonyBtnOutline}>
+            More Info
+          </a>
+        </div>
+      </div>
       <div id="InducteeSection">
         <InducteeNav
           title="Inductees"
@@ -274,6 +264,7 @@ export const query = graphql`
           }
         }
         registrationLink
+        schedule
         date(formatString: "MMMM DD, YYYY")
       }
     }

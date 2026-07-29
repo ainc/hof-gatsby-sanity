@@ -38,31 +38,58 @@
     justify-content: space-between;
     padding: 0 40px;
   }
+
+  /* Vertically center nav items (incl. the CTA button) in the expanded navbar */
+  @include screen-laptop-min {
+    ul {
+      align-items: center;
+    }
+  }
 }
 
 /* Alert */
 .alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #af0a0a;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  padding: 5px 15px;
+  /* Cancel out the parent container-fluid gutters so the banner spans full width */
+  margin: 0 calc(var(--bs-gutter-x) * -0.5);
+
+  a {
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+      color: #e0e0e0;
+    }
+  }
+
   @include screen-xs {
-    height: 55px;
+    min-height: 55px;
     text-align: center;
     font-size: 0.9rem;
   }
 
   @include screen-sm {
-    height: 60px;
+    min-height: 60px;
     font-size: 1rem;
   }
 
   @include screen-md {
-    height: 65px;
+    min-height: 65px;
   }
 
   @include screen-lg {
-    height: 70px;
+    min-height: 70px;
   }
 
   @include screen-max {
-    height: 75px;
+    min-height: 75px;
   }
 }
 
@@ -118,6 +145,36 @@
 
   @include screen-lg {
     padding: 20px 12px;
+  }
+}
+
+/* Nav CTA Button */
+.nav-cta {
+  background: #c2202a;
+  color: white;
+  font-family: "Times New Roman", Times, Serif;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 50px;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 11px 25px;
+
+  &:hover {
+    background: #a51b24;
+    color: white;
+  }
+
+  @include screen-xs {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+
+  @include screen-sm {
+    padding: 12px 22px;
+    font-size: 0.9rem;
   }
 }
 

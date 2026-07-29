@@ -21,12 +21,14 @@ const getCeremonyEmbedUrl = (url) => {
 
     if (parsed.pathname.startsWith("/embed/")) {
       const out = new URL(parsed.toString());
+      out.searchParams.delete("autoplay");
       if (!out.searchParams.has("rel")) out.searchParams.set("rel", "0");
       return out.toString();
     }
 
     if (parsed.pathname === "/watch" && parsed.searchParams.has("v")) {
-      const videoId = parsed.searchParams.get("v");
+      // Guard against malformed links like watch?v=ID?autoplay=1
+      const videoId = parsed.searchParams.get("v").split(/[?&]/)[0];
       return `https://www.youtube.com/embed/${videoId}?rel=0`;
     }
 

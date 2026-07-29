@@ -112,8 +112,8 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link as="li" className="mx-2">
-                  <a href="/induction-dinner" className={styles.links}>Induction Dinner</a>
+                <Nav.Link as="li" className="mx-2 d-flex align-items-center">
+                  <a href="/induction-dinner" className={styles.navCta}>Induction Ceremony</a>
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
