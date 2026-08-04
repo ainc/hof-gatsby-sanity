@@ -140,13 +140,19 @@ const InducteeBio = ({ pageContext }) => {
               {inducteeInfo.inductee.title} {inducteeInfo.inductee.company}
             </h3>
             <Body>
-              {inducteeInfo.bio.map((block, blockIndex) => (
-                <div key={blockIndex}>
-                  {block.children.map((child, childIndex) => (
-                    <span key={childIndex}>{child.text}</span>
-                  ))}
+              {inducteeInfo.bio?.length ? (
+                inducteeInfo.bio.map((block, blockIndex) => (
+                  <div key={blockIndex}>
+                    {(block.children || []).map((child, childIndex) => (
+                      <span key={childIndex}>{child.text}</span>
+                    ))}
+                  </div>
+                ))
+              ) : (
+                <div>
+                  {inducteeInfo.inductee.name}'s full biography is coming soon.
                 </div>
-              ))}
+              )}
             </Body>
             <a href="/" style={{ color: "rgb(102, 102, 102)" }}>
               <i className="icon-caret-left"></i> Back to Inductees

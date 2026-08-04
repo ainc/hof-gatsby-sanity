@@ -156,7 +156,7 @@ const InducteeNav = (props) => {
                     >
                       <InducteeAnimation>
                         <InducteeCard
-                          img={node.inductee.profilePhoto.asset.gatsbyImageData}
+                          img={node.inductee.profilePhoto?.asset?.gatsbyImageData}
                           name={node.inductee.name}
                           company={node.inductee.company}
                           link={
@@ -179,7 +179,7 @@ const InducteeNav = (props) => {
                     >
                       <InducteeAnimation>
                         <InducteeCard
-                          img={node.inductee.profilePhoto.asset.gatsbyImageData}
+                          img={node.inductee.profilePhoto?.asset?.gatsbyImageData}
                           name={node.inductee.name}
                           company={node.inductee.company}
                           link={
