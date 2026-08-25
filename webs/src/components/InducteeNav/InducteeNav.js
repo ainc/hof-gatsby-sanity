@@ -159,6 +159,7 @@ const InducteeNav = (props) => {
                           img={node.inductee.profilePhoto?.asset?.gatsbyImageData}
                           name={node.inductee.name}
                           company={node.inductee.company}
+                          smallCompanyText={props.title === "Emerging Entrepreneurs"}
                           link={
                             props.title === "Inductees"
                               ? node.slug.current
@@ -182,6 +183,7 @@ const InducteeNav = (props) => {
                           img={node.inductee.profilePhoto?.asset?.gatsbyImageData}
                           name={node.inductee.name}
                           company={node.inductee.company}
+                          smallCompanyText={props.title === "Emerging Entrepreneurs"}
                           link={
                             props.title === "Inductees"
                               ? node.slug.current

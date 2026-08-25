@@ -89,14 +89,22 @@ const InducteeCard = (props) => {
         )}
         <a
           href={props.link}
-          className={styles.cardOverlay}
+          className={`${styles.cardOverlay} ${
+            props.smallCompanyText ? styles.compactOverlay : ""
+          }`}
           aria-label={`View ${props.name}'s bio`}
         >
           <Row>
             <Col>
               <span className={styles.name}>
                 {props.name} <br />
-                <span className={styles.company}>{props.company}</span>
+                <span
+                  className={`${styles.company} ${
+                    props.smallCompanyText ? styles.companySmall : ""
+                  }`}
+                >
+                  {props.company}
+                </span>
               </span>
               <span className="view-bio">
                 <i className="icon-eye-open" aria-label="View Bio"></i> View Bio
