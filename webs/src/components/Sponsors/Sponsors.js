@@ -56,7 +56,8 @@ const Sponsors = () => {
               <GatsbyImage
                 image={node.image.asset.gatsbyImageData}
                 alt={node.name}
-                style={{ maxWidth: "40%" }}
+                imgStyle={{ objectFit: "contain", maxHeight: "140px" }}
+                style={{ maxWidth: "50%", maxHeight: "140px", width: "100%", height: "auto", margin: "0 auto" }}
               />
             </a>
           </Col>
@@ -76,7 +77,8 @@ const Sponsors = () => {
               <GatsbyImage
                 image={node.image.asset.gatsbyImageData}
                 alt={node.name}
-                style={{ maxWidth: "50%"}}
+                imgStyle={{ objectFit: "contain", maxHeight: "110px" }}
+                style={{ maxWidth: "40%", maxHeight: "110px", width: "100%", height: "auto", margin: "0 auto" }}
                 />
             </a>
           </Col>
@@ -97,7 +99,8 @@ const Sponsors = () => {
               <GatsbyImage
                 image={node.image.asset.gatsbyImageData}
                 alt={node.name}
-                style={{ maxWidth: "55%" }}
+                imgStyle={{ objectFit: "contain", maxHeight: "90px" }}
+                style={{ maxWidth: "32%", maxHeight: "90px", width: "100%", height: "auto", margin: "0 auto" }}
               />
             </a>
           </Col>
@@ -118,7 +121,8 @@ const Sponsors = () => {
               <GatsbyImage
                 image={node.image.asset.gatsbyImageData}
                 alt={node.name}
-                style={{ maxWidth: "60%" }}
+                imgStyle={{ objectFit: "contain", maxHeight: "70px" }}
+                style={{ maxWidth: "24%", maxHeight: "70px", width: "100%", height: "auto", margin: "0 auto" }}
               />
             </a>
           </Col>
@@ -139,7 +143,8 @@ const Sponsors = () => {
               <GatsbyImage
                 image={node.image.asset.gatsbyImageData}
                 alt={node.name}
-                style={{ maxWidth: "60%" }}
+                imgStyle={{ objectFit: "contain", maxHeight: "60px" }}
+                style={{ maxWidth: "20%", maxHeight: "60px", width: "100%", height: "auto", margin: "0 auto" }}
               />
             </a>
           </Col>
@@ -160,7 +165,8 @@ const Sponsors = () => {
               <GatsbyImage
                 image={node.image.asset.gatsbyImageData}
                 alt={node.name}
-                style={{ maxWidth: "60%" }}
+                imgStyle={{ objectFit: "contain", maxHeight: "55px" }}
+                style={{ maxWidth: "18%", maxHeight: "55px", width: "100%", height: "auto", margin: "0 auto" }}
               />
             </a>
           </Col>
