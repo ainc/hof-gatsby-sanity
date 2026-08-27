@@ -165,8 +165,8 @@ const Sponsors = () => {
               <GatsbyImage
                 image={node.image.asset.gatsbyImageData}
                 alt={node.name}
-                imgStyle={{ objectFit: "contain", maxHeight: "55px" }}
-                style={{ maxWidth: "18%", maxHeight: "55px", width: "100%", height: "auto", margin: "0 auto" }}
+                imgStyle={{ objectFit: "contain", maxHeight: "60px" }}
+                style={{ maxWidth: "20%", maxHeight: "60px", width: "100%", height: "auto", margin: "0 auto" }}
               />
             </a>
           </Col>
