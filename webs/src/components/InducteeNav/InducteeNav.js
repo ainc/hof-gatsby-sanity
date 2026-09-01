@@ -158,6 +158,7 @@ const InducteeNav = (props) => {
                         <InducteeCard
                           img={node.inductee.profilePhoto?.asset?.gatsbyImageData}
                           name={node.inductee.name}
+                          parentCompany={node.inductee.parentCompany}
                           company={node.inductee.company}
                           smallCompanyText={props.title === "Emerging Entrepreneurs"}
                           link={
@@ -182,6 +183,7 @@ const InducteeNav = (props) => {
                         <InducteeCard
                           img={node.inductee.profilePhoto?.asset?.gatsbyImageData}
                           name={node.inductee.name}
+                          parentCompany={node.inductee.parentCompany}
                           company={node.inductee.company}
                           smallCompanyText={props.title === "Emerging Entrepreneurs"}
                           link={

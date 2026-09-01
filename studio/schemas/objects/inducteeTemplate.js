@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'parentCompany',
+      title: 'Parent Company',
+      type: 'string',
+    },
+    {
       name: 'company',
       title: 'Company',
       type: 'string',
