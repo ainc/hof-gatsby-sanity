@@ -235,6 +235,7 @@ export const query = graphql`
       nodes {
         inductee {
           name
+          parentCompany
           company
           title
           year(formatString: "YYYY")
