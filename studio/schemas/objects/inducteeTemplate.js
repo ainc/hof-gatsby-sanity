@@ -12,6 +12,7 @@ export default {
       name: 'parentCompany',
       title: 'Parent Company',
       type: 'string',
+      description: 'Optional field for the parent company of the inductee. If the inductee has no parent company, leave this entry blank.',
     },
     {
       name: 'company',
