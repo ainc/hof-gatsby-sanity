@@ -100,11 +100,11 @@ const InducteeCard = (props) => {
                 {props.name} <br />
                 {props.parentCompany ? (
                   <span
-                    className={`${styles.company} ${
+                    className={`${styles.parentCompany} ${
                       props.smallCompanyText ? styles.companySmall : ""
                     }`}
                   >
-                    {props.parentCompany} <br />
+                    {props.parentCompany}
                   </span>
                 ) : null}
                 <span
