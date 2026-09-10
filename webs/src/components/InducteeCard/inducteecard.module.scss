@@ -171,6 +171,14 @@
     0 1px 0 rgba(0, 0, 0, 0.1),
     0 -10px 0 rgba(255, 255, 255, 0.3);
 }
+
+.parentCompany {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 5px;;
+}
+
 .company {
   font-style: italic;
   font-size: 12px;
@@ -179,7 +187,7 @@
 
 /* Smaller variant for cards with long company lists (e.g. Emerging Entrepreneurs) */
 .company-small {
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1;
 }
 
@@ -207,6 +215,8 @@
     box-shadow:
       0 1px 0 rgba(0, 0, 0, 0.1),
       0 -6px 0 rgba(255, 255, 255, 0.3);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   :global(.view-bio) {
