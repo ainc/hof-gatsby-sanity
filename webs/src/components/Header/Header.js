@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React, { useEffect, useState } from "react";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
-import { StaticImage } from "gatsby-plugin-image";
 import * as styles from "./header.module.scss";
+import KEHOFLogo from "./KEHOFLogo";
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -40,12 +40,7 @@ const Header = () => {
 
             {/* Logo */}
             <Navbar.Brand href="/">
-              <StaticImage
-                placeholder="blurred"
-                src="../../images/hof-logo.png"
-                alt="KEHOF logo"
-                style={{ maxWidth: "200px" }}
-              />
+              <KEHOFLogo className={styles.navLogo} />
             </Navbar.Brand>
 
             {/* Hamburger toggle for mobile */}
