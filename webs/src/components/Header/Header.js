@@ -40,7 +40,7 @@ const Header = () => {
 
             {/* Logo */}
             <Navbar.Brand href="/">
-              <KEHOFLogo className={styles.navLogo} />
+              <KEHOFLogo className={styles.navLogo} style={{ height: 92, width: "auto" }} />
             </Navbar.Brand>
 
             {/* Hamburger toggle for mobile */}
