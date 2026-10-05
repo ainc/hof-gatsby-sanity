@@ -23,9 +23,10 @@
 .nav-filter li:last-child {
   border-right: none;
 }
-.nav-filter li:focus {
-  color: rgb(175, 10, 9);
-  font-size: 26px;
+.nav-filter li:focus,
+.nav-filter li.active {
+  color: #c12029;
+  font-weight: 700;
 }
 
 .inductees-list {

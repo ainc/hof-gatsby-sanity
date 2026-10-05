@@ -16,8 +16,8 @@ const IndexPage = ({ data }) => {
   const Inductees = data.allSanityInductee.nodes;
   const Emerging = data.allSanityEmergingEntrepreneur.nodes;
   const event = data.allSanityEvent.nodes.at(-1);
-  const [inducteeSelectedYear, setInducteeSelectedYear] = useState(null);
-  const [emergingSelectedYear, setEmergingSelectedYear] = useState(null);
+  const [inducteeSelectedYear, setInducteeSelectedYear] = useState("2026");
+  const [emergingSelectedYear, setEmergingSelectedYear] = useState("2026");
   const [inducteeSelectedIndustry, setInducteeSelectedIndustry] = useState(null);
   const [emergingSelectedIndustry, setEmergingSelectedIndustry] = useState(null);
   return (

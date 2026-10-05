@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import { graphql, useStaticQuery } from "gatsby";
 import * as styles from "./footer.module.scss";
+import NewsletterModal from "./NewsletterModal";
 
 const Footer = () => {
   const query = useStaticQuery(graphql`
@@ -60,6 +61,7 @@ const Footer = () => {
   const sponsorOpportunites =
     query.allSanityDocuments.nodes.at(-1).sponsorOpportunites;
   const location = query.allSanityEvent.nodes.at(-1).location;
+  const [showNewsletter, setShowNewsletter] = useState(false);
 
   return (
     <Container fluid className={styles.footer}>
@@ -161,6 +163,22 @@ const Footer = () => {
                 </p>
               </Col>
             </Row>
+            <Row>
+              <Col>
+                <h3>Newsletter</h3>
+                <p>
+                  <a
+                    href="#newsletter"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setShowNewsletter(true);
+                    }}
+                  >
+                    Sign up for our newsletter
+                  </a>
+                </p>
+              </Col>
+            </Row>
           </Col>
         </Row>
         <Row className="mt-5">
@@ -171,6 +189,10 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
+      <NewsletterModal
+        show={showNewsletter}
+        onHide={() => setShowNewsletter(false)}
+      />
     </Container>
   );
 };

@@ -26,7 +26,7 @@ const InducteeNav = (props) => {
       return a.localeCompare(b, undefined, { sensitivity: "base" })
     })
 
-  const [selectedYear, setSelectedYear] = useState(null)
+  const [selectedYear, setSelectedYear] = useState("2026")
   const [selectedIndustry, setSelectedIndustry] = useState(null)
   const [fadingOut, setFadingOut] = useState(false)
 
@@ -83,11 +83,22 @@ const InducteeNav = (props) => {
         <div>
           {/* Large Screens */}
           <Nav as="ul" className={`${styles.navFilter} d-none d-lg-block`}>
-            <Nav.Item as="li" onClick={() => handleYearClick(null)} tabIndex="-1">
+            <Nav.Item
+              as="li"
+              className={!selectedYear && !selectedIndustry ? styles.active : undefined}
+              onClick={() => handleYearClick(null)}
+              tabIndex="-1"
+            >
               All
             </Nav.Item>
             {years.map((year) => (
-              <Nav.Item as="li" key={year} onClick={() => handleYearClick(year)} tabIndex="-1">
+              <Nav.Item
+                as="li"
+                key={year}
+                className={selectedYear === year ? styles.active : undefined}
+                onClick={() => handleYearClick(year)}
+                tabIndex="-1"
+              >
                 {year}
               </Nav.Item>
             ))}
