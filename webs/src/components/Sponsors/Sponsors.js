@@ -43,135 +43,172 @@ const Sponsors = () => {
   return (
     <Container id="sponsors" className={styles.border}>
       {presentingSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center my-4">
-        <h3>Presenting Sponsor</h3>
-        {presentingSponsor.map((node, index) => (
-          <Col md={12} className="my-5">
-            <a
-              href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                imgStyle={{ objectFit: "contain", maxHeight: "140px" }}
-                style={{ maxWidth: "50%", maxHeight: "140px", width: "100%", height: "auto", margin: "0 auto" }}
-              />
-            </a>
-          </Col>
-        ))}
-      </Row>
+        <Row className="d-flex justify-content-center align-items-center text-center my-4">
+          <h3>Presenting Sponsor</h3>
+          {presentingSponsor.map((node, index) => (
+            <Col md={12} className="my-5">
+              <a
+                href={node.link}
+                target="_blank"
+                className="mt-3"
+                rel="noreferrer"
+              >
+                <GatsbyImage
+                  image={node.image.asset.gatsbyImageData}
+                  alt={node.name}
+                  imgStyle={{ objectFit: "contain", maxHeight: "140px" }}
+                  style={{
+                    maxWidth: "50%",
+                    maxHeight: "140px",
+                    width: "100%",
+                    height: "auto",
+                    margin: "0 auto",
+                  }}
+                />
+              </a>
+            </Col>
+          ))}
+        </Row>
       )}
       {platinumSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center my-4">
-        <h3>Platinum Sponsor</h3>
-        {platinumSponsor.map((node, index) => (
-          <Col md={12} className="my-5">
-            <a href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                imgStyle={{ objectFit: "contain", maxHeight: "110px" }}
-                style={{ maxWidth: "40%", maxHeight: "110px", width: "100%", height: "auto", margin: "0 auto" }}
+        <Row className="d-flex justify-content-center align-items-center text-center my-4">
+          <h3>Platinum Sponsor</h3>
+          {platinumSponsor.map((node, index) => (
+            <Col md={12} className="my-5">
+              <a
+                href={node.link}
+                target="_blank"
+                className="mt-3"
+                rel="noreferrer"
+              >
+                <GatsbyImage
+                  image={node.image.asset.gatsbyImageData}
+                  alt={node.name}
+                  imgStyle={{ objectFit: "contain", maxHeight: "110px" }}
+                  style={{
+                    maxWidth: "40%",
+                    maxHeight: "110px",
+                    width: "100%",
+                    height: "auto",
+                    margin: "0 auto",
+                  }}
                 />
-            </a>
-          </Col>
-        ))}
-      </Row>
+              </a>
+            </Col>
+          ))}
+        </Row>
       )}
       {goldSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center my-4">
-        <h3>Gold Sponsor</h3>
-        {goldSponsor.map((node, index) => (
-          <Col className="my-5">
-            <a
-              href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                imgStyle={{ objectFit: "contain", maxHeight: "90px" }}
-                style={{ maxWidth: "32%", maxHeight: "90px", width: "100%", height: "auto", margin: "0 auto" }}
-              />
-            </a>
-          </Col>
-        ))}
-      </Row>
+        <Row className="d-flex justify-content-center align-items-center text-center my-4">
+          <h3>Gold Sponsor</h3>
+          {goldSponsor.map((node, index) => (
+            <Col className="my-5">
+              <a
+                href={node.link}
+                target="_blank"
+                className="mt-3"
+                rel="noreferrer"
+              >
+                <GatsbyImage
+                  image={node.image.asset.gatsbyImageData}
+                  alt={node.name}
+                  imgStyle={{ objectFit: "contain", maxHeight: "90px" }}
+                  style={{
+                    maxWidth: "32%",
+                    maxHeight: "90px",
+                    width: "100%",
+                    height: "auto",
+                    margin: "0 auto",
+                  }}
+                />
+              </a>
+            </Col>
+          ))}
+        </Row>
       )}
       {silverSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center">
-        <h3>Silver Sponsor</h3>
-        {silverSponsor.map((node, index) => (
-          <Col className="my-5">
-            <a
-              href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                imgStyle={{ objectFit: "contain", maxHeight: "70px" }}
-                style={{ maxWidth: "24%", maxHeight: "70px", width: "100%", height: "auto", margin: "0 auto" }}
-              />
-            </a>
-          </Col>
-        ))}
-      </Row>
+        <Row className="d-flex justify-content-center align-items-center text-center">
+          <h3>Silver Sponsor</h3>
+          {silverSponsor.map((node, index) => (
+            <Col className="my-5">
+              <a
+                href={node.link}
+                target="_blank"
+                className="mt-3"
+                rel="noreferrer"
+              >
+                <GatsbyImage
+                  image={node.image.asset.gatsbyImageData}
+                  alt={node.name}
+                  imgStyle={{ objectFit: "contain", maxHeight: "70px" }}
+                  style={{
+                    maxWidth: "24%",
+                    maxHeight: "70px",
+                    width: "100%",
+                    height: "auto",
+                    margin: "0 auto",
+                  }}
+                />
+              </a>
+            </Col>
+          ))}
+        </Row>
       )}
       {bronzeSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center">
-        <h3>Bronze Sponsor</h3>
-        {bronzeSponsor.map((node, index) => (
-          <Col className="my-5">
-            <a
-              href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                imgStyle={{ objectFit: "contain", maxHeight: "70px" }}
-                style={{ maxWidth: "24%", maxHeight: "70px", width: "100%", height: "auto", margin: "0 auto" }}
-              />
-            </a>
-          </Col>
-        ))}
-      </Row>
+        <Row className="d-flex justify-content-center align-items-center text-center">
+          <h3>Bronze Sponsor</h3>
+          {bronzeSponsor.map((node, index) => (
+            <Col className="my-5">
+              <a
+                href={node.link}
+                target="_blank"
+                className="mt-3"
+                rel="noreferrer"
+              >
+                <GatsbyImage
+                  image={node.image.asset.gatsbyImageData}
+                  alt={node.name}
+                  imgStyle={{ objectFit: "contain", maxHeight: "110px" }}
+                  style={{
+                    maxWidth: "48%",
+                    maxHeight: "110px",
+                    width: "100%",
+                    height: "auto",
+                    margin: "0 auto",
+                  }}
+                />
+              </a>
+            </Col>
+          ))}
+        </Row>
       )}
       {pioneerSponsor.length > 0 && (
-      <Row className="d-flex justify-content-center align-items-center text-center">
-        <h3>Pioneer Sponsor</h3>
-        {pioneerSponsor.map((node, index) => (
-          <Col className="my-5">
-            <a
-              href={node.link}
-              target="_blank"
-              className="mt-3"
-              rel="noreferrer"
-            >
-              <GatsbyImage
-                image={node.image.asset.gatsbyImageData}
-                alt={node.name}
-                imgStyle={{ objectFit: "contain", maxHeight: "80px" }}
-                style={{ maxWidth: "85%", maxHeight: "80px", width: "100%", height: "auto", margin: "0 auto" }}
-              />
-            </a>
-          </Col>
-        ))}
-      </Row>
+        <Row className="d-flex justify-content-center align-items-center text-center">
+          <h3>Pioneer Sponsor</h3>
+          {pioneerSponsor.map((node, index) => (
+            <Col className="my-5">
+              <a
+                href={node.link}
+                target="_blank"
+                className="mt-3"
+                rel="noreferrer"
+              >
+                <GatsbyImage
+                  image={node.image.asset.gatsbyImageData}
+                  alt={node.name}
+                  imgStyle={{ objectFit: "contain", maxHeight: "80px" }}
+                  style={{
+                    maxWidth: "85%",
+                    maxHeight: "80px",
+                    width: "100%",
+                    height: "auto",
+                    margin: "0 auto",
+                  }}
+                />
+              </a>
+            </Col>
+          ))}
+        </Row>
       )}
     </Container>
   );
