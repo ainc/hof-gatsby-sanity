@@ -1,0 +1,156 @@
+import React from "react";
+import { Container } from "react-bootstrap";
+import Layout from "../../components/Layout/Layout";
+import "../../styles/main.scss";
+import * as styles from "./connection.module.scss";
+import mackPhoto from "../../images/connection/mackenzie-hanes.jpeg";
+import kylePhoto from "../../images/connection/kyle-raney.jpg";
+import maisonPhoto from "../../images/connection/maison.jpg";
+import benPhoto from "../../images/connection/ben.jpg";
+
+const team = [
+  {
+    name: "Mackenzie Hanes",
+    title: "Director of Partnerships",
+    email: "mackenzie.hanes@awesomeinc.org",
+    photo: mackPhoto,
+  },
+  {
+    name: "Maison Rudd",
+    title: "Coworking Manager",
+    email: "maison.rudd@awesomeinc.org",
+    photo: maisonPhoto,
+  },
+  {
+    name: "Ben Strevy",
+    title: "Awesome Fund Principal",
+    email: "ben.strevy@awesomeinc.org",
+    photo: benPhoto,
+  },
+  {
+    name: "Kyle Raney",
+    title: "Developer and Solutions Architect",
+    email: "kyle.raney@awesomeinc.org",
+    photo: kylePhoto,
+  },
+];
+
+const eventbriteUrl =
+  "https://www.eventbrite.com/e/5-across-december-finals-2026-entrepreneur-pitch-competition-awesome-inc-tickets-1980880551052";
+const fiveAcrossUrl = "https://awesomeinc.org/events/5across/";
+
+const ConnectionPage = () => {
+  return (
+    <Layout>
+      <Container className={styles.page}>
+        <div className="mx-4">
+          <header className={styles.hero}>
+            <p className={styles.kicker}>After the ceremony</p>
+            <h1 className={styles.displayTitle}>Connection Team</h1>
+            <p className={styles.lede}>
+              Find us at the high tops in the back of the room. We are here to
+              connect you with Kentucky&apos;s startup community.
+            </p>
+          </header>
+
+          <section aria-labelledby="team-heading">
+            <h2 id="team-heading" className={styles.sectionTitle}>
+              The team
+            </h2>
+            <div className={styles.teamGrid}>
+              {team.map((member) => (
+                <article key={member.email} className={styles.card}>
+                  <div className={styles.photoWrap}>
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className={styles.photo}
+                      />
+                    ) : (
+                      <div className={styles.initial} aria-hidden="true">
+                        {member.initial}
+                      </div>
+                    )}
+                  </div>
+                  <h3 className={styles.name}>{member.name}</h3>
+                  <p className={styles.role}>{member.title}</p>
+                  <a className={styles.email} href={`mailto:${member.email}`}>
+                    Email {member.name.split(" ")[0]}
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section aria-labelledby="event-heading">
+            <h2 id="event-heading" className={styles.sectionTitle}>
+              Upcoming event
+            </h2>
+            <article className={styles.eventCard}>
+              <div className={styles.dateBlock}>
+                <span className={styles.dateMonth}>Dec</span>
+                <span className={styles.dateDay}>2</span>
+                <span className={styles.dateYear}>2026</span>
+              </div>
+              <div className={styles.eventBody}>
+                <h3 className={styles.eventName}>5 Across December Finals</h3>
+                <p className={styles.eventMeta}>Wednesday, December 2, 2026</p>
+                <p className={styles.eventMeta}>
+                  Kentucky Theatre, 214 E Main St, Lexington
+                </p>
+                <p className={styles.schedule}>
+                  Doors 4:30 p.m.
+                  <br />
+                  Networking and dinner 5:00–5:30 p.m.
+                  <br />
+                  Pitches 5:30–7:00 p.m.
+                </p>
+                <div className={styles.actions}>
+                  <a
+                    className={styles.primaryLink}
+                    href={eventbriteUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Get tickets
+                  </a>
+                  <a
+                    className={styles.textLink}
+                    href={fiveAcrossUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    More about 5 Across
+                  </a>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section aria-labelledby="pass-heading">
+            <h2 id="pass-heading" className={styles.sectionTitle}>
+              Coworking day pass
+            </h2>
+            <div className={styles.ticket}>
+              <div className={styles.ticketStub}>
+                <span className={styles.ticketLabel}>Day pass</span>
+                <span className={styles.ticketKind}>Free coworking</span>
+              </div>
+              <div className={styles.ticketBody}>
+                <p className={styles.ticketNote}>
+                  See a member of our Connection Team after the ceremony for a
+                  free day of coworking.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </Container>
+    </Layout>
+  );
+};
+
+export default ConnectionPage;
+
+export const Head = () => <title>Connection Team</title>;

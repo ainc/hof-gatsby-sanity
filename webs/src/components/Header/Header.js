@@ -15,7 +15,11 @@ const Header = () => {
     }
   `);
 
-  const { alertText = "", linkText = "", linkUrl = "" } = data.sanityHeaderAlert || {};
+  const {
+    alertText = "",
+    linkText = "",
+    linkUrl = "",
+  } = data.sanityHeaderAlert || {};
   const [isHomepage, setIsHomepage] = useState(false);
 
   useEffect(() => {
@@ -29,18 +33,18 @@ const Header = () => {
 
   return (
     <>
-      
       <Container
         fluid
         className={`${styles.background} ${isHomepage ? styles.homepage : ""}`}
       >
         <Container>
-          
           <Navbar expand="lg" className={`${styles.nav} py-1 px-2`}>
-
             {/* Logo */}
             <Navbar.Brand href="/">
-              <KEHOFLogo className={styles.navLogo} style={{ height: 92, width: "auto" }} />
+              <KEHOFLogo
+                className={styles.navLogo}
+                style={{ height: 92, width: "auto" }}
+              />
             </Navbar.Brand>
 
             {/* Hamburger toggle for mobile */}
@@ -50,25 +54,35 @@ const Header = () => {
             <Navbar.Collapse id="main-navbar-nav">
               <Nav as="ul" className="ms-auto">
                 <Nav.Link as="li" className="mx-2">
-                  <a href="/#InducteeSection" className={styles.links}>Inductees</a>
+                  <a href="/#InducteeSection" className={styles.links}>
+                    Inductees
+                  </a>
                 </Nav.Link>
                 <Nav.Link as="li" className="mx-2">
-                  <a href="/media" className={styles.links}>Media</a>
+                  <a href="/media" className={styles.links}>
+                    Media
+                  </a>
                 </Nav.Link>
                 <Nav.Link as="li" className="mx-2">
-                  <a href="/book" className={styles.links}>Book</a>
+                  <a href="/book" className={styles.links}>
+                    Book
+                  </a>
                 </Nav.Link>
                 <Nav.Link as="li" className="mx-2">
-                  <a href="/founders-series" className={styles.links}>Founders Series</a>
+                  <a href="/founders-series" className={styles.links}>
+                    Founders Series
+                  </a>
                 </Nav.Link>
                 <Nav.Link as="li" className="mx-2">
-                  <a href="/fellowship" className={styles.links}>The Fellowship</a>
+                  <a href="/fellowship" className={styles.links}>
+                    The Fellowship
+                  </a>
                 </Nav.Link>
 
                 <NavDropdown
                   title={<span className={styles.links}>Nominate</span>}
                   id="collapsable-nav-dropdown"
-                  className={styles.dropdownMenuLg}
+                  className={`${styles.dropdownMenuLg} mx-2`}
                 >
                   <NavDropdown.Item
                     className={styles.dropdownItems}
@@ -108,7 +122,9 @@ const Header = () => {
                 </NavDropdown>
 
                 <Nav.Link as="li" className="mx-2 d-flex align-items-center">
-                  <a href="/induction-dinner" className={styles.navCta}>Induction Ceremony</a>
+                  <a href="/induction-dinner" className={styles.navCta}>
+                    Induction Ceremony
+                  </a>
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>

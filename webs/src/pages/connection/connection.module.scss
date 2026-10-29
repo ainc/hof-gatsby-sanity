@@ -1,0 +1,350 @@
+@import "../../styles/mixins/mixins";
+
+.page {
+  padding-top: 2rem;
+  padding-bottom: 4.5rem;
+}
+
+.hero {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0.5rem auto 0.5rem;
+}
+
+.kicker {
+  font-family: $base-font;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $brand-color;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.displayTitle {
+  font-family: "AmericanPurpose", "Times New Roman", Times, serif;
+  font-weight: 100;
+  color: $brand-color2;
+  font-size: clamp(2.25rem, 11vw, 3.4rem);
+  line-height: 0.95;
+  margin: 0 0 1rem;
+}
+
+.lede {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+  line-height: 1.45;
+  color: #666;
+  margin: 0;
+}
+
+.sectionTitle {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  font-size: 1.75rem;
+  color: $brand-color;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 0.75rem;
+  margin: 2.75rem 0 1.25rem;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @media (min-width: #{$screen-sm}) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.card {
+  background: $white-color;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  padding: 1.25rem 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.photoWrap {
+  width: min(100%, 220px);
+  margin: 0 auto 1rem;
+  aspect-ratio: 1;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.initial {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $brand-color;
+  color: $white-color;
+  font-family: "AmericanPurpose", "Times New Roman", Times, serif;
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.name {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  font-size: 1.6rem;
+  color: #666;
+  margin: 0;
+}
+
+.role {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: #666;
+  margin: 0.35rem 0 1rem;
+  min-height: 2.8rem;
+}
+
+.email,
+.primaryLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  background: $brand-color;
+  color: $white-color;
+  text-decoration: none;
+  border-radius: 50px;
+  font-family: $base-font;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus-visible {
+    background: $button-hover-bg-color;
+    color: $white-color;
+  }
+}
+
+.email {
+  width: 100%;
+}
+
+.eventCard {
+  display: flex;
+  flex-direction: column;
+  background: $white-color;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  @media (min-width: #{$screen-sm}) {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.dateBlock {
+  background: $brand-color;
+  color: $white-color;
+  text-align: center;
+  padding: 1.15rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: #{$screen-sm}) {
+    min-width: 9.5rem;
+    padding: 1.5rem 1.75rem;
+  }
+}
+
+.dateMonth {
+  font-family: $base-font;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.dateDay {
+  font-family: "AmericanPurpose", "Times New Roman", Times, serif;
+  font-size: 4.75rem;
+  line-height: 0.85;
+  margin: 0.15rem 0;
+}
+
+.dateYear {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.05rem;
+}
+
+.eventBody {
+  padding: 1.4rem 1.35rem 1.6rem;
+  text-align: left;
+
+  @media (min-width: #{$screen-sm}) {
+    padding: 1.6rem 1.75rem 1.75rem;
+  }
+}
+
+.eventName {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  font-size: 1.85rem;
+  color: $brand-color2;
+  margin: 0 0 0.45rem;
+}
+
+.eventMeta,
+.schedule {
+  font-family: "Times New Roman", Times, serif;
+  color: #666;
+  font-size: 1.08rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.schedule {
+  margin-top: 0.85rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+
+  @media (min-width: #{$screen-xs}) {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.primaryLink {
+  width: 100%;
+
+  @media (min-width: #{$screen-xs}) {
+    width: auto;
+    padding: 0.7rem 1.6rem;
+  }
+}
+
+.textLink {
+  color: #666;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.05rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: #666;
+    border-bottom: 1px dashed rgba(102, 102, 102, 0.5);
+  }
+}
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  background: $white-color;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+
+  @media (min-width: #{$screen-sm}) {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.ticketStub {
+  position: relative;
+  background: $brand-color;
+  color: $white-color;
+  text-align: center;
+  padding: 1.35rem 1.25rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 16px;
+    background: radial-gradient(
+      circle at 10px 8px,
+      #e6e6e6 6px,
+      transparent 6.5px
+    );
+    background-size: 22px 16px;
+    background-repeat: repeat-x;
+    z-index: 1;
+  }
+
+  @media (min-width: #{$screen-sm}) {
+    width: 12.5rem;
+    flex-shrink: 0;
+    padding: 1.5rem 1.35rem;
+
+    &::after {
+      top: 0;
+      bottom: 0;
+      left: auto;
+      right: -8px;
+      width: 16px;
+      height: auto;
+      background: radial-gradient(
+        circle at 8px 11px,
+        #e6e6e6 6px,
+        transparent 6.5px
+      );
+      background-size: 16px 22px;
+      background-repeat: repeat-y;
+    }
+  }
+}
+
+.ticketLabel {
+  font-family: $base-font;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.ticketKind {
+  font-family: "AmericanPurpose", "Times New Roman", Times, serif;
+  font-size: 1.85rem;
+  line-height: 1.05;
+  margin-top: 0.35rem;
+}
+
+.ticketBody {
+  display: flex;
+  align-items: center;
+  padding: 1.6rem 1.4rem 1.5rem;
+
+  @media (min-width: #{$screen-sm}) {
+    padding: 1.75rem 2rem;
+  }
+}
+
+.ticketNote {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: $brand-color2;
+  margin: 0;
+}
