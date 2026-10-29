@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import Layout from "../../components/Layout/Layout";
+import Title from "../../components/Title/Title";
 import "../../styles/main.scss";
 import * as styles from "./connection.module.scss";
 import mackPhoto from "../../images/connection/mackenzie-hanes.jpeg";
@@ -54,9 +55,9 @@ const ConnectionPage = () => {
           </header>
 
           <section aria-labelledby="team-heading">
-            <h2 id="team-heading" className={styles.sectionTitle}>
-              The team
-            </h2>
+            <Title id="team-heading" className={styles.sectionTitle}>
+              The Team
+            </Title>
             <div className={styles.teamGrid}>
               {team.map((member) => (
                 <article key={member.email} className={styles.card}>
@@ -84,9 +85,9 @@ const ConnectionPage = () => {
           </section>
 
           <section aria-labelledby="event-heading">
-            <h2 id="event-heading" className={styles.sectionTitle}>
-              Upcoming event
-            </h2>
+            <Title id="event-heading" className={styles.sectionTitle}>
+              Upcoming Event
+            </Title>
             <article className={styles.eventCard}>
               <div className={styles.dateBlock}>
                 <span className={styles.dateMonth}>Dec</span>
@@ -129,9 +130,9 @@ const ConnectionPage = () => {
           </section>
 
           <section aria-labelledby="pass-heading">
-            <h2 id="pass-heading" className={styles.sectionTitle}>
-              Coworking day pass
-            </h2>
+            <Title id="pass-heading" className={styles.sectionTitle}>
+              Coworking Day Pass
+            </Title>
             <div className={styles.ticket}>
               <div className={styles.ticketStub}>
                 <span className={styles.ticketLabel}>Day pass</span>
