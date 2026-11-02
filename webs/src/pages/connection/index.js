@@ -76,8 +76,15 @@ const ConnectionPage = () => {
                   </div>
                   <h3 className={styles.name}>{member.name}</h3>
                   <p className={styles.role}>{member.title}</p>
-                  <a className={styles.email} href={`mailto:${member.email}`}>
-                    Email {member.name.split(" ")[0]}
+                  <a
+                    className={styles.email}
+                    href={`mailto:${member.email}`}
+                    aria-label={`Email ${member.name}`}
+                  >
+                    Email
+                    <span className={styles.emailName}>
+                      &nbsp;{member.name.split(" ")[0]}
+                    </span>
                   </a>
                 </article>
               ))}
@@ -96,17 +103,23 @@ const ConnectionPage = () => {
               </div>
               <div className={styles.eventBody}>
                 <h3 className={styles.eventName}>5 Across December Finals</h3>
-                <p className={styles.eventMeta}>Wednesday, December 2, 2026</p>
-                <p className={styles.eventMeta}>
-                  Kentucky Theatre, 214 E Main St, Lexington
-                </p>
-                <p className={styles.schedule}>
-                  Doors 4:30 p.m.
-                  <br />
-                  Networking and dinner 5:00–5:30 p.m.
-                  <br />
-                  Pitches 5:30–7:00 p.m.
-                </p>
+                <dl className={styles.details}>
+                  <dt>Date</dt>
+                  <dd>Wednesday, December 2, 2026</dd>
+                  <dt>Location</dt>
+                  <dd>Kentucky Theatre, 214 E Main St, Lexington</dd>
+                </dl>
+                <ul className={styles.schedule}>
+                  <li>
+                    <strong>4:30 p.m.</strong> Doors open
+                  </li>
+                  <li>
+                    <strong>5:00 p.m.</strong> Networking and dinner
+                  </li>
+                  <li>
+                    <strong>5:30 p.m.</strong> Pitch competition
+                  </li>
+                </ul>
                 <div className={styles.actions}>
                   <a
                     className={styles.primaryLink}
@@ -129,10 +142,10 @@ const ConnectionPage = () => {
             </article>
           </section>
 
-          <section aria-labelledby="pass-heading">
-            <Title id="pass-heading" className={styles.sectionTitle}>
-              Coworking Day Pass
-            </Title>
+          <section
+            aria-label="Coworking day pass"
+            className={styles.passSection}
+          >
             <div className={styles.ticket}>
               <div className={styles.ticketStub}>
                 <span className={styles.ticketLabel}>Day pass</span>
